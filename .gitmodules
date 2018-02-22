@@ -1,3 +1,6 @@
 [submodule "open-dash-daughterboard/lib"]
-	path = open-dash-daughterboard/datasheets/esp32
+	path = open-dash-daughterboard/lib/esp32
 	url = https://github.com/adamjvr/ESP32-kiCAD-Footprints.git
+[submodule "open-dash-daughterboard/lib/digikey"]
+	path = open-dash-daughterboard/lib/digikey
+	url = https://github.com/digikey/digikey-kicad-library.git

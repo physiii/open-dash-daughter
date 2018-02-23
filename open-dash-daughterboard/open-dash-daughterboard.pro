@@ -1,4 +1,4 @@
-update=Wed 21 Feb 2018 15:41:31 CST
+update=2/22/2018 4:02:43 PM
 version=1
 last_client=kicad
 [general]
@@ -27,10 +27,6 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-[eeschema]
-version=1
-LibDir=
-[eeschema/libraries]
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
@@ -41,3 +37,10 @@ NetFmtName=
 SpiceAjustPassiveValues=0
 LabSize=50
 ERC_TestSimilarLabels=1
+[eeschema]
+version=1
+LibDir=lib/digikey;lib/esp32
+[eeschema/libraries]
+LibName1=lib/esp32/ESP32-Footprints/ESP32-footprints-Shem-Lib
+LibName2=lib/esp32/ESP32-Footprints/espressif-xess
+LibName3=lib/digikey/digikey-symbols/dk_Interface-Drivers-Receivers-Transceivers

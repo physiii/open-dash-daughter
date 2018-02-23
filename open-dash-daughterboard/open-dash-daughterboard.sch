@@ -1,10 +1,12 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 2
+LIBS:ESP32-footprints-Shem-Lib
+LIBS:espressif-xess
 LIBS:open-dash-daughterboard-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 5
+Sheet 1 7
 Title ""
 Date ""
 Rev ""
@@ -15,33 +17,39 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 2850 2550 1300 950 
-U 5A7BADB8
-F0 "switching regulator" 50
-F1 "switching regulator.sch" 50
+S 3100 1950 1200 800 
+U 5936D792
+F0 "microcontroller" 60
+F1 "microcontroller.sch" 60
 $EndSheet
 $Sheet
-S 5200 2550 1550 950 
-U 5A7BADDB
-F0 "processor" 50
-F1 "processor.sch" 50
+S 6950 1950 950  800 
+U 5936D8F6
+F0 "switches" 60
+F1 "switches.sch" 60
 $EndSheet
 $Sheet
-S 2850 4100 1350 900 
+S 5800 1950 1050 800 
+U 5936D89B
+F0 "Power" 60
+F1 "power.sch" 60
+$EndSheet
+$Sheet
+S 4550 1950 1000 800 
+U 59C50990
+F0 "environment" 60
+F1 "environment.sch" 60
+$EndSheet
+$Sheet
+S 3150 3100 1350 900 
 U 5A7BAF4B
 F0 "audio" 50
 F1 "audio.sch" 50
 $EndSheet
 $Sheet
-S 5200 4050 1550 950 
+S 5500 3050 1550 950 
 U 5A8CA1AF
 F0 "canbus" 50
 F1 "canbus.sch" 50
-$EndSheet
-$Sheet
-S 7300 2550 1400 950 
-U 5A8CA1FA
-F0 "sensor" 50
-F1 "sensor.sch" 50
 $EndSheet
 $EndSCHEMATC

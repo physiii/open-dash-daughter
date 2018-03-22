@@ -1,6 +1,8 @@
 EESchema Schematic File Version 2
 LIBS:ESP32-footprints-Shem-Lib
 LIBS:espressif-xess
+LIBS:dk_Interface-Drivers-Receivers-Transceivers
+LIBS:open-automation
 LIBS:open-dash-daughterboard-cache
 EELAYER 25 0
 EELAYER END
@@ -33,7 +35,7 @@ V_MAIN
 Text GLabel 9850 3425 1    60   Input ~ 0
 V_USB
 $Comp
-L CP C1
+L C_100uF C1
 U 1 1 593709F5
 P 7900 3475
 F 0 "C1" V 7950 3525 50  0000 L CNN
@@ -45,7 +47,7 @@ F 4 "UVR1H101MPD" H 7900 3475 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L CP C2
+L C_1000uF C2
 U 1 1 5968D146
 P 9900 3825
 F 0 "C2" H 9925 3925 50  0000 L CNN
@@ -118,7 +120,7 @@ BATTERY
 Text GLabel 4075 4950 0    60   Input ~ 0
 V_MAIN
 $Comp
-L Conn_01x02 BATTERY1
+L CONN_01X02 BATTERY1
 U 1 1 597573B9
 P 5625 5775
 AR Path="/597573B9" Ref="BATTERY1"  Part="1" 
@@ -373,7 +375,7 @@ V_PANEL
 Text GLabel 5200 3275 2    60   Input ~ 0
 V_MAIN
 $Comp
-L Conn_01x02 PANEL1
+L CONN_01X02 PANEL1
 U 1 1 59C5AB51
 P 5650 6275
 AR Path="/59C5AB51" Ref="PANEL1"  Part="1" 

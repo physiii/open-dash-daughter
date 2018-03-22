@@ -1,6 +1,8 @@
 EESchema Schematic File Version 2
 LIBS:ESP32-footprints-Shem-Lib
 LIBS:espressif-xess
+LIBS:dk_Interface-Drivers-Receivers-Transceivers
+LIBS:open-automation
 LIBS:open-dash-daughterboard-cache
 EELAYER 25 0
 EELAYER END
@@ -93,7 +95,7 @@ F 3 "https://www.mcmaster.com/#catalog/123/904/=18nyvt2" H 8425 4075 60  0001 C 
 	1    0    0    -1  
 $EndComp
 $Comp
-L SW_Push FACTORY1
+L SW_PUSH FACTORY1
 U 1 1 59C587B8
 P 3725 3975
 F 0 "FACTORY1" H 3725 4150 50  0000 C CNN
@@ -155,7 +157,7 @@ $EndComp
 Text GLabel 4675 2925 1    60   Input ~ 0
 3V3
 $Comp
-L SW_Push REBOOT1
+L SW_PUSH REBOOT1
 U 1 1 59E3EE49
 P 4675 3975
 F 0 "REBOOT1" H 4675 4150 50  0000 C CNN
@@ -217,7 +219,7 @@ $EndComp
 Text GLabel 5450 2925 1    60   Input ~ 0
 3V3
 $Comp
-L SW_Push PROG1
+L SW_PUSH PROG1
 U 1 1 59E3F1CB
 P 5450 3975
 F 0 "PROG1" H 5450 4150 50  0000 C CNN

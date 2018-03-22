@@ -1,10 +1,6 @@
-update=2/22/2018 4:02:43 PM
+update=Mon 26 Feb 2018 01:26:37 PM CST
 version=1
 last_client=kicad
-[general]
-version=1
-RootSch=
-BoardNm=
 [pcbnew]
 version=1
 LastNetListRead=
@@ -37,10 +33,13 @@ NetFmtName=
 SpiceAjustPassiveValues=0
 LabSize=50
 ERC_TestSimilarLabels=1
+[general]
+version=1
 [eeschema]
 version=1
-LibDir=lib/digikey;lib/esp32
+LibDir=lib/digikey;lib/esp32;../../kicad-parts/libraries
 [eeschema/libraries]
 LibName1=lib/esp32/ESP32-Footprints/ESP32-footprints-Shem-Lib
 LibName2=lib/esp32/ESP32-Footprints/espressif-xess
 LibName3=lib/digikey/digikey-symbols/dk_Interface-Drivers-Receivers-Transceivers
+LibName4=open-automation

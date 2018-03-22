@@ -1,6 +1,8 @@
 EESchema Schematic File Version 2
 LIBS:ESP32-footprints-Shem-Lib
 LIBS:espressif-xess
+LIBS:dk_Interface-Drivers-Receivers-Transceivers
+LIBS:open-automation
 LIBS:open-dash-daughterboard-cache
 EELAYER 25 0
 EELAYER END

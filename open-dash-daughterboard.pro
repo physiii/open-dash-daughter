@@ -1,10 +1,6 @@
-update=22/05/2015 07:44:53
+update=Thu 22 Mar 2018 04:48:57 PM CDT
 version=1
 last_client=kicad
-[general]
-version=1
-RootSch=
-BoardNm=
 [pcbnew]
 version=1
 LastNetListRead=
@@ -31,3 +27,5 @@ NetIExt=net
 version=1
 LibDir=
 [eeschema/libraries]
+[general]
+version=1

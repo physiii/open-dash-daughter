@@ -1,11 +1,12 @@
 EESchema Schematic File Version 2
 LIBS:device
 LIBS:smart-regulator-cache
+LIBS:open-dash-daughterboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 11
+Sheet 6 11
 Title ""
 Date ""
 Rev ""
@@ -15,4 +16,258 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text GLabel 1400 1475 0    60   Input ~ 0
+3V3
+$Comp
+L GND #PWR016
+U 1 1 59C50BD3
+P 1850 1625
+F 0 "#PWR016" H 1850 1375 50  0001 C CNN
+F 1 "GND" H 1850 1475 50  0000 C CNN
+F 2 "" H 1850 1625 50  0000 C CNN
+F 3 "" H 1850 1625 50  0000 C CNN
+	1    1850 1625
+	1    0    0    -1  
+$EndComp
+Text GLabel 2850 1475 2    60   Input ~ 0
+SCL
+Text GLabel 2850 1575 2    60   Input ~ 0
+SDA
+$Comp
+L SI7020-A20 U6
+U 1 1 59C50BD4
+P 2350 1575
+F 0 "U6" H 2550 1475 60  0000 C CNN
+F 1 "SI7020-A20" H 2350 1775 60  0000 C CNN
+F 2 "smart-regulator:SI7020-A20" H 2350 1275 60  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/silicon-labs/SI7020-A20-GM1R/336-3596-1-ND/5823452" H 2350 1375 60  0001 C CNN
+F 4 "SI7020-A20-GM1R" H 2450 1375 60  0001 C CNN "Part Number"
+	1    2350 1575
+	1    0    0    -1  
+$EndComp
+$Comp
+L C_0.1uF C9
+U 1 1 59C50BD5
+P 1550 1675
+F 0 "C9" H 1575 1775 50  0000 L CNN
+F 1 "C_0.1uF" H 1250 1575 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 1650 1975 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 1550 1425 50  0001 C CNN
+F 4 "C0603C104K5RACTU" H 1675 1875 60  0001 C CNN "Part Number"
+	1    1550 1675
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR017
+U 1 1 59C50BD6
+P 1550 1875
+F 0 "#PWR017" H 1550 1625 50  0001 C CNN
+F 1 "GND" H 1550 1725 50  0000 C CNN
+F 2 "" H 1550 1875 50  0000 C CNN
+F 3 "" H 1550 1875 50  0000 C CNN
+	1    1550 1875
+	1    0    0    -1  
+$EndComp
+Text Label 4475 1200 0    60   ~ 0
+Light-Level
+Text GLabel 5225 1575 2    60   Input ~ 0
+SDA
+Text GLabel 5225 1475 2    60   Input ~ 0
+SCL
+$Comp
+L GND #PWR018
+U 1 1 59C50BD8
+P 4225 1625
+F 0 "#PWR018" H 4225 1375 50  0001 C CNN
+F 1 "GND" H 4225 1475 50  0000 C CNN
+F 2 "" H 4225 1625 50  0000 C CNN
+F 3 "" H 4225 1625 50  0000 C CNN
+	1    4225 1625
+	1    0    0    -1  
+$EndComp
+Text GLabel 3900 1475 0    60   Input ~ 0
+3V3
+$Comp
+L C_0.1uF C10
+U 1 1 59C50BDA
+P 4000 1650
+F 0 "C10" H 4025 1750 50  0000 L CNN
+F 1 "C_0.1uF" H 3700 1550 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4100 1950 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 4000 1400 50  0001 C CNN
+F 4 "C0603C104K5RACTU" H 4125 1850 60  0001 C CNN "Part Number"
+	1    4000 1650
+	1    0    0    -1  
+$EndComp
+Text Label 2050 1250 0    60   ~ 0
+Temp-Humidty
+$Comp
+L GND #PWR019
+U 1 1 59E2A131
+P 4000 1850
+F 0 "#PWR019" H 4000 1600 50  0001 C CNN
+F 1 "GND" H 4000 1700 50  0000 C CNN
+F 2 "" H 4000 1850 50  0000 C CNN
+F 3 "" H 4000 1850 50  0000 C CNN
+	1    4000 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L TSL45315CL U2
+U 1 1 59E41F23
+P 4725 1575
+F 0 "U2" H 4925 1475 60  0000 C CNN
+F 1 "TSL45315CL" H 4725 1775 60  0000 C CNN
+F 2 "smart-regulator:LIGHT-SENSOR-TSL45315CL" H 4725 1275 60  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/ams/TSL45315CL/TSL45315-CLCT-ND/3095326" H 4725 1375 60  0001 C CNN
+F 4 "TSL45315CL" H 4725 1175 60  0001 C CNN "Part Number"
+	1    4725 1575
+	1    0    0    -1  
+$EndComp
+Text GLabel 7100 1575 0    60   Input ~ 0
+BATTERY
+Text GLabel 7100 2000 0    60   Input ~ 0
+V_MAIN
+Text GLabel 6200 1475 0    60   Input ~ 0
+3V3
+$Comp
+L C_0.1uF C5
+U 1 1 5AC2BC67
+P 6475 1725
+F 0 "C5" V 6550 1775 50  0000 L CNN
+F 1 "C_0.1uF" V 6625 1575 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 6575 2025 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 6475 1475 50  0001 C CNN
+F 4 "C0603C104K5RACTU" H 6600 1925 60  0001 C CNN "Part Number"
+	1    6475 1725
+	-1   0    0    1   
+$EndComp
+$Comp
+L GND #PWR020
+U 1 1 5AC2BC6E
+P 6475 1925
+F 0 "#PWR020" H 6475 1675 50  0001 C CNN
+F 1 "GND" V 6550 1850 50  0000 C CNN
+F 2 "" H 6475 1925 50  0000 C CNN
+F 3 "" H 6475 1925 50  0000 C CNN
+	1    6475 1925
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR021
+U 1 1 5AC2BC85
+P 7675 1800
+F 0 "#PWR021" H 7675 1550 50  0001 C CNN
+F 1 "GND" H 7675 1650 50  0000 C CNN
+F 2 "" H 7675 1800 50  0000 C CNN
+F 3 "" H 7675 1800 50  0000 C CNN
+	1    7675 1800
+	1    0    0    -1  
+$EndComp
+Text GLabel 8775 1675 2    60   Input ~ 0
+SDA
+Text GLabel 8775 1775 2    60   Input ~ 0
+SCL
+$Comp
+L Power-Monitor-INA219 U4
+U 1 1 5AC2BC90
+P 8200 1625
+F 0 "U4" H 8400 1375 60  0000 C CNN
+F 1 "Power-Monitor-INA219" H 8225 1925 60  0000 C CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23-8_Handsoldering" H 8300 1275 60  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/texas-instruments/INA219AIDCNR/296-23770-1-ND/1952550" H 8400 1375 60  0001 C CNN
+F 4 "INA219AIDCNR" H 8500 1475 60  0001 C CNN "Part Number"
+	1    8200 1625
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR022
+U 1 1 5AC2BC97
+P 8800 1450
+F 0 "#PWR022" H 8800 1200 50  0001 C CNN
+F 1 "GND" H 8700 1450 50  0000 C CNN
+F 2 "" H 8800 1450 50  0000 C CNN
+F 3 "" H 8800 1450 50  0000 C CNN
+	1    8800 1450
+	-1   0    0    1   
+$EndComp
+Text GLabel 8775 1575 2    60   Input ~ 0
+3V3
+$Comp
+L R_10m R1
+U 1 1 5AC2BCA2
+P 7175 1800
+F 0 "R1" H 7150 1800 50  0000 C CNN
+F 1 "R_10m" H 7150 1700 50  0000 C CNN
+F 2 "Resistors_SMD:R_2512_HandSoldering" H 7150 1625 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/bourns-inc/CRA2512-FZ-R010ELF/CRA2512-FZ-R010ELFCT-ND/1775054" H 7175 1550 50  0001 C CNN
+F 4 "CRA2512-FZ-R010ELF" H 7175 1875 60  0001 C CNN "Part Number"
+	1    7175 1800
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1400 1475 1900 1475
+Wire Wire Line
+	1900 1575 1850 1575
+Wire Wire Line
+	2850 1575 2750 1575
+Wire Wire Line
+	2750 1475 2850 1475
+Wire Wire Line
+	1550 1525 1550 1475
+Connection ~ 1550 1475
+Wire Wire Line
+	1550 1875 1550 1825
+Wire Wire Line
+	1850 1575 1850 1625
+Wire Wire Line
+	4225 1625 4225 1575
+Wire Wire Line
+	4225 1575 4275 1575
+Wire Wire Line
+	3900 1475 4275 1475
+Wire Wire Line
+	4000 1475 4000 1500
+Wire Wire Line
+	4000 1850 4000 1800
+Connection ~ 4000 1475
+Wire Wire Line
+	5225 1575 5125 1575
+Wire Wire Line
+	5125 1475 5225 1475
+Wire Wire Line
+	6200 1475 7725 1475
+Wire Wire Line
+	7350 2000 7350 1675
+Wire Wire Line
+	7675 1800 7675 1775
+Wire Wire Line
+	7675 1775 7725 1775
+Wire Wire Line
+	7100 2000 7350 2000
+Wire Wire Line
+	7175 2000 7175 1925
+Connection ~ 7175 2000
+Wire Wire Line
+	7175 1625 7175 1575
+Connection ~ 7175 1575
+Connection ~ 6475 1475
+Wire Wire Line
+	6475 1925 6475 1875
+Wire Wire Line
+	8650 1475 8800 1475
+Wire Wire Line
+	8775 1675 8650 1675
+Wire Wire Line
+	8775 1775 8650 1775
+Wire Wire Line
+	8800 1475 8800 1450
+Wire Wire Line
+	7100 1575 7725 1575
+Wire Wire Line
+	8775 1575 8650 1575
+Wire Wire Line
+	6475 1475 6475 1575
+Wire Wire Line
+	7350 1675 7725 1675
 $EndSCHEMATC

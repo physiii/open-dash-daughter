@@ -1,4 +1,4 @@
-update=Thu 22 Mar 2018 04:48:57 PM CDT
+update=4/2/2018 9:19:01 AM
 version=1
 last_client=kicad
 [pcbnew]
@@ -25,7 +25,9 @@ version=1
 NetIExt=net
 [eeschema]
 version=1
-LibDir=
+LibDir=libraries
 [eeschema/libraries]
+LibName1=device
+LibName2=libraries/smart-regulator-cache
 [general]
 version=1

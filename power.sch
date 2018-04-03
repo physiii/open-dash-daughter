@@ -15,18 +15,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L LM2576 U3
-U 1 1 5936E607
-P 4475 1075
-F 0 "U3" H 4825 1275 60  0000 C CNN
-F 1 "LM2576" H 4525 875 60  0000 C CNN
-F 2 "smart-regulator:Regulator-LM2576" H 4875 1025 60  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/texas-instruments/LM2576SX-5.0-NOPB/LM2576SX-5.0-NOPBCT-ND/3440106" H 4875 1025 60  0001 C CNN
-F 4 "LM2576SX-5.0/NOPB" H 4475 1075 60  0001 C CNN "Part Number"
-	1    4475 1075
-	1    0    0    -1  
-$EndComp
 Text GLabel 2650 975  0    60   Input ~ 0
 V_MAIN
 $Comp
@@ -59,7 +47,7 @@ U 1 1 5969017D
 P 5325 1075
 F 0 "L1" V 5275 1075 50  0001 C CNN
 F 1 "47uH" V 5275 1075 50  0000 C CNN
-F 2 "smart-regulator:L-RAD-7.4mm" H 5325 1075 50  0001 C CNN
+F 2 "open-automation:L-RAD-7.4mm" H 5325 1075 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/abracon-llc/AIUR-06-470K/535-13031-ND/2343602" H 5325 1075 50  0001 C CNN
 F 4 "AIUR-06-470K" V 5325 1075 10  0001 C CNN "Part Number"
 	1    5325 1075
@@ -105,7 +93,7 @@ P 5125 1275
 F 0 "D1" H 5125 1375 50  0000 C CNN
 F 1 "D_Schottky" H 5125 1175 50  0001 C CNN
 F 2 "Diodes_SMD:D_SMA" H 5125 1275 50  0001 C CNN
-F 3 "http://www.digikey.com/scripts/DkSearch/dksus.dll?Detail&itemSeq=233263850&uq=636356340886764109" H 5125 1275 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/diodes-incorporated/B330A-13-F/B330A-FDICT-ND/815332" H 5125 1275 50  0001 C CNN
 F 4 "B330A-13-F" H 5125 1275 60  0001 C CNN "Part Number"
 	1    5125 1275
 	0    1    1    0   
@@ -116,7 +104,7 @@ U 1 1 597573B9
 P 1150 1050
 F 0 "BATTERY1" H 1228 1091 50  0000 L CNN
 F 1 "CONN_01X02" H 1228 1000 50  0000 L CNN
-F 2 "smart-regulator:XT60" H 1150 1050 50  0001 C CNN
+F 2 "open-automation:XT60" H 1150 1050 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 1150 1050 50  0001 C CNN
 	1    1150 1050
 	-1   0    0    -1  
@@ -233,13 +221,21 @@ Connection ~ 4225 2500
 Wire Wire Line
 	4225 2550 4225 2500
 Wire Wire Line
-	2675 2400 3375 2400
+	2675 2400 2975 2400
+Wire Wire Line
+	2975 2400 3375 2400
 Wire Wire Line
 	3325 2600 3375 2600
 Wire Wire Line
-	3325 2600 3325 2825
+	3325 2600 3325 2800
 Wire Wire Line
-	4125 2500 4825 2500
+	3325 2800 3325 2825
+Wire Wire Line
+	4125 2500 4225 2500
+Wire Wire Line
+	4225 2500 4625 2500
+Wire Wire Line
+	4625 2500 4825 2500
 Wire Wire Line
 	5125 1125 5125 1075
 Connection ~ 5125 1075
@@ -250,15 +246,23 @@ Wire Wire Line
 Wire Wire Line
 	5475 1075 5525 1075
 Wire Wire Line
-	5075 1075 5175 1075
+	5075 1075 5125 1075
 Wire Wire Line
-	5075 975  6075 975 
+	5125 1075 5175 1075
+Wire Wire Line
+	5075 975  5525 975 
+Wire Wire Line
+	5525 975  5775 975 
+Wire Wire Line
+	5775 975  6075 975 
 Wire Wire Line
 	8850 975  9175 975 
 Wire Wire Line
 	2900 1175 2900 975 
 Wire Wire Line
-	2650 975  3975 975 
+	2650 975  2900 975 
+Wire Wire Line
+	2900 975  3975 975 
 Connection ~ 2900 975 
 Wire Wire Line
 	2900 1525 2900 1475
@@ -267,7 +271,9 @@ Wire Wire Line
 Wire Wire Line
 	3925 1175 3975 1175
 Wire Wire Line
-	3525 1075 3975 1075
+	3525 1075 3675 1075
+Wire Wire Line
+	3675 1075 3975 1075
 Wire Wire Line
 	1400 1150 1400 1100
 Wire Wire Line
@@ -283,7 +289,7 @@ U 1 1 59C5AB51
 P 9375 1025
 F 0 "12V_Out1" H 9453 1066 50  0000 L CNN
 F 1 "CONN_01X02" H 9453 975 50  0000 L CNN
-F 2 "smart-regulator:XT60" H 9375 1025 50  0001 C CNN
+F 2 "open-automation:XT60" H 9375 1025 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 9375 1025 50  0001 C CNN
 	1    9375 1025
 	1    0    0    -1  
@@ -377,4 +383,15 @@ Text GLabel 6075 975  2    60   Input ~ 0
 5V
 Text GLabel 8850 975  0    60   Input ~ 0
 12V
+$Comp
+L LM2576SX-3.3 U?
+U 1 1 5AC3E9C2
+P 4475 1075
+F 0 "U?" H 4825 1275 60  0000 C CNN
+F 1 "LM2576SX-3.3" H 4525 875 60  0000 C CNN
+F 2 "open-automation:Regulator-LM2576" H 4375 675 60  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=LM2576SX-3.3%2FNOPBCT-ND" H 4425 775 60  0001 C CNN
+	1    4475 1075
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

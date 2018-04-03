@@ -1,4 +1,4 @@
-update=Tue 03 Apr 2018 10:43:21 AM CDT
+update=4/3/2018 12:37:56 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -30,5 +30,4 @@ version=1
 LibDir=libraries
 [eeschema/libraries]
 LibName1=device
-LibName2=libraries/smart-regulator-cache
-LibName3=/home/physiii/circuits/kicad-parts/libraries/open-automation
+LibName2=/home/physiii/circuits/kicad-parts/libraries/open-automation

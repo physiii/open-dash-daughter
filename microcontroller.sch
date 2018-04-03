@@ -1,6 +1,5 @@
 EESchema Schematic File Version 2
 LIBS:device
-LIBS:smart-regulator-cache
 LIBS:open-dash-daughterboard-cache
 EELAYER 25 0
 EELAYER END
@@ -70,7 +69,7 @@ RXD
 Text GLabel 8800 3750 2    60   Input ~ 0
 TXD
 Text GLabel 8800 3650 2    60   Input ~ 0
-V_USB
+5V
 $Comp
 L GND #PWR013
 U 1 1 590979B2

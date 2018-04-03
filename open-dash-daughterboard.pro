@@ -1,4 +1,4 @@
-update=4/2/2018 3:45:09 PM
+update=Tue 03 Apr 2018 10:43:21 AM CDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,11 +23,12 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
+[general]
+version=1
 [eeschema]
 version=1
 LibDir=libraries
 [eeschema/libraries]
 LibName1=device
 LibName2=libraries/smart-regulator-cache
-[general]
-version=1
+LibName3=/home/physiii/circuits/kicad-parts/libraries/open-automation

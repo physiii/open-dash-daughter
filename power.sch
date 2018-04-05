@@ -1,5 +1,6 @@
 EESchema Schematic File Version 2
 LIBS:device
+LIBS:open-automation
 LIBS:open-dash-daughterboard-cache
 EELAYER 25 0
 EELAYER END
@@ -20,43 +21,43 @@ V_MAIN
 $Comp
 L CP C4
 U 1 1 5968D146
-P 5025 1225
-F 0 "C4" H 5050 1325 50  0000 L CNN
-F 1 "1000uF" H 5050 1125 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D10.0mm_P5.00mm" H 5063 1075 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/rubycon/25YXJ1000M10X20/1189-1241-ND/3134197" H 5025 1225 50  0001 C CNN
-F 4 "25YXJ1000M10X20" H 5025 1225 60  0001 C CNN "Part Number"
-	1    5025 1225
+P 4975 1325
+F 0 "C4" H 5000 1425 50  0000 L CNN
+F 1 "1000uF" H 5000 1225 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D10.0mm_P5.00mm" H 5013 1175 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rubycon/25YXJ1000M10X20/1189-1241-ND/3134197" H 4975 1325 50  0001 C CNN
+F 4 "25YXJ1000M10X20" H 4975 1325 60  0001 C CNN "Part Number"
+	1    4975 1325
 	1    0    0    -1  
 $EndComp
 $Comp
 L L L1
 U 1 1 5969017D
-P 4575 1075
-F 0 "L1" V 4525 1075 50  0001 C CNN
-F 1 "68uH" V 4525 1075 50  0000 C CNN
-F 2 "Inductors_SMD:L_12x12mm_h8mm" H 4575 1075 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/wurth-electronics-inc/7447709680/732-1247-2-ND/1638652" H 4575 1075 50  0001 C CNN
-F 4 "Wurth 7447709680" V 4575 1075 10  0001 C CNN "Part Number"
-	1    4575 1075
+P 4650 1075
+F 0 "L1" V 4600 1075 50  0001 C CNN
+F 1 "68uH" V 4600 1075 50  0000 C CNN
+F 2 "Inductors_SMD:L_12x12mm_h8mm" H 4650 1075 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/wurth-electronics-inc/7447709680/732-1247-2-ND/1638652" H 4650 1075 50  0001 C CNN
+F 4 "Wurth 7447709680" V 4650 1075 10  0001 C CNN "Part Number"
+	1    4650 1075
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR01
+L GND #PWR8
 U 1 1 59690AC9
-P 5025 1425
-F 0 "#PWR01" H 5025 1175 50  0001 C CNN
-F 1 "GND" H 5025 1275 50  0000 C CNN
-F 2 "" H 5025 1425 50  0000 C CNN
-F 3 "" H 5025 1425 50  0000 C CNN
-	1    5025 1425
+P 4975 1525
+F 0 "#PWR8" H 4975 1275 50  0001 C CNN
+F 1 "GND" H 4975 1375 50  0000 C CNN
+F 2 "" H 4975 1525 50  0000 C CNN
+F 3 "" H 4975 1525 50  0000 C CNN
+	1    4975 1525
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR02
+L GND #PWR4
 U 1 1 59690B3F
 P 2900 1575
-F 0 "#PWR02" H 2900 1325 50  0001 C CNN
+F 0 "#PWR4" H 2900 1325 50  0001 C CNN
 F 1 "GND" V 2850 1400 50  0000 C CNN
 F 2 "" H 2900 1575 50  0000 C CNN
 F 3 "" H 2900 1575 50  0000 C CNN
@@ -64,10 +65,10 @@ F 3 "" H 2900 1575 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR03
+L GND #PWR7
 U 1 1 59690D86
 P 4375 1475
-F 0 "#PWR03" H 4375 1225 50  0001 C CNN
+F 0 "#PWR7" H 4375 1225 50  0001 C CNN
 F 1 "GND" H 4375 1325 50  0000 C CNN
 F 2 "" H 4375 1475 50  0000 C CNN
 F 3 "" H 4375 1475 50  0000 C CNN
@@ -86,69 +87,47 @@ F 4 "CDBA540-HF" H 4375 1275 60  0001 C CNN "Part Number"
 	1    4375 1275
 	0    1    1    0   
 $EndComp
-$Comp
-L CONN_01X02 BATTERY1
-U 1 1 597573B9
-P 1150 1050
-F 0 "BATTERY1" H 1228 1091 50  0000 L CNN
-F 1 "CONN_01X02" H 1228 1000 50  0000 L CNN
-F 2 "open-automation:XT60" H 1150 1050 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 1150 1050 50  0001 C CNN
-	1    1150 1050
-	-1   0    0    -1  
-$EndComp
-Text GLabel 1450 1000 2    60   Input ~ 0
+Text GLabel 1450 975  2    60   Input ~ 0
 BATTERY
 $Comp
-L GND #PWR04
+L GND #PWR1
 U 1 1 59757643
-P 1400 1150
-F 0 "#PWR04" H 1400 900 50  0001 C CNN
-F 1 "GND" H 1400 1000 50  0000 C CNN
-F 2 "" H 1400 1150 50  0000 C CNN
-F 3 "" H 1400 1150 50  0000 C CNN
-	1    1400 1150
+P 1400 1125
+F 0 "#PWR1" H 1400 875 50  0001 C CNN
+F 1 "GND" H 1400 975 50  0000 C CNN
+F 2 "" H 1400 1125 50  0000 C CNN
+F 3 "" H 1400 1125 50  0000 C CNN
+	1    1400 1125
 	-1   0    0    -1  
 $EndComp
 $Comp
 L LED D4
 U 1 1 598F7872
-P 5500 1200
-F 0 "D4" H 5500 1300 50  0000 C CNN
-F 1 "LED" H 5500 1100 50  0000 C CNN
-F 2 "LEDs:LED_0603_HandSoldering" H 5500 1200 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 5500 1200 50  0001 C CNN
-F 4 "SML-D12M8WT86" H 5500 1200 60  0001 C CNN "Part Number"
-	1    5500 1200
+P 6450 1300
+F 0 "D4" H 6450 1400 50  0000 C CNN
+F 1 "LED" H 6450 1200 50  0000 C CNN
+F 2 "LEDs:LED_0603_HandSoldering" H 6450 1300 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 6450 1300 50  0001 C CNN
+F 4 "SML-D12M8WT86" H 6450 1300 60  0001 C CNN "Part Number"
+	1    6450 1300
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR05
+L GND #PWR16
 U 1 1 598F7A99
-P 5500 1750
-F 0 "#PWR05" H 5500 1500 50  0001 C CNN
-F 1 "GND" H 5500 1600 50  0000 C CNN
-F 2 "" H 5500 1750 50  0000 C CNN
-F 3 "" H 5500 1750 50  0000 C CNN
-	1    5500 1750
+P 6450 1850
+F 0 "#PWR16" H 6450 1600 50  0001 C CNN
+F 1 "GND" H 6450 1700 50  0000 C CNN
+F 2 "" H 6450 1850 50  0000 C CNN
+F 3 "" H 6450 1850 50  0000 C CNN
+	1    6450 1850
 	1    0    0    -1  
 $EndComp
 $Comp
-L CONN_01X02 12V_Out1
-U 1 1 59C5AB51
-P 9375 1025
-F 0 "12V_Out1" H 9453 1066 50  0000 L CNN
-F 1 "CONN_01X02" H 9453 975 50  0000 L CNN
-F 2 "open-automation:XT60" H 9375 1025 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 9375 1025 50  0001 C CNN
-	1    9375 1025
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR06
+L GND #PWR17
 U 1 1 59C5AB58
 P 9125 1125
-F 0 "#PWR06" H 9125 875 50  0001 C CNN
+F 0 "#PWR17" H 9125 875 50  0001 C CNN
 F 1 "GND" H 9125 975 50  0000 C CNN
 F 2 "" H 9125 1125 50  0000 C CNN
 F 3 "" H 9125 1125 50  0000 C CNN
@@ -156,121 +135,362 @@ F 3 "" H 9125 1125 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_10k R3
+L R_10k R9
 U 1 1 59E4131F
-P 5500 1550
-F 0 "R3" V 5500 1550 50  0000 C CNN
-F 1 "R_1k4" V 5425 1550 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 5430 1550 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-071K4L/311-1.40KHRCT-ND/729808" V 5580 1550 50  0001 C CNN
-F 4 "RC0603FR-071K4L" V 5680 1650 60  0001 C CNN "Part Number"
-	1    5500 1550
+P 6450 1650
+F 0 "R9" V 6450 1650 50  0000 C CNN
+F 1 "R_1k4" V 6375 1650 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 6380 1650 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-071K4L/311-1.40KHRCT-ND/729808" V 6530 1650 50  0001 C CNN
+F 4 "RC0603FR-071K4L" V 6630 1750 60  0001 C CNN "Part Number"
+	1    6450 1650
 	1    0    0    -1  
 $EndComp
 Text Notes 10050 1050 0    60   ~ 0
 Battery Passthrough
-Text Notes 775  825  0    60   ~ 0
+Text Notes 775  800  0    60   ~ 0
 12V Battery Input
 Text Notes 2300 825  0    60   ~ 0
 V_MAIN is after the current sense resistor.
-Text GLabel 5900 975  2    60   Input ~ 0
+Text GLabel 6800 1075 2    60   Input ~ 0
 3V3
 Text GLabel 8850 975  0    60   Input ~ 0
 BATTERY
-$Comp
-L LM2576SX-3.3 U1
-U 1 1 5AC3E9C2
-P 3725 1075
-F 0 "U1" H 4075 1275 60  0000 C CNN
-F 1 "LM2576SX-3.3" H 3775 875 60  0000 C CNN
-F 2 "open-automation:Regulator-LM2576" H 3625 675 60  0001 C CNN
-F 3 "https://www.digikey.com/products/en?keywords=LM2576SX-3.3%2FNOPBCT-ND" H 3675 775 60  0001 C CNN
-F 4 "LM2576SX-3.3/NOPB" H 3725 1075 60  0001 C CNN "Part Number"
-	1    3725 1075
-	1    0    0    -1  
-$EndComp
-Text GLabel 2450 2200 0    60   Input ~ 0
+Text GLabel 2600 2650 0    60   Input ~ 0
 V_MAIN
 $Comp
 L L L2
 U 1 1 5AC413A9
-P 5325 2300
-F 0 "L2" V 5275 2300 50  0001 C CNN
-F 1 "100uH" V 5275 2300 50  0000 C CNN
-F 2 "open-automation:L_Toroid_Horizontal_D21.8mm_P20.06mm_Bourns_2100" H 5325 2300 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/bourns-inc/2100HT-101-H-RC/M8921-ND/775460" H 5325 2300 50  0001 C CNN
-F 4 "2100HT-101-H-RC" V 5325 2300 60  0001 C CNN "Part Number"
-	1    5325 2300
+P 5525 2750
+F 0 "L2" V 5475 2750 50  0001 C CNN
+F 1 "100uH" V 5475 2750 50  0000 C CNN
+F 2 "open-automation:L_Toroid_Horizontal_D21.8mm_P20.06mm_Bourns_2100" H 5525 2750 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/bourns-inc/2100HT-101-H-RC/M8921-ND/775460" H 5525 2750 50  0001 C CNN
+F 4 "2100HT-101-H-RC" V 5525 2750 60  0001 C CNN "Part Number"
+	1    5525 2750
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR07
+L GND #PWR12
 U 1 1 5AC413AF
-P 5775 2650
-F 0 "#PWR07" H 5775 2400 50  0001 C CNN
-F 1 "GND" H 5775 2500 50  0000 C CNN
-F 2 "" H 5775 2650 50  0000 C CNN
-F 3 "" H 5775 2650 50  0000 C CNN
-	1    5775 2650
+P 5800 3200
+F 0 "#PWR12" H 5800 2950 50  0001 C CNN
+F 1 "GND" H 5800 3050 50  0000 C CNN
+F 2 "" H 5800 3200 50  0000 C CNN
+F 3 "" H 5800 3200 50  0000 C CNN
+	1    5800 3200
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR08
+L GND #PWR3
 U 1 1 5AC413B5
-P 2700 2725
-F 0 "#PWR08" H 2700 2475 50  0001 C CNN
-F 1 "GND" V 2650 2550 50  0000 C CNN
-F 2 "" H 2700 2725 50  0000 C CNN
-F 3 "" H 2700 2725 50  0000 C CNN
-	1    2700 2725
+P 2850 3175
+F 0 "#PWR3" H 2850 2925 50  0001 C CNN
+F 1 "GND" V 2800 3000 50  0000 C CNN
+F 2 "" H 2850 3175 50  0000 C CNN
+F 3 "" H 2850 3175 50  0000 C CNN
+	1    2850 3175
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR09
+L GND #PWR9
 U 1 1 5AC413BB
-P 5125 2700
-F 0 "#PWR09" H 5125 2450 50  0001 C CNN
-F 1 "GND" H 5125 2550 50  0000 C CNN
-F 2 "" H 5125 2700 50  0000 C CNN
-F 3 "" H 5125 2700 50  0000 C CNN
-	1    5125 2700
+P 5275 3150
+F 0 "#PWR9" H 5275 2900 50  0001 C CNN
+F 1 "GND" H 5275 3000 50  0000 C CNN
+F 2 "" H 5275 3150 50  0000 C CNN
+F 3 "" H 5275 3150 50  0000 C CNN
+	1    5275 3150
 	1    0    0    -1  
 $EndComp
-Text GLabel 6075 2200 2    60   Input ~ 0
+Text GLabel 6550 2750 2    60   Input ~ 0
 5V
+Text GLabel 3750 2750 0    60   Input ~ 0
+EN_5V_POWER
 $Comp
-L LM2576SX-3.3 U2
-U 1 1 5AC413CA
-P 4475 2300
-F 0 "U2" H 4825 2500 60  0000 C CNN
-F 1 "LM2576SX-5.0" H 4525 2100 60  0000 C CNN
-F 2 "open-automation:Regulator-LM2576" H 4375 1900 60  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/texas-instruments/LM2576SX-5.0-NOPB/LM2576SX-5.0-NOPBCT-ND/3440106" H 4425 2000 60  0001 C CNN
-F 4 "LM2576SX-5.0/NOPB" H 4475 2300 60  0001 C CNN "Part Number"
-	1    4475 2300
+L R_10k R1
+U 1 1 5AC421CC
+P 3650 3025
+F 0 "R1" V 3650 3025 50  0000 C CNN
+F 1 "R_10k" V 3575 3025 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 3580 3025 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 3730 3025 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 3830 3125 60  0001 C CNN "Part Number"
+	1    3650 3025
+	0    -1   -1   0   
+$EndComp
+Text Notes 6525 1675 0    60   ~ 0
+1mA current through LED
+$Comp
+L GND #PWR18
+U 1 1 5AC54EB6
+P 9150 1650
+F 0 "#PWR18" H 9150 1400 50  0001 C CNN
+F 1 "GND" H 9150 1500 50  0000 C CNN
+F 2 "" H 9150 1650 50  0000 C CNN
+F 3 "" H 9150 1650 50  0000 C CNN
+	1    9150 1650
 	1    0    0    -1  
 $EndComp
-Text GLabel 3600 2300 0    60   Input ~ 0
-EN_5V_POWER
+Text GLabel 8875 1500 0    60   Input ~ 0
+5V
+Text Notes 10050 1575 0    60   ~ 0
+Main Board 5V Supply
+Text Notes 8775 750  0    60   ~ 0
+Main Board Connections
+Text GLabel 2575 4125 0    60   Input ~ 0
+V_MAIN
+$Comp
+L GND #PWR13
+U 1 1 5AC637C2
+P 5950 4675
+F 0 "#PWR13" H 5950 4425 50  0001 C CNN
+F 1 "GND" H 5950 4525 50  0000 C CNN
+F 2 "" H 5950 4675 50  0000 C CNN
+F 3 "" H 5950 4675 50  0000 C CNN
+	1    5950 4675
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR2
+U 1 1 5AC637C8
+P 2825 4650
+F 0 "#PWR2" H 2825 4400 50  0001 C CNN
+F 1 "GND" V 2775 4475 50  0000 C CNN
+F 2 "" H 2825 4650 50  0000 C CNN
+F 3 "" H 2825 4650 50  0000 C CNN
+	1    2825 4650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR10
+U 1 1 5AC637CE
+P 5300 4675
+F 0 "#PWR10" H 5300 4425 50  0001 C CNN
+F 1 "GND" H 5300 4525 50  0000 C CNN
+F 2 "" H 5300 4675 50  0000 C CNN
+F 3 "" H 5300 4675 50  0000 C CNN
+	1    5300 4675
+	1    0    0    -1  
+$EndComp
+Text GLabel 6700 4225 2    60   Input ~ 0
+8V
+Text GLabel 3750 4225 0    60   Input ~ 0
+EN_8V_POWER
+$Comp
+L R_10k R2
+U 1 1 5AC637FA
+P 3675 4450
+F 0 "R2" V 3675 4450 50  0000 C CNN
+F 1 "R_10k" V 3600 4450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 3605 4450 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 3755 4450 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 3855 4550 60  0001 C CNN "Part Number"
+	1    3675 4450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L R_10k R8
+U 1 1 5AC647A0
+P 6425 4875
+F 0 "R8" V 6425 4875 50  0000 C CNN
+F 1 "R_1.3k" V 6325 4875 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 6355 4875 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-071K3L/311-1.30KHRCT-ND/729805" V 6505 4875 50  0001 C CNN
+F 4 "RC0603FR-071K3L" V 6605 4975 60  0001 C CNN "Part Number"
+	1    6425 4875
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR15
+U 1 1 5AC64EC6
+P 6425 5125
+F 0 "#PWR15" H 6425 4875 50  0001 C CNN
+F 1 "GND" H 6425 4975 50  0000 C CNN
+F 2 "" H 6425 5125 50  0000 C CNN
+F 3 "" H 6425 5125 50  0000 C CNN
+	1    6425 5125
+	1    0    0    -1  
+$EndComp
+Text Label 6600 4675 0    60   ~ 0
+8V_Feedback
+Text Label 5375 4125 0    60   ~ 0
+8V_Feedback
+$Comp
+L CP C2
+U 1 1 5AC68E0B
+P 2850 2925
+F 0 "C2" V 2900 2975 50  0000 L CNN
+F 1 "180uF" V 2700 2825 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D8.0mm_P3.50mm" H 2888 2775 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/united-chemi-con/EKZN500ELL181MH20D/565-4066-ND/4843876" H 2850 2925 50  0001 C CNN
+F 4 "EKZN500ELL181MH20D" H 2850 2925 60  0001 C CNN "Part Number"
+	1    2850 2925
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C1
+U 1 1 5AC6900B
+P 2825 4400
+F 0 "C1" V 2875 4450 50  0000 L CNN
+F 1 "180uF" V 2675 4300 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D8.0mm_P3.50mm" H 2863 4250 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/united-chemi-con/EKZN500ELL181MH20D/565-4066-ND/4843876" H 2825 4400 50  0001 C CNN
+F 4 "EKZN500ELL181MH20D" H 2825 4400 60  0001 C CNN "Part Number"
+	1    2825 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L L L3
+U 1 1 5AC6A697
+P 5625 4225
+F 0 "L3" V 5575 4225 50  0001 C CNN
+F 1 "100uH" V 5575 4225 50  0000 C CNN
+F 2 "open-automation:L_Toroid_Horizontal_D21.8mm_P20.06mm_Bourns_2100" H 5625 4225 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/bourns-inc/2100HT-101-H-RC/M8921-ND/775460" H 5625 4225 50  0001 C CNN
+F 4 "2100HT-101-H-RC" V 5625 4225 60  0001 C CNN "Part Number"
+	1    5625 4225
+	0    -1   -1   0   
+$EndComp
+$Comp
+L D_Schottky D2
+U 1 1 5AC6AF0A
+P 5275 2950
+F 0 "D2" H 5275 3050 50  0000 C CNN
+F 1 "D_Schottky" H 5275 2850 50  0001 C CNN
+F 2 "Diodes_SMD:D_SMA" H 5275 2950 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/comchip-technology/CDBA540-HF/641-1707-1-ND/5226090" H 5275 2950 50  0001 C CNN
+F 4 "CDBA540-HF" H 5275 2950 60  0001 C CNN "Part Number"
+	1    5275 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L D_Schottky D3
+U 1 1 5AC6B09E
+P 5300 4450
+F 0 "D3" H 5300 4550 50  0000 C CNN
+F 1 "D_Schottky" H 5300 4350 50  0001 C CNN
+F 2 "Diodes_SMD:D_SMA" H 5300 4450 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/comchip-technology/CDBA540-HF/641-1707-1-ND/5226090" H 5300 4450 50  0001 C CNN
+F 4 "CDBA540-HF" H 5300 4450 60  0001 C CNN "Part Number"
+	1    5300 4450
+	0    1    1    0   
+$EndComp
+$Comp
+L CP C3
+U 1 1 5AC6CB1C
+P 2900 1325
+F 0 "C3" V 2950 1375 50  0000 L CNN
+F 1 "180uF" V 2750 1225 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D8.0mm_P3.50mm" H 2938 1175 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/united-chemi-con/EKZN500ELL181MH20D/565-4066-ND/4843876" H 2900 1325 50  0001 C CNN
+F 4 "EKZN500ELL181MH20D" H 2900 1325 60  0001 C CNN "Part Number"
+	1    2900 1325
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C5
+U 1 1 5AC6DA75
+P 5800 3000
+F 0 "C5" H 5825 3100 50  0000 L CNN
+F 1 "1000uF" H 5825 2900 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D10.0mm_P5.00mm" H 5838 2850 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rubycon/25YXJ1000M10X20/1189-1241-ND/3134197" H 5800 3000 50  0001 C CNN
+F 4 "25YXJ1000M10X20" H 5800 3000 60  0001 C CNN "Part Number"
+	1    5800 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CP C6
+U 1 1 5AC6DAE1
+P 5950 4475
+F 0 "C6" H 5975 4575 50  0000 L CNN
+F 1 "1000uF" H 5975 4375 50  0000 L CNN
+F 2 "Capacitors_THT:CP_Radial_D10.0mm_P5.00mm" H 5988 4325 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rubycon/25YXJ1000M10X20/1189-1241-ND/3134197" H 5950 4475 50  0001 C CNN
+F 4 "25YXJ1000M10X20" H 5950 4475 60  0001 C CNN "Part Number"
+	1    5950 4475
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR5
+U 1 1 5AC73772
+P 4075 2950
+F 0 "#PWR5" H 4075 2700 50  0001 C CNN
+F 1 "GND" V 4025 2775 50  0000 C CNN
+F 2 "" H 4075 2950 50  0000 C CNN
+F 3 "" H 4075 2950 50  0000 C CNN
+	1    4075 2950
+	1    0    0    -1  
+$EndComp
+Text GLabel 3325 3025 0    60   Input ~ 0
+3.3V
+$Comp
+L GND #PWR6
+U 1 1 5AC740CE
+P 4100 4475
+F 0 "#PWR6" H 4100 4225 50  0001 C CNN
+F 1 "GND" V 4050 4300 50  0000 C CNN
+F 2 "" H 4100 4475 50  0000 C CNN
+F 3 "" H 4100 4475 50  0000 C CNN
+	1    4100 4475
+	1    0    0    -1  
+$EndComp
+Text GLabel 3325 4450 0    60   Input ~ 0
+3.3V
+$Comp
+L LM2576 U3
+U 1 1 5AC686EE
+P 4650 4225
+F 0 "U3" H 5000 4425 60  0000 C CNN
+F 1 "LM2576-ADJ" H 4700 4025 60  0000 C CNN
+F 2 "open-automation:Regulator-LM2576" H 5050 4175 60  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/texas-instruments/LM2576SX-ADJ-NOPB/LM2576SX-ADJ-NOPBCT-ND/3440107" H 5050 4175 60  0001 C CNN
+F 4 "LM2576SX-ADJ/NOPB" H 4650 4225 60  0001 C CNN "Part Number"
+	1    4650 4225
+	1    0    0    -1  
+$EndComp
+$Comp
+L LM2576 U2
+U 1 1 5AC68B48
+P 4625 2750
+F 0 "U2" H 4975 2950 60  0000 C CNN
+F 1 "LM2576-ADJ" H 4675 2550 60  0000 C CNN
+F 2 "open-automation:Regulator-LM2576" H 5025 2700 60  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/texas-instruments/LM2576SX-ADJ-NOPB/LM2576SX-ADJ-NOPBCT-ND/3440107" H 5025 2700 60  0001 C CNN
+F 4 "LM2576SX-ADJ/NOPB" H 4625 2750 60  0001 C CNN "Part Number"
+	1    4625 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L LM2576 U1
+U 1 1 5AC68BC4
+P 3725 1075
+F 0 "U1" H 4075 1275 60  0000 C CNN
+F 1 "LM2576-ADJ" H 3775 875 60  0000 C CNN
+F 2 "open-automation:Regulator-LM2576" H 4125 1025 60  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/texas-instruments/LM2576SX-ADJ-NOPB/LM2576SX-ADJ-NOPBCT-ND/3440107" H 4125 1025 60  0001 C CNN
+F 4 "LM2576SX-ADJ/NOPB" H 3725 1075 60  0001 C CNN "Part Number"
+	1    3725 1075
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
-	5500 1700 5500 1750
+	6450 1800 6450 1850
 Wire Wire Line
-	5500 1350 5500 1400
+	6450 1450 6450 1500
 Wire Wire Line
-	5500 975  5500 1050
+	6450 1075 6450 1150
 Wire Wire Line
 	4375 1125 4375 1075
 Connection ~ 4375 1075
 Wire Wire Line
 	4375 1475 4375 1425
 Wire Wire Line
-	5025 1425 5025 1375
+	4975 1525 4975 1475
 Wire Wire Line
-	4725 1075 4775 1075
+	4325 1075 4500 1075
 Wire Wire Line
-	4325 1075 4425 1075
-Wire Wire Line
-	4325 975  5900 975 
+	4800 1075 6800 1075
 Wire Wire Line
 	8850 975  9175 975 
 Wire Wire Line
@@ -283,23 +503,18 @@ Wire Wire Line
 Wire Wire Line
 	3175 1175 3225 1175
 Wire Wire Line
-	1400 1150 1400 1100
+	1400 1125 1400 1075
 Wire Wire Line
-	1400 1100 1350 1100
+	1400 1075 1350 1075
 Wire Wire Line
-	1450 1000 1350 1000
+	1450 975  1350 975 
 Wire Wire Line
 	9125 1125 9125 1075
 Wire Wire Line
 	9125 1075 9175 1075
-Connection ~ 4775 975 
 Wire Wire Line
-	4775 975  4775 975 
-Wire Wire Line
-	4775 1075 4775 975 
-Wire Wire Line
-	5025 1075 5025 975 
-Connection ~ 5025 975 
+	4975 1075 4975 1175
+Connection ~ 4975 1075
 Wire Wire Line
 	3225 1075 3175 1075
 Connection ~ 3175 1175
@@ -309,363 +524,239 @@ Wire Wire Line
 	3175 1525 2900 1525
 Connection ~ 2900 1525
 Wire Wire Line
-	5125 2350 5125 2300
-Connection ~ 5125 2300
+	5275 2800 5275 2750
+Connection ~ 5275 2750
 Wire Wire Line
-	5125 2700 5125 2650
+	5275 3150 5275 3100
 Wire Wire Line
-	5775 2650 5775 2600
+	5800 3200 5800 3150
 Wire Wire Line
-	5475 2300 5525 2300
+	5225 2750 5375 2750
 Wire Wire Line
-	5075 2300 5175 2300
+	5675 2750 6550 2750
+Connection ~ 2850 2650
 Wire Wire Line
-	5075 2200 6075 2200
-Connection ~ 2700 2200
+	2850 3075 2850 3175
 Wire Wire Line
-	2700 2625 2700 2725
+	4075 2850 4125 2850
 Wire Wire Line
-	3925 2400 3975 2400
-Connection ~ 5525 2200
+	5800 2850 5800 2750
+Connection ~ 5800 2750
 Wire Wire Line
-	5525 2200 5525 2200
+	2600 2650 4125 2650
 Wire Wire Line
-	5525 2300 5525 2200
-Wire Wire Line
-	5775 2300 5775 2200
-Connection ~ 5775 2200
-Wire Wire Line
-	2450 2200 3975 2200
-Wire Wire Line
-	3925 2500 3925 2400
-$Comp
-L R_10k R1
-U 1 1 5AC421CC
-P 3500 2575
-F 0 "R1" V 3500 2575 50  0000 C CNN
-F 1 "R_10k" V 3425 2575 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 3430 2575 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 3580 2575 50  0001 C CNN
-F 4 "RC0603JR-0710KL" V 3680 2675 60  0001 C CNN "Part Number"
-	1    3500 2575
-	0    -1   -1   0   
-$EndComp
-Text Notes 5575 1575 0    60   ~ 0
-1mA current through LED
-$Comp
-L CONN_01X02 5V_Out1
-U 1 1 5AC54EB0
-P 9400 1550
-F 0 "5V_Out1" H 9478 1591 50  0000 L CNN
-F 1 "CONN_01X02" H 9478 1500 50  0000 L CNN
-F 2 "open-automation:XT60" H 9400 1550 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 9400 1550 50  0001 C CNN
-	1    9400 1550
-	1    0    0    -1  
-$EndComp
-$Comp
-L GND #PWR010
-U 1 1 5AC54EB6
-P 9150 1650
-F 0 "#PWR010" H 9150 1400 50  0001 C CNN
-F 1 "GND" H 9150 1500 50  0000 C CNN
-F 2 "" H 9150 1650 50  0000 C CNN
-F 3 "" H 9150 1650 50  0000 C CNN
-	1    9150 1650
-	1    0    0    -1  
-$EndComp
-Text GLabel 8875 1500 0    60   Input ~ 0
-5V
+	4075 2950 4075 2850
 Wire Wire Line
 	8875 1500 9200 1500
 Wire Wire Line
 	9150 1650 9150 1600
 Wire Wire Line
 	9150 1600 9200 1600
-Text Notes 10050 1575 0    60   ~ 0
-Main Board 5V Supply
-Text Notes 8775 750  0    60   ~ 0
-Main Board Connections
-Text GLabel 2425 3575 0    60   Input ~ 0
-V_MAIN
+Wire Wire Line
+	5300 4300 5300 4225
+Connection ~ 5300 4225
+Wire Wire Line
+	5300 4675 5300 4600
+Wire Wire Line
+	5950 4675 5950 4625
+Wire Wire Line
+	5775 4225 6700 4225
+Wire Wire Line
+	5250 4225 5475 4225
+Connection ~ 2825 4125
+Wire Wire Line
+	2825 4550 2825 4650
+Wire Wire Line
+	4100 4325 4150 4325
+Wire Wire Line
+	5950 4225 5950 4325
+Connection ~ 5950 4225
+Wire Wire Line
+	2575 4125 4150 4125
+Wire Wire Line
+	4100 4475 4100 4325
+Wire Wire Line
+	6425 5025 6425 5125
+Wire Wire Line
+	6425 4600 6425 4725
+Wire Wire Line
+	6425 4300 6425 4225
+Connection ~ 6425 4225
+Wire Wire Line
+	6425 4675 6600 4675
+Connection ~ 6425 4675
+Wire Wire Line
+	5250 4125 5375 4125
+Connection ~ 6450 1075
+Wire Wire Line
+	3750 2750 4125 2750
+Connection ~ 3875 2750
+Wire Wire Line
+	3325 3025 3500 3025
+Wire Wire Line
+	3800 3025 3875 3025
+Wire Wire Line
+	3875 3025 3875 2750
+Wire Wire Line
+	3825 4450 3925 4450
+Wire Wire Line
+	3925 4450 3925 4225
+Wire Wire Line
+	3750 4225 4150 4225
+Connection ~ 3925 4225
+Wire Wire Line
+	3325 4450 3525 4450
+Wire Wire Line
+	2825 4125 2825 4250
+Wire Wire Line
+	2850 2650 2850 2775
 $Comp
-L GND #PWR011
-U 1 1 5AC637C2
-P 5800 4125
-F 0 "#PWR011" H 5800 3875 50  0001 C CNN
-F 1 "GND" H 5800 3975 50  0000 C CNN
-F 2 "" H 5800 4125 50  0000 C CNN
-F 3 "" H 5800 4125 50  0000 C CNN
-	1    5800 4125
+L R_10k R5
+U 1 1 5AC69CD6
+P 6275 2975
+F 0 "R5" V 6275 2975 50  0000 C CNN
+F 1 "R_7.15k" V 6175 2975 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 6205 2975 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/vishay-dale/CRCW06037K15FKEA/541-7.15KHCT-ND/1179907" V 6355 2975 50  0001 C CNN
+F 4 "CRCW06037K15FKEA" V 6455 3075 60  0001 C CNN "Part Number"
+	1    6275 2975
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR012
-U 1 1 5AC637C8
-P 2675 4100
-F 0 "#PWR012" H 2675 3850 50  0001 C CNN
-F 1 "GND" V 2625 3925 50  0000 C CNN
-F 2 "" H 2675 4100 50  0000 C CNN
-F 3 "" H 2675 4100 50  0000 C CNN
-	1    2675 4100
+L GND #PWR14
+U 1 1 5AC69CE3
+P 6275 3650
+F 0 "#PWR14" H 6275 3400 50  0001 C CNN
+F 1 "GND" H 6275 3500 50  0000 C CNN
+F 2 "" H 6275 3650 50  0000 C CNN
+F 3 "" H 6275 3650 50  0000 C CNN
+	1    6275 3650
 	1    0    0    -1  
 $EndComp
+Text Label 6450 3200 0    60   ~ 0
+5V_Feedback
+Wire Wire Line
+	6275 3550 6275 3650
+Wire Wire Line
+	6275 3125 6275 3250
+Wire Wire Line
+	6275 2825 6275 2750
+Wire Wire Line
+	6275 3200 6450 3200
+Connection ~ 6275 3200
+Connection ~ 6275 2750
+Wire Wire Line
+	5225 2650 5425 2650
+Text Label 5425 2650 0    60   ~ 0
+5V_Feedback
 $Comp
-L GND #PWR013
-U 1 1 5AC637CE
-P 5150 4125
-F 0 "#PWR013" H 5150 3875 50  0001 C CNN
-F 1 "GND" H 5150 3975 50  0000 C CNN
-F 2 "" H 5150 4125 50  0000 C CNN
-F 3 "" H 5150 4125 50  0000 C CNN
-	1    5150 4125
+L R_10k R3
+U 1 1 5AC6AB45
+P 5525 1300
+F 0 "R3" V 5525 1300 50  0000 C CNN
+F 1 "R_3.92k" V 5425 1300 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 5455 1300 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-073K92L/311-3.92KHRCT-ND/730085" V 5605 1300 50  0001 C CNN
+F 4 "RC0603FR-073K92L" V 5705 1400 60  0001 C CNN "Part Number"
+	1    5525 1300
 	1    0    0    -1  
-$EndComp
-Text GLabel 6550 3675 2    60   Input ~ 0
-8V
-$Comp
-L LM2576SX-3.3 U3
-U 1 1 5AC637DD
-P 4500 3675
-F 0 "U3" H 4850 3875 60  0000 C CNN
-F 1 "LM2576SX-ADJ" H 4550 3475 60  0000 C CNN
-F 2 "open-automation:Regulator-LM2576" H 4400 3275 60  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/texas-instruments/LM2576SX-ADJ-NOPB/LM2576SX-ADJ-NOPBCT-ND/3440107" H 4450 3375 60  0001 C CNN
-F 4 "LM2576SX-ADJ/NOPB" H 4500 3675 60  0001 C CNN "Part Number"
-	1    4500 3675
-	1    0    0    -1  
-$EndComp
-Text GLabel 3600 3675 0    60   Input ~ 0
-EN_8V_POWER
-Wire Wire Line
-	5150 3750 5150 3675
-Connection ~ 5150 3675
-Wire Wire Line
-	5150 4125 5150 4050
-Wire Wire Line
-	5800 4125 5800 4075
-Wire Wire Line
-	5575 3675 6550 3675
-Wire Wire Line
-	5100 3675 5275 3675
-Connection ~ 2675 3575
-Wire Wire Line
-	2675 4000 2675 4100
-Wire Wire Line
-	3950 3775 4000 3775
-Wire Wire Line
-	5800 3675 5800 3775
-Connection ~ 5800 3675
-Wire Wire Line
-	2425 3575 4000 3575
-Wire Wire Line
-	3950 3925 3950 3775
-$Comp
-L R_10k R2
-U 1 1 5AC637FA
-P 3525 3900
-F 0 "R2" V 3525 3900 50  0000 C CNN
-F 1 "R_10k" V 3450 3900 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 3455 3900 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 3605 3900 50  0001 C CNN
-F 4 "RC0603JR-0710KL" V 3705 4000 60  0001 C CNN "Part Number"
-	1    3525 3900
-	0    -1   -1   0   
 $EndComp
 $Comp
 L R_10k R4
-U 1 1 5AC645BA
-P 6275 3900
-F 0 "R4" V 6275 3900 50  0000 C CNN
-F 1 "R_7.15k" V 6175 3900 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 6205 3900 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 6355 3900 50  0001 C CNN
-F 4 "RC0603JR-0710KL" V 6455 4000 60  0001 C CNN "Part Number"
-	1    6275 3900
+U 1 1 5AC6AB4C
+P 5525 1725
+F 0 "R4" V 5525 1725 50  0000 C CNN
+F 1 "R_2.32k" V 5425 1725 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 5455 1725 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-072K32L/311-2.32KHRCT-ND/729968" V 5605 1725 50  0001 C CNN
+F 4 "RC0603FR-072K32L" V 5705 1825 60  0001 C CNN "Part Number"
+	1    5525 1725
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_10k R5
-U 1 1 5AC647A0
-P 6275 4325
-F 0 "R5" V 6275 4325 50  0000 C CNN
-F 1 "R_1.3k" V 6175 4325 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 6205 4325 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 6355 4325 50  0001 C CNN
-F 4 "RC0603JR-0710KL" V 6455 4425 60  0001 C CNN "Part Number"
-	1    6275 4325
+L GND #PWR11
+U 1 1 5AC6AB52
+P 5525 1975
+F 0 "#PWR11" H 5525 1725 50  0001 C CNN
+F 1 "GND" H 5525 1825 50  0000 C CNN
+F 2 "" H 5525 1975 50  0000 C CNN
+F 3 "" H 5525 1975 50  0000 C CNN
+	1    5525 1975
+	1    0    0    -1  
+$EndComp
+Text Label 5625 1525 0    60   ~ 0
+3.3V_Feedback
+Wire Wire Line
+	5525 1875 5525 1975
+Wire Wire Line
+	5525 1450 5525 1575
+Wire Wire Line
+	5525 1075 5525 1075
+Wire Wire Line
+	5525 1075 5525 1150
+Wire Wire Line
+	5525 1525 5625 1525
+Connection ~ 5525 1525
+Connection ~ 5525 1075
+Wire Wire Line
+	4325 975  4500 975 
+Text Label 4500 975  0    60   ~ 0
+3.3V_Feedback
+$Comp
+L CONN_01X02 BATT_OUT_1
+U 1 1 5AC711D2
+P 9375 1025
+F 0 "BATT_OUT_1" H 9675 1000 50  0000 C CNN
+F 1 "CONN_01X02" H 9700 1100 50  0000 C CNN
+F 2 "open-automation:XT60" H 9375 1025 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 9375 1025 50  0001 C CNN
+	1    9375 1025
+	1    0    0    1   
+$EndComp
+$Comp
+L CONN_01X02 5V_OUT_1
+U 1 1 5AC715BC
+P 9400 1550
+F 0 "5V_OUT_1" H 9650 1525 50  0000 C CNN
+F 1 "CONN_01X02" H 9725 1625 50  0000 C CNN
+F 2 "open-automation:XT60" H 9400 1550 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 9400 1550 50  0001 C CNN
+	1    9400 1550
+	1    0    0    1   
+$EndComp
+$Comp
+L CONN_01X02 BATT_IN_1
+U 1 1 5AC70F73
+P 1150 1025
+F 0 "BATT_IN_1" H 1400 1075 50  0000 C CNN
+F 1 "CONN_01X02" H 1475 975 50  0000 C CNN
+F 2 "open-automation:XT60" H 1150 1025 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 1150 1025 50  0001 C CNN
+	1    1150 1025
+	-1   0    0    -1  
+$EndComp
+$Comp
+L R_10k R6
+U 1 1 5AC777F6
+P 6275 3400
+F 0 "R6" V 6275 3400 50  0000 C CNN
+F 1 "R_2.32k" V 6175 3400 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 6205 3400 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-072K32L/311-2.32KHRCT-ND/729968" V 6355 3400 50  0001 C CNN
+F 4 "RC0603FR-072K32L" V 6455 3500 60  0001 C CNN "Part Number"
+	1    6275 3400
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR014
-U 1 1 5AC64EC6
-P 6275 4575
-F 0 "#PWR014" H 6275 4325 50  0001 C CNN
-F 1 "GND" H 6275 4425 50  0000 C CNN
-F 2 "" H 6275 4575 50  0000 C CNN
-F 3 "" H 6275 4575 50  0000 C CNN
-	1    6275 4575
+L R_10k R7
+U 1 1 5AC77A5F
+P 6425 4450
+F 0 "R7" V 6425 4450 50  0000 C CNN
+F 1 "R_7.15k" V 6325 4450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 6355 4450 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/vishay-dale/CRCW06037K15FKEA/541-7.15KHCT-ND/1179907" V 6505 4450 50  0001 C CNN
+F 4 "CRCW06037K15FKEA" V 6605 4550 60  0001 C CNN "Part Number"
+	1    6425 4450
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6275 4475 6275 4575
-Wire Wire Line
-	6275 4050 6275 4175
-Wire Wire Line
-	6275 3750 6275 3675
-Connection ~ 6275 3675
-Wire Wire Line
-	6275 4125 6450 4125
-Connection ~ 6275 4125
-Text Label 6450 4125 0    60   ~ 0
-8V_FeedBack
-Wire Wire Line
-	5100 3575 5225 3575
-Text Label 5225 3575 0    60   ~ 0
-8V_FeedBack
-$Comp
-L CP C2
-U 1 1 5AC68E0B
-P 2700 2475
-F 0 "C2" V 2750 2525 50  0000 L CNN
-F 1 "180uF" V 2550 2375 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D8.0mm_P3.50mm" H 2738 2325 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/united-chemi-con/EKZN500ELL181MH20D/565-4066-ND/4843876" H 2700 2475 50  0001 C CNN
-F 4 "EKZN500ELL181MH20D" H 2700 2475 60  0001 C CNN "Part Number"
-	1    2700 2475
-	1    0    0    -1  
-$EndComp
-$Comp
-L CP C3
-U 1 1 5AC6900B
-P 2675 3850
-F 0 "C3" V 2725 3900 50  0000 L CNN
-F 1 "180uF" V 2525 3750 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D8.0mm_P3.50mm" H 2713 3700 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/united-chemi-con/EKZN500ELL181MH20D/565-4066-ND/4843876" H 2675 3850 50  0001 C CNN
-F 4 "EKZN500ELL181MH20D" H 2675 3850 60  0001 C CNN "Part Number"
-	1    2675 3850
-	1    0    0    -1  
-$EndComp
-$Comp
-L L L3
-U 1 1 5AC6A697
-P 5425 3675
-F 0 "L3" V 5375 3675 50  0001 C CNN
-F 1 "100uH" V 5375 3675 50  0000 C CNN
-F 2 "open-automation:L_Toroid_Horizontal_D21.8mm_P20.06mm_Bourns_2100" H 5425 3675 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/bourns-inc/2100HT-101-H-RC/M8921-ND/775460" H 5425 3675 50  0001 C CNN
-F 4 "2100HT-101-H-RC" V 5425 3675 60  0001 C CNN "Part Number"
-	1    5425 3675
-	0    -1   -1   0   
-$EndComp
-$Comp
-L D_Schottky D2
-U 1 1 5AC6AF0A
-P 5125 2500
-F 0 "D2" H 5125 2600 50  0000 C CNN
-F 1 "D_Schottky" H 5125 2400 50  0001 C CNN
-F 2 "Diodes_SMD:D_SMA" H 5125 2500 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/comchip-technology/CDBA540-HF/641-1707-1-ND/5226090" H 5125 2500 50  0001 C CNN
-F 4 "CDBA540-HF" H 5125 2500 60  0001 C CNN "Part Number"
-	1    5125 2500
-	0    1    1    0   
-$EndComp
-$Comp
-L D_Schottky D3
-U 1 1 5AC6B09E
-P 5150 3900
-F 0 "D3" H 5150 4000 50  0000 C CNN
-F 1 "D_Schottky" H 5150 3800 50  0001 C CNN
-F 2 "Diodes_SMD:D_SMA" H 5150 3900 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/comchip-technology/CDBA540-HF/641-1707-1-ND/5226090" H 5150 3900 50  0001 C CNN
-F 4 "CDBA540-HF" H 5150 3900 60  0001 C CNN "Part Number"
-	1    5150 3900
-	0    1    1    0   
-$EndComp
-$Comp
-L CP C1
-U 1 1 5AC6CB1C
-P 2900 1325
-F 0 "C1" V 2950 1375 50  0000 L CNN
-F 1 "180uF" V 2750 1225 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D8.0mm_P3.50mm" H 2938 1175 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/united-chemi-con/EKZN500ELL181MH20D/565-4066-ND/4843876" H 2900 1325 50  0001 C CNN
-F 4 "EKZN500ELL181MH20D" H 2900 1325 60  0001 C CNN "Part Number"
-	1    2900 1325
-	1    0    0    -1  
-$EndComp
-$Comp
-L CP C5
-U 1 1 5AC6DA75
-P 5775 2450
-F 0 "C5" H 5800 2550 50  0000 L CNN
-F 1 "1000uF" H 5800 2350 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D10.0mm_P5.00mm" H 5813 2300 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/rubycon/25YXJ1000M10X20/1189-1241-ND/3134197" H 5775 2450 50  0001 C CNN
-F 4 "25YXJ1000M10X20" H 5775 2450 60  0001 C CNN "Part Number"
-	1    5775 2450
-	1    0    0    -1  
-$EndComp
-$Comp
-L CP C6
-U 1 1 5AC6DAE1
-P 5800 3925
-F 0 "C6" H 5825 4025 50  0000 L CNN
-F 1 "1000uF" H 5825 3825 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D10.0mm_P5.00mm" H 5838 3775 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/rubycon/25YXJ1000M10X20/1189-1241-ND/3134197" H 5800 3925 50  0001 C CNN
-F 4 "25YXJ1000M10X20" H 5800 3925 60  0001 C CNN "Part Number"
-	1    5800 3925
-	1    0    0    -1  
-$EndComp
-Connection ~ 5500 975 
-$Comp
-L GND #PWR?
-U 1 1 5AC73772
-P 3925 2500
-F 0 "#PWR?" H 3925 2250 50  0001 C CNN
-F 1 "GND" V 3875 2325 50  0000 C CNN
-F 2 "" H 3925 2500 50  0000 C CNN
-F 3 "" H 3925 2500 50  0000 C CNN
-	1    3925 2500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3600 2300 3975 2300
-Connection ~ 3725 2300
-Text GLabel 3175 2575 0    60   Input ~ 0
-3.3V
-Wire Wire Line
-	3175 2575 3350 2575
-Wire Wire Line
-	3650 2575 3725 2575
-Wire Wire Line
-	3725 2575 3725 2300
-$Comp
-L GND #PWR?
-U 1 1 5AC740CE
-P 3950 3925
-F 0 "#PWR?" H 3950 3675 50  0001 C CNN
-F 1 "GND" V 3900 3750 50  0000 C CNN
-F 2 "" H 3950 3925 50  0000 C CNN
-F 3 "" H 3950 3925 50  0000 C CNN
-	1    3950 3925
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3675 3900 3775 3900
-Wire Wire Line
-	3775 3900 3775 3675
-Wire Wire Line
-	3600 3675 4000 3675
-Connection ~ 3775 3675
-Text GLabel 3175 3900 0    60   Input ~ 0
-3.3V
-Wire Wire Line
-	3175 3900 3375 3900
-Wire Wire Line
-	2675 3575 2675 3700
-Wire Wire Line
-	2700 2200 2700 2325
 $EndSCHEMATC

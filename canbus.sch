@@ -1,11 +1,12 @@
 EESchema Schematic File Version 2
 LIBS:device
+LIBS:open-automation
 LIBS:open-dash-daughterboard-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 11
+Sheet 5 11
 Title ""
 Date ""
 Rev ""

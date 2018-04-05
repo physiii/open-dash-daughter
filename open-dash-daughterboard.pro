@@ -1,4 +1,4 @@
-update=4/3/2018 12:37:56 PM
+update=4/5/2018 2:02:24 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,8 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=libraries
+LibDir=libraries;../kicad-parts
 [eeschema/libraries]
 LibName1=device
 LibName2=/home/physiii/circuits/kicad-parts/libraries/open-automation
+LibName3=libraries/open-automation

@@ -1,5 +1,6 @@
 EESchema Schematic File Version 2
 LIBS:device
+LIBS:open-automation
 LIBS:open-dash-daughterboard-cache
 EELAYER 25 0
 EELAYER END

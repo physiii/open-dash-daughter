@@ -1,11 +1,9 @@
-EESchema Schematic File Version 2
-LIBS:ESP32-footprints-Shem-Lib
-LIBS:espressif-xess
-EELAYER 25 0
+EESchema Schematic File Version 4
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 6
+Sheet 1 11
 Title ""
 Date ""
 Rev ""

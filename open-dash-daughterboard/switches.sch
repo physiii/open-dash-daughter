@@ -1,10 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:ESP32-footprints-Shem-Lib
-LIBS:espressif-xess
-LIBS:dk_Interface-Drivers-Receivers-Transceivers
-LIBS:open-automation
+EESchema Schematic File Version 4
 LIBS:open-dash-daughterboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -19,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L LED D2
+L open-automation:LED D2
 U 1 1 59092D24
 P 3725 3125
 F 0 "D2" V 3700 3225 50  0000 C CNN
@@ -35,7 +31,7 @@ FACTORY
 Wire Wire Line
 	7975 4600 8075 4600
 $Comp
-L touchpad U10
+L open-automation:touchpad U10
 U 1 1 590F8D3B
 P 8475 4600
 F 0 "U10" H 8625 4400 60  0000 C CNN
@@ -48,7 +44,7 @@ $EndComp
 Text GLabel 3725 2925 1    60   Input ~ 0
 3V3
 $Comp
-L USB_A_2 P5
+L open-automation:USB_A_2 P5
 U 1 1 59693837
 P 8350 2800
 F 0 "P5" H 8600 2600 50  0000 C CNN
@@ -60,7 +56,7 @@ F 4 "1002-004-01010" H 8350 2800 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR06
+L open-automation:GND #PWR06
 U 1 1 5969393D
 P 8500 3200
 F 0 "#PWR06" H 8500 2950 50  0001 C CNN
@@ -71,7 +67,7 @@ F 3 "" H 8500 3200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8500 3100 8500 3200
+	8500 3100 8500 3150
 Wire Wire Line
 	8750 2700 8750 3150
 Wire Wire Line
@@ -84,7 +80,7 @@ Wire Wire Line
 Wire Wire Line
 	7900 3200 7850 3200
 $Comp
-L housing-mounts U4
+L open-automation:housing-mounts U4
 U 1 1 5978A2A6
 P 8425 4025
 F 0 "U4" H 8575 3925 60  0000 C CNN
@@ -95,7 +91,7 @@ F 3 "https://www.mcmaster.com/#catalog/123/904/=18nyvt2" H 8425 4075 60  0001 C 
 	1    0    0    -1  
 $EndComp
 $Comp
-L SW_PUSH FACTORY1
+L open-automation:SW_PUSH FACTORY1
 U 1 1 59C587B8
 P 3725 3975
 F 0 "FACTORY1" H 3725 4150 50  0000 C CNN
@@ -109,7 +105,7 @@ $EndComp
 Text GLabel 3850 3650 2    60   Input ~ 0
 FACTORY
 $Comp
-L GND #PWR07
+L open-automation:GND #PWR07
 U 1 1 59C59092
 P 3725 4350
 F 0 "#PWR07" H 3725 4100 50  0001 C CNN
@@ -122,7 +118,7 @@ $EndComp
 Wire Wire Line
 	3725 4350 3725 4275
 $Comp
-L R_10k R2
+L open-automation:R_10k R2
 U 1 1 59E3E4D2
 P 3725 3475
 F 0 "R2" V 3725 3475 50  0000 C CNN
@@ -138,12 +134,12 @@ Wire Wire Line
 Wire Wire Line
 	3725 2925 3725 2975
 Wire Wire Line
-	3725 3625 3725 3675
+	3725 3625 3725 3650
 Wire Wire Line
 	3850 3650 3725 3650
 Connection ~ 3725 3650
 $Comp
-L LED D3
+L open-automation:LED D3
 U 1 1 59E3EE41
 P 4675 3125
 F 0 "D3" V 4650 3225 50  0000 C CNN
@@ -157,7 +153,7 @@ $EndComp
 Text GLabel 4675 2925 1    60   Input ~ 0
 3V3
 $Comp
-L SW_PUSH REBOOT1
+L open-automation:SW_PUSH REBOOT1
 U 1 1 59E3EE49
 P 4675 3975
 F 0 "REBOOT1" H 4675 4150 50  0000 C CNN
@@ -171,7 +167,7 @@ $EndComp
 Text GLabel 4800 3650 2    60   Input ~ 0
 EN
 $Comp
-L GND #PWR08
+L open-automation:GND #PWR08
 U 1 1 59E3EE50
 P 4675 4350
 F 0 "#PWR08" H 4675 4100 50  0001 C CNN
@@ -184,7 +180,7 @@ $EndComp
 Wire Wire Line
 	4675 4350 4675 4275
 $Comp
-L R_10k R3
+L open-automation:R_10k R3
 U 1 1 59E3EE58
 P 4675 3475
 F 0 "R3" V 4675 3475 50  0000 C CNN
@@ -200,12 +196,12 @@ Wire Wire Line
 Wire Wire Line
 	4675 2925 4675 2975
 Wire Wire Line
-	4675 3625 4675 3675
+	4675 3625 4675 3650
 Wire Wire Line
 	4800 3650 4675 3650
 Connection ~ 4675 3650
 $Comp
-L LED D5
+L open-automation:LED D5
 U 1 1 59E3F1C3
 P 5450 3125
 F 0 "D5" V 5425 3225 50  0000 C CNN
@@ -219,7 +215,7 @@ $EndComp
 Text GLabel 5450 2925 1    60   Input ~ 0
 3V3
 $Comp
-L SW_PUSH PROG1
+L open-automation:SW_PUSH PROG1
 U 1 1 59E3F1CB
 P 5450 3975
 F 0 "PROG1" H 5450 4150 50  0000 C CNN
@@ -233,7 +229,7 @@ $EndComp
 Text GLabel 5575 3650 2    60   Input ~ 0
 PROG
 $Comp
-L GND #PWR09
+L open-automation:GND #PWR09
 U 1 1 59E3F1D2
 P 5450 4350
 F 0 "#PWR09" H 5450 4100 50  0001 C CNN
@@ -246,7 +242,7 @@ $EndComp
 Wire Wire Line
 	5450 4350 5450 4275
 $Comp
-L R_10k R4
+L open-automation:R_10k R4
 U 1 1 59E3F1DA
 P 5450 3475
 F 0 "R4" V 5450 3475 50  0000 C CNN
@@ -262,7 +258,7 @@ Wire Wire Line
 Wire Wire Line
 	5450 2925 5450 2975
 Wire Wire Line
-	5450 3625 5450 3675
+	5450 3625 5450 3650
 Wire Wire Line
 	5575 3650 5450 3650
 Connection ~ 5450 3650
@@ -282,4 +278,12 @@ Wire Wire Line
 	8150 3200 8150 3100
 Wire Wire Line
 	8050 3200 8050 3100
+Wire Wire Line
+	8500 3150 8500 3200
+Wire Wire Line
+	3725 3650 3725 3675
+Wire Wire Line
+	4675 3650 4675 3675
+Wire Wire Line
+	5450 3650 5450 3675
 $EndSCHEMATC

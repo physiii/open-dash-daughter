@@ -1,10 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:ESP32-footprints-Shem-Lib
-LIBS:espressif-xess
-LIBS:dk_Interface-Drivers-Receivers-Transceivers
-LIBS:open-automation
+EESchema Schematic File Version 4
 LIBS:open-dash-daughterboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -19,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L LM2576 U3
+L open-automation:LM2576 U3
 U 1 1 5936E607
 P 8800 3675
 F 0 "U3" H 9150 3875 60  0000 C CNN
@@ -35,7 +31,7 @@ V_MAIN
 Text GLabel 9850 3425 1    60   Input ~ 0
 V_USB
 $Comp
-L C_100uF C1
+L open-automation:C_100uF C1
 U 1 1 593709F5
 P 7900 3475
 F 0 "C1" V 7950 3525 50  0000 L CNN
@@ -47,7 +43,7 @@ F 4 "UVR1H101MPD" H 7900 3475 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L C_1000uF C2
+L open-automation:C_1000uF C2
 U 1 1 5968D146
 P 9900 3825
 F 0 "C2" H 9925 3925 50  0000 L CNN
@@ -59,7 +55,7 @@ F 4 "UVR0J102MPD1TD" H 9900 3825 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L L L1
+L open-automation:L L1
 U 1 1 5969017D
 P 9650 3675
 F 0 "L1" V 9600 3675 50  0001 C CNN
@@ -71,7 +67,7 @@ F 4 "AIUR-06-470K" V 9650 3675 10  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR010
+L open-automation:GND #PWR010
 U 1 1 59690AC9
 P 9900 4025
 F 0 "#PWR010" H 9900 3775 50  0001 C CNN
@@ -82,7 +78,7 @@ F 3 "" H 9900 4025 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR011
+L open-automation:GND #PWR011
 U 1 1 59690B3F
 P 7700 3475
 F 0 "#PWR011" H 7700 3225 50  0001 C CNN
@@ -93,7 +89,7 @@ F 3 "" H 7700 3475 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR012
+L open-automation:GND #PWR012
 U 1 1 59690D86
 P 9450 4075
 F 0 "#PWR012" H 9450 3825 50  0001 C CNN
@@ -104,7 +100,7 @@ F 3 "" H 9450 4075 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L D_Schottky D1
+L open-automation:D_Schottky D1
 U 1 1 59690FC6
 P 9450 3875
 F 0 "D1" H 9450 3975 50  0000 C CNN
@@ -120,7 +116,7 @@ BATTERY
 Text GLabel 4075 4950 0    60   Input ~ 0
 V_MAIN
 $Comp
-L CONN_01X02 BATTERY1
+L open-automation:CONN_01X02 BATTERY1
 U 1 1 597573B9
 P 5625 5775
 AR Path="/597573B9" Ref="BATTERY1"  Part="1" 
@@ -135,7 +131,7 @@ $EndComp
 Text GLabel 5325 5725 0    60   Input ~ 0
 BATTERY
 $Comp
-L GND #PWR013
+L open-automation:GND #PWR013
 U 1 1 59757643
 P 5375 5875
 F 0 "#PWR013" H 5375 5625 50  0001 C CNN
@@ -148,7 +144,7 @@ $EndComp
 Text GLabel 9425 4850 1    60   Input ~ 0
 3V3
 $Comp
-L GND #PWR014
+L open-automation:GND #PWR014
 U 1 1 598E598C
 P 8250 3825
 F 0 "#PWR014" H 8250 3575 50  0001 C CNN
@@ -161,7 +157,7 @@ $EndComp
 Text GLabel 7750 3675 0    60   Input ~ 0
 power_EN
 $Comp
-L GND #PWR015
+L open-automation:GND #PWR015
 U 1 1 598F6B7D
 P 8225 5100
 F 0 "#PWR015" H 8225 4850 50  0001 C CNN
@@ -174,7 +170,7 @@ $EndComp
 Text GLabel 8175 4850 0    60   Input ~ 0
 V_MAIN
 $Comp
-L C C3
+L open-automation:C C3
 U 1 1 598F70D3
 P 9125 5150
 F 0 "C3" H 9150 5250 50  0000 L CNN
@@ -186,7 +182,7 @@ F 4 "CL10B475KQ8NQNC" H 9125 5150 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR016
+L open-automation:GND #PWR016
 U 1 1 598F7252
 P 9125 5400
 F 0 "#PWR016" H 9125 5150 50  0001 C CNN
@@ -197,7 +193,7 @@ F 3 "" H 9125 5400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L LED D4
+L open-automation:LED D4
 U 1 1 598F7872
 P 9525 5200
 F 0 "D4" H 9525 5300 50  0000 C CNN
@@ -209,7 +205,7 @@ F 4 "SML-D12M8WT86" H 9525 5200 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR017
+L open-automation:GND #PWR017
 U 1 1 598F7A99
 P 9525 5750
 F 0 "#PWR017" H 9525 5500 50  0001 C CNN
@@ -220,7 +216,7 @@ F 3 "" H 9525 5750 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR018
+L open-automation:GND #PWR018
 U 1 1 59A20D2D
 P 8000 4075
 F 0 "#PWR018" H 8000 3825 50  0001 C CNN
@@ -233,7 +229,7 @@ $EndComp
 Text GLabel 4500 4275 2    60   Input ~ 0
 3V3
 $Comp
-L C_0.1uF C8
+L open-automation:C_0.1uF C8
 U 1 1 59C52B59
 P 4275 4275
 F 0 "C8" V 4350 4325 50  0000 L CNN
@@ -245,7 +241,7 @@ F 4 "C0603C104K5RACTU" H 4400 4475 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR019
+L open-automation:GND #PWR019
 U 1 1 59C53560
 P 4075 4275
 F 0 "#PWR019" H 4075 4025 50  0001 C CNN
@@ -278,7 +274,7 @@ Wire Wire Line
 Wire Wire Line
 	8225 5100 8225 5050
 Wire Wire Line
-	9025 4950 9525 4950
+	9025 4950 9125 4950
 Wire Wire Line
 	9450 3725 9450 3675
 Connection ~ 9450 3675
@@ -289,11 +285,11 @@ Wire Wire Line
 	9900 4025 9900 3975
 Connection ~ 9850 3675
 Wire Wire Line
-	9850 3425 9850 3675
+	9850 3425 9850 3575
 Wire Wire Line
-	9800 3675 9900 3675
+	9800 3675 9850 3675
 Wire Wire Line
-	9400 3675 9500 3675
+	9400 3675 9450 3675
 Wire Wire Line
 	9400 3575 9850 3575
 Wire Wire Line
@@ -302,7 +298,7 @@ Wire Wire Line
 	8250 3575 8300 3575
 Connection ~ 8250 3475
 Wire Wire Line
-	8250 3375 8250 3575
+	8250 3375 8250 3475
 Wire Wire Line
 	7700 3475 7750 3475
 Wire Wire Line
@@ -310,7 +306,7 @@ Wire Wire Line
 Wire Wire Line
 	8250 3775 8300 3775
 Wire Wire Line
-	7750 3675 8300 3675
+	7750 3675 8000 3675
 Wire Wire Line
 	5375 5875 5375 5825
 Wire Wire Line
@@ -337,7 +333,7 @@ Wire Wire Line
 Wire Wire Line
 	4575 4875 4625 4875
 Wire Wire Line
-	4325 4950 4075 4950
+	4325 4950 4150 4950
 Wire Wire Line
 	4150 4950 4150 4875
 Connection ~ 4150 4950
@@ -345,14 +341,14 @@ Wire Wire Line
 	4150 4575 4150 4525
 Connection ~ 4150 4525
 Wire Wire Line
-	4500 4275 4425 4275
+	4500 4275 4450 4275
 Connection ~ 4450 4275
 Wire Wire Line
 	4075 4275 4125 4275
 Wire Wire Line
 	5550 4575 5700 4575
 $Comp
-L GND #PWR020
+L open-automation:GND #PWR020
 U 1 1 59C52714
 P 4575 4900
 F 0 "#PWR020" H 4575 4650 50  0001 C CNN
@@ -375,7 +371,7 @@ V_PANEL
 Text GLabel 5200 3275 2    60   Input ~ 0
 V_MAIN
 $Comp
-L CONN_01X02 PANEL1
+L open-automation:CONN_01X02 PANEL1
 U 1 1 59C5AB51
 P 5650 6275
 AR Path="/59C5AB51" Ref="PANEL1"  Part="1" 
@@ -390,7 +386,7 @@ $EndComp
 Text GLabel 5350 6225 0    60   Input ~ 0
 V_PANEL
 $Comp
-L GND #PWR021
+L open-automation:GND #PWR021
 U 1 1 59C5AB58
 P 5400 6375
 F 0 "#PWR021" H 5400 6125 50  0001 C CNN
@@ -407,7 +403,7 @@ Wire Wire Line
 Wire Wire Line
 	5350 6225 5450 6225
 $Comp
-L Power-Monitor-INA219 U5
+L open-automation:Power-Monitor-INA219 U5
 U 1 1 59C5E21B
 P 5100 4725
 F 0 "U5" H 5300 4475 60  0000 C CNN
@@ -419,7 +415,7 @@ F 4 "INA219AIDCNR" H 5400 4575 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_10k R8
+L open-automation:R_10k R8
 U 1 1 59C5FC56
 P 8000 3875
 F 0 "R8" V 8000 3875 50  0000 C CNN
@@ -431,7 +427,7 @@ F 4 "RC0603JR-0710KL" V 8180 3975 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR022
+L open-automation:GND #PWR022
 U 1 1 59C6263F
 P 5700 4550
 F 0 "#PWR022" H 5700 4300 50  0001 C CNN
@@ -446,7 +442,7 @@ Wire Wire Line
 Wire Wire Line
 	4525 3275 4675 3275
 $Comp
-L R R7
+L open-automation:R R7
 U 1 1 59E3D0E8
 P 4875 2725
 F 0 "R7" H 4925 2575 50  0000 C CNN
@@ -462,18 +458,18 @@ Text GLabel 4875 2475 1    60   Input ~ 0
 Wire Wire Line
 	4875 2475 4875 2575
 Wire Wire Line
-	4875 2875 4875 2975
+	4875 2875 4875 2925
 Text GLabel 4725 2925 0    60   Input ~ 0
 PANEL_SW
 Wire Wire Line
 	4725 2925 4875 2925
 Connection ~ 4875 2925
 Wire Wire Line
-	4325 4525 4075 4525
+	4325 4525 4150 4525
 Wire Wire Line
 	5200 3275 5075 3275
 $Comp
-L R_10k R11
+L open-automation:R_10k R11
 U 1 1 59E4131F
 P 9525 5550
 F 0 "R11" V 9525 5550 50  0000 C CNN
@@ -489,7 +485,7 @@ Text GLabel 5675 4675 2    60   Input ~ 0
 Wire Wire Line
 	5675 4675 5550 4675
 $Comp
-L NCP1117LPST33T3G U11
+L open-automation:NCP1117LPST33T3G U11
 U 1 1 5A105FD6
 P 8675 4950
 F 0 "U11" H 8800 4750 50  0000 C CNN
@@ -501,7 +497,7 @@ F 4 "NCP1117LPST33T3G" H 8700 5275 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_10m R1
+L open-automation:R_10m R1
 U 1 1 5A108421
 P 4150 4750
 F 0 "R1" H 4125 4750 50  0000 C CNN
@@ -513,7 +509,7 @@ F 4 "CRA2512-FZ-R010ELF" H 4150 4825 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L Q_NMOS_GSD_AOD4184A Q1
+L open-automation:Q_NMOS_GSD_AOD4184A Q1
 U 1 1 5A109055
 P 4800 3250
 F 0 "Q1" V 4650 3225 50  0000 L CNN
@@ -524,4 +520,26 @@ F 4 "AOD4184A" H 4850 2875 60  0001 C CNN "Part Number"
 	1    4800 3250
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	9425 4950 9525 4950
+Wire Wire Line
+	9125 4950 9425 4950
+Wire Wire Line
+	9450 3675 9500 3675
+Wire Wire Line
+	9850 3575 9850 3675
+Wire Wire Line
+	9850 3675 9900 3675
+Wire Wire Line
+	8250 3475 8250 3575
+Wire Wire Line
+	8000 3675 8300 3675
+Wire Wire Line
+	4150 4950 4075 4950
+Wire Wire Line
+	4150 4525 4075 4525
+Wire Wire Line
+	4450 4275 4425 4275
+Wire Wire Line
+	4875 2925 4875 2975
 $EndSCHEMATC

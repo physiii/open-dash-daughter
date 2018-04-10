@@ -1,4 +1,4 @@
-update=Mon 26 Feb 2018 01:26:37 PM CST
+update=Tue 10 Apr 2018 15:05:17 CDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -37,9 +37,4 @@ ERC_TestSimilarLabels=1
 version=1
 [eeschema]
 version=1
-LibDir=lib/digikey;lib/esp32;../../kicad-parts/libraries
-[eeschema/libraries]
-LibName1=lib/esp32/ESP32-Footprints/ESP32-footprints-Shem-Lib
-LibName2=lib/esp32/ESP32-Footprints/espressif-xess
-LibName3=lib/digikey/digikey-symbols/dk_Interface-Drivers-Receivers-Transceivers
-LibName4=open-automation
+LibDir=

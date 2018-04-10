@@ -1,10 +1,6 @@
-EESchema Schematic File Version 2
-LIBS:ESP32-footprints-Shem-Lib
-LIBS:espressif-xess
-LIBS:dk_Interface-Drivers-Receivers-Transceivers
-LIBS:open-automation
+EESchema Schematic File Version 4
 LIBS:open-dash-daughterboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -19,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L GND #PWR01
+L open-automation:GND #PWR01
 U 1 1 59097974
 P 4825 2750
 F 0 "#PWR01" H 4825 2500 50  0001 C CNN
@@ -40,7 +36,7 @@ PROG
 Text GLabel 6175 4750 3    60   Input ~ 0
 IO2
 $Comp
-L ESP-WROOM-32 U1
+L open-automation:ESP-WROOM-32 U1
 U 1 1 590979AF
 P 5775 3450
 F 0 "U1" H 6325 2350 60  0000 C CNN
@@ -55,7 +51,7 @@ SCL
 Text GLabel 6725 3600 2    60   Input ~ 0
 SDA
 $Comp
-L GND #PWR02
+L open-automation:GND #PWR02
 U 1 1 590979B0
 P 8150 3500
 F 0 "#PWR02" H 8150 3250 50  0001 C CNN
@@ -74,7 +70,7 @@ TXD
 Text GLabel 8800 3650 2    60   Input ~ 0
 V_USB
 $Comp
-L GND #PWR03
+L open-automation:GND #PWR03
 U 1 1 590979B2
 P 8750 3500
 F 0 "#PWR03" H 8750 3250 50  0001 C CNN
@@ -113,7 +109,7 @@ Wire Wire Line
 Wire Wire Line
 	6625 4100 6725 4100
 Wire Wire Line
-	6175 4650 6175 4750
+	6175 4650 6175 4700
 Wire Wire Line
 	4775 3000 4875 3000
 Wire Wire Line
@@ -129,7 +125,7 @@ POWER_EN
 Text Label 4200 1025 0    197  ~ 0
 Microcontroller
 $Comp
-L C_1uF C6
+L open-automation:C_1uF C6
 U 1 1 59C55B03
 P 2825 3775
 F 0 "C6" H 2825 3875 50  0000 L CNN
@@ -141,7 +137,7 @@ F 4 "CC0603ZRY5V7BB105" H 2950 3975 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR04
+L open-automation:GND #PWR04
 U 1 1 59C55B05
 P 2625 4025
 F 0 "#PWR04" H 2625 3775 50  0001 C CNN
@@ -156,7 +152,7 @@ Text GLabel 2625 3400 1    60   Input ~ 0
 Wire Wire Line
 	2425 3925 2425 3975
 Wire Wire Line
-	2425 3975 2825 3975
+	2425 3975 2625 3975
 Wire Wire Line
 	2825 3975 2825 3925
 Wire Wire Line
@@ -173,7 +169,7 @@ Wire Wire Line
 Wire Wire Line
 	8100 3750 8200 3750
 $Comp
-L R_10k R6
+L open-automation:R_10k R6
 U 1 1 59C609F8
 P 6400 4700
 F 0 "R6" V 6400 4700 50  0000 C CNN
@@ -188,7 +184,7 @@ Wire Wire Line
 	6250 4700 6175 4700
 Connection ~ 6175 4700
 $Comp
-L GND #PWR05
+L open-automation:GND #PWR05
 U 1 1 59C60A9D
 P 6600 4700
 F 0 "#PWR05" H 6600 4450 50  0001 C CNN
@@ -217,7 +213,7 @@ PANEL_SW
 Wire Wire Line
 	6725 3900 6625 3900
 $Comp
-L Conn_02x05_Odd_Even J1
+L open-automation:Conn_02x05_Odd_Even J1
 U 1 1 59C6C1C0
 P 8400 3750
 F 0 "J1" H 8450 4050 50  0000 C CNN
@@ -232,7 +228,7 @@ SCL
 Text GLabel 3350 3925 3    60   Input ~ 0
 SDA
 $Comp
-L R_10k R10
+L open-automation:R_10k R10
 U 1 1 59C83F25
 P 3450 3700
 F 0 "R10" V 3450 3700 50  0000 C CNN
@@ -244,7 +240,7 @@ F 4 "RC0603JR-0710KL" V 3630 3800 60  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L R_10k R9
+L open-automation:R_10k R9
 U 1 1 59C83F7C
 P 3350 3700
 F 0 "R9" V 3350 3700 50  0000 C CNN
@@ -268,7 +264,7 @@ Text GLabel 3350 3425 1    60   Input ~ 0
 Text GLabel 3450 3425 1    60   Input ~ 0
 3V3
 $Comp
-L C_10uF C4
+L open-automation:C_10uF C4
 U 1 1 5A10664F
 P 2425 3775
 F 0 "C4" H 2450 3875 50  0000 L CNN
@@ -282,7 +278,7 @@ $EndComp
 Wire Wire Line
 	2425 3625 2425 3525
 Wire Wire Line
-	2425 3525 2825 3525
+	2425 3525 2625 3525
 Wire Wire Line
 	2625 3525 2625 3400
 Wire Wire Line
@@ -296,4 +292,10 @@ Wire Notes Line
 	3000 3150 3000 4275
 Wire Notes Line
 	3000 4275 2075 4275
+Wire Wire Line
+	2625 3975 2825 3975
+Wire Wire Line
+	6175 4700 6175 4750
+Wire Wire Line
+	2625 3525 2825 3525
 $EndSCHEMATC

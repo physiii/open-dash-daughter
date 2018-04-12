@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -105,16 +106,16 @@ F 3 "" H 3050 4125 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3900 1500 3800 1500
+	3900 1500 3850 1500
 Wire Wire Line
 	3800 1400 3800 1500
 Wire Wire Line
 	2725 1400 2850 1400
 Connection ~ 3800 1400
 Wire Wire Line
-	3750 1800 3900 1800
+	3750 1800 3850 1800
 Wire Wire Line
-	3900 1700 3550 1700
+	3900 1700 3850 1700
 Wire Wire Line
 	2850 1450 2850 1400
 Connection ~ 2850 1400
@@ -150,9 +151,9 @@ Wire Wire Line
 Wire Wire Line
 	3050 4025 3050 4125
 Wire Wire Line
-	3675 2350 3900 2350
+	3675 2350 3850 2350
 Wire Wire Line
-	3600 2250 3900 2250
+	3600 2250 3850 2250
 $Comp
 L Device:C C12
 U 1 1 5AC7CAB7
@@ -170,9 +171,9 @@ Wire Wire Line
 Wire Wire Line
 	3525 2575 3525 2100
 Wire Wire Line
-	3525 2100 3900 2100
+	3525 2100 3850 2100
 Wire Wire Line
-	3900 2000 3450 2000
+	3900 2000 3850 2000
 Wire Wire Line
 	3450 2000 3450 2325
 Wire Wire Line
@@ -242,7 +243,7 @@ F 4 "RC0603JR-0710KL" V 2700 3650 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3800 1400 3900 1400
+	3800 1400 3850 1400
 Wire Wire Line
 	2850 1400 3175 1400
 Wire Wire Line
@@ -273,4 +274,28 @@ Text HLabel 5225 2100 2    60   Input ~ 0
 R_AUDIO_OUT-
 Text HLabel 2425 3650 0    60   Input ~ 0
 STBY_AUDIO_AMP
+Connection ~ 3850 1500
+Wire Wire Line
+	3850 1500 3800 1500
+Connection ~ 3850 2000
+Wire Wire Line
+	3850 2000 3450 2000
+Connection ~ 3850 2250
+Wire Wire Line
+	3850 2250 3900 2250
+Connection ~ 3850 2350
+Wire Wire Line
+	3850 2350 3900 2350
+Connection ~ 3850 1800
+Wire Wire Line
+	3850 1800 3900 1800
+Connection ~ 3850 1700
+Wire Wire Line
+	3850 1700 3550 1700
+Connection ~ 3850 2100
+Wire Wire Line
+	3850 2100 3900 2100
+Connection ~ 3850 1400
+Wire Wire Line
+	3850 1400 3900 1400
 $EndSCHEMATC

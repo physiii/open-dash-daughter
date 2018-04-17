@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 11
+Sheet 1 13
 Title ""
 Date ""
 Rev ""
@@ -88,7 +88,7 @@ F9 "R_AUDIO_OUT-" I R 4150 5200 50
 F10 "STBY_AUDIO_AMP" I L 2750 4700 50 
 $EndSheet
 $Sheet
-S 3100 600  1400 950 
+S 9100 750  1400 950 
 U 5ABD1850
 F0 "video mixer" 50
 F1 "video-mixer.sch" 50
@@ -171,6 +171,37 @@ Entry Wire Line
 	2600 4350 2700 4450
 Wire Wire Line
 	2750 4450 2700 4450
+$Sheet
+S 1000 4300 1400 850 
+U 5AD64A7B
+F0 "switches" 50
+F1 "switches.sch" 50
+F2 "V_USB" I R 2400 4450 50 
+F3 "TXD" I R 2400 4800 50 
+F4 "RXD" I R 2400 4900 50 
+F5 "FACTORY" I L 1000 4450 50 
+F6 "EN" I L 1000 4550 50 
+F7 "PROG" I L 1000 4650 50 
+F8 "3V3" I R 2400 4350 50 
+$EndSheet
+$Sheet
+S 1150 3200 1250 850 
+U 5AD64B22
+F0 "thermometer" 50
+F1 "thermometer.sch" 50
+F2 "5V" I R 2400 3300 50 
+F3 "IO17" I R 2400 3400 50 
+$EndSheet
+Entry Wire Line
+	2500 3300 2600 3400
+Entry Wire Line
+	2500 4350 2600 4450
+Entry Wire Line
+	3050 3000 3150 3100
+Wire Wire Line
+	2400 3300 2500 3300
+Wire Wire Line
+	2400 4350 2500 4350
 Wire Bus Line
 	2600 2100 2600 4550
 $EndSCHEMATC

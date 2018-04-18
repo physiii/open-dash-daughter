@@ -53,7 +53,7 @@ F0 "audio amplifier" 50
 F1 "audio-amplifier.sch" 50
 $EndSheet
 $Sheet
-S 3100 600  1400 950 
+S 2600 4200 1400 950 
 U 5ABD1850
 F0 "video mixer" 50
 F1 "video-mixer.sch" 50
@@ -76,66 +76,4 @@ U 5ABE8D90
 F0 "composite input" 50
 F1 "composite-input.sch" 50
 $EndSheet
-Entry Wire Line
-	2500 2000 2600 2100
-Entry Wire Line
-	2500 2100 2600 2200
-Entry Wire Line
-	2500 2250 2600 2350
-Entry Wire Line
-	2500 2350 2600 2450
-Entry Wire Line
-	2500 2500 2600 2600
-Entry Wire Line
-	2500 2650 2600 2750
-Entry Wire Line
-	2500 2800 2600 2900
-Wire Wire Line
-	2500 2000 2400 2000
-Wire Wire Line
-	2400 2100 2500 2100
-Wire Wire Line
-	2500 2250 2400 2250
-Wire Wire Line
-	2400 2350 2500 2350
-Wire Wire Line
-	2500 2500 2400 2500
-Wire Wire Line
-	2400 2650 2500 2650
-Wire Wire Line
-	2500 2800 2400 2800
-Entry Wire Line
-	2600 2200 2700 2300
-Entry Wire Line
-	2600 2300 2700 2400
-Entry Wire Line
-	2600 2100 2700 2200
-Wire Wire Line
-	2700 2200 2750 2200
-Wire Wire Line
-	2750 2300 2700 2300
-Wire Wire Line
-	2750 2400 2700 2400
-Entry Wire Line
-	2600 2400 2700 2500
-Wire Wire Line
-	2700 2500 2750 2500
-Entry Wire Line
-	2600 3200 2700 3300
-Entry Wire Line
-	2600 3300 2700 3400
-Entry Wire Line
-	2600 3400 2700 3500
-Wire Wire Line
-	2700 3300 2750 3300
-Wire Wire Line
-	2750 3400 2700 3400
-Wire Wire Line
-	2700 3500 2750 3500
-Entry Wire Line
-	2600 4350 2700 4450
-Wire Wire Line
-	2750 4450 2700 4450
-Wire Bus Line
-	2600 2100 2600 4550
 $EndSCHEMATC

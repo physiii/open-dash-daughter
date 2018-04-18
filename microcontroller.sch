@@ -6,7 +6,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 3 13
+Sheet 3 11
 Title ""
 Date ""
 Rev ""
@@ -17,7 +17,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:GND #PWR021
+L GND #PWR021
 U 1 1 59097974
 P 4825 2750
 F 0 "#PWR021" H 4825 2500 50  0001 C CNN
@@ -27,8 +27,18 @@ F 3 "" H 4825 2750 50  0000 C CNN
 	1    4825 2750
 	-1   0    0    1   
 $EndComp
+Text GLabel 4775 4100 0    60   Input ~ 0
+FACTORY
+Text GLabel 6725 3050 2    60   Input ~ 0
+RXD
+Text GLabel 6725 2950 2    60   Input ~ 0
+TXD
+Text GLabel 6725 4100 2    60   Input ~ 0
+PROG
+Text GLabel 6175 4750 3    60   Input ~ 0
+IO2
 $Comp
-L open-automation:ESP-WROOM-32 U4
+L ESP-WROOM-32 U4
 U 1 1 590979AF
 P 5775 3450
 F 0 "U4" H 6325 2350 60  0000 C CNN
@@ -38,8 +48,12 @@ F 3 "https://www.espressif.com/sites/default/files/documentation/esp_wroom_32_da
 	1    5775 3450
 	1    0    0    -1  
 $EndComp
+Text GLabel 6725 3500 2    60   Input ~ 0
+SCL
+Text GLabel 6725 3600 2    60   Input ~ 0
+SDA
 $Comp
-L open-automation:GND #PWR022
+L GND #PWR022
 U 1 1 590979B0
 P 8150 3500
 F 0 "#PWR022" H 8150 3250 50  0001 C CNN
@@ -49,8 +63,16 @@ F 3 "" H 8150 3500 50  0000 C CNN
 	1    8150 3500
 	-1   0    0    1   
 $EndComp
+Text GLabel 8100 3650 0    60   Input ~ 0
+3V3
+Text GLabel 8800 3850 2    60   Input ~ 0
+RXD
+Text GLabel 8800 3750 2    60   Input ~ 0
+TXD
+Text GLabel 8800 3650 2    60   Input ~ 0
+5V
 $Comp
-L open-automation:GND #PWR023
+L GND #PWR023
 U 1 1 590979B2
 P 8750 3500
 F 0 "#PWR023" H 8750 3250 50  0001 C CNN
@@ -60,10 +82,12 @@ F 3 "" H 8750 3500 50  0000 C CNN
 	1    8750 3500
 	-1   0    0    1   
 $EndComp
+Text GLabel 6725 3800 2    60   Input ~ 0
+POWER_EN
 Text Label 4200 1025 0    197  ~ 0
 Microcontroller
 $Comp
-L open-automation:C_1uF C8
+L C_1uF C8
 U 1 1 59C55B03
 P 2825 3775
 F 0 "C8" H 2825 3875 50  0000 L CNN
@@ -75,7 +99,7 @@ F 4 "CC0603ZRY5V7BB105" H 2950 3975 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR024
+L GND #PWR024
 U 1 1 59C55B05
 P 2625 4025
 F 0 "#PWR024" H 2625 3775 50  0001 C CNN
@@ -85,10 +109,16 @@ F 3 "" H 2625 4025 50  0000 C CNN
 	1    2625 4025
 	1    0    0    -1  
 $EndComp
+Text GLabel 2625 3400 1    60   Input ~ 0
+3V3
 Text Notes 2275 4400 0    60   ~ 0
 Bypass CAPs
+Text GLabel 8100 3750 0    60   Input ~ 0
+PROG
+Text GLabel 8100 3850 0    60   Input ~ 0
+FACTORY
 $Comp
-L open-automation:R_10k R12
+L R_10k R12
 U 1 1 59C609F8
 P 6400 4700
 F 0 "R12" V 6400 4700 50  0000 C CNN
@@ -100,7 +130,7 @@ F 4 "RC0603JR-0710KL" V 6580 4800 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:GND #PWR025
+L GND #PWR025
 U 1 1 59C60A9D
 P 6600 4700
 F 0 "#PWR025" H 6600 4450 50  0001 C CNN
@@ -110,8 +140,22 @@ F 3 "" H 6600 4700 50  0000 C CNN
 	1    6600 4700
 	0    -1   -1   0   
 $EndComp
+Text GLabel 4775 2900 0    60   Input ~ 0
+3V3
+Text GLabel 4775 3000 0    60   Input ~ 0
+EN
+Text GLabel 8100 3950 0    60   Input ~ 0
+SCL
+Text GLabel 8800 3950 2    60   Input ~ 0
+SDA
+Text GLabel 6725 3900 2    60   Input ~ 0
+PANEL_SW
+Text GLabel 3450 3925 3    60   Input ~ 0
+SCL
+Text GLabel 3350 3925 3    60   Input ~ 0
+SDA
 $Comp
-L open-automation:R_10k R11
+L R_10k R11
 U 1 1 59C83F25
 P 3450 3700
 F 0 "R11" V 3450 3700 50  0000 C CNN
@@ -123,7 +167,7 @@ F 4 "RC0603JR-0710KL" V 3630 3800 60  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L open-automation:R_10k R10
+L R_10k R10
 U 1 1 59C83F7C
 P 3350 3700
 F 0 "R10" V 3350 3700 50  0000 C CNN
@@ -134,8 +178,12 @@ F 4 "RC0603JR-0710KL" V 3530 3800 60  0001 C CNN "Part Number"
 	1    3350 3700
 	-1   0    0    1   
 $EndComp
+Text GLabel 3350 3425 1    60   Input ~ 0
+3V3
+Text GLabel 3450 3425 1    60   Input ~ 0
+3V3
 $Comp
-L open-automation:C_10uF C7
+L C_10uF C7
 U 1 1 5A10664F
 P 2425 3775
 F 0 "C7" H 2450 3875 50  0000 L CNN
@@ -146,8 +194,12 @@ F 4 "GRM188R61A106ME69D" H 2550 3975 60  0001 C CNN "Part Number"
 	1    2425 3775
 	1    0    0    -1  
 $EndComp
+Text GLabel 4850 5250 0    60   Input ~ 0
+EN_5V_POWER
+Text GLabel 4850 5400 0    60   Input ~ 0
+EN_8V_POWER
 $Comp
-L open-automation:Conn_02x05_Odd_Even J1
+L Conn_02x05_Odd_Even J1
 U 1 1 5AC7372F
 P 8400 3750
 F 0 "J1" H 8450 4050 50  0000 C CNN
@@ -157,6 +209,10 @@ F 3 "" H 8400 3750 50  0001 C CNN
 	1    8400 3750
 	1    0    0    -1  
 $EndComp
+Text GLabel 4850 5550 0    60   Input ~ 0
+MUTE_AUDIO_AMP
+Text GLabel 4850 5700 0    60   Input ~ 0
+STBY_AUDIO_AMP
 Wire Wire Line
 	8750 3550 8750 3500
 Wire Wire Line
@@ -186,7 +242,7 @@ Wire Wire Line
 Wire Wire Line
 	6625 4100 6725 4100
 Wire Wire Line
-	6175 4650 6175 4700
+	6175 4650 6175 4750
 Wire Wire Line
 	4775 3000 4875 3000
 Wire Wire Line
@@ -200,7 +256,7 @@ Wire Wire Line
 Wire Wire Line
 	2425 3925 2425 3975
 Wire Wire Line
-	2425 3975 2625 3975
+	2425 3975 2825 3975
 Wire Wire Line
 	2825 3975 2825 3925
 Wire Wire Line
@@ -232,7 +288,7 @@ Wire Wire Line
 Wire Wire Line
 	2425 3625 2425 3525
 Wire Wire Line
-	2425 3525 2625 3525
+	2425 3525 2825 3525
 Wire Wire Line
 	2625 3525 2625 3400
 Wire Wire Line
@@ -254,66 +310,4 @@ Wire Wire Line
 	4850 5550 5150 5550
 Wire Wire Line
 	4850 5700 5150 5700
-Wire Wire Line
-	2625 3975 2825 3975
-Wire Wire Line
-	6175 4700 6175 4750
-Wire Wire Line
-	2625 3525 2825 3525
-Text HLabel 3350 3425 1    60   Input ~ 0
-3V3
-Text HLabel 3450 3425 1    60   Input ~ 0
-3V3
-Text HLabel 3450 3925 3    60   Input ~ 0
-SCL
-Text HLabel 3350 3925 3    60   Input ~ 0
-SDA
-Text HLabel 2625 3400 1    60   Input ~ 0
-3V3
-Text HLabel 4850 5250 0    60   Input ~ 0
-EN_5V_POWER
-Text HLabel 4850 5400 0    60   Input ~ 0
-EN_8V_POWER
-Text HLabel 4850 5550 0    60   Input ~ 0
-MUTE_AUDIO_AMP
-Text HLabel 4850 5700 0    60   Input ~ 0
-STBY_AUDIO_AMP
-Text HLabel 6175 4750 3    60   Input ~ 0
-IO2
-Text HLabel 6725 4100 2    60   Input ~ 0
-PROG
-Text HLabel 6725 3900 2    60   Input ~ 0
-PANEL_SW
-Text HLabel 6725 3800 2    60   Input ~ 0
-POWER_EN
-Text HLabel 6725 3600 2    60   Input ~ 0
-SDA
-Text HLabel 6725 3500 2    60   Input ~ 0
-SCL
-Text HLabel 6725 3050 2    60   Input ~ 0
-RXD
-Text HLabel 6725 2950 2    60   Input ~ 0
-TXD
-Text HLabel 8100 3650 0    60   Input ~ 0
-3V3
-Text HLabel 8100 3750 0    60   Input ~ 0
-PROG
-Text HLabel 8100 3850 0    60   Input ~ 0
-FACTORY
-Text HLabel 8100 3950 0    60   Input ~ 0
-SCL
-Text HLabel 8800 3650 2    60   Input ~ 0
-5V
-Text HLabel 8800 3750 2    60   Input ~ 0
-TXD
-Text HLabel 8800 3850 2    60   Input ~ 0
-RXD
-Text HLabel 8800 3950 2    60   Input ~ 0
-SDA
-Text HLabel 4775 4100 0    60   Input ~ 0
-FACTORY
-Text HLabel 4775 2900 0    60   Input ~ 0
-3V3
-Text HLabel 4775 3000 0    60   Input ~ 0
-ESP_EN
 $EndSCHEMATC

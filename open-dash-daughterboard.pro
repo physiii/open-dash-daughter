@@ -1,12 +1,4 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-update=4/17/2018 12:21:21 PM
-=======
 update=Tue 10 Apr 2018 15:36:18 CDT
->>>>>>> lawrence_test
-=======
-update=4/6/2018 1:42:54 PM
->>>>>>> parent of 5eeefb6... Backup before switching to lawrence-test branch
 version=1
 last_client=kicad
 [pcbnew]
@@ -31,14 +23,6 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-<<<<<<< HEAD
-[general]
-<<<<<<< HEAD
-version=1
-[eeschema]
-version=1
-LibDir=
-=======
 version=1
 [eeschema]
 version=1
@@ -53,15 +37,3 @@ NetFmtName=
 SpiceAjustPassiveValues=0
 LabSize=50
 ERC_TestSimilarLabels=1
->>>>>>> lawrence_test
-=======
-[eeschema]
-version=1
-LibDir=libraries;../kicad-parts
-[eeschema/libraries]
-LibName1=device
-LibName2=/home/physiii/circuits/kicad-parts/libraries/open-automation
-LibName3=libraries/open-automation
-[general]
-version=1
->>>>>>> parent of 5eeefb6... Backup before switching to lawrence-test branch

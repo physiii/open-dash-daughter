@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 7 11
+Sheet 7 13
 Title ""
 Date ""
 Rev ""
@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L TDA7297 U8
+L open-automation:TDA7297 U8
 U 1 1 5AC797FB
 P 4500 1750
 F 0 "U8" H 4150 1000 60  0000 C CNN
@@ -25,10 +25,8 @@ F 3 "https://www.digikey.com/product-detail/en/stmicroelectronics/TDA7297/497-39
 	1    4500 1750
 	1    0    0    -1  
 $EndComp
-Text GLabel 2725 1400 0    60   Input ~ 0
-8V
 $Comp
-L AGND #PWR033
+L open-automation:AGND #PWR033
 U 1 1 5AC7B29E
 P 3750 1800
 F 0 "#PWR033" H 3750 1550 50  0001 C CNN
@@ -39,7 +37,7 @@ F 3 "" H 3750 1800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR034
+L open-automation:GND #PWR034
 U 1 1 5AC7B2BE
 P 2850 1850
 F 0 "#PWR034" H 2850 1600 50  0001 C CNN
@@ -50,7 +48,7 @@ F 3 "" H 2850 1850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C14
+L Device:C C14
 U 1 1 5AC7B472
 P 2850 1600
 F 0 "C14" H 2875 1700 50  0000 L CNN
@@ -62,7 +60,7 @@ F 4 "16YXJ470M8X11.5" H 2850 1600 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L C C17
+L Device:C C17
 U 1 1 5AC7B4BE
 P 3175 1600
 F 0 "C17" H 3200 1700 50  0000 L CNN
@@ -73,12 +71,8 @@ F 4 "CL10B104KA8NFNC" H 3175 1600 60  0001 C CNN "Part Number"
 	1    3175 1600
 	1    0    0    -1  
 $EndComp
-Text GLabel 2425 2875 0    60   Input ~ 0
-MUTE_AUDIO_AMP
-Text GLabel 2425 3650 0    60   Input ~ 0
-STBY_AUDIO_AMP
 $Comp
-L R R14
+L Device:R R14
 U 1 1 5AC7BCAE
 P 2700 2875
 F 0 "R14" V 2780 2875 50  0000 C CNN
@@ -90,7 +84,7 @@ F 4 "RC0603JR-0710KL" V 2700 2875 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L GND #PWR035
+L open-automation:GND #PWR035
 U 1 1 5AC7C381
 P 3025 3325
 F 0 "#PWR035" H 3025 3075 50  0001 C CNN
@@ -101,7 +95,7 @@ F 3 "" H 3025 3325 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR036
+L open-automation:GND #PWR036
 U 1 1 5AC7C45C
 P 3050 4125
 F 0 "#PWR036" H 3050 3875 50  0001 C CNN
@@ -112,16 +106,16 @@ F 3 "" H 3050 4125 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3900 1500 3800 1500
+	3900 1500 3850 1500
 Wire Wire Line
 	3800 1400 3800 1500
 Wire Wire Line
-	2725 1400 3900 1400
+	2725 1400 2850 1400
 Connection ~ 3800 1400
 Wire Wire Line
-	3750 1800 3900 1800
+	3750 1800 3850 1800
 Wire Wire Line
-	3900 1700 3550 1700
+	3900 1700 3850 1700
 Wire Wire Line
 	2850 1450 2850 1400
 Connection ~ 2850 1400
@@ -129,9 +123,9 @@ Wire Wire Line
 	3175 1450 3175 1400
 Connection ~ 3175 1400
 Wire Wire Line
-	2850 1750 2850 1850
+	2850 1750 2850 1800
 Wire Wire Line
-	2850 1800 3550 1800
+	2850 1800 3175 1800
 Wire Wire Line
 	3175 1800 3175 1750
 Connection ~ 2850 1800
@@ -143,12 +137,12 @@ Wire Wire Line
 Wire Wire Line
 	2550 2875 2425 2875
 Wire Wire Line
-	2850 3650 3675 3650
+	2850 3650 3050 3650
 Wire Wire Line
 	3050 3650 3050 3725
 Connection ~ 3050 3650
 Wire Wire Line
-	2850 2875 3600 2875
+	2850 2875 3025 2875
 Wire Wire Line
 	3025 2875 3025 2950
 Connection ~ 3025 2875
@@ -157,11 +151,11 @@ Wire Wire Line
 Wire Wire Line
 	3050 4025 3050 4125
 Wire Wire Line
-	3675 2350 3900 2350
+	3675 2350 3850 2350
 Wire Wire Line
-	3600 2250 3900 2250
+	3600 2250 3850 2250
 $Comp
-L C C12
+L Device:C C12
 U 1 1 5AC7CAB7
 P 2750 2325
 F 0 "C12" V 2800 2400 50  0000 L CNN
@@ -177,9 +171,9 @@ Wire Wire Line
 Wire Wire Line
 	3525 2575 3525 2100
 Wire Wire Line
-	3525 2100 3900 2100
+	3525 2100 3850 2100
 Wire Wire Line
-	3900 2000 3450 2000
+	3900 2000 3850 2000
 Wire Wire Line
 	3450 2000 3450 2325
 Wire Wire Line
@@ -188,10 +182,6 @@ Wire Wire Line
 	2600 2325 2400 2325
 Wire Wire Line
 	2600 2575 2400 2575
-Text GLabel 2400 2325 0    60   Input ~ 0
-L_AUDIO_IN
-Text GLabel 2400 2575 0    60   Input ~ 0
-R_AUDIO_IN
 Wire Wire Line
 	5050 1650 5225 1650
 Wire Wire Line
@@ -200,20 +190,12 @@ Wire Wire Line
 	5050 2000 5225 2000
 Wire Wire Line
 	5050 2100 5225 2100
-Text GLabel 5225 1650 2    60   Input ~ 0
-L_AUDIO_OUT+
-Text GLabel 5225 1750 2    60   Input ~ 0
-L_AUDIO_OUT-
-Text GLabel 5225 2000 2    60   Input ~ 0
-R_AUDIO_OUT+
-Text GLabel 5225 2100 2    60   Input ~ 0
-R_AUDIO_OUT-
 Wire Wire Line
 	3600 2875 3600 2250
 Wire Wire Line
 	3675 3650 3675 2350
 $Comp
-L C C13
+L Device:C C13
 U 1 1 5AC80604
 P 2750 2575
 F 0 "C13" V 2800 2650 50  0000 L CNN
@@ -225,7 +207,7 @@ F 4 "CL10B224KO8NNNC" V 2750 2575 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L C C15
+L Device:C C15
 U 1 1 5AC80ED0
 P 3025 3100
 F 0 "C15" H 3150 3075 50  0000 L CNN
@@ -237,7 +219,7 @@ F 4 "CL10B105MO8NNWC" V 3025 3100 60  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L CP C16
+L Device:C C16
 U 1 1 5AC81549
 P 3050 3875
 F 0 "C16" H 3075 3975 50  0000 L CNN
@@ -249,7 +231,7 @@ F 4 "ESH106M050AC3AA" H 3050 3875 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R R15
+L Device:R R15
 U 1 1 5AC82122
 P 2700 3650
 F 0 "R15" V 2780 3650 50  0000 C CNN
@@ -260,4 +242,60 @@ F 4 "RC0603JR-0710KL" V 2700 3650 60  0001 C CNN "Part Number"
 	1    2700 3650
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	3800 1400 3850 1400
+Wire Wire Line
+	2850 1400 3175 1400
+Wire Wire Line
+	3175 1400 3800 1400
+Wire Wire Line
+	2850 1800 2850 1850
+Wire Wire Line
+	3175 1800 3550 1800
+Wire Wire Line
+	3050 3650 3675 3650
+Wire Wire Line
+	3025 2875 3600 2875
+Text HLabel 2725 1400 0    60   Input ~ 0
+8V
+Text HLabel 2400 2325 0    60   Input ~ 0
+L_AUDIO_IN
+Text HLabel 2400 2575 0    60   Input ~ 0
+R_AUDIO_IN
+Text HLabel 2425 2875 0    60   Input ~ 0
+MUTE_AUDIO_AMP
+Text HLabel 5225 1650 2    60   Input ~ 0
+L_AUDIO_OUT+
+Text HLabel 5225 2000 2    60   Input ~ 0
+R_AUDIO_OUT+
+Text HLabel 5225 1750 2    60   Input ~ 0
+L_AUDIO_OUT-
+Text HLabel 5225 2100 2    60   Input ~ 0
+R_AUDIO_OUT-
+Text HLabel 2425 3650 0    60   Input ~ 0
+STBY_AUDIO_AMP
+Connection ~ 3850 1500
+Wire Wire Line
+	3850 1500 3800 1500
+Connection ~ 3850 2000
+Wire Wire Line
+	3850 2000 3450 2000
+Connection ~ 3850 2250
+Wire Wire Line
+	3850 2250 3900 2250
+Connection ~ 3850 2350
+Wire Wire Line
+	3850 2350 3900 2350
+Connection ~ 3850 1800
+Wire Wire Line
+	3850 1800 3900 1800
+Connection ~ 3850 1700
+Wire Wire Line
+	3850 1700 3550 1700
+Connection ~ 3850 2100
+Wire Wire Line
+	3850 2100 3900 2100
+Connection ~ 3850 1400
+Wire Wire Line
+	3850 1400 3900 1400
 $EndSCHEMATC

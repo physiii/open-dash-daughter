@@ -2,9 +2,9 @@ EESchema Schematic File Version 4
 LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr USLetter 11000 8500
 encoding utf-8
-Sheet 2 11
+Sheet 2 13
 Title ""
 Date ""
 Rev ""
@@ -14,10 +14,8 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text GLabel 3025 975  0    60   Input ~ 0
-V_MAIN
 $Comp
-L CP C4
+L Device:C C4
 U 1 1 5968D146
 P 5350 1325
 F 0 "C4" H 5375 1425 50  0000 L CNN
@@ -29,7 +27,7 @@ F 4 "25YXJ1000M10X20" H 5350 1325 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L L L1
+L open-automation:L L1
 U 1 1 5969017D
 P 5025 1075
 F 0 "L1" V 4975 1075 50  0001 C CNN
@@ -41,7 +39,7 @@ F 4 "Wurth 7447709680" V 5025 1075 10  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR01
+L open-automation:GND #PWR01
 U 1 1 59690AC9
 P 5350 1525
 F 0 "#PWR01" H 5350 1275 50  0001 C CNN
@@ -52,7 +50,7 @@ F 3 "" H 5350 1525 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR02
+L open-automation:GND #PWR02
 U 1 1 59690B3F
 P 3275 1575
 F 0 "#PWR02" H 3275 1325 50  0001 C CNN
@@ -63,7 +61,7 @@ F 3 "" H 3275 1575 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR03
+L open-automation:GND #PWR03
 U 1 1 59690D86
 P 4750 1475
 F 0 "#PWR03" H 4750 1225 50  0001 C CNN
@@ -74,7 +72,7 @@ F 3 "" H 4750 1475 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L D_Schottky D2
+L open-automation:D_Schottky D2
 U 1 1 59690FC6
 P 4750 1275
 F 0 "D2" H 4750 1375 50  0000 C CNN
@@ -85,10 +83,8 @@ F 4 "CDBA540-HF" H 4750 1275 60  0001 C CNN "Part Number"
 	1    4750 1275
 	0    1    1    0   
 $EndComp
-Text GLabel 1975 975  2    60   Input ~ 0
-BATTERY
 $Comp
-L GND #PWR04
+L open-automation:GND #PWR04
 U 1 1 59757643
 P 1400 1450
 F 0 "#PWR04" H 1400 1200 50  0001 C CNN
@@ -99,7 +95,7 @@ F 3 "" H 1400 1450 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L LED D5
+L open-automation:LED D5
 U 1 1 598F7872
 P 6825 1300
 F 0 "D5" H 6825 1400 50  0000 C CNN
@@ -111,7 +107,7 @@ F 4 "SML-D12M8WT86" H 6825 1300 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR05
+L open-automation:GND #PWR05
 U 1 1 598F7A99
 P 6825 1850
 F 0 "#PWR05" H 6825 1600 50  0001 C CNN
@@ -122,18 +118,18 @@ F 3 "" H 6825 1850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR06
+L power:GND #PWR06
 U 1 1 59C5AB58
-P 9125 1125
-F 0 "#PWR06" H 9125 875 50  0001 C CNN
-F 1 "GND" H 9125 975 50  0000 C CNN
-F 2 "" H 9125 1125 50  0000 C CNN
-F 3 "" H 9125 1125 50  0000 C CNN
-	1    9125 1125
+P 8425 2425
+F 0 "#PWR06" H 8425 2175 50  0001 C CNN
+F 1 "GND" H 8425 2275 50  0000 C CNN
+F 2 "" H 8425 2425 50  0000 C CNN
+F 3 "" H 8425 2425 50  0000 C CNN
+	1    8425 2425
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_10k R9
+L open-automation:R_10k R9
 U 1 1 59E4131F
 P 6825 1650
 F 0 "R9" V 6825 1650 50  0000 C CNN
@@ -144,20 +140,14 @@ F 4 "RC0603FR-071K4L" V 7005 1750 60  0001 C CNN "Part Number"
 	1    6825 1650
 	1    0    0    -1  
 $EndComp
-Text Notes 10050 1050 0    60   ~ 0
+Text Notes 9350 2350 0    60   ~ 0
 Battery Passthrough
 Text Notes 775  800  0    60   ~ 0
 12V Battery Input
 Text Notes 2675 825  0    60   ~ 0
 V_MAIN is after the current sense resistor.
-Text GLabel 7175 1075 2    60   Input ~ 0
-3V3
-Text GLabel 8850 975  0    60   Input ~ 0
-BATTERY
-Text GLabel 2975 2650 0    60   Input ~ 0
-V_MAIN
 $Comp
-L L L2
+L open-automation:L L2
 U 1 1 5AC413A9
 P 5900 2750
 F 0 "L2" V 5850 2750 50  0001 C CNN
@@ -169,7 +159,7 @@ F 4 "2100HT-101-H-RC" V 5900 2750 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L GND #PWR07
+L open-automation:GND #PWR07
 U 1 1 5AC413AF
 P 6175 3200
 F 0 "#PWR07" H 6175 2950 50  0001 C CNN
@@ -180,7 +170,7 @@ F 3 "" H 6175 3200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR08
+L open-automation:GND #PWR08
 U 1 1 5AC413B5
 P 3225 3175
 F 0 "#PWR08" H 3225 2925 50  0001 C CNN
@@ -191,7 +181,7 @@ F 3 "" H 3225 3175 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR09
+L open-automation:GND #PWR09
 U 1 1 5AC413BB
 P 5650 3150
 F 0 "#PWR09" H 5650 2900 50  0001 C CNN
@@ -201,12 +191,8 @@ F 3 "" H 5650 3150 50  0000 C CNN
 	1    5650 3150
 	1    0    0    -1  
 $EndComp
-Text GLabel 6925 2750 2    60   Input ~ 0
-5V
-Text GLabel 4125 2750 0    60   Input ~ 0
-EN_5V_POWER
 $Comp
-L R_10k R1
+L open-automation:R_10k R1
 U 1 1 5AC421CC
 P 4025 3025
 F 0 "R1" V 4025 3025 50  0000 C CNN
@@ -220,26 +206,22 @@ $EndComp
 Text Notes 6900 1675 0    60   ~ 0
 1mA current through LED
 $Comp
-L GND #PWR010
+L power:GND #PWR010
 U 1 1 5AC54EB6
-P 9150 1650
-F 0 "#PWR010" H 9150 1400 50  0001 C CNN
-F 1 "GND" H 9150 1500 50  0000 C CNN
-F 2 "" H 9150 1650 50  0000 C CNN
-F 3 "" H 9150 1650 50  0000 C CNN
-	1    9150 1650
+P 8450 2950
+F 0 "#PWR010" H 8450 2700 50  0001 C CNN
+F 1 "GND" H 8450 2800 50  0000 C CNN
+F 2 "" H 8450 2950 50  0000 C CNN
+F 3 "" H 8450 2950 50  0000 C CNN
+	1    8450 2950
 	1    0    0    -1  
 $EndComp
-Text GLabel 8875 1500 0    60   Input ~ 0
-5V
-Text Notes 10050 1575 0    60   ~ 0
+Text Notes 9350 2875 0    60   ~ 0
 Main Board 5V Supply
-Text Notes 8775 750  0    60   ~ 0
+Text Notes 8075 2050 0    60   ~ 0
 Main Board Connections
-Text GLabel 2950 4125 0    60   Input ~ 0
-V_MAIN
 $Comp
-L GND #PWR011
+L open-automation:GND #PWR011
 U 1 1 5AC637C2
 P 6325 4675
 F 0 "#PWR011" H 6325 4425 50  0001 C CNN
@@ -250,7 +232,7 @@ F 3 "" H 6325 4675 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR012
+L open-automation:GND #PWR012
 U 1 1 5AC637C8
 P 3200 4650
 F 0 "#PWR012" H 3200 4400 50  0001 C CNN
@@ -261,7 +243,7 @@ F 3 "" H 3200 4650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR013
+L open-automation:GND #PWR013
 U 1 1 5AC637CE
 P 5675 4675
 F 0 "#PWR013" H 5675 4425 50  0001 C CNN
@@ -271,12 +253,8 @@ F 3 "" H 5675 4675 50  0000 C CNN
 	1    5675 4675
 	1    0    0    -1  
 $EndComp
-Text GLabel 7075 4225 2    60   Input ~ 0
-8V
-Text GLabel 4125 4225 0    60   Input ~ 0
-EN_8V_POWER
 $Comp
-L R_10k R2
+L open-automation:R_10k R2
 U 1 1 5AC637FA
 P 4050 4450
 F 0 "R2" V 4050 4450 50  0000 C CNN
@@ -288,7 +266,7 @@ F 4 "RC0603JR-0710KL" V 4230 4550 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L R_10k R8
+L open-automation:R_10k R8
 U 1 1 5AC647A0
 P 6800 4875
 F 0 "R8" V 6800 4875 50  0000 C CNN
@@ -300,7 +278,7 @@ F 4 "RC0603FR-071K3L" V 6980 4975 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR014
+L open-automation:GND #PWR014
 U 1 1 5AC64EC6
 P 6800 5125
 F 0 "#PWR014" H 6800 4875 50  0001 C CNN
@@ -315,7 +293,7 @@ Text Label 6975 4675 0    60   ~ 0
 Text Label 5750 4125 0    60   ~ 0
 8V_Feedback
 $Comp
-L CP C2
+L Device:C C2
 U 1 1 5AC68E0B
 P 3225 2925
 F 0 "C2" V 3275 2975 50  0000 L CNN
@@ -327,7 +305,7 @@ F 4 "EKZN500ELL181MH20D" H 3225 2925 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C1
+L Device:C C1
 U 1 1 5AC6900B
 P 3200 4400
 F 0 "C1" V 3250 4450 50  0000 L CNN
@@ -339,7 +317,7 @@ F 4 "EKZN500ELL181MH20D" H 3200 4400 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L L L3
+L open-automation:L L3
 U 1 1 5AC6A697
 P 6000 4225
 F 0 "L3" V 5950 4225 50  0001 C CNN
@@ -351,7 +329,7 @@ F 4 "2100HT-101-H-RC" V 6000 4225 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L D_Schottky D3
+L open-automation:D_Schottky D3
 U 1 1 5AC6AF0A
 P 5650 2950
 F 0 "D3" H 5650 3050 50  0000 C CNN
@@ -363,7 +341,7 @@ F 4 "CDBA540-HF" H 5650 2950 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L D_Schottky D4
+L open-automation:D_Schottky D4
 U 1 1 5AC6B09E
 P 5675 4450
 F 0 "D4" H 5675 4550 50  0000 C CNN
@@ -375,7 +353,7 @@ F 4 "CDBA540-HF" H 5675 4450 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L CP C3
+L Device:C C3
 U 1 1 5AC6CB1C
 P 3275 1325
 F 0 "C3" V 3325 1375 50  0000 L CNN
@@ -387,7 +365,7 @@ F 4 "EKZN500ELL181MH20D" H 3275 1325 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C5
+L Device:C C5
 U 1 1 5AC6DA75
 P 6175 3000
 F 0 "C5" H 6200 3100 50  0000 L CNN
@@ -399,7 +377,7 @@ F 4 "25YXJ1000M10X20" H 6175 3000 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L CP C6
+L Device:C C6
 U 1 1 5AC6DAE1
 P 6325 4475
 F 0 "C6" H 6350 4575 50  0000 L CNN
@@ -411,7 +389,7 @@ F 4 "25YXJ1000M10X20" H 6325 4475 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR015
+L open-automation:GND #PWR015
 U 1 1 5AC73772
 P 4450 2950
 F 0 "#PWR015" H 4450 2700 50  0001 C CNN
@@ -421,10 +399,8 @@ F 3 "" H 4450 2950 50  0000 C CNN
 	1    4450 2950
 	1    0    0    -1  
 $EndComp
-Text GLabel 3700 3025 0    60   Input ~ 0
-3.3V
 $Comp
-L GND #PWR016
+L open-automation:GND #PWR016
 U 1 1 5AC740CE
 P 4475 4475
 F 0 "#PWR016" H 4475 4225 50  0001 C CNN
@@ -434,10 +410,8 @@ F 3 "" H 4475 4475 50  0000 C CNN
 	1    4475 4475
 	1    0    0    -1  
 $EndComp
-Text GLabel 3700 4450 0    60   Input ~ 0
-3.3V
 $Comp
-L LM2576 U3
+L open-automation:LM2576 U3
 U 1 1 5AC686EE
 P 5025 4225
 F 0 "U3" H 5375 4425 60  0000 C CNN
@@ -449,7 +423,7 @@ F 4 "LM2576SX-ADJ/NOPB" H 5025 4225 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L LM2576 U2
+L open-automation:LM2576 U2
 U 1 1 5AC68B48
 P 5000 2750
 F 0 "U2" H 5350 2950 60  0000 C CNN
@@ -461,7 +435,7 @@ F 4 "LM2576SX-ADJ/NOPB" H 5000 2750 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L LM2576 U1
+L open-automation:LM2576 U1
 U 1 1 5AC68BC4
 P 4100 1075
 F 0 "U1" H 4450 1275 60  0000 C CNN
@@ -490,7 +464,7 @@ Wire Wire Line
 Wire Wire Line
 	5175 1075 5350 1075
 Wire Wire Line
-	8850 975  9175 975 
+	8150 2275 8475 2275
 Wire Wire Line
 	3275 1175 3275 975 
 Connection ~ 3275 975 
@@ -507,9 +481,9 @@ Wire Wire Line
 Wire Wire Line
 	1350 975  1750 975 
 Wire Wire Line
-	9125 1125 9125 1075
+	8425 2425 8425 2375
 Wire Wire Line
-	9125 1075 9175 1075
+	8425 2375 8475 2375
 Wire Wire Line
 	5350 1075 5350 1175
 Connection ~ 5350 1075
@@ -545,11 +519,11 @@ Wire Wire Line
 Wire Wire Line
 	4450 2950 4450 2850
 Wire Wire Line
-	8875 1500 9200 1500
+	8175 2800 8500 2800
 Wire Wire Line
-	9150 1650 9150 1600
+	8450 2950 8450 2900
 Wire Wire Line
-	9150 1600 9200 1600
+	8450 2900 8500 2900
 Wire Wire Line
 	5675 4300 5675 4225
 Connection ~ 5675 4225
@@ -609,7 +583,7 @@ Wire Wire Line
 Wire Wire Line
 	3225 2650 3225 2775
 $Comp
-L R_10k R5
+L open-automation:R_10k R5
 U 1 1 5AC69CD6
 P 6650 2975
 F 0 "R5" V 6650 2975 50  0000 C CNN
@@ -621,7 +595,7 @@ F 4 "CRCW06037K15FKEA" V 6830 3075 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR017
+L open-automation:GND #PWR017
 U 1 1 5AC69CE3
 P 6650 3650
 F 0 "#PWR017" H 6650 3400 50  0001 C CNN
@@ -648,7 +622,7 @@ Wire Wire Line
 Text Label 5800 2650 0    60   ~ 0
 5V_Feedback
 $Comp
-L R_10k R3
+L open-automation:R_10k R3
 U 1 1 5AC6AB45
 P 5900 1300
 F 0 "R3" V 5900 1300 50  0000 C CNN
@@ -660,7 +634,7 @@ F 4 "RC0603FR-073K92L" V 6080 1400 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_10k R4
+L open-automation:R_10k R4
 U 1 1 5AC6AB4C
 P 5900 1725
 F 0 "R4" V 5900 1725 50  0000 C CNN
@@ -672,7 +646,7 @@ F 4 "RC0603FR-072K32L" V 6080 1825 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR018
+L open-automation:GND #PWR018
 U 1 1 5AC6AB52
 P 5900 1975
 F 0 "#PWR018" H 5900 1725 50  0001 C CNN
@@ -699,29 +673,29 @@ Wire Wire Line
 Text Label 4875 975  0    60   ~ 0
 3.3V_Feedback
 $Comp
-L CONN_01X02 BATT_OUT_1
+L open-automation:CONN_01X02 BATT_OUT_1
 U 1 1 5AC711D2
-P 9375 1025
-F 0 "BATT_OUT_1" H 9675 1000 50  0000 C CNN
-F 1 "CONN_01X02" H 9700 1100 50  0000 C CNN
-F 2 "open-automation:XT60" H 9375 1025 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 9375 1025 50  0001 C CNN
-	1    9375 1025
+P 8675 2325
+F 0 "BATT_OUT_1" H 8975 2300 50  0000 C CNN
+F 1 "CONN_01X02" H 9000 2400 50  0000 C CNN
+F 2 "open-automation:XT60" H 8675 2325 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 8675 2325 50  0001 C CNN
+	1    8675 2325
 	1    0    0    1   
 $EndComp
 $Comp
-L CONN_01X02 5V_OUT_1
+L open-automation:CONN_01X02 5V_OUT_1
 U 1 1 5AC715BC
-P 9400 1550
-F 0 "5V_OUT_1" H 9650 1525 50  0000 C CNN
-F 1 "CONN_01X02" H 9725 1625 50  0000 C CNN
-F 2 "open-automation:XT60" H 9400 1550 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 9400 1550 50  0001 C CNN
-	1    9400 1550
+P 8700 2850
+F 0 "5V_OUT_1" H 8950 2825 50  0000 C CNN
+F 1 "CONN_01X02" H 9025 2925 50  0000 C CNN
+F 2 "open-automation:XT60" H 8700 2850 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 8700 2850 50  0001 C CNN
+	1    8700 2850
 	1    0    0    1   
 $EndComp
 $Comp
-L CONN_01X02 BATT_IN_1
+L open-automation:CONN_01X02 BATT_IN_1
 U 1 1 5AC70F73
 P 1150 1025
 F 0 "BATT_IN_1" H 1400 1075 50  0000 C CNN
@@ -732,7 +706,7 @@ F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-
 	-1   0    0    -1  
 $EndComp
 $Comp
-L R_10k R6
+L open-automation:R_10k R6
 U 1 1 5AC777F6
 P 6650 3400
 F 0 "R6" V 6650 3400 50  0000 C CNN
@@ -744,7 +718,7 @@ F 4 "RC0603FR-072K32L" V 6830 3500 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L R_10k R7
+L open-automation:R_10k R7
 U 1 1 5AC77A5F
 P 6800 4450
 F 0 "R7" V 6800 4450 50  0000 C CNN
@@ -756,7 +730,7 @@ F 4 "CRCW06037K15FKEA" V 6980 4550 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L D_Zener D1
+L Device:D_Zener D1
 U 1 1 5AC6FF2B
 P 1750 1175
 F 0 "D1" H 1750 1275 50  0000 C CNN
@@ -776,8 +750,9 @@ Wire Wire Line
 	1750 1375 1400 1375
 Connection ~ 1400 1375
 $Comp
-L AGND #PWR019
+L open-automation:AGND #PWR019
 U 1 1 5AC7AABD
+<<<<<<< HEAD
 P 1625 2000
 AR Path="/5AC7AABD" Ref="#PWR019"  Part="1" 
 AR Path="/5A7BADB8/5AC7AABD" Ref="#PWR019"  Part="1" 
@@ -786,24 +761,118 @@ F 1 "AGND" H 1625 1850 50  0000 C CNN
 F 2 "" H 1625 2000 50  0000 C CNN
 F 3 "" H 1625 2000 50  0000 C CNN
 	1    1625 2000
+=======
+P 1700 2000
+F 0 "#PWR019" H 1700 1750 50  0001 C CNN
+F 1 "AGND" H 1700 1850 50  0000 C CNN
+F 2 "" H 1700 2000 50  0000 C CNN
+F 3 "" H 1700 2000 50  0000 C CNN
+	1    1700 2000
+>>>>>>> lawrence_test
 	1    0    0    -1  
 $EndComp
 $Comp
-L GND #PWR020
+L open-automation:GND #PWR020
 U 1 1 5AC7ACFB
-P 1400 2000
-F 0 "#PWR020" H 1400 1750 50  0001 C CNN
-F 1 "GND" H 1400 1850 50  0000 C CNN
-F 2 "" H 1400 2000 50  0000 C CNN
-F 3 "" H 1400 2000 50  0000 C CNN
-	1    1400 2000
+P 1450 2000
+F 0 "#PWR020" H 1450 1750 50  0001 C CNN
+F 1 "GND" H 1450 1850 50  0000 C CNN
+F 2 "" H 1450 2000 50  0000 C CNN
+F 3 "" H 1450 2000 50  0000 C CNN
+	1    1450 2000
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	1400 2000 1400 1875
+	4750 1075 4875 1075
 Wire Wire Line
-	1400 1875 1625 1875
+	3275 975  3600 975 
 Wire Wire Line
+	5350 1075 5900 1075
+Wire Wire Line
+	3550 1175 3550 1525
+Wire Wire Line
+	3275 1525 3275 1575
+Wire Wire Line
+	5650 2750 5750 2750
+Wire Wire Line
+	3225 2650 4500 2650
+Wire Wire Line
+	6175 2750 6650 2750
+Wire Wire Line
+	5675 4225 5850 4225
+Wire Wire Line
+	3200 4125 4525 4125
+Wire Wire Line
+	6325 4225 6800 4225
+Wire Wire Line
+	6800 4225 7075 4225
+Wire Wire Line
+	6800 4675 6800 4725
+Wire Wire Line
+	6825 1075 7175 1075
+Wire Wire Line
+	4250 2750 4500 2750
+Wire Wire Line
+	4300 4225 4525 4225
+Wire Wire Line
+	6650 3200 6650 3250
+Wire Wire Line
+	6650 2750 6925 2750
+Wire Wire Line
+	5900 1525 5900 1575
+Wire Wire Line
+	5900 1075 6825 1075
+Wire Wire Line
+	1750 975  1975 975 
+Wire Wire Line
+	1400 1375 1400 1450
+Text HLabel 7075 4225 2    60   Input ~ 0
+8V
+Text HLabel 6925 2750 2    60   Input ~ 0
+5V
+Text HLabel 8175 2800 0    60   Input ~ 0
+5V
+Text HLabel 8150 2275 0    60   Input ~ 0
+BATTERY
+Text HLabel 7175 1075 2    60   Input ~ 0
+3V3
+Text HLabel 1975 975  2    60   Input ~ 0
+BATTERY
+Text HLabel 3025 975  0    60   Input ~ 0
+V_MAIN
+Text HLabel 2975 2650 0    60   Input ~ 0
+V_MAIN
+Text HLabel 4125 2750 0    60   Input ~ 0
+EN_5V_POWER
+Text HLabel 3700 3025 0    60   Input ~ 0
+3V3
+Text HLabel 4125 4225 0    60   Input ~ 0
+EN_8V_POWER
+Text HLabel 3700 4450 0    60   Input ~ 0
+3V3
+Text HLabel 2950 4125 0    60   Input ~ 0
+V_MAIN
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ACFFB2D
+P 1200 2000
+F 0 "#PWR?" H 1200 1750 50  0001 C CNN
+F 1 "GND" H 1205 1827 50  0000 C CNN
+F 2 "" H 1200 2000 50  0000 C CNN
+F 3 "" H 1200 2000 50  0000 C CNN
+	1    1200 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 2000 1200 1850
+Wire Wire Line
+	1200 1850 1450 1850
+Wire Wire Line
+	1450 1850 1450 2000
+Wire Wire Line
+	1450 1850 1700 1850
+Wire Wire Line
+<<<<<<< HEAD
 	1625 1875 1625 2000
 Wire Wire Line
 	4750 1075 4875 1075
@@ -849,4 +918,8 @@ Wire Wire Line
 	1750 975  1975 975 
 Wire Wire Line
 	1400 1375 1400 1450
+=======
+	1700 1850 1700 2000
+Connection ~ 1450 1850
+>>>>>>> lawrence_test
 $EndSCHEMATC

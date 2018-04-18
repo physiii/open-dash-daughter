@@ -1,6 +1,8 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 2
+LIBS:device
+LIBS:open-automation
 LIBS:open-dash-daughterboard-cache
-EELAYER 26 0
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8

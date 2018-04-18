@@ -1,4 +1,4 @@
-update=Tue 10 Apr 2018 15:36:18 CDT
+update=4/6/2018 1:42:54 PM
 version=1
 last_client=kicad
 [pcbnew]
@@ -23,17 +23,12 @@ ModuleOutlineThickness=0.150000000000
 [cvpcb]
 version=1
 NetIExt=net
-version=1
 [eeschema]
 version=1
-LibDir=
-[schematic_editor]
+LibDir=libraries;../kicad-parts
+[eeschema/libraries]
+LibName1=device
+LibName2=/home/physiii/circuits/kicad-parts/libraries/open-automation
+LibName3=libraries/open-automation
+[general]
 version=1
-PageLayoutDescrFile=
-PlotDirectoryName=
-SubpartIdSeparator=0
-SubpartFirstId=65
-NetFmtName=
-SpiceAjustPassiveValues=0
-LabSize=50
-ERC_TestSimilarLabels=1

@@ -33,15 +33,4 @@ Wire Wire Line
 	9200 1750 8800 1750
 Wire Wire Line
 	8800 1850 9200 1850
-$Comp
-L MCU_ST_STM32:STM32F042C6Tx U?
-U 1 1 5ACF8CB8
-P 4500 2900
-F 0 "U?" H 4500 4878 50  0000 C CNN
-F 1 "STM32F042C6Tx" H 4500 4787 50  0000 C CNN
-F 2 "Package_QFP:LQFP-48_7x7mm_P0.5mm" H 7500 4575 50  0001 R TNN
-F 3 "http://www.st.com/st-web-ui/static/active/en/resource/technical/document/datasheet/DM00105814.pdf" H 4500 2900 50  0001 C CNN
-	1    4500 2900
-	1    0    0    -1  
-$EndComp
 $EndSCHEMATC

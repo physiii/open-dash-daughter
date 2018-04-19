@@ -196,8 +196,6 @@ Entry Wire Line
 	2500 3300 2600 3400
 Entry Wire Line
 	2500 4350 2600 4450
-Entry Wire Line
-	3050 3000 3150 3100
 Wire Wire Line
 	2400 3300 2500 3300
 Wire Wire Line

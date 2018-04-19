@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 12
+Sheet 1 13
 Title ""
 Date ""
 Rev ""
@@ -286,4 +286,10 @@ Wire Bus Line
 	4250 300  4250 7950
 Wire Bus Line
 	2300 250  2300 7500
+$Sheet
+S 5550 2050 1450 1000
+U 5AE2E67D
+F0 "GPS interface" 50
+F1 "GPS interface.sch" 50
+$EndSheet
 $EndSCHEMATC

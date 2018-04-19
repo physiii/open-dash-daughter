@@ -14,4 +14,573 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+$Comp
+L open-automation:Si4740 U?
+U 1 1 5ADA9622
+P 6500 3300
+F 0 "U?" H 6700 4050 50  0000 L CNN
+F 1 "Si4740" H 6600 3900 50  0000 L CNN
+F 2 "MODULE" H 6700 4050 50  0001 C CNN
+F 3 "DOCUMENTATION" H 6700 3850 50  0001 C CNN
+	1    6500 3300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5ADAF1C6
+P 2700 1250
+F 0 "L?" H 2753 1296 50  0000 L CNN
+F 1 "L" H 2753 1205 50  0000 L CNN
+F 2 "" H 2700 1250 50  0001 C CNN
+F 3 "~" H 2700 1250 50  0001 C CNN
+	1    2700 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5ADAF260
+P 2450 950
+F 0 "L?" V 2272 950 50  0000 C CNN
+F 1 "L" V 2363 950 50  0000 C CNN
+F 2 "" H 2450 950 50  0001 C CNN
+F 3 "~" H 2450 950 50  0001 C CNN
+	1    2450 950 
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5ADAF29F
+P 2950 950
+F 0 "L?" V 2772 950 50  0000 C CNN
+F 1 "L" V 2863 950 50  0000 C CNN
+F 2 "" H 2950 950 50  0001 C CNN
+F 3 "~" H 2950 950 50  0001 C CNN
+	1    2950 950 
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ADAF321
+P 2050 950
+F 0 "C?" V 1798 950 50  0000 C CNN
+F 1 "C" V 1889 950 50  0000 C CNN
+F 2 "" H 2088 800 50  0001 C CNN
+F 3 "~" H 2050 950 50  0001 C CNN
+	1    2050 950 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2600 950  2700 950 
+Wire Wire Line
+	2700 950  2700 1100
+Wire Wire Line
+	2800 950  2700 950 
+Connection ~ 2700 950 
+Wire Wire Line
+	2200 950  2300 950 
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADAF4F6
+P 2700 1550
+F 0 "#PWR?" H 2700 1300 50  0001 C CNN
+F 1 "GND" H 2705 1377 50  0000 C CNN
+F 2 "" H 2700 1550 50  0000 C CNN
+F 3 "" H 2700 1550 50  0000 C CNN
+	1    2700 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 1550 2700 1400
+Text Label 1550 950  2    50   ~ 0
+Antenna
+Wire Wire Line
+	1550 950  1750 950 
+$Comp
+L Device:L L?
+U 1 1 5ADAF6D2
+P 1750 3500
+F 0 "L?" H 1803 3546 50  0000 L CNN
+F 1 "L" H 1803 3455 50  0000 L CNN
+F 2 "" H 1750 3500 50  0001 C CNN
+F 3 "~" H 1750 3500 50  0001 C CNN
+	1    1750 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5ADAF742
+P 2050 3800
+F 0 "L?" V 1872 3800 50  0000 C CNN
+F 1 "L" V 1963 3800 50  0000 C CNN
+F 2 "" H 2050 3800 50  0001 C CNN
+F 3 "~" H 2050 3800 50  0001 C CNN
+	1    2050 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ADAF7B2
+P 1750 4050
+F 0 "C?" H 1865 4096 50  0000 L CNN
+F 1 "C" H 1865 4005 50  0000 L CNN
+F 2 "" H 1788 3900 50  0001 C CNN
+F 3 "~" H 1750 4050 50  0001 C CNN
+	1    1750 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADAF7FC
+P 1750 4400
+F 0 "#PWR?" H 1750 4150 50  0001 C CNN
+F 1 "GND" H 1755 4227 50  0000 C CNN
+F 2 "" H 1750 4400 50  0000 C CNN
+F 3 "" H 1750 4400 50  0000 C CNN
+	1    1750 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L L?
+U 1 1 5ADAF817
+P 2350 4050
+F 0 "L?" H 2403 4096 50  0000 L CNN
+F 1 "L" H 2403 4005 50  0000 L CNN
+F 2 "" H 2350 4050 50  0001 C CNN
+F 3 "~" H 2350 4050 50  0001 C CNN
+	1    2350 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ADAF887
+P 2650 3800
+F 0 "C?" V 2398 3800 50  0000 C CNN
+F 1 "C" V 2489 3800 50  0000 C CNN
+F 2 "" H 2688 3650 50  0001 C CNN
+F 3 "~" H 2650 3800 50  0001 C CNN
+	1    2650 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5ADAF932
+P 2350 4500
+F 0 "R?" H 2420 4546 50  0000 L CNN
+F 1 "R" H 2420 4455 50  0000 L CNN
+F 2 "" V 2280 4500 50  0001 C CNN
+F 3 "~" H 2350 4500 50  0001 C CNN
+	1    2350 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADAF980
+P 2350 4750
+F 0 "#PWR?" H 2350 4500 50  0001 C CNN
+F 1 "GND" H 2355 4577 50  0000 C CNN
+F 2 "" H 2350 4750 50  0000 C CNN
+F 3 "" H 2350 4750 50  0000 C CNN
+	1    2350 4750
+	1    0    0    -1  
+$EndComp
+Connection ~ 1750 950 
+Wire Wire Line
+	1750 950  1900 950 
+Wire Wire Line
+	1900 3800 1750 3800
+Wire Wire Line
+	1750 3650 1750 3800
+Connection ~ 1750 3800
+Wire Wire Line
+	1750 3800 1750 3900
+Wire Wire Line
+	1750 4400 1750 4200
+Wire Wire Line
+	2200 3800 2350 3800
+Wire Wire Line
+	2350 3800 2350 3900
+Wire Wire Line
+	2500 3800 2350 3800
+Connection ~ 2350 3800
+Wire Wire Line
+	2350 4350 2350 4200
+Wire Wire Line
+	2350 4750 2350 4650
+$Comp
+L Device:Q_NJFET_DGS Q?
+U 1 1 5ADB086B
+P 4200 2750
+F 0 "Q?" H 4391 2796 50  0000 L CNN
+F 1 "Q_NJFET_DGS" H 4391 2705 50  0000 L CNN
+F 2 "" H 4400 2850 50  0001 C CNN
+F 3 "~" H 4200 2750 50  0001 C CNN
+	1    4200 2750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_NJFET_DGS Q?
+U 1 1 5ADB08E2
+P 4200 3800
+F 0 "Q?" H 4391 3846 50  0000 L CNN
+F 1 "Q_NJFET_DGS" H 4391 3755 50  0000 L CNN
+F 2 "" H 4400 3900 50  0001 C CNN
+F 3 "~" H 4200 3800 50  0001 C CNN
+	1    4200 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_TVS-Diodes:PESD1CAN-UX D?
+U 1 1 5ADB0B33
+P 3200 1550
+F 0 "D?" V 3253 1322 60  0000 R CNN
+F 1 "PESD1CAN-UX" V 3147 1322 60  0000 R CNN
+F 2 "digikey-footprints:SOT-323" H 3400 1750 60  0001 L CNN
+F 3 "https://assets.nexperia.com/documents/data-sheet/PESD1CAN-U.pdf" H 3400 1850 60  0001 L CNN
+F 4 "1727-1306-1-ND" H 3400 1950 60  0001 L CNN "Digi-Key_PN"
+F 5 "PESD1CAN-UX" H 3400 2050 60  0001 L CNN "MPN"
+F 6 "Circuit Protection" H 3400 2150 60  0001 L CNN "Category"
+F 7 "TVS - Diodes" H 3400 2250 60  0001 L CNN "Family"
+F 8 "https://assets.nexperia.com/documents/data-sheet/PESD1CAN-U.pdf" H 3400 2350 60  0001 L CNN "DK_Datasheet_Link"
+F 9 "/product-detail/en/nexperia-usa-inc/PESD1CAN-UX/1727-1306-1-ND/4386316" H 3400 2450 60  0001 L CNN "DK_Detail_Page"
+F 10 "TVS DIODE 24VWM 50VC SC70" H 3400 2550 60  0001 L CNN "Description"
+F 11 "Nexperia USA Inc." H 3400 2650 60  0001 L CNN "Manufacturer"
+F 12 "Active" H 3400 2750 60  0001 L CNN "Status"
+	1    3200 1550
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ADB0DC5
+P 3650 2750
+F 0 "C?" V 3398 2750 50  0000 C CNN
+F 1 "C" V 3489 2750 50  0000 C CNN
+F 2 "" H 3688 2600 50  0001 C CNN
+F 3 "~" H 3650 2750 50  0001 C CNN
+	1    3650 2750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5ADB0EB9
+P 3900 2500
+F 0 "R?" H 3970 2546 50  0000 L CNN
+F 1 "R" H 3970 2455 50  0000 L CNN
+F 2 "" V 3830 2500 50  0001 C CNN
+F 3 "~" H 3900 2500 50  0001 C CNN
+	1    3900 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5ADB0F3F
+P 3900 3000
+F 0 "R?" H 3970 3046 50  0000 L CNN
+F 1 "R" H 3970 2955 50  0000 L CNN
+F 2 "" V 3830 3000 50  0001 C CNN
+F 3 "~" H 3900 3000 50  0001 C CNN
+	1    3900 3000
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADB10C5
+P 3900 3250
+F 0 "#PWR?" H 3900 3000 50  0001 C CNN
+F 1 "GND" H 3905 3077 50  0000 C CNN
+F 2 "" H 3900 3250 50  0000 C CNN
+F 3 "" H 3900 3250 50  0000 C CNN
+	1    3900 3250
+	1    0    0    -1  
+$EndComp
+Text HLabel 3900 2100 1    50   Input ~ 0
+3v3
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADB11C8
+P 3350 2900
+F 0 "#PWR?" H 3350 2650 50  0001 C CNN
+F 1 "GND" H 3355 2727 50  0000 C CNN
+F 2 "" H 3350 2900 50  0000 C CNN
+F 3 "" H 3350 2900 50  0000 C CNN
+	1    3350 2900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3350 2900 3350 2750
+Wire Wire Line
+	3350 2750 3500 2750
+Wire Wire Line
+	3900 2850 3900 2650
+Wire Wire Line
+	3800 2750 4000 2750
+Wire Wire Line
+	3900 2350 3900 2100
+Wire Wire Line
+	3900 3250 3900 3150
+Wire Wire Line
+	4300 3600 4300 2950
+Wire Wire Line
+	2800 3800 4000 3800
+$Comp
+L Device:L L?
+U 1 1 5ADB26F5
+P 4300 4300
+F 0 "L?" H 4353 4346 50  0000 L CNN
+F 1 "L" H 4353 4255 50  0000 L CNN
+F 2 "" H 4300 4300 50  0001 C CNN
+F 3 "~" H 4300 4300 50  0001 C CNN
+	1    4300 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADB27D1
+P 4300 4600
+F 0 "#PWR?" H 4300 4350 50  0001 C CNN
+F 1 "GND" H 4305 4427 50  0000 C CNN
+F 2 "" H 4300 4600 50  0000 C CNN
+F 3 "" H 4300 4600 50  0000 C CNN
+	1    4300 4600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 4150 4300 4050
+Wire Wire Line
+	4300 4600 4300 4450
+$Comp
+L Device:C C?
+U 1 1 5ADB2D24
+P 5050 4050
+F 0 "C?" V 4798 4050 50  0000 C CNN
+F 1 "C" V 4889 4050 50  0000 C CNN
+F 2 "" H 5088 3900 50  0001 C CNN
+F 3 "~" H 5050 4050 50  0001 C CNN
+	1    5050 4050
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4900 4050 4300 4050
+Connection ~ 4300 4050
+Wire Wire Line
+	4300 4050 4300 4000
+$Comp
+L Device:L L?
+U 1 1 5ADB30AA
+P 5350 3800
+F 0 "L?" H 5403 3846 50  0000 L CNN
+F 1 "L" H 5403 3755 50  0000 L CNN
+F 2 "" H 5350 3800 50  0001 C CNN
+F 3 "~" H 5350 3800 50  0001 C CNN
+	1    5350 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5200 4050 5350 4050
+Wire Wire Line
+	5350 4050 5350 3950
+$Comp
+L Device:L L?
+U 1 1 5ADB3533
+P 4300 2150
+F 0 "L?" H 4353 2196 50  0000 L CNN
+F 1 "L" H 4353 2105 50  0000 L CNN
+F 2 "" H 4300 2150 50  0001 C CNN
+F 3 "~" H 4300 2150 50  0001 C CNN
+	1    4300 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ADB35F7
+P 4750 2450
+F 0 "C?" V 4498 2450 50  0000 C CNN
+F 1 "C" V 4589 2450 50  0000 C CNN
+F 2 "" H 4788 2300 50  0001 C CNN
+F 3 "~" H 4750 2450 50  0001 C CNN
+	1    4750 2450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4600 2450 4300 2450
+Wire Wire Line
+	4300 2450 4300 2550
+Wire Wire Line
+	4300 2300 4300 2450
+Connection ~ 4300 2450
+Wire Wire Line
+	5750 2550 5350 2550
+Wire Wire Line
+	5350 2550 5350 3650
+Wire Wire Line
+	4900 2450 5150 2450
+Wire Wire Line
+	5150 2450 5150 2850
+Wire Wire Line
+	5150 2850 5750 2850
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADB4CF2
+P 5550 3000
+F 0 "#PWR?" H 5550 2750 50  0001 C CNN
+F 1 "GND" H 5555 2827 50  0000 C CNN
+F 2 "" H 5550 3000 50  0000 C CNN
+F 3 "" H 5550 3000 50  0000 C CNN
+	1    5550 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5550 3000 5550 2750
+Wire Wire Line
+	5550 2750 5750 2750
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADB531F
+P 5250 2600
+F 0 "#PWR?" H 5250 2350 50  0001 C CNN
+F 1 "GND" H 5255 2427 50  0000 C CNN
+F 2 "" H 5250 2600 50  0000 C CNN
+F 3 "" H 5250 2600 50  0000 C CNN
+	1    5250 2600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5750 2450 5250 2450
+Wire Wire Line
+	5250 2450 5250 2600
+Wire Wire Line
+	1750 950  1750 3350
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADB6EA1
+P 3100 2150
+F 0 "#PWR?" H 3100 1900 50  0001 C CNN
+F 1 "GND" H 3105 1977 50  0000 C CNN
+F 2 "" H 3100 2150 50  0000 C CNN
+F 3 "" H 3100 2150 50  0000 C CNN
+	1    3100 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADB6F08
+P 3300 2150
+F 0 "#PWR?" H 3300 1900 50  0001 C CNN
+F 1 "GND" H 3305 1977 50  0000 C CNN
+F 2 "" H 3300 2150 50  0000 C CNN
+F 3 "" H 3300 2150 50  0000 C CNN
+	1    3300 2150
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3100 950  3200 950 
+Wire Wire Line
+	3200 950  3200 1050
+Wire Wire Line
+	5750 2350 5150 2350
+Wire Wire Line
+	5150 2350 5150 950 
+Wire Wire Line
+	5150 950  3200 950 
+Connection ~ 3200 950 
+Wire Wire Line
+	3300 2050 3300 2150
+Wire Wire Line
+	3100 2150 3100 2050
+$Comp
+L Device:C C?
+U 1 1 5ADBA5FC
+P 4550 1900
+F 0 "C?" V 4298 1900 50  0000 C CNN
+F 1 "C" V 4389 1900 50  0000 C CNN
+F 2 "" H 4588 1750 50  0001 C CNN
+F 3 "~" H 4550 1900 50  0001 C CNN
+	1    4550 1900
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5ADBA70E
+P 4550 1500
+F 0 "C?" V 4298 1500 50  0000 C CNN
+F 1 "C" V 4389 1500 50  0000 C CNN
+F 2 "" H 4588 1350 50  0001 C CNN
+F 3 "~" H 4550 1500 50  0001 C CNN
+	1    4550 1500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4300 2000 4300 1900
+Wire Wire Line
+	4300 1900 4400 1900
+Wire Wire Line
+	4300 1900 4300 1500
+Wire Wire Line
+	4300 1500 4400 1500
+Connection ~ 4300 1900
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADBBCBC
+P 4950 1950
+F 0 "#PWR?" H 4950 1700 50  0001 C CNN
+F 1 "GND" H 4955 1777 50  0000 C CNN
+F 2 "" H 4950 1950 50  0000 C CNN
+F 3 "" H 4950 1950 50  0000 C CNN
+	1    4950 1950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4700 1900 4950 1900
+Wire Wire Line
+	4950 1900 4950 1950
+Wire Wire Line
+	4700 1500 4950 1500
+Wire Wire Line
+	4950 1500 4950 1900
+Connection ~ 4950 1900
+Text HLabel 4300 1100 1    50   Input ~ 0
+3v3
+$Comp
+L Device:R R?
+U 1 1 5ADBD513
+P 4300 1300
+F 0 "R?" H 4370 1346 50  0000 L CNN
+F 1 "R" H 4370 1255 50  0000 L CNN
+F 2 "" V 4230 1300 50  0001 C CNN
+F 3 "~" H 4300 1300 50  0001 C CNN
+	1    4300 1300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 1500 4300 1450
+Connection ~ 4300 1500
+Wire Wire Line
+	4300 1150 4300 1100
+NoConn ~ 5750 2650
+NoConn ~ 6500 1650
+NoConn ~ 6600 1650
+NoConn ~ 6700 1650
+Text HLabel 7900 2100 1    50   Input ~ 0
+3v3
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5ADC27BB
+P 8100 2500
+F 0 "#PWR?" H 8100 2250 50  0001 C CNN
+F 1 "GND" H 8105 2327 50  0000 C CNN
+F 2 "" H 8100 2500 50  0000 C CNN
+F 3 "" H 8100 2500 50  0000 C CNN
+	1    8100 2500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7700 2350 7900 2350
+Wire Wire Line
+	7900 2350 7900 2100
+Wire Wire Line
+	8100 2500 8100 2450
+Wire Wire Line
+	8100 2450 7700 2450
+NoConn ~ 7700 2850
+NoConn ~ 7700 2750
+NoConn ~ 7000 1650
 $EndSCHEMATC

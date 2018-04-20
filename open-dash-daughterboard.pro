@@ -1,4 +1,4 @@
-update=4/3/2018 12:37:56 PM
+update=Tue 10 Apr 2018 15:36:18 CDT
 version=1
 last_client=kicad
 [pcbnew]
@@ -27,7 +27,14 @@ NetIExt=net
 version=1
 [eeschema]
 version=1
-LibDir=libraries
-[eeschema/libraries]
-LibName1=device
-LibName2=/home/physiii/circuits/kicad-parts/libraries/open-automation
+LibDir=
+[schematic_editor]
+version=1
+PageLayoutDescrFile=
+PlotDirectoryName=
+SubpartIdSeparator=0
+SubpartFirstId=65
+NetFmtName=
+SpiceAjustPassiveValues=0
+LabSize=50
+ERC_TestSimilarLabels=1

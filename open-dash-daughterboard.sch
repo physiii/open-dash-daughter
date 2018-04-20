@@ -1,11 +1,10 @@
-EESchema Schematic File Version 2
-LIBS:device
+EESchema Schematic File Version 4
 LIBS:open-dash-daughterboard-cache
-EELAYER 25 0
+EELAYER 26 0
 EELAYER END
-$Descr A4 11693 8268
+$Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 11
+Sheet 1 13
 Title ""
 Date ""
 Rev ""
@@ -16,63 +15,281 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Sheet
-S 2600 1200 1300 950 
+S 800  50   1300 1050
 U 5A7BADB8
 F0 "power" 50
 F1 "power.sch" 50
+F2 "8V" I R 2100 150 50 
+F3 "5V" I R 2100 400 50 
+F4 "BATTERY" I R 2100 650 50 
+F5 "3V3" I R 2100 800 50 
+F6 "V_MAIN" I R 2100 950 50 
+F7 "EN_5V_POWER" I R 2100 500 50 
+F8 "EN_8V_POWER" I R 2100 250 50 
 $EndSheet
 $Sheet
-S 4450 1200 1550 950 
+S 2450 150  1550 950 
 U 5A7BADDB
 F0 "microcontroller" 50
 F1 "microcontroller.sch" 50
+F2 "3V3" I L 2450 350 50 
+F3 "SCL" I R 4000 300 50 
+F4 "SDA" I R 4000 400 50 
+F5 "EN_5V_POWER" I L 2450 450 50 
+F6 "EN_8V_POWER" I L 2450 550 50 
+F7 "MUTE_AUDIO_AMP" I R 4000 800 50 
+F8 "STBY_AUDIO_AMP" I R 4000 500 50 
+F9 "IO2" I R 4000 600 50 
+F10 "PROG" I R 4000 700 50 
+F11 "PANEL_SW" I R 4000 900 50 
+F12 "POWER_EN" I R 4000 1000 50 
+F13 "RXD" I R 4000 200 50 
+F14 "TXD" I L 2450 1000 50 
+F15 "FACTORY" I L 2450 900 50 
+F16 "5V" I L 2450 650 50 
+F17 "ESP_EN" I L 2450 200 50 
 $EndSheet
 $Sheet
-S 4400 2700 1350 900 
+S 2450 4750 1550 900 
 U 5A7BAF4B
 F0 "audio mixer" 50
 F1 "audio-mixer.sch" 50
 $EndSheet
 $Sheet
-S 2600 5550 1550 950 
+S 2450 5900 1550 950 
 U 5A8CA1AF
 F0 "canbus" 50
 F1 "canbus.sch" 50
+F2 "5V" I L 2450 5950 50 
+F3 "MOSI" I R 4000 5950 50 
+F4 "MISO" I R 4000 6050 50 
+F5 "CAN_CS" I R 4000 6150 50 
+F6 "SPI_SCK" I R 4000 6250 50 
+F7 "CAN_RESET" I R 4000 6375 50 
+F8 "CAN_INT" I R 4000 6475 50 
 $EndSheet
 $Sheet
-S 6550 1200 1400 950 
+S 2450 1300 1550 950 
 U 5A8CA1FA
 F0 "environment" 50
 F1 "environment.sch" 50
+F2 "3V3" I L 2450 1450 50 
+F3 "SCL" I R 4000 1450 50 
+F4 "SDA" I R 4000 1550 50 
+F5 "BATTERY" I L 2450 1550 50 
+F6 "V_MAIN" I L 2450 1650 50 
 $EndSheet
 $Sheet
-S 2600 2650 1400 950 
+S 2450 2500 1550 950 
 U 5ABD1806
 F0 "audio amplifier" 50
 F1 "audio-amplifier.sch" 50
+F2 "8V" I L 2450 2600 50 
+F3 "L_AUDIO_IN" I R 4000 2700 50 
+F4 "R_AUDIO_IN" I R 4000 2800 50 
+F5 "MUTE_AUDIO_AMP" I R 4000 2600 50 
+F6 "L_AUDIO_OUT+" I R 4000 3150 50 
+F7 "R_AUDIO_OUT+" I R 4000 3250 50 
+F8 "L_AUDIO_OUT-" I R 4000 3050 50 
+F9 "R_AUDIO_OUT-" I R 4000 3350 50 
+F10 "STBY_AUDIO_AMP" I R 4000 2900 50 
 $EndSheet
 $Sheet
-S 2600 4200 1400 950 
+S 7950 2050 1400 950 
 U 5ABD1850
 F0 "video mixer" 50
 F1 "video-mixer.sch" 50
 $EndSheet
 $Sheet
-S 8350 1200 1400 950 
+S 5500 3700 1400 950 
 U 5ABD187E
 F0 "interface" 50
 F1 "interface.sch" 50
 $EndSheet
 $Sheet
-S 6150 2700 1350 900 
+S 2450 3650 1550 900 
 U 5ABD18ED
 F0 "FM Radio" 50
 F1 "FM-radio.sch" 50
+F2 "3v3" I L 2450 3800 50 
+F3 "FM_Radio_Serial_En" I R 4000 3750 50 
+F4 "SCL" I R 4000 3850 50 
+F5 "SDA" I R 4000 3950 50 
+F6 "LOUT" I R 4000 4200 50 
+F7 "ROUT" I R 4000 4100 50 
+F8 "FM_INT" I R 4000 4300 50 
 $EndSheet
 $Sheet
-S 4400 4200 1400 950 
+S 7300 3700 1400 950 
 U 5ABE8D90
 F0 "composite input" 50
 F1 "composite-input.sch" 50
+$EndSheet
+Entry Wire Line
+	2200 150  2300 250 
+Entry Wire Line
+	2200 250  2300 350 
+Entry Wire Line
+	2200 400  2300 500 
+Entry Wire Line
+	2200 500  2300 600 
+Entry Wire Line
+	2200 650  2300 750 
+Entry Wire Line
+	2200 800  2300 900 
+Entry Wire Line
+	2200 950  2300 1050
+Wire Wire Line
+	2200 150  2100 150 
+Wire Wire Line
+	2100 250  2200 250 
+Wire Wire Line
+	2200 400  2100 400 
+Wire Wire Line
+	2100 500  2200 500 
+Wire Wire Line
+	2200 650  2100 650 
+Wire Wire Line
+	2100 800  2200 800 
+Wire Wire Line
+	2200 950  2100 950 
+Entry Wire Line
+	2300 350  2400 450 
+Entry Wire Line
+	2300 450  2400 550 
+Entry Wire Line
+	2300 250  2400 350 
+Wire Wire Line
+	2400 350  2450 350 
+Wire Wire Line
+	2450 450  2400 450 
+Wire Wire Line
+	2450 550  2400 550 
+Entry Wire Line
+	2300 550  2400 650 
+Wire Wire Line
+	2400 650  2450 650 
+Entry Wire Line
+	2300 1350 2400 1450
+Entry Wire Line
+	2300 1450 2400 1550
+Entry Wire Line
+	2300 1550 2400 1650
+Wire Wire Line
+	2400 1450 2450 1450
+Wire Wire Line
+	2450 1550 2400 1550
+Wire Wire Line
+	2400 1650 2450 1650
+Entry Wire Line
+	2300 2500 2400 2600
+Wire Wire Line
+	2450 2600 2400 2600
+$Sheet
+S 2450 7100 1550 850 
+U 5AD64A7B
+F0 "switches" 50
+F1 "switches.sch" 50
+F2 "V_USB" I L 2450 7250 50 
+F3 "TXD" I R 4000 7600 50 
+F4 "RXD" I R 4000 7700 50 
+F5 "FACTORY" I R 4000 7250 50 
+F6 "EN" I R 4000 7350 50 
+F7 "PROG" I R 4000 7450 50 
+F8 "3V3" I L 2450 7150 50 
+$EndSheet
+Entry Wire Line
+	2300 5850 2400 5950
+Wire Wire Line
+	2400 5950 2450 5950
+Entry Wire Line
+	2300 7050 2400 7150
+Entry Wire Line
+	2300 7150 2400 7250
+Wire Wire Line
+	2400 7250 2450 7250
+Wire Wire Line
+	2450 7150 2400 7150
+Entry Wire Line
+	4150 200  4250 300 
+Entry Wire Line
+	4150 300  4250 400 
+Entry Wire Line
+	4150 400  4250 500 
+Entry Wire Line
+	4150 1450 4250 1550
+Entry Wire Line
+	4150 1550 4250 1650
+Entry Wire Line
+	4150 7450 4250 7550
+Entry Wire Line
+	4150 700  4250 800 
+Entry Wire Line
+	4150 1000 4250 1100
+Entry Wire Line
+	4150 900  4250 1000
+Entry Wire Line
+	4150 7600 4250 7700
+Entry Wire Line
+	4150 7700 4250 7800
+Entry Wire Line
+	4150 5950 4250 6050
+Entry Wire Line
+	4150 6050 4250 6150
+Entry Wire Line
+	4150 6150 4250 6250
+Entry Wire Line
+	4150 6250 4250 6350
+Wire Wire Line
+	4000 5950 4150 5950
+Wire Wire Line
+	4150 6050 4000 6050
+Wire Wire Line
+	4000 6150 4150 6150
+Wire Wire Line
+	4150 6250 4000 6250
+Wire Wire Line
+	4150 7450 4000 7450
+Wire Wire Line
+	4150 7600 4000 7600
+Wire Wire Line
+	4000 1450 4150 1450
+Wire Wire Line
+	4000 1550 4150 1550
+Wire Wire Line
+	4150 900  4000 900 
+Wire Wire Line
+	4000 1000 4150 1000
+Wire Wire Line
+	4150 700  4000 700 
+Wire Wire Line
+	4150 200  4000 200 
+Wire Wire Line
+	4150 300  4000 300 
+Wire Wire Line
+	4000 400  4150 400 
+Wire Wire Line
+	4000 7700 4150 7700
+Entry Wire Line
+	2300 3700 2400 3800
+Wire Wire Line
+	2400 3800 2450 3800
+Entry Wire Line
+	4150 3850 4250 3950
+Entry Wire Line
+	4150 3950 4250 4050
+Wire Wire Line
+	4000 3850 4150 3850
+Wire Wire Line
+	4150 3950 4000 3950
+Wire Bus Line
+	4250 300  4250 7950
+Wire Bus Line
+	2300 250  2300 7500
+$Sheet
+S 5550 2050 1450 1000
+U 5AE2E67D
+F0 "GPS interface" 50
+F1 "GPS interface.sch" 50
 $EndSheet
 $EndSCHEMATC

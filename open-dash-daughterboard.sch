@@ -282,14 +282,14 @@ Wire Wire Line
 	4000 3850 4150 3850
 Wire Wire Line
 	4150 3950 4000 3950
-Wire Bus Line
-	4250 300  4250 7950
-Wire Bus Line
-	2300 250  2300 7500
 $Sheet
 S 5550 2050 1450 1000
 U 5AE2E67D
 F0 "GPS interface" 50
 F1 "GPS interface.sch" 50
 $EndSheet
+Wire Bus Line
+	2300 250  2300 7500
+Wire Bus Line
+	4250 300  4250 7950
 $EndSCHEMATC

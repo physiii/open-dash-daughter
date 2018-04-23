@@ -39,17 +39,6 @@ F 4 "MCP2515-I/ST" H 3350 3450 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0102
-U 1 1 5AD70698
-P 5825 3525
-F 0 "#PWR0102" H 5825 3275 50  0001 C CNN
-F 1 "GND" H 5830 3352 50  0000 C CNN
-F 2 "" H 5825 3525 50  0000 C CNN
-F 3 "" H 5825 3525 50  0000 C CNN
-	1    5825 3525
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:R_10k R?
 U 1 1 5AD70852
 P 5100 3325
@@ -67,31 +56,9 @@ Wire Wire Line
 	5325 3150 5100 3150
 Wire Wire Line
 	5100 3150 5100 3175
-$Comp
-L open-automation:GND #PWR0103
-U 1 1 5AD70A1D
-P 5100 3525
-F 0 "#PWR0103" H 5100 3275 50  0001 C CNN
-F 1 "GND" H 5105 3352 50  0000 C CNN
-F 2 "" H 5100 3525 50  0000 C CNN
-F 3 "" H 5100 3525 50  0000 C CNN
-	1    5100 3525
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5100 3475 5100 3525
 NoConn ~ 5325 3050
-$Comp
-L open-automation:GND #PWR0104
-U 1 1 5AD71616
-P 5650 2325
-F 0 "#PWR0104" H 5650 2075 50  0001 C CNN
-F 1 "GND" H 5655 2152 50  0000 C CNN
-F 2 "" H 5650 2325 50  0000 C CNN
-F 3 "" H 5650 2325 50  0000 C CNN
-	1    5650 2325
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5650 2325 5650 2250
 Wire Wire Line
@@ -115,17 +82,6 @@ F 2 "Resistors_SMD:R_0603" V 7030 3275 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-07100RL/311-100GRCT-ND/729644" V 7180 3275 50  0001 C CNN
 F 4 "RC0603JR-07100RL" H 7100 3275 50  0001 C CNN "Part Number"
 	1    7100 3275
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:GND #PWR0105
-U 1 1 5AD729B9
-P 7100 3875
-F 0 "#PWR0105" H 7100 3625 50  0001 C CNN
-F 1 "GND" H 7105 3702 50  0000 C CNN
-F 2 "" H 7100 3875 50  0000 C CNN
-F 3 "" H 7100 3875 50  0000 C CNN
-	1    7100 3875
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -204,7 +160,7 @@ NoConn ~ 3950 3950
 Wire Wire Line
 	3350 4250 3350 4350
 $Comp
-L open-automation:GND #PWR0106
+L power:GND #PWR0106
 U 1 1 5AD7FB4B
 P 3350 4350
 F 0 "#PWR0106" H 3350 4100 50  0001 C CNN
@@ -227,7 +183,7 @@ F 4 "C0603C104K5RACTU" H 3175 2200 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0107
+L power:GND #PWR0107
 U 1 1 5AD7FE03
 P 3175 2425
 F 0 "#PWR0107" H 3175 2175 50  0001 C CNN
@@ -237,8 +193,6 @@ F 3 "" H 3175 2425 50  0000 C CNN
 	1    3175 2425
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3175 2425 3175 2350
 Wire Wire Line
 	3175 2050 3175 2000
 Wire Wire Line
@@ -305,17 +259,6 @@ Wire Wire Line
 Connection ~ 1725 3825
 Wire Wire Line
 	1725 3825 1725 3925
-$Comp
-L open-automation:GND #PWR0108
-U 1 1 5AD8CF5A
-P 1725 3925
-F 0 "#PWR0108" H 1725 3675 50  0001 C CNN
-F 1 "GND" H 1730 3752 50  0000 C CNN
-F 2 "" H 1725 3925 50  0000 C CNN
-F 3 "" H 1725 3925 50  0000 C CNN
-	1    1725 3925
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3950 4050 4175 4050
 Wire Wire Line
@@ -395,5 +338,62 @@ F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10C22
 F 4 "CL10C220JB8NFNC" H 2000 3825 50  0001 C CNN "Part Number"
 	1    2000 3825
 	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5ADD5FFD
+P 1725 3925
+F 0 "#PWR?" H 1725 3675 50  0001 C CNN
+F 1 "GND" H 1730 3752 50  0000 C CNN
+F 2 "" H 1725 3925 50  0001 C CNN
+F 3 "" H 1725 3925 50  0001 C CNN
+	1    1725 3925
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3175 2350 3175 2425
+$Comp
+L power:GND #PWR?
+U 1 1 5ADD74BB
+P 5100 3525
+F 0 "#PWR?" H 5100 3275 50  0001 C CNN
+F 1 "GND" H 5105 3352 50  0000 C CNN
+F 2 "" H 5100 3525 50  0001 C CNN
+F 3 "" H 5100 3525 50  0001 C CNN
+	1    5100 3525
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5ADD757D
+P 5825 3525
+F 0 "#PWR?" H 5825 3275 50  0001 C CNN
+F 1 "GND" H 5830 3352 50  0000 C CNN
+F 2 "" H 5825 3525 50  0001 C CNN
+F 3 "" H 5825 3525 50  0001 C CNN
+	1    5825 3525
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5ADD7680
+P 7100 3875
+F 0 "#PWR?" H 7100 3625 50  0001 C CNN
+F 1 "GND" H 7105 3702 50  0000 C CNN
+F 2 "" H 7100 3875 50  0001 C CNN
+F 3 "" H 7100 3875 50  0001 C CNN
+	1    7100 3875
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5ADD76B3
+P 5650 2325
+F 0 "#PWR?" H 5650 2075 50  0001 C CNN
+F 1 "GND" H 5655 2152 50  0000 C CNN
+F 2 "" H 5650 2325 50  0001 C CNN
+F 3 "" H 5650 2325 50  0001 C CNN
+	1    5650 2325
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

@@ -229,7 +229,7 @@ F 3 "~" H 5450 3800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L dk_TVS-Diodes:PESD1CAN-UX D?
+L open-dash-daughterboard-rescue:PESD1CAN-UX-dk_TVS-Diodes D?
 U 1 1 5ADB0B33
 P 3200 1550
 F 0 "D?" V 3253 1322 60  0000 R CNN
@@ -628,7 +628,7 @@ F 3 "~" H 3500 4200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222ALT3G Q?
+L open-dash-daughterboard-rescue:MMBT2222ALT3G-dk_Transistors-Bipolar-BJT-Single Q?
 U 1 1 5ADE56F6
 P 3400 5900
 F 0 "Q?" H 3587 5953 60  0000 L CNN
@@ -819,7 +819,7 @@ Wire Notes Line
 Text Notes 2300 3450 0    50   ~ 0
 Mains Trap
 $Comp
-L dk_TVS-Diodes:PESD1CAN-UX D?
+L open-dash-daughterboard-rescue:PESD1CAN-UX-dk_TVS-Diodes D?
 U 1 1 5AE12CF8
 P 5100 4950
 F 0 "D?" V 5153 4722 60  0000 R CNN
@@ -883,7 +883,7 @@ $EndComp
 Wire Wire Line
 	2900 5900 3050 5900
 $Comp
-L dk_Transistors-Bipolar-BJT-Single:MMBT2222ALT3G Q?
+L open-dash-daughterboard-rescue:MMBT2222ALT3G-dk_Transistors-Bipolar-BJT-Single Q?
 U 1 1 5AE1B7AD
 P 4650 6100
 F 0 "Q?" H 4838 6153 60  0000 L CNN

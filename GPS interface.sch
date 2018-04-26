@@ -72,7 +72,7 @@ SDA
 Text Label 7100 3500 2    50   ~ 0
 SCL
 $Comp
-L dk_RF-Receivers:A2235-H U?
+L open-dash-daughterboard-rescue:A2235-H-dk_RF-Receivers U?
 U 1 1 5AE2F0AB
 P 9150 3250
 F 0 "U?" H 9250 4050 60  0000 C CNN

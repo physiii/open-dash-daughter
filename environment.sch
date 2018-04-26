@@ -190,19 +190,19 @@ Wire Wire Line
 Wire Wire Line
 	4200 1425 5450 1425
 Text HLabel 1400 1475 0    60   Input ~ 0
-3V3
+3v3
 Text HLabel 2850 1475 2    60   Input ~ 0
 SCL
 Text HLabel 2850 1575 2    60   Input ~ 0
 SDA
 Text HLabel 3925 1425 0    60   Input ~ 0
-3V3
+3v3
 Text HLabel 4825 1525 0    60   Input ~ 0
 BATTERY
 Text HLabel 4825 1950 0    60   Input ~ 0
 V_MAIN
 Text HLabel 6500 1525 2    60   Input ~ 0
-3V3
+3v3
 Text HLabel 6500 1625 2    60   Input ~ 0
 SDA
 Text HLabel 6500 1725 2    60   Input ~ 0

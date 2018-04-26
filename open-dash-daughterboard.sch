@@ -73,7 +73,7 @@ S 2450 1300 1550 950
 U 5A8CA1FA
 F0 "environment" 50
 F1 "environment.sch" 50
-F2 "3V3" I L 2450 1450 50 
+F2 "3v3" I L 2450 1450 50 
 F3 "SCL" I R 4000 1450 50 
 F4 "SDA" I R 4000 1550 50 
 F5 "BATTERY" I L 2450 1550 50 
@@ -101,34 +101,34 @@ F0 "video mixer" 50
 F1 "video-mixer.sch" 50
 $EndSheet
 $Sheet
-S 5500 3700 1450 1900
+S 5450 3950 1450 1900
 U 5ABD187E
 F0 "interface" 50
 F1 "interface.sch" 50
-F2 "AMF_Antenna" I L 5500 3800 50 
-F3 "GPS_Antenna" I L 5500 3900 50 
-F4 "can_+" I L 5500 4050 50 
-F5 "aux_R" I L 5500 4300 50 
-F6 "aux_ref" I L 5500 4350 50 
-F7 "can_-" I L 5500 4100 50 
-F8 "BL" I R 6950 3800 50 
-F9 "Ground" I R 6950 3900 50 
-F10 "Mic_-" I R 6950 4250 50 
-F11 "Mic_+" I R 6950 4200 50 
-F12 "CameraSignal" I R 6950 4400 50 
-F13 "CameraShield" I R 6950 4450 50 
-F14 "CameraReturn" I R 6950 4500 50 
-F15 "12vAlwaysOn" I R 6950 3750 50 
-F16 "rightRearSpeaker+" I R 6950 4000 50 
-F17 "rightFrontSpeaker+" I R 6950 4050 50 
-F18 "leftFrontSpeaker+" I R 6950 4100 50 
-F19 "leftRearSpeaker+" I L 5500 4450 50 
-F20 "rightRearSpeaker-" I L 5500 4500 50 
-F21 "rightFrontSpeaker-" I L 5500 4550 50 
-F22 "leftFrontSpeaker-" I L 5500 4950 50 
-F23 "leftRearSpeaker-" I L 5500 5050 50 
-F24 "auxDet" I L 5500 4250 50 
-F25 "auxL" I L 5500 4200 50 
+F2 "AMF_Antenna" I L 5450 4050 50 
+F3 "GPS_Antenna" I L 5450 4150 50 
+F4 "can_+" I L 5450 4300 50 
+F5 "aux_R" I L 5450 4700 50 
+F6 "aux_ref" I L 5450 4800 50 
+F7 "can_-" I L 5450 4400 50 
+F8 "BL" I R 6900 4100 50 
+F9 "Ground" I R 6900 4200 50 
+F10 "Mic_-" I R 6900 5250 50 
+F11 "Mic_+" I R 6900 5150 50 
+F12 "CameraSignal" I R 6900 5450 50 
+F13 "CameraShield" I R 6900 5550 50 
+F14 "CameraReturn" I R 6900 5650 50 
+F15 "12vAlwaysOn" I R 6900 4000 50 
+F16 "rightRearSpeaker+" I R 6900 4650 50 
+F17 "rightFrontSpeaker+" I R 6900 4450 50 
+F18 "leftFrontSpeaker+" I L 5450 5100 50 
+F19 "leftRearSpeaker+" I L 5450 5300 50 
+F20 "rightRearSpeaker-" I R 6900 4750 50 
+F21 "rightFrontSpeaker-" I R 6900 4550 50 
+F22 "leftFrontSpeaker-" I L 5450 5200 50 
+F23 "leftRearSpeaker-" I L 5450 5400 50 
+F24 "auxDet" I L 5450 4600 50 
+F25 "auxL" I L 5450 4500 50 
 $EndSheet
 $Sheet
 S 2450 3650 1550 900 
@@ -311,6 +311,10 @@ S 5550 2050 1450 1000
 U 5AE2E67D
 F0 "GPS interface" 50
 F1 "GPS interface.sch" 50
+F2 "3V3" I L 5550 2150 50 
+F3 "SDA" I L 5550 2400 50 
+F4 "SCL" I L 5550 2500 50 
+F5 "GPS_Ant" I L 5550 2650 50 
 $EndSheet
 Wire Bus Line
 	2300 250  2300 7500

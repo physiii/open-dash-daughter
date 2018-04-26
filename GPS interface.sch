@@ -129,4 +129,8 @@ Wire Wire Line
 	8200 3450 8350 3450
 Wire Wire Line
 	6850 3600 8200 3600
+Text HLabel 8050 3850 0    50   Input ~ 0
+GPS_Ant
+Wire Wire Line
+	8350 3850 8050 3850
 $EndSCHEMATC

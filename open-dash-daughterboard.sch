@@ -101,10 +101,34 @@ F0 "video mixer" 50
 F1 "video-mixer.sch" 50
 $EndSheet
 $Sheet
-S 5500 3700 1400 950 
+S 5500 3700 1450 1900
 U 5ABD187E
 F0 "interface" 50
 F1 "interface.sch" 50
+F2 "AMF_Antenna" I L 5500 3800 50 
+F3 "GPS_Antenna" I L 5500 3900 50 
+F4 "can_+" I L 5500 4050 50 
+F5 "aux_R" I L 5500 4300 50 
+F6 "aux_ref" I L 5500 4350 50 
+F7 "can_-" I L 5500 4100 50 
+F8 "BL" I R 6950 3800 50 
+F9 "Ground" I R 6950 3900 50 
+F10 "Mic_-" I R 6950 4250 50 
+F11 "Mic_+" I R 6950 4200 50 
+F12 "CameraSignal" I R 6950 4400 50 
+F13 "CameraShield" I R 6950 4450 50 
+F14 "CameraReturn" I R 6950 4500 50 
+F15 "12vAlwaysOn" I R 6950 3750 50 
+F16 "rightRearSpeaker+" I R 6950 4000 50 
+F17 "rightFrontSpeaker+" I R 6950 4050 50 
+F18 "leftFrontSpeaker+" I R 6950 4100 50 
+F19 "leftRearSpeaker+" I L 5500 4450 50 
+F20 "rightRearSpeaker-" I L 5500 4500 50 
+F21 "rightFrontSpeaker-" I L 5500 4550 50 
+F22 "leftFrontSpeaker-" I L 5500 4950 50 
+F23 "leftRearSpeaker-" I L 5500 5050 50 
+F24 "auxDet" I L 5500 4250 50 
+F25 "auxL" I L 5500 4200 50 
 $EndSheet
 $Sheet
 S 2450 3650 1550 900 

@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 13
+Sheet 1 14
 Title ""
 Date ""
 Rev ""
@@ -292,4 +292,21 @@ Wire Bus Line
 	2300 250  2300 7500
 Wire Bus Line
 	4250 300  4250 7950
+$Sheet
+S 5500 4975 1475 700 
+U 5AE37EA7
+F0 "audio-interface" 50
+F1 "audio-interface.sch" 50
+F2 "5v" I L 5500 5075 50 
+F3 "usb_dm" B L 5500 5425 50 
+F4 "usb_dp" B L 5500 5325 50 
+F5 "3v3" I L 5500 5175 50 
+F6 "audio_mute" I L 5500 5575 50 
+F7 "audio_out_right" O R 6975 5075 50 
+F8 "audio_out_left" O R 6975 5175 50 
+F9 "dac_clk_out" O R 6975 5325 50 
+F10 "dac_data_out" O R 6975 5625 50 
+F11 "dac_left_l_r_clk_out" O R 6975 5425 50 
+F12 "dac_serial_clk_out" O R 6975 5525 50 
+$EndSheet
 $EndSCHEMATC

@@ -270,7 +270,7 @@ L open-automation:R_10k R8
 U 1 1 5AC647A0
 P 6800 4875
 F 0 "R8" V 6800 4875 50  0000 C CNN
-F 1 "R_1.3k" V 6700 4875 50  0000 C CNN
+F 1 "R_1k3" V 6700 4875 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 6730 4875 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-071K3L/311-1.30KHRCT-ND/729805" V 6880 4875 50  0001 C CNN
 F 4 "RC0603FR-071K3L" V 6980 4975 60  0001 C CNN "Part Number"
@@ -289,9 +289,9 @@ F 3 "" H 6800 5125 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 6975 4675 0    60   ~ 0
-8V_Feedback
+8v_feedback
 Text Label 5750 4125 0    60   ~ 0
-8V_Feedback
+8v_feedback
 $Comp
 L Device:C C2
 U 1 1 5AC68E0B
@@ -587,7 +587,7 @@ L open-automation:R_10k R5
 U 1 1 5AC69CD6
 P 6650 2975
 F 0 "R5" V 6650 2975 50  0000 C CNN
-F 1 "R_7.15k" V 6550 2975 50  0000 C CNN
+F 1 "R_7k15" V 6550 2975 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 6580 2975 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/vishay-dale/CRCW06037K15FKEA/541-7.15KHCT-ND/1179907" V 6730 2975 50  0001 C CNN
 F 4 "CRCW06037K15FKEA" V 6830 3075 60  0001 C CNN "Part Number"
@@ -606,7 +606,7 @@ F 3 "" H 6650 3650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 6825 3200 0    60   ~ 0
-5V_Feedback
+5v_feedback
 Wire Wire Line
 	6650 3550 6650 3650
 Wire Wire Line
@@ -620,13 +620,13 @@ Connection ~ 6650 2750
 Wire Wire Line
 	5600 2650 5800 2650
 Text Label 5800 2650 0    60   ~ 0
-5V_Feedback
+5v_feedback
 $Comp
 L open-automation:R_10k R3
 U 1 1 5AC6AB45
 P 5900 1300
 F 0 "R3" V 5900 1300 50  0000 C CNN
-F 1 "R_3.92k" V 5800 1300 50  0000 C CNN
+F 1 "R_3k92" V 5800 1300 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 5830 1300 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-073K92L/311-3.92KHRCT-ND/730085" V 5980 1300 50  0001 C CNN
 F 4 "RC0603FR-073K92L" V 6080 1400 60  0001 C CNN "Part Number"
@@ -638,7 +638,7 @@ L open-automation:R_10k R4
 U 1 1 5AC6AB4C
 P 5900 1725
 F 0 "R4" V 5900 1725 50  0000 C CNN
-F 1 "R_2.32k" V 5800 1725 50  0000 C CNN
+F 1 "R_2k32" V 5800 1725 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 5830 1725 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-072K32L/311-2.32KHRCT-ND/729968" V 5980 1725 50  0001 C CNN
 F 4 "RC0603FR-072K32L" V 6080 1825 60  0001 C CNN "Part Number"
@@ -657,7 +657,7 @@ F 3 "" H 5900 1975 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 6000 1525 0    60   ~ 0
-3.3V_Feedback
+3v3_feedback
 Wire Wire Line
 	5900 1875 5900 1975
 Wire Wire Line
@@ -671,7 +671,7 @@ Connection ~ 5900 1075
 Wire Wire Line
 	4700 975  4875 975 
 Text Label 4875 975  0    60   ~ 0
-3.3V_Feedback
+3v3_feedback
 $Comp
 L open-automation:CONN_01X02 BATT_OUT_1
 U 1 1 5AC711D2
@@ -710,7 +710,7 @@ L open-automation:R_10k R6
 U 1 1 5AC777F6
 P 6650 3400
 F 0 "R6" V 6650 3400 50  0000 C CNN
-F 1 "R_2.32k" V 6550 3400 50  0000 C CNN
+F 1 "R_2k32" V 6550 3400 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 6580 3400 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-072K32L/311-2.32KHRCT-ND/729968" V 6730 3400 50  0001 C CNN
 F 4 "RC0603FR-072K32L" V 6830 3500 60  0001 C CNN "Part Number"
@@ -722,7 +722,7 @@ L open-automation:R_10k R7
 U 1 1 5AC77A5F
 P 6800 4450
 F 0 "R7" V 6800 4450 50  0000 C CNN
-F 1 "R_7.15k" V 6700 4450 50  0000 C CNN
+F 1 "R_7k15" V 6700 4450 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 6730 4450 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/vishay-dale/CRCW06037K15FKEA/541-7.15KHCT-ND/1179907" V 6880 4450 50  0001 C CNN
 F 4 "CRCW06037K15FKEA" V 6980 4550 60  0001 C CNN "Part Number"

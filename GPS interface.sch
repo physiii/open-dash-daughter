@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 13 13
+Sheet 13 14
 Title ""
 Date ""
 Rev ""
@@ -26,7 +26,7 @@ F 3 "~" H 5350 3500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text HLabel 4900 3400 0    50   Input ~ 0
-3V3
+3v3
 Text HLabel 4900 3600 0    50   Input ~ 0
 SDA
 Text HLabel 4900 3500 0    50   Input ~ 0
@@ -66,7 +66,7 @@ $EndComp
 Wire Wire Line
 	6850 3700 7200 3700
 Text Label 7100 3400 2    50   ~ 0
-3V3
+3v3
 Text Label 7100 3600 2    50   ~ 0
 SDA
 Text Label 7100 3500 2    50   ~ 0

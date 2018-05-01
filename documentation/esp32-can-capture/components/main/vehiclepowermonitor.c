@@ -8,13 +8,47 @@
 
 #include "CAN.h"
 
-CAN_device_t CAN_cfg = {
-};
+// dummys CAN IDs until we identify the proper ones
+#define CAN_ID_KEY_ON (0x00113355)
+#define CAN_ID_KEY_OFF (0x00224466)
+#define GPIO_OPENDASH_POWER (GPIO_NUM_8)
+#define POWER_DELAY_SECONDS (30)
+
+CAN_device_t CAN_cfg = {0};
+
+// the CAN queue is interrupt driven, so only modify xPowerTask in a critical
+// section (applies to initialization in task_CAN and destruction in
+// task_PowerOff)
+TaskHandle_t xPowerTask = NULL;
+portMUX_TYPE mux_powerstatus = portMUX_INITIALIZER_UNLOCKED;
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
 {
   // printf("event: %s\n", fmt_event_id(event->event_id));
   return ESP_OK;
+}
+
+void set_opendash_power_state(int level) {
+  gpio_set_level(GPIO_OPENDASH_POWER, level);
+}
+
+void power_on_opendash() {
+  set_opendash_power_state(1);
+}
+
+void power_off_opendash() {
+  set_opendash_power_state(0);
+}
+
+void task_PowerOff(void *pvParameters) {
+
+  vTaskDelay((POWER_DELAY_SECONDS * 1000) / portTICK_PERIOD_MS);
+
+  taskENTER_CRITICAL(&mux_powerstatus);
+    power_off_opendash();
+    vTaskDelete(NULL);
+    xPowerTask = NULL;
+  taskEXIT_CRITICAL(&mux_powerstatus);
 }
 
 // from <http://www.barth-dev.de/can-driver-esp32/> and
@@ -35,7 +69,7 @@ void task_CAN( void *pvParameters ){
     int ret;
     if (0 != (ret = CAN_init())) {
       printf("CAN_init failed with %d\n", ret);
-      vTaskDelete(NULL);
+      // should probably reboot or something
     }
 
     printf("Entering CAN loop\n");
@@ -55,6 +89,24 @@ void task_CAN( void *pvParameters ){
         		printf(" RTR from 0x%08x, DLC %d\r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC);
         	else
         		printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
+
+          if (CAN_ID_KEY_ON == __RX_frame.MsgID) {
+            taskENTER_CRITICAL(&mux_powerstatus);
+              if (NULL != xPowerTask) { // if we have an existing power-down timeout, cancel it
+                vTaskDelete(xPowerTask);
+              } else { // otherwise just turn on
+                power_on_opendash();
+              }
+            taskEXIT_CRITICAL(&mux_powerstatus);
+          }
+          else if (CAN_ID_KEY_OFF == __RX_frame.MsgID) {
+            taskENTER_CRITICAL(&mux_powerstatus);
+              // if we don't have an existing power down task, start one
+              if (NULL == xPowerTask) {
+                xTaskCreate(&task_PowerOff, "PWROFF", configMINIMAL_STACK_SIZE, NULL, 5, &xPowerTask);
+              }
+            taskEXIT_CRITICAL(&mux_powerstatus);
+          }
 
         	//loop back frame
         	// CAN_write_frame(&__RX_frame);

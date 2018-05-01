@@ -288,9 +288,9 @@ Wire Wire Line
 Wire Wire Line
 	4625 2950 4625 2750
 Wire Wire Line
-	3950 2850 5325 2850
+	3950 2850 4300 2850
 Wire Wire Line
-	4625 2750 5325 2750
+	4625 2750 4700 2750
 $Comp
 L open-automation:R_10k R?
 U 1 1 5ADA3415
@@ -396,4 +396,48 @@ F 3 "" H 5650 2325 50  0001 C CNN
 	1    5650 2325
 	1    0    0    -1  
 $EndComp
+$Comp
+L Device:R R?
+U 1 1 5AE8F142
+P 4300 1800
+F 0 "R?" H 4230 1754 50  0000 R CNN
+F 1 "Jumper 0ohm" H 4230 1845 50  0000 R CNN
+F 2 "" V 4230 1800 50  0001 C CNN
+F 3 "~" H 4300 1800 50  0001 C CNN
+	1    4300 1800
+	1    0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5AE8F18A
+P 4700 1800
+F 0 "R?" H 4770 1846 50  0000 L CNN
+F 1 "Jumper 0ohm" H 4770 1755 50  0000 L CNN
+F 2 "" V 4630 1800 50  0001 C CNN
+F 3 "~" H 4700 1800 50  0001 C CNN
+	1    4700 1800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4300 1950 4300 2850
+Connection ~ 4300 2850
+Wire Wire Line
+	4300 2850 5325 2850
+Wire Wire Line
+	4700 1950 4700 2750
+Connection ~ 4700 2750
+Wire Wire Line
+	4700 2750 5325 2750
+Text HLabel 4100 1450 0    50   Input ~ 0
+CAN_RX
+Text HLabel 4900 1450 2    50   Input ~ 0
+CAN_TX
+Wire Wire Line
+	4100 1450 4300 1450
+Wire Wire Line
+	4300 1450 4300 1650
+Wire Wire Line
+	4700 1650 4700 1450
+Wire Wire Line
+	4700 1450 4900 1450
 $EndSCHEMATC

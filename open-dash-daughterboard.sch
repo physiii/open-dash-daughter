@@ -67,6 +67,8 @@ F5 "CAN_CS" I R 4000 6150 50
 F6 "SPI_SCK" I R 4000 6250 50 
 F7 "CAN_RESET" I R 4000 6375 50 
 F8 "CAN_INT" I R 4000 6475 50 
+F9 "CAN_RX" I R 4000 6600 50 
+F10 "CAN_TX" I R 4000 6700 50 
 $EndSheet
 $Sheet
 S 2450 1300 1550 950 
@@ -101,34 +103,34 @@ F0 "video mixer" 50
 F1 "video-mixer.sch" 50
 $EndSheet
 $Sheet
-S 5450 3650 1650 1900
+S 6450 4550 1650 1900
 U 5ABD187E
 F0 "interface" 50
 F1 "interface.sch" 50
-F2 "AMF_Antenna" I L 5450 3700 50 
-F3 "GPS_Antenna" I L 5450 3800 50 
-F4 "can_+" I L 5450 4250 50 
-F5 "aux_R" I L 5450 4600 50 
-F6 "aux_ref" I L 5450 4700 50 
-F7 "can_-" I L 5450 4350 50 
-F8 "BL" I R 7100 4050 50 
-F9 "Ground" I R 7100 4150 50 
-F10 "Mic_-" I R 7100 4700 50 
-F11 "Mic_+" I R 7100 4800 50 
-F12 "CameraSignal" I R 7100 4900 50 
-F13 "CameraShield" I R 7100 4600 50 
-F14 "CameraReturn" I R 7100 5200 50 
-F15 "12vAlwaysOn" I R 7100 3950 50 
-F16 "rightRearSpeaker+" I R 7100 5100 50 
-F17 "rightFrontSpeaker+" I R 7100 4400 50 
-F18 "leftFrontSpeaker+" I L 5450 4800 50 
-F19 "leftRearSpeaker+" I L 5450 4900 50 
-F20 "rightRearSpeaker-" I R 7100 5000 50 
-F21 "rightFrontSpeaker-" I R 7100 4500 50 
-F22 "leftFrontSpeaker-" I L 5450 5000 50 
-F23 "leftRearSpeaker-" I L 5450 5100 50 
-F24 "auxDet" I L 5450 3950 50 
-F25 "auxL" I L 5450 4450 50 
+F2 "AMF_Antenna" I L 6450 4600 50 
+F3 "GPS_Antenna" I L 6450 4700 50 
+F4 "can_+" I L 6450 5050 50 
+F5 "aux_R" I L 6450 5450 50 
+F6 "aux_ref" I L 6450 5550 50 
+F7 "can_-" I L 6450 5150 50 
+F8 "BL" I R 8100 4950 50 
+F9 "Ground" I R 8100 5050 50 
+F10 "Mic_-" I R 8100 5600 50 
+F11 "Mic_+" I R 8100 5700 50 
+F12 "CameraSignal" I R 8100 5800 50 
+F13 "CameraShield" I R 8100 5500 50 
+F14 "CameraReturn" I R 8100 6100 50 
+F15 "12vAlwaysOn" I R 8100 4850 50 
+F16 "rightRearSpeaker+" I R 8100 6000 50 
+F17 "rightFrontSpeaker+" I R 8100 5300 50 
+F18 "leftFrontSpeaker+" I L 6450 5700 50 
+F19 "leftRearSpeaker+" I L 6450 5800 50 
+F20 "rightRearSpeaker-" I R 8100 5900 50 
+F21 "rightFrontSpeaker-" I R 8100 5400 50 
+F22 "leftFrontSpeaker-" I L 6450 5900 50 
+F23 "leftRearSpeaker-" I L 6450 6000 50 
+F24 "auxDet" I L 6450 4850 50 
+F25 "auxL" I L 6450 5350 50 
 $EndSheet
 $Sheet
 S 2450 3650 1550 900 
@@ -144,7 +146,7 @@ F7 "FM_INT" I R 4000 4300 50
 F8 "FM_RADIO_RST" I R 4000 3750 50 
 $EndSheet
 $Sheet
-S 7300 3700 1400 950 
+S 5600 3350 1400 950 
 U 5ABE8D90
 F0 "composite input" 50
 F1 "composite-input.sch" 50
@@ -317,22 +319,36 @@ F4 "SCL" I L 5550 2500 50
 F5 "GPS_Ant" I L 5550 2650 50 
 $EndSheet
 $Sheet
-S 8400 5100 1475 700 
+S 4750 5900 1475 700 
 U 5AE37EA7
 F0 "audio-interface" 50
 F1 "audio-interface.sch" 50
-F2 "5v" I L 8400 5200 50 
-F3 "usb_dm" B L 8400 5550 50 
-F4 "usb_dp" B L 8400 5450 50 
-F5 "3v3" I L 8400 5300 50 
-F6 "audio_mute" I L 8400 5700 50 
-F7 "audio_out_right" O R 9875 5200 50 
-F8 "audio_out_left" O R 9875 5300 50 
-F9 "dac_clk_out" O R 9875 5450 50 
-F10 "dac_data_out" O R 9875 5750 50 
-F11 "dac_left_l_r_clk_out" O R 9875 5550 50 
-F12 "dac_serial_clk_out" O R 9875 5650 50 
+F2 "5v" I L 4750 6000 50 
+F3 "usb_dm" B L 4750 6350 50 
+F4 "usb_dp" B L 4750 6250 50 
+F5 "3v3" I L 4750 6100 50 
+F6 "audio_mute" I L 4750 6500 50 
+F7 "audio_out_right" O R 6225 6000 50 
+F8 "audio_out_left" O R 6225 6100 50 
+F9 "dac_clk_out" O R 6225 6250 50 
+F10 "dac_data_out" O R 6225 6550 50 
+F11 "dac_left_l_r_clk_out" O R 6225 6350 50 
+F12 "dac_serial_clk_out" O R 6225 6450 50 
 $EndSheet
+Entry Wire Line
+	4150 6600 4250 6700
+Entry Wire Line
+	4150 6700 4250 6800
+Wire Wire Line
+	4150 6600 4000 6600
+Wire Wire Line
+	4000 6700 4150 6700
+Wire Wire Line
+	5550 2650 5200 2650
+Wire Wire Line
+	5200 2650 5200 4700
+Wire Wire Line
+	5200 4700 6450 4700
 Wire Bus Line
 	2300 250  2300 7500
 Wire Bus Line

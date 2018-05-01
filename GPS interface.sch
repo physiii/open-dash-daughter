@@ -25,33 +25,33 @@ F 3 "~" H 5350 3500 50  0001 C CNN
 	1    5350 3500
 	1    0    0    -1  
 $EndComp
-Text HLabel 4900 3400 0    50   Input ~ 0
+Text HLabel 3650 3400 0    50   Input ~ 0
 3v3
-Text HLabel 4900 3600 0    50   Input ~ 0
+Text HLabel 3650 3600 0    50   Input ~ 0
 SDA
-Text HLabel 4900 3500 0    50   Input ~ 0
+Text HLabel 3650 3500 0    50   Input ~ 0
 SCL
 $Comp
 L open-automation:GND #PWR?
 U 1 1 5AE2E7DF
-P 4800 3800
-F 0 "#PWR?" H 4800 3550 50  0001 C CNN
-F 1 "GND" H 4805 3627 50  0000 C CNN
-F 2 "" H 4800 3800 50  0000 C CNN
-F 3 "" H 4800 3800 50  0000 C CNN
-	1    4800 3800
+P 3550 3800
+F 0 "#PWR?" H 3550 3550 50  0001 C CNN
+F 1 "GND" H 3555 3627 50  0000 C CNN
+F 2 "" H 3550 3800 50  0000 C CNN
+F 3 "" H 3550 3800 50  0000 C CNN
+	1    3550 3800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4900 3400 5150 3400
+	3650 3400 5000 3400
 Wire Wire Line
-	5150 3500 4900 3500
+	5150 3500 4600 3500
 Wire Wire Line
-	4900 3600 5150 3600
+	3650 3600 4200 3600
 Wire Wire Line
-	5150 3700 4800 3700
+	5150 3700 3800 3700
 Wire Wire Line
-	4800 3700 4800 3800
+	3550 3700 3550 3800
 $Comp
 L Connector_Generic:Conn_01x04 J?
 U 1 1 5AE2E8B5
@@ -72,7 +72,7 @@ SDA
 Text Label 7100 3500 2    50   ~ 0
 SCL
 $Comp
-L open-dash-daughterboard-rescue:A2235-H-dk_RF-Receivers U?
+L open-automation:A2235-H-dk_RF-Receivers U?
 U 1 1 5AE2F0AB
 P 9150 3250
 F 0 "U?" H 9250 4050 60  0000 C CNN
@@ -94,7 +94,7 @@ $EndComp
 Wire Wire Line
 	7650 3400 7650 2350
 Wire Wire Line
-	7650 2350 9050 2350
+	7650 2350 7850 2350
 Wire Wire Line
 	9050 2350 9050 2650
 Wire Wire Line
@@ -133,4 +133,163 @@ Text HLabel 8050 3850 0    50   Input ~ 0
 GPS_Ant
 Wire Wire Line
 	8350 3850 8050 3850
+Text Label 8050 3950 2    50   ~ 0
+3v3
+$Comp
+L Device:R R?
+U 1 1 5AEA67C5
+P 5000 3050
+F 0 "R?" H 5070 3096 50  0000 L CNN
+F 1 "Jumper" H 5070 3005 50  0000 L CNN
+F 2 "" V 4930 3050 50  0001 C CNN
+F 3 "~" H 5000 3050 50  0001 C CNN
+	1    5000 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5AEA683D
+P 4600 3050
+F 0 "R?" H 4670 3096 50  0000 L CNN
+F 1 "Jumper" H 4670 3005 50  0000 L CNN
+F 2 "" V 4530 3050 50  0001 C CNN
+F 3 "~" H 4600 3050 50  0001 C CNN
+	1    4600 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5AEA685D
+P 4200 3050
+F 0 "R?" H 4270 3096 50  0000 L CNN
+F 1 "Jumper" H 4270 3005 50  0000 L CNN
+F 2 "" V 4130 3050 50  0001 C CNN
+F 3 "~" H 4200 3050 50  0001 C CNN
+	1    4200 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5AEA687F
+P 3800 3050
+F 0 "R?" H 3870 3096 50  0000 L CNN
+F 1 "Jumper" H 3870 3005 50  0000 L CNN
+F 2 "" V 3730 3050 50  0001 C CNN
+F 3 "~" H 3800 3050 50  0001 C CNN
+	1    3800 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 3200 3800 3700
+Connection ~ 3800 3700
+Wire Wire Line
+	3800 3700 3550 3700
+Wire Wire Line
+	4200 3200 4200 3600
+Connection ~ 4200 3600
+Wire Wire Line
+	4200 3600 5150 3600
+Wire Wire Line
+	4600 3200 4600 3500
+Connection ~ 4600 3500
+Wire Wire Line
+	4600 3500 3650 3500
+Wire Wire Line
+	5000 3200 5000 3400
+Connection ~ 5000 3400
+Wire Wire Line
+	5000 3400 5150 3400
+Text Label 5000 2750 2    50   ~ 0
+3v3
+Text Label 4600 2750 2    50   ~ 0
+SCL
+Text Label 4200 2750 2    50   ~ 0
+SDA
+Text Label 3800 2750 2    50   ~ 0
+GND_Plane
+Wire Wire Line
+	5000 2900 5000 2750
+Wire Wire Line
+	4600 2750 4600 2900
+Wire Wire Line
+	4200 2900 4200 2750
+Wire Wire Line
+	3800 2750 3800 2900
+Wire Wire Line
+	8050 3950 8350 3950
+$Comp
+L Device:C C?
+U 1 1 5AEADD26
+P 7850 2550
+F 0 "C?" H 7965 2596 50  0000 L CNN
+F 1 "C" H 7965 2505 50  0000 L CNN
+F 2 "" H 7888 2400 50  0001 C CNN
+F 3 "~" H 7850 2550 50  0001 C CNN
+	1    7850 2550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5AEADD96
+P 8200 2550
+F 0 "C?" H 8315 2596 50  0000 L CNN
+F 1 "C" H 8315 2505 50  0000 L CNN
+F 2 "" H 8238 2400 50  0001 C CNN
+F 3 "~" H 8200 2550 50  0001 C CNN
+	1    8200 2550
+	1    0    0    -1  
+$EndComp
+Text Label 8350 2800 0    50   ~ 0
+GND_Plane
+Wire Wire Line
+	8350 2800 8200 2800
+Wire Wire Line
+	8200 2800 8200 2700
+Wire Wire Line
+	8200 2400 8200 2350
+Connection ~ 8200 2350
+Wire Wire Line
+	8200 2350 9050 2350
+Wire Wire Line
+	7850 2400 7850 2350
+Connection ~ 7850 2350
+Wire Wire Line
+	7850 2350 8200 2350
+Wire Wire Line
+	7850 2700 7850 2800
+Wire Wire Line
+	7850 2800 8200 2800
+Connection ~ 8200 2800
+$Comp
+L Device:C C?
+U 1 1 5AEB1B71
+P 10150 3350
+F 0 "C?" V 9898 3350 50  0000 C CNN
+F 1 "C" V 9989 3350 50  0000 C CNN
+F 2 "" H 10188 3200 50  0001 C CNN
+F 3 "~" H 10150 3350 50  0001 C CNN
+	1    10150 3350
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5AEB1C00
+P 8100 2950
+F 0 "C?" V 7848 2950 50  0000 C CNN
+F 1 "C" V 7939 2950 50  0000 C CNN
+F 2 "" H 8138 2800 50  0001 C CNN
+F 3 "~" H 8100 2950 50  0001 C CNN
+	1    8100 2950
+	0    1    1    0   
+$EndComp
+Text Notes 5250 1450 0    50   ~ 0
+This block will be a piece that can be either left on the board and the antenna can be installed, or can be broken off and wired up to the bezel \n
+Wire Notes Line
+	6100 5750 10800 5750
+Wire Notes Line
+	10800 5750 10800 1550
+Wire Notes Line
+	10800 1550 6100 1550
+Wire Notes Line
+	6100 1550 6100 5750
 $EndSCHEMATC

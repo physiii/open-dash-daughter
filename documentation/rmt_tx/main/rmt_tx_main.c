@@ -16,27 +16,21 @@ static const char *RMT_TX_TAG = "RMT Tx";
 #define RMT_TX_CHANNEL RMT_CHANNEL_0
 #define RMT_TX_GPIO 18
 
-#define RMT_TICK_10_US (80000000/RMT_CLK_DIV/100000)
-#define RMT_CLK_DIV 100
-#define PULSE_T0H_NS (350)
-#define PULSE_T1H_NS (700)
-#define PULSE_T0L_NS (800)
-#define PULSE_T1L_NS (600)
-#define PULSE_RES_NS (50000)
+// RMT_BASECLK_APB is not defined anywhere I can see, assuming default 80MHz
+#define MY_RMT_BASECLK_APB (80)
 
-#define PULSE_T0H_US (PULSE_T0H_NS / 1000)
-#define PULSE_T1H_US (PULSE_T1H_NS / 1000)
-#define PULSE_T0L_US (PULSE_T0L_NS / 1000)
-#define PULSE_T1L_US (PULSE_T1L_NS / 1000)
-#define PULSE_RES_US (PULSE_RES_NS / 1000)
+#define RMT_CLK_DIV 1
+#define PULSE_T0H_US (0.35)
+#define PULSE_T1H_US (0.7)
+#define PULSE_T0L_US (0.8)
+#define PULSE_T1L_US (0.6)
+#define PULSE_RES_US (50)
 
-#define US_TO_RMT_TICK(u) (u / 10 * RMT_TICK_10_US)
-
-#define PULSE_T0H (US_TO_RMT_TICK(PULSE_T0H_US))
-#define PULSE_T1H (US_TO_RMT_TICK(PULSE_T1H_US))
-#define PULSE_T0L (US_TO_RMT_TICK(PULSE_T0L_US))
-#define PULSE_T1L (US_TO_RMT_TICK(PULSE_T1L_US))
-#define PULSE_RES (US_TO_RMT_TICK(PULSE_RES_US))
+#define T0H_TICKS ((int)(MY_RMT_BASECLK_APB * PULSE_T0H_US))
+#define T1H_TICKS ((int)(MY_RMT_BASECLK_APB * PULSE_T1H_US))
+#define T0L_TICKS ((int)(MY_RMT_BASECLK_APB * PULSE_T0L_US))
+#define T1L_TICKS ((int)(MY_RMT_BASECLK_APB * PULSE_T1L_US))
+#define RES_TICKS ((int)(MY_RMT_BASECLK_APB * PULSE_RES_US))
 
 struct rgb_t {
   unsigned char r, g, b;
@@ -80,37 +74,37 @@ rmt_item32_t morse_items[] = {
 rmt_item32_t items[] = {
   // frame 0: g=0, r=255, b=0
   // frame 0 green, send eight zero bits (0_code)
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
 
   // frame 0 red 255, send eight 1 bits (1_code)
-  {{{ PULSE_T1H, 1, PULSE_T1L, 0 }}},
-  {{{ PULSE_T1H, 1, PULSE_T1L, 0 }}},
-  {{{ PULSE_T1H, 1, PULSE_T1L, 0 }}},
-  {{{ PULSE_T1H, 1, PULSE_T1L, 0 }}},
-  {{{ PULSE_T1H, 1, PULSE_T1L, 0 }}},
-  {{{ PULSE_T1H, 1, PULSE_T1L, 0 }}},
-  {{{ PULSE_T1H, 1, PULSE_T1L, 0 }}},
-  {{{ PULSE_T1H, 1, PULSE_T1L, 0 }}},
+  {{{ T1H_TICKS, 1, T1L_TICKS, 0 }}},
+  {{{ T1H_TICKS, 1, T1L_TICKS, 0 }}},
+  {{{ T1H_TICKS, 1, T1L_TICKS, 0 }}},
+  {{{ T1H_TICKS, 1, T1L_TICKS, 0 }}},
+  {{{ T1H_TICKS, 1, T1L_TICKS, 0 }}},
+  {{{ T1H_TICKS, 1, T1L_TICKS, 0 }}},
+  {{{ T1H_TICKS, 1, T1L_TICKS, 0 }}},
+  {{{ T1H_TICKS, 1, T1L_TICKS, 0 }}},
 
   // frame 0 blue 0, send eight 0 bits (0_code)
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
-  {{{ PULSE_T0H, 1, PULSE_T0L, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
+  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
 
   // send a reset code
-  {{{ PULSE_RES, 0, 0, 0 }}}
+  {{{ RES_TICKS, 0, 0, 0 }}}
 };
 
 /*
@@ -148,11 +142,11 @@ static void ws2812_rmt_tx_init() {
 
     config.rmt_mode = RMT_MODE_TX;
     config.channel = RMT_TX_CHANNEL;
-    config.clk_div = 255;
+    config.clk_div = RMT_CLK_DIV;
     config.gpio_num = RMT_TX_GPIO;
     config.mem_block_num = 1;
 
-    config.tx_config.loop_en = 0; // loop the current configuration
+    config.tx_config.loop_en = 1; // loop the current configuration
     config.tx_config.carrier_en = 0;
     config.tx_config.idle_output_en = 1;
     config.tx_config.idle_level = 1;
@@ -166,6 +160,8 @@ void app_main(void *ignore)
     ESP_LOGI(RMT_TX_TAG, "Configuring transmitter");
     ws2812_rmt_tx_init();
     int number_of_items = sizeof(items) / sizeof(items[0]);
+
+    ESP_LOGI(RMT_TX_TAG, "APB: %dMHz\nT0H ticks: %d\nT1H ticks: %d\nT0L ticks: %d\nT1L ticks: %d\nRES ticks: %d", MY_RMT_BASECLK_APB, T0H_TICKS, T1H_TICKS, T0L_TICKS, T1L_TICKS, RES_TICKS);
 
     while (1)
     {

@@ -13,6 +13,7 @@
 
 static const char *RMT_TX_TAG = "RMT Tx";
 
+// count of light positions
 #define WS2812_PIXELS (60)
 
 #define RMT_TX_CHANNEL RMT_CHANNEL_0
@@ -42,109 +43,6 @@ struct rgb_t pixel[WS2812_PIXELS] = {0};
 // 3 channels (RGB), 8 bits each
 rmt_item32_t rmt_pixel[WS2812_PIXELS][3][8];
 
-/*
- * Prepare a raw table with a message in the Morse code
- *
- * The message is "ESP" : . ... .--.
- *
- * The table structure represents the RMT item structure:
- * {duration, level, duration, level}
- *
- */
-
-rmt_item32_t morse_items[] = {
-    // E : dot
-    {{{ 32767, 1, 32767, 0 }}}, // dot
-    //
-    {{{ 32767, 0, 32767, 0 }}}, // SPACE
-    // S : dot, dot, dot
-    {{{ 32767, 1, 32767, 0 }}}, // dot
-    {{{ 32767, 1, 32767, 0 }}}, // dot
-    {{{ 32767, 1, 32767, 0 }}}, // dot
-    //
-    {{{ 32767, 0, 32767, 0 }}}, // SPACE
-    // P : dot, dash, dash, dot
-    {{{ 32767, 1, 32767, 0 }}}, // dot
-    {{{ 32767, 1, 32767, 1 }}},
-    {{{ 32767, 1, 32767, 0 }}}, // dash
-    {{{ 32767, 1, 32767, 1 }}},
-    {{{ 32767, 1, 32767, 0 }}}, // dash
-    {{{ 32767, 1, 32767, 0 }}}, // dot
-
-    // RMT end marker
-    {{{ 0, 1, 0, 0 }}}
-};
-
-rmt_item32_t bit0 = {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}};
-
-// let's just turn on the first light red
-// {{{ duration0_in_ticks, level0, duration1_in_ticks, level1 }}}
-rmt_item32_t items[] = {
-  // frame 0: g=0, r=255, b=0
-  // frame 0 green, send eight zero bits (0_code)
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T1H_TICKS, 1, T1L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-
-  // frame 0 red 255, send eight 1 bits (1_code)
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-
-  // frame 0 blue 0, send eight 0 bits (0_code)
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-
-  // send a reset code
-  // {{{ RES_TICKS, 0, 0, 0 }}}
-
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-
-  // frame 0 red 255, send eight 1 bits (1_code)
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T1H_TICKS, 1, T1L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-
-  // frame 0 blue 0, send eight 0 bits (0_code)
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-  {{{ T0H_TICKS, 1, T0L_TICKS, 0 }}},
-
-};
-
 static void ws2812_rmt_tx_init() {
     rmt_config_t config = {};
 
@@ -152,9 +50,9 @@ static void ws2812_rmt_tx_init() {
     config.channel = RMT_TX_CHANNEL;
     config.clk_div = RMT_CLK_DIV;
     config.gpio_num = RMT_TX_GPIO;
-    config.mem_block_num = 1;
+    config.mem_block_num = 1; // don't know what this does but it needs to be so
 
-    config.tx_config.loop_en = 0; // don't loop the current configuration
+    config.tx_config.loop_en = 0;
     config.tx_config.carrier_en = 0;
     config.tx_config.idle_output_en = 0;
     config.tx_config.idle_level = 0;
@@ -176,7 +74,8 @@ void set_pixel_channel(rmt_item32_t * item, int state) {
 }
 
 void write_pixels() {
-  ESP_ERROR_CHECK(rmt_write_items(RMT_TX_CHANNEL, rmt_pixel, sizeof(rmt_pixel) / sizeof(rmt_pixel[0][0][0]), true));
+  int structs = sizeof(rmt_pixel) / sizeof(rmt_pixel[0][0][0]);
+  ESP_ERROR_CHECK(rmt_write_items(RMT_TX_CHANNEL, rmt_pixel, structs, true));
 }
 
 // copy rgb_t pixel data into rmt_pixel data
@@ -196,11 +95,12 @@ void set_pixel_by_index(int index, unsigned char r, unsigned char g, unsigned ch
   }
 }
 
-void init_pixels() {
+void reset_pixels() {
   int index;
   for (index = 0; index < WS2812_PIXELS; index += 1) {
     set_pixel_by_index(index, 0, 0, 0, 0);
   }
+  write_pixels();
 }
 
 void app_main(void *ignore)
@@ -209,15 +109,8 @@ void app_main(void *ignore)
     ESP_LOGI(RMT_TX_TAG, "APB: %dMHz\nT0H ticks: %d\nT1H ticks: %d\nT0L ticks: %d\nT1L ticks: %d\nRES ticks: %d", MY_RMT_BASECLK_APB, T0H_TICKS, T1H_TICKS, T0L_TICKS, T1L_TICKS, RES_TICKS);
     ws2812_rmt_tx_init();
 
-    // init_pixels();
-
-    // ESP_ERROR_CHECK(rmt_write_items(RMT_TX_CHANNEL, items, sizeof(items) / sizeof(items[0]), true));
-    // ESP_ERROR_CHECK(rmt_write_items(RMT_TX_CHANNEL, rmt_pixel, sizeof(rmt_pixel) / sizeof(rmt_pixel[0][0][0]), true));
-
-    // printf("%d %d %d %d\n", sizeof(rmt_pixel), sizeof(rmt_pixel[0]), sizeof(rmt_pixel[0][0]), sizeof(rmt_pixel[0][0][0]));
-    init_pixels();
+    reset_pixels();
     ESP_LOGI(RMT_TX_TAG, "Resetting pixels ...");
-    write_pixels();
 
     vTaskDelay(500 / portTICK_PERIOD_MS);
 

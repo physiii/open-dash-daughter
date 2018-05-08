@@ -103,6 +103,47 @@ void reset_pixels() {
   write_pixels();
 }
 
+void light_demo() {
+  // gbr glider runs across
+  for (int i = 2; i < WS2812_PIXELS; i += 1) {
+    set_pixel_by_index(i - 2, 127, 0, 0, 0);
+    set_pixel_by_index(i - 1, 0, 127, 0, 0);
+    set_pixel_by_index(i - 0, 0, 0, 127, 1);
+    write_pixels();
+    set_pixel_by_index(i - 2, 0, 0, 0, 0);
+    set_pixel_by_index(i - 1, 0, 0, 0, 0);
+    set_pixel_by_index(i - 0, 0, 0, 0, 0);
+    vTaskDelay((2500 / WS2812_PIXELS) / portTICK_PERIOD_MS);
+  }
+
+  for (int i = WS2812_PIXELS - 1; i >= 2; i -= 1) {
+    set_pixel_by_index(i - 2, 127, 0, 0, 0);
+    set_pixel_by_index(i - 1, 0, 127, 0, 0);
+    set_pixel_by_index(i - 0, 0, 0, 127, 1);
+    write_pixels();
+    set_pixel_by_index(i - 2, 0, 0, 0, 0);
+    set_pixel_by_index(i - 1, 0, 0, 0, 0);
+    set_pixel_by_index(i - 0, 0, 0, 0, 0);
+    vTaskDelay((2500 / WS2812_PIXELS) / portTICK_PERIOD_MS);
+  }
+
+  for (int i = 0; i < 4; i += 1) {
+    set_pixel_by_index(0, 0, 0, 0, 0);
+    set_pixel_by_index(1, 0, 0, 0, 0);
+    set_pixel_by_index(2, 0, 0, 0, 1);
+    vTaskDelay(250 / portTICK_PERIOD_MS);
+    set_pixel_by_index(0, 127, 0, 0, 0);
+    set_pixel_by_index(1, 0, 127, 0, 0);
+    set_pixel_by_index(2, 0, 0, 127, 1);
+    vTaskDelay(250 / portTICK_PERIOD_MS);
+  }
+
+  set_pixel_by_index(0, 0, 0, 0, 0);
+  set_pixel_by_index(1, 0, 0, 0, 0);
+  set_pixel_by_index(2, 0, 0, 0, 1);
+  vTaskDelay(500 / portTICK_PERIOD_MS);
+}
+
 void app_main(void *ignore)
 {
     ESP_LOGI(RMT_TX_TAG, "Configuring transmitter");
@@ -111,7 +152,6 @@ void app_main(void *ignore)
 
     reset_pixels();
     ESP_LOGI(RMT_TX_TAG, "Resetting pixels ...");
-
     vTaskDelay(500 / portTICK_PERIOD_MS);
 
     ESP_LOGI(RMT_TX_TAG, "pixel 5 red");
@@ -125,6 +165,10 @@ void app_main(void *ignore)
     ESP_LOGI(RMT_TX_TAG, "pixel 5 green");
     set_pixel_by_index(4, 0, 63, 0, 1);
     vTaskDelay(1500 / portTICK_PERIOD_MS);
+
+    while (1) {
+      light_demo();
+    }
 
     vTaskDelete(NULL);
 }

@@ -95,12 +95,32 @@ void set_pixel_by_index(int index, unsigned char r, unsigned char g, unsigned ch
   }
 }
 
-void reset_pixels() {
+void all_one_color(unsigned char r, unsigned char g, unsigned char b) {
   int index;
   for (index = 0; index < WS2812_PIXELS; index += 1) {
-    set_pixel_by_index(index, 0, 0, 0, 0);
+    set_pixel_by_index(index, r, g, b, 0);
   }
   write_pixels();
+}
+
+void reset_pixels() {
+  all_one_color(0, 0, 0);
+}
+
+void all_red() {
+  all_one_color(255, 0, 0);
+}
+
+void all_green() {
+  all_one_color(0, 255, 0);
+}
+
+void all_blue() {
+  all_one_color(0, 0, 255);
+}
+
+void all_white() {
+  all_one_color(255, 255, 255);
 }
 
 void light_demo() {
@@ -167,6 +187,18 @@ void app_main(void *ignore)
     vTaskDelay(1500 / portTICK_PERIOD_MS);
 
     while (1) {
+      all_red();
+      vTaskDelay(1500 / portTICK_PERIOD_MS);
+
+      all_green();
+      vTaskDelay(1500 / portTICK_PERIOD_MS);
+
+      all_blue();
+      vTaskDelay(1500 / portTICK_PERIOD_MS);
+
+      all_white();
+      vTaskDelay(1500 / portTICK_PERIOD_MS);
+
       light_demo();
     }
 

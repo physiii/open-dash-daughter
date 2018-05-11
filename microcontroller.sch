@@ -24,17 +24,6 @@ F 3 "" H 4825 2750 50  0000 C CNN
 	1    4825 2750
 	-1   0    0    1   
 $EndComp
-$Comp
-L open-automation:ESP-WROOM-32 U4
-U 1 1 5AF61D9A
-P 5775 3450
-F 0 "U4" H 6325 2350 60  0000 C CNN
-F 1 "ESP-WROOM-32" H 5775 4250 60  0000 C CNN
-F 2 "open-automation:ESP-WROOM-32" H 5425 4050 60  0001 C CNN
-F 3 "https://www.espressif.com/sites/default/files/documentation/esp_wroom_32_datasheet_en.pdf" H 5425 4050 60  0001 C CNN
-	1    5775 3450
-	1    0    0    -1  
-$EndComp
 Text Label 4200 1025 0    197  ~ 0
 Microcontroller
 $Comp
@@ -244,4 +233,15 @@ Text HLabel 6725 4000 2    50   Output ~ 0
 SOFT_POWER
 Wire Wire Line
 	6625 4000 6725 4000
+$Comp
+L open-automation:ESP-WROOM-32 U14
+U 1 1 5AFA4EFB
+P 5775 3450
+F 0 "U14" H 6325 2350 60  0000 C CNN
+F 1 "ESP-WROOM-32" H 5775 4250 60  0000 C CNN
+F 2 "open-automation:ESP-WROOM-32" H 5425 4050 60  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp_wroom_32_datasheet_en.pdf" H 5425 4050 60  0001 C CNN
+	1    5775 3450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

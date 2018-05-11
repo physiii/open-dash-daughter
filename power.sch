@@ -71,18 +71,6 @@ F 3 "" H 4750 1475 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:D_Schottky D2
-U 1 1 59690FC6
-P 4750 1275
-F 0 "D2" H 4750 1375 50  0000 C CNN
-F 1 "D_Schottky" H 4750 1175 50  0001 C CNN
-F 2 "Diodes_SMD:D_SMA" H 4750 1275 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/comchip-technology/CDBA540-HF/641-1707-1-ND/5226090" H 4750 1275 50  0001 C CNN
-F 4 "CDBA540-HF" H 4750 1275 60  0001 C CNN "Part Number"
-	1    4750 1275
-	0    1    1    0   
-$EndComp
-$Comp
 L open-automation:GND #PWR04
 U 1 1 59757643
 P 1400 1450
@@ -92,18 +80,6 @@ F 2 "" H 1400 1450 50  0000 C CNN
 F 3 "" H 1400 1450 50  0000 C CNN
 	1    1400 1450
 	-1   0    0    -1  
-$EndComp
-$Comp
-L open-automation:LED D5
-U 1 1 598F7872
-P 6825 1300
-F 0 "D5" H 6825 1400 50  0000 C CNN
-F 1 "LED" H 6825 1200 50  0000 C CNN
-F 2 "LEDs:LED_0603_HandSoldering" H 6825 1300 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 6825 1300 50  0001 C CNN
-F 4 "SML-D12M8WT86" H 6825 1300 60  0001 C CNN "Part Number"
-	1    6825 1300
-	0    -1   -1   0   
 $EndComp
 $Comp
 L open-automation:GND #PWR05
@@ -253,18 +229,6 @@ F 3 "" H 5675 4675 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_10k R2
-U 1 1 5AC637FA
-P 4050 4450
-F 0 "R2" V 4050 4450 50  0000 C CNN
-F 1 "R_10k" V 3975 4450 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 3980 4450 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 4130 4450 50  0001 C CNN
-F 4 "RC0603JR-0710KL" V 4230 4550 60  0001 C CNN "Part Number"
-	1    4050 4450
-	0    -1   -1   0   
-$EndComp
-$Comp
 L open-automation:R_10k R8
 U 1 1 5AC647A0
 P 6800 4875
@@ -326,18 +290,6 @@ F 3 "https://www.digikey.com/product-detail/en/bourns-inc/2100HT-101-H-RC/M8921-
 F 4 "2100HT-101-H-RC" V 6000 4225 60  0001 C CNN "Part Number"
 	1    6000 4225
 	0    -1   -1   0   
-$EndComp
-$Comp
-L open-automation:D_Schottky D3
-U 1 1 5AC6AF0A
-P 5650 2950
-F 0 "D3" H 5650 3050 50  0000 C CNN
-F 1 "D_Schottky" H 5650 2850 50  0001 C CNN
-F 2 "Diodes_SMD:D_SMA" H 5650 2950 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/comchip-technology/CDBA540-HF/641-1707-1-ND/5226090" H 5650 2950 50  0001 C CNN
-F 4 "CDBA540-HF" H 5650 2950 60  0001 C CNN "Part Number"
-	1    5650 2950
-	0    1    1    0   
 $EndComp
 $Comp
 L open-automation:D_Schottky D4
@@ -621,30 +573,6 @@ Wire Wire Line
 Text Label 5800 2650 0    60   ~ 0
 5v_feedback
 $Comp
-L open-automation:R_10k R3
-U 1 1 5AC6AB45
-P 5900 1300
-F 0 "R3" V 5900 1300 50  0000 C CNN
-F 1 "R_3k92" V 5800 1300 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 5830 1300 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-073K92L/311-3.92KHRCT-ND/730085" V 5980 1300 50  0001 C CNN
-F 4 "RC0603FR-073K92L" V 6080 1400 60  0001 C CNN "Part Number"
-	1    5900 1300
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:R_10k R4
-U 1 1 5AC6AB4C
-P 5900 1725
-F 0 "R4" V 5900 1725 50  0000 C CNN
-F 1 "R_2k32" V 5800 1725 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 5830 1725 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-072K32L/311-2.32KHRCT-ND/729968" V 5980 1725 50  0001 C CNN
-F 4 "RC0603FR-072K32L" V 6080 1825 60  0001 C CNN "Part Number"
-	1    5900 1725
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:GND #PWR018
 U 1 1 5AC6AB52
 P 5900 1975
@@ -727,18 +655,6 @@ F 3 "https://www.digikey.com/product-detail/en/vishay-dale/CRCW06037K15FKEA/541-
 F 4 "CRCW06037K15FKEA" V 6980 4550 60  0001 C CNN "Part Number"
 	1    6800 4450
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:D_Zener D1
-U 1 1 5AC6FF2B
-P 1750 1175
-F 0 "D1" H 1750 1275 50  0000 C CNN
-F 1 "26V Zener" H 1750 1075 50  0000 C CNN
-F 2 "Diodes_SMD:D_SMB" H 1750 1175 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/smc-diode-solutions/SMBJ26CATR/1655-1628-1-ND/6023073" H 1750 1175 50  0001 C CNN
-F 4 "SMBJ26CATR" H 1750 1175 60  0001 C CNN "Part Number"
-	1    1750 1175
-	0    1    1    0   
 $EndComp
 Connection ~ 1750 975 
 Wire Wire Line
@@ -862,4 +778,88 @@ Wire Wire Line
 Wire Wire Line
 	1700 1850 1700 2000
 Connection ~ 1450 1850
+$Comp
+L Device:D_Zener D1
+U 1 1 5AFA3889
+P 1750 1175
+F 0 "D1" H 1750 1275 50  0000 C CNN
+F 1 "26V Zener" H 1750 1075 50  0000 C CNN
+F 2 "Diodes_SMD:D_SMB" H 1750 1175 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/smc-diode-solutions/SMBJ26CATR/1655-1628-1-ND/6023073" H 1750 1175 50  0001 C CNN
+F 4 "SMBJ26CATR" H 1750 1175 60  0001 C CNN "Part Number"
+	1    1750 1175
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:D_Schottky D12
+U 1 1 5AFA3A8A
+P 4750 1275
+F 0 "D12" H 4750 1375 50  0000 C CNN
+F 1 "D_Schottky" H 4750 1175 50  0001 C CNN
+F 2 "Diodes_SMD:D_SMA" H 4750 1275 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/comchip-technology/CDBA540-HF/641-1707-1-ND/5226090" H 4750 1275 50  0001 C CNN
+F 4 "CDBA540-HF" H 4750 1275 60  0001 C CNN "Part Number"
+	1    4750 1275
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:R_10k R39
+U 1 1 5AFA3C39
+P 4050 4450
+F 0 "R39" V 4050 4450 50  0000 C CNN
+F 1 "R_10k" V 3975 4450 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 3980 4450 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 4130 4450 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 4230 4550 60  0001 C CNN "Part Number"
+	1    4050 4450
+	0    -1   -1   0   
+$EndComp
+$Comp
+L open-automation:R_10k R40
+U 1 1 5AFA4154
+P 5900 1300
+F 0 "R40" V 5900 1300 50  0000 C CNN
+F 1 "R_3k92" V 5800 1300 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 5830 1300 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-073K92L/311-3.92KHRCT-ND/730085" V 5980 1300 50  0001 C CNN
+F 4 "RC0603FR-073K92L" V 6080 1400 60  0001 C CNN "Part Number"
+	1    5900 1300
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_10k R41
+U 1 1 5AFA41C0
+P 5900 1725
+F 0 "R41" V 5900 1725 50  0000 C CNN
+F 1 "R_2k32" V 5800 1725 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603_HandSoldering" V 5830 1725 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-072K32L/311-2.32KHRCT-ND/729968" V 5980 1725 50  0001 C CNN
+F 4 "RC0603FR-072K32L" V 6080 1825 60  0001 C CNN "Part Number"
+	1    5900 1725
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:D_Schottky D13
+U 1 1 5AFA48DE
+P 5650 2950
+F 0 "D13" H 5650 3050 50  0000 C CNN
+F 1 "D_Schottky" H 5650 2850 50  0001 C CNN
+F 2 "Diodes_SMD:D_SMA" H 5650 2950 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/comchip-technology/CDBA540-HF/641-1707-1-ND/5226090" H 5650 2950 50  0001 C CNN
+F 4 "CDBA540-HF" H 5650 2950 60  0001 C CNN "Part Number"
+	1    5650 2950
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:LED D14
+U 1 1 5AFA4A17
+P 6825 1300
+F 0 "D14" H 6825 1400 50  0000 C CNN
+F 1 "LED" H 6825 1200 50  0000 C CNN
+F 2 "LEDs:LED_0603_HandSoldering" H 6825 1300 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 6825 1300 50  0001 C CNN
+F 4 "SML-D12M8WT86" H 6825 1300 60  0001 C CNN "Part Number"
+	1    6825 1300
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC

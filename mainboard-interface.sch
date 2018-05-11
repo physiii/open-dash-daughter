@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0147
 U 1 1 590979B0
 P 5400 3000
-F 0 "#PWR?" H 5400 2750 50  0001 C CNN
+F 0 "#PWR0147" H 5400 2750 50  0001 C CNN
 F 1 "GND" H 5400 2850 50  0000 C CNN
 F 2 "" H 5400 3000 50  0000 C CNN
 F 3 "" H 5400 3000 50  0000 C CNN
@@ -25,10 +25,10 @@ F 3 "" H 5400 3000 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0148
 U 1 1 590979B2
 P 6000 3000
-F 0 "#PWR?" H 6000 2750 50  0001 C CNN
+F 0 "#PWR0148" H 6000 2750 50  0001 C CNN
 F 1 "GND" H 6000 2850 50  0000 C CNN
 F 2 "" H 6000 3000 50  0000 C CNN
 F 3 "" H 6000 3000 50  0000 C CNN
@@ -78,10 +78,10 @@ RXD
 Text HLabel 6050 3450 2    60   Input ~ 0
 SDA
 $Comp
-L Connector_Generic:Conn_02x06_Odd_Even J?
+L Connector_Generic:Conn_02x06_Odd_Even J5
 U 1 1 5AF62600
 P 5650 3250
-F 0 "J?" H 5700 3667 50  0000 C CNN
+F 0 "J5" H 5700 3667 50  0000 C CNN
 F 1 "Conn_02x06_Odd_Even" H 5700 2800 50  0000 C CNN
 F 2 "" H 5650 3250 50  0001 C CNN
 F 3 "~" H 5650 3250 50  0001 C CNN
@@ -97,10 +97,10 @@ SOFT_POWER
 Text HLabel 3550 2975 1    60   Input ~ 0
 3V3
 $Comp
-L open-automation:R_10k R?
+L open-automation:R_10k R38
 U 1 1 5AF64A9D
 P 3550 3200
-F 0 "R?" H 3620 3246 50  0000 L CNN
+F 0 "R38" H 3620 3246 50  0000 L CNN
 F 1 "R_10k" H 3620 3155 50  0000 L CNN
 F 2 "Resistors_SMD:R_0603" V 3480 3200 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 3630 3200 50  0001 C CNN

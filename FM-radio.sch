@@ -14,10 +14,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:Si4740 U?
+L open-automation:Si4740 U11
 U 1 1 5ADA9622
 P 7750 3300
-F 0 "U?" H 7950 4050 50  0000 L CNN
+F 0 "U11" H 7950 4050 50  0000 L CNN
 F 1 "Si4741" H 7850 3900 50  0000 L CNN
 F 2 "MODULE" H 7950 4050 50  0001 C CNN
 F 3 "DOCUMENTATION" H 7950 3850 50  0001 C CNN
@@ -25,10 +25,10 @@ F 3 "DOCUMENTATION" H 7950 3850 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:L L?
+L Device:L L8
 U 1 1 5ADAF1C6
 P 2700 1250
-F 0 "L?" H 2753 1296 50  0000 L CNN
+F 0 "L8" H 2753 1296 50  0000 L CNN
 F 1 "122nH" H 2753 1205 50  0000 L CNN
 F 2 "Inductors_SMD:L_0603_HandSoldering" H 2700 1250 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/pulse-electronics-network/PE-0603CD121GTT/1840-1101-1-ND/8120509" H 2700 1250 50  0001 C CNN
@@ -37,10 +37,10 @@ F 4 "PE-0603CD121GTT" H 2700 1250 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:L L?
+L Device:L L7
 U 1 1 5ADAF260
 P 2450 950
-F 0 "L?" V 2600 950 50  0000 C CNN
+F 0 "L7" V 2600 950 50  0000 C CNN
 F 1 "33nH" V 2525 950 50  0000 C CNN
 F 2 "Inductors_SMD:L_0603_HandSoldering" H 2450 950 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/bourns-inc/CW160808-33NJ/CW160808-33NJCT-ND/3767866" H 2450 950 50  0001 C CNN
@@ -49,10 +49,10 @@ F 4 "CW160808-33NJ" V 2450 950 50  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C26
 U 1 1 5ADAF321
 P 2050 950
-F 0 "C?" V 1798 950 50  0000 C CNN
+F 0 "C26" V 1798 950 50  0000 C CNN
 F 1 "18pF" V 1889 950 50  0000 C CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 2088 800 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/vishay-vitramon/VJ0603A180JXACW1BC/720-1524-1-ND/420985" H 2050 950 50  0001 C CNN
@@ -85,10 +85,10 @@ Antenna
 Wire Wire Line
 	1550 950  1750 950 
 $Comp
-L Device:L L?
+L Device:L L5
 U 1 1 5ADAF6D2
 P 1750 3500
-F 0 "L?" H 1803 3546 50  0000 L CNN
+F 0 "L5" H 1803 3546 50  0000 L CNN
 F 1 "6.8uH" H 1803 3455 50  0000 L CNN
 F 2 "open-automation:Coilcraft_0805PS_Handsoldering" H 1750 3500 50  0001 C CNN
 F 3 "https://www.mouser.com/ProductDetail/Coilcraft/0805PS-682KLB?qs=sGAEpiMZZMsg%252by3WlYCkU2kWFds1hA9DACZH0%2fCmx5U%3d" H 1750 3500 50  0001 C CNN
@@ -98,10 +98,10 @@ F 5 "0805PS-682KLB" H 1750 3500 50  0001 C CNN "Part number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C25
 U 1 1 5ADAF7B2
 P 1750 4050
-F 0 "C?" H 1865 4096 50  0000 L CNN
+F 0 "C25" H 1865 4096 50  0000 L CNN
 F 1 "3.9pF" H 1865 4005 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 1788 3900 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10C3R9CB8NNNC/1276-1146-1-ND/3889232" H 1750 4050 50  0001 C CNN
@@ -121,10 +121,10 @@ F 3 "" H 1750 4400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C28
 U 1 1 5ADAF887
 P 2800 3800
-F 0 "C?" V 2548 3800 50  0000 C CNN
+F 0 "C28" V 2548 3800 50  0000 C CNN
 F 1 "270pF" V 2639 3800 50  0000 C CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 2838 3650 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C271JAGAC7867/399-14973-1-ND/7382522" H 2800 3800 50  0001 C CNN
@@ -145,10 +145,10 @@ Wire Wire Line
 Wire Wire Line
 	1750 4400 1750 4200
 $Comp
-L Device:Q_NJFET_SDG Q?
+L Device:Q_NJFET_SDG Q2
 U 1 1 5ADB086B
 P 5450 2750
-F 0 "Q?" H 5650 2875 50  0000 L CNN
+F 0 "Q2" H 5650 2875 50  0000 L CNN
 F 1 "Q_NJFET_DGS" H 5650 2800 50  0000 L CNN
 F 2 "TO_SOT_Packages_SMD:SOT-23" H 5650 2850 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/nxp-usa-inc/BF861C215/568-6169-1-ND/2531456" H 5450 2750 50  0001 C CNN
@@ -157,10 +157,10 @@ F 4 "BF861C,215" H 5450 2750 50  0001 C CNN "Part Number"
 	1    0    0    1   
 $EndComp
 $Comp
-L Power_Protection:CM1213A-01SO D?
+L Power_Protection:CM1213A-01SO D8
 U 1 1 5ADB0B33
 P 4575 4150
-F 0 "D?" H 4525 3875 60  0000 R CNN
+F 0 "D8" H 4525 3875 60  0000 R CNN
 F 1 "D1213A-01SO-7" H 4525 3975 60  0000 R CNN
 F 2 "digikey-footprints:SOT-23-3" H 4775 4350 60  0001 L CNN
 F 3 "https://www.digikey.com/product-detail/en/diodes-incorporated/D1213A-01SO-7/D1213A-01SO-7DICT-ND/3340430" H 4775 4450 60  0001 L CNN
@@ -169,10 +169,10 @@ F 4 "D1213A-01SO-7" H 4775 4550 60  0001 L CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C30
 U 1 1 5ADB0DC5
 P 4725 3000
-F 0 "C?" V 4473 3000 50  0000 C CNN
+F 0 "C30" V 4473 3000 50  0000 C CNN
 F 1 "0.47uF" V 4564 3000 50  0000 C CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4763 2850 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB474/311-4116-1-ND/8025205" H 4725 3000 50  0001 C CNN
@@ -181,10 +181,10 @@ F 4 "CC0603ZRY5V7BB474" V 4725 3000 50  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R24
 U 1 1 5ADB0EB9
 P 5075 2500
-F 0 "R?" H 5145 2546 50  0000 L CNN
+F 0 "R24" H 5145 2546 50  0000 L CNN
 F 1 "249" H 5145 2455 50  0000 L CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 5005 2500 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-07249RL/311-249HRCT-ND/730032" H 5075 2500 50  0001 C CNN
@@ -197,10 +197,10 @@ Wire Wire Line
 Wire Wire Line
 	5550 3600 5550 2950
 $Comp
-L Device:L L?
+L Device:L L10
 U 1 1 5ADB26F5
 P 5550 4300
-F 0 "L?" H 5603 4346 50  0000 L CNN
+F 0 "L10" H 5603 4346 50  0000 L CNN
 F 1 "1mH" H 5603 4255 50  0000 L CNN
 F 2 "Inductors_SMD:L_7.3x7.3_H4.5" H 5550 4300 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/bourns-inc/SRR0745A-102M/SRR0745A-102MCT-ND/5031149" H 5550 4300 50  0001 C CNN
@@ -224,10 +224,10 @@ Wire Wire Line
 Wire Wire Line
 	5550 4600 5550 4450
 $Comp
-L Device:C C?
+L Device:C C34
 U 1 1 5ADB2D24
 P 6300 4050
-F 0 "C?" V 6048 4050 50  0000 C CNN
+F 0 "C34" V 6048 4050 50  0000 C CNN
 F 1 "18nF" V 6139 4050 50  0000 C CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 6338 3900 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B183JB8NNNC/1276-1977-1-ND/3890063" H 6300 4050 50  0001 C CNN
@@ -241,10 +241,10 @@ Connection ~ 5550 4050
 Wire Wire Line
 	5550 4050 5550 4000
 $Comp
-L Device:L L?
+L Device:L L11
 U 1 1 5ADB30AA
 P 6600 3800
-F 0 "L?" H 6653 3846 50  0000 L CNN
+F 0 "L11" H 6653 3846 50  0000 L CNN
 F 1 "33uH" H 6653 3755 50  0000 L CNN
 F 2 "Inductors_SMD:L_6.3x6.3_H3" H 6600 3800 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/bourns-inc/SRR0604-330KL/SRR0604-330KLCT-ND/2352994" H 6600 3800 50  0001 C CNN
@@ -257,10 +257,10 @@ Wire Wire Line
 Wire Wire Line
 	6600 4050 6600 3950
 $Comp
-L Device:L L?
+L Device:L L9
 U 1 1 5ADB3533
 P 5550 2150
-F 0 "L?" H 5603 2196 50  0000 L CNN
+F 0 "L9" H 5603 2196 50  0000 L CNN
 F 1 "220uH" H 5603 2105 50  0000 L CNN
 F 2 "open-automation:Coilcraft_1008PS_Handsoldering" H 5550 2150 50  0001 C CNN
 F 3 "https://www.mouser.com/ProductDetail/Coilcraft/1008PS-224KLB?qs=zCSbvcPd3pbbzsho0wjAGQ%3D%3D" H 5550 2150 50  0001 C CNN
@@ -355,10 +355,10 @@ Connection ~ 6200 1900
 Text HLabel 4875 1500 0    50   Input ~ 0
 3v3
 $Comp
-L Device:R R?
+L Device:R R26
 U 1 1 5ADBD513
 P 5325 1500
-F 0 "R?" H 5395 1546 50  0000 L CNN
+F 0 "R26" H 5395 1546 50  0000 L CNN
 F 1 "10" H 5395 1455 50  0000 L CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 5255 1500 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-0710RL/311-10.0HRDKR-ND/732773" H 5325 1500 50  0001 C CNN
@@ -414,10 +414,10 @@ Wire Wire Line
 Wire Wire Line
 	10450 2750 10450 2850
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0125
 U 1 1 5ADEBD94
 P 9650 2500
-F 0 "#PWR?" H 9650 2250 50  0001 C CNN
+F 0 "#PWR0125" H 9650 2250 50  0001 C CNN
 F 1 "GND" H 9655 2327 50  0000 C CNN
 F 2 "" H 9650 2500 50  0000 C CNN
 F 3 "" H 9650 2500 50  0000 C CNN
@@ -428,10 +428,10 @@ Connection ~ 10450 2350
 Wire Wire Line
 	8950 2350 10000 2350
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0126
 U 1 1 5ADED5D4
 P 10000 2850
-F 0 "#PWR?" H 10000 2600 50  0001 C CNN
+F 0 "#PWR0126" H 10000 2600 50  0001 C CNN
 F 1 "GND" H 10005 2677 50  0000 C CNN
 F 2 "" H 10000 2850 50  0000 C CNN
 F 3 "" H 10000 2850 50  0000 C CNN
@@ -439,10 +439,10 @@ F 3 "" H 10000 2850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C39
 U 1 1 5ADED5DA
 P 10000 2600
-F 0 "C?" H 9885 2554 50  0000 R CNN
+F 0 "C39" H 9885 2554 50  0000 R CNN
 F 1 "22nF" H 9885 2645 50  0000 R CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 10038 2450 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B223KA8NNWC/1276-2000-1-ND/3890086" H 10000 2600 50  0001 C CNN
@@ -466,10 +466,10 @@ Wire Wire Line
 Wire Wire Line
 	7950 4300 7950 4100
 $Comp
-L Device:C C?
+L Device:C C36
 U 1 1 5ADFB03B
 P 9550 3200
-F 0 "C?" V 9298 3200 50  0000 C CNN
+F 0 "C36" V 9298 3200 50  0000 C CNN
 F 1 "0.39uF" V 9389 3200 50  0000 C CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 9588 3050 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R71C394KA88D/490-6428-1-ND/3845625" H 9550 3200 50  0001 C CNN
@@ -506,10 +506,10 @@ Wire Notes Line
 Text Notes 1450 3200 0    50   ~ 0
 FM Intrusion FIlter\n
 $Comp
-L Device:C C?
+L Device:C C29
 U 1 1 5AE1B9E5
 P 3825 4625
-F 0 "C?" H 3710 4579 50  0000 R CNN
+F 0 "C29" H 3710 4579 50  0000 R CNN
 F 1 "1200pF" H 3710 4670 50  0000 R CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 3863 4475 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B122KB8NNNC/1276-1951-1-ND/3890037" H 3825 4625 50  0001 C CNN
@@ -526,10 +526,10 @@ FM_RADIO_RST
 Text Notes 7800 4600 0    50   ~ 0
 i2c add: 0010001x
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0127
 U 1 1 5AE4AD4A
 P 7850 3600
-F 0 "#PWR?" H 7850 3350 50  0001 C CNN
+F 0 "#PWR0127" H 7850 3350 50  0001 C CNN
 F 1 "GND" H 7855 3427 50  0000 C CNN
 F 2 "" H 7850 3600 50  0000 C CNN
 F 3 "" H 7850 3600 50  0000 C CNN
@@ -545,10 +545,10 @@ Wire Wire Line
 Text HLabel 9925 3875 2    50   Input ~ 0
 3v3
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0128
 U 1 1 5AE0458E
 P 9625 4375
-F 0 "#PWR?" H 9625 4125 50  0001 C CNN
+F 0 "#PWR0128" H 9625 4125 50  0001 C CNN
 F 1 "GND" H 9630 4202 50  0000 C CNN
 F 2 "" H 9625 4375 50  0000 C CNN
 F 3 "" H 9625 4375 50  0000 C CNN
@@ -563,10 +563,10 @@ Wire Wire Line
 	9625 4275 9625 4375
 Connection ~ 9625 3875
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0129
 U 1 1 5AE045A0
 P 9175 4375
-F 0 "#PWR?" H 9175 4125 50  0001 C CNN
+F 0 "#PWR0129" H 9175 4125 50  0001 C CNN
 F 1 "GND" H 9180 4202 50  0000 C CNN
 F 2 "" H 9175 4375 50  0000 C CNN
 F 3 "" H 9175 4375 50  0000 C CNN
@@ -595,10 +595,10 @@ Wire Wire Line
 Text Notes 8725 4000 3    50   ~ 0
 TODO: 32.768kHZ oscillaotr if needed?
 $Comp
-L Device:R R?
+L Device:R R23
 U 1 1 5AE23446
 P 3475 4200
-F 0 "R?" H 3545 4246 50  0000 L CNN
+F 0 "R23" H 3545 4246 50  0000 L CNN
 F 1 "10M" H 3545 4155 50  0000 L CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 3405 4200 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710ML/311-10MGRCT-ND/729648" H 3475 4200 50  0001 C CNN
@@ -611,10 +611,10 @@ Wire Wire Line
 Wire Wire Line
 	3475 4350 3475 4475
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0130
 U 1 1 5AE2977B
 P 3475 4475
-F 0 "#PWR?" H 3475 4225 50  0001 C CNN
+F 0 "#PWR0130" H 3475 4225 50  0001 C CNN
 F 1 "GND" H 3480 4302 50  0000 C CNN
 F 2 "" H 3475 4475 50  0000 C CNN
 F 3 "" H 3475 4475 50  0000 C CNN
@@ -632,10 +632,10 @@ am_passive_ant_en
 Wire Wire Line
 	3825 6050 3825 6275
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0131
 U 1 1 5AE4F967
 P 3825 6275
-F 0 "#PWR?" H 3825 6025 50  0001 C CNN
+F 0 "#PWR0131" H 3825 6025 50  0001 C CNN
 F 1 "GND" H 3830 6102 50  0000 C CNN
 F 2 "" H 3825 6275 50  0000 C CNN
 F 3 "" H 3825 6275 50  0000 C CNN
@@ -644,10 +644,10 @@ F 3 "" H 3825 6275 50  0000 C CNN
 $EndComp
 Connection ~ 3825 3800
 $Comp
-L Device:R R?
+L Device:R R21
 U 1 1 5AE6355B
 P 1650 5500
-F 0 "R?" V 1443 5500 50  0000 C CNN
+F 0 "R21" V 1443 5500 50  0000 C CNN
 F 1 "4.7k" V 1534 5500 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 1580 5500 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-074K7L/311-4.7KGRCT-ND/729732" H 1650 5500 50  0001 C CNN
@@ -677,10 +677,10 @@ Wire Wire Line
 Wire Wire Line
 	5075 3150 5075 3250
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0132
 U 1 1 5AEDE11C
 P 5075 3300
-F 0 "#PWR?" H 5075 3050 50  0001 C CNN
+F 0 "#PWR0132" H 5075 3050 50  0001 C CNN
 F 1 "GND" H 5080 3127 50  0000 C CNN
 F 2 "" H 5075 3300 50  0000 C CNN
 F 3 "" H 5075 3300 50  0000 C CNN
@@ -691,10 +691,10 @@ Wire Wire Line
 	5075 3300 5075 3250
 Connection ~ 5075 3250
 $Comp
-L Device:R R?
+L Device:R R25
 U 1 1 5AEE4932
 P 5075 3000
-F 0 "R?" H 5145 3046 50  0000 L CNN
+F 0 "R25" H 5145 3046 50  0000 L CNN
 F 1 "249" H 5145 2955 50  0000 L CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 5005 3000 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-07249RL/311-249HRCT-ND/730032" H 5075 3000 50  0001 C CNN
@@ -703,10 +703,10 @@ F 4 "RC0603FR-07249RL" H 5075 3000 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R27
 U 1 1 5AEE5173
 P 7750 3950
-F 0 "R?" H 7820 3996 50  0000 L CNN
+F 0 "R27" H 7820 3996 50  0000 L CNN
 F 1 "2k" H 7820 3905 50  0000 L CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 7680 3950 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-072KL/311-2.0KGRCT-ND/729673" H 7750 3950 50  0001 C CNN
@@ -715,10 +715,10 @@ F 4 "RC0603JR-072KL" H 7750 3950 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R28
 U 1 1 5AEE8E2A
 P 7950 3950
-F 0 "R?" H 8020 3996 50  0000 L CNN
+F 0 "R28" H 8020 3996 50  0000 L CNN
 F 1 "2k" H 8020 3905 50  0000 L CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 7880 3950 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-072KL/311-2.0KGRCT-ND/729673" H 7950 3950 50  0001 C CNN
@@ -727,10 +727,10 @@ F 4 "RC0603JR-072KL" H 7950 3950 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R29
 U 1 1 5AEE8E98
 P 8175 3950
-F 0 "R?" H 8245 3996 50  0000 L CNN
+F 0 "R29" H 8245 3996 50  0000 L CNN
 F 1 "2k" H 8245 3905 50  0000 L CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 8105 3950 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-072KL/311-2.0KGRCT-ND/729673" H 8175 3950 50  0001 C CNN
@@ -739,10 +739,10 @@ F 4 "RC0603JR-072KL" H 8175 3950 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R?
+L Device:R R22
 U 1 1 5AEE9D64
 P 3075 5850
-F 0 "R?" H 3145 5896 50  0000 L CNN
+F 0 "R22" H 3145 5896 50  0000 L CNN
 F 1 "249" H 3145 5805 50  0000 L CNN
 F 2 "Resistors_SMD:R_0603_HandSoldering" V 3005 5850 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-07249RL/311-249HRCT-ND/730032" H 3075 5850 50  0001 C CNN
@@ -789,10 +789,10 @@ Connection ~ 2275 5175
 Wire Wire Line
 	2275 5175 2625 5175
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0133
 U 1 1 5AF5212A
 P 2625 5550
-F 0 "#PWR?" H 2625 5300 50  0001 C CNN
+F 0 "#PWR0133" H 2625 5300 50  0001 C CNN
 F 1 "GND" H 2630 5377 50  0000 C CNN
 F 2 "" H 2625 5550 50  0000 C CNN
 F 3 "" H 2625 5550 50  0000 C CNN
@@ -802,10 +802,10 @@ $EndComp
 Wire Wire Line
 	2625 5500 2625 5550
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0134
 U 1 1 5AF5FA7F
 P 2275 6450
-F 0 "#PWR?" H 2275 6200 50  0001 C CNN
+F 0 "#PWR0134" H 2275 6200 50  0001 C CNN
 F 1 "GND" H 2280 6277 50  0000 C CNN
 F 2 "" H 2275 6450 50  0000 C CNN
 F 3 "" H 2275 6450 50  0000 C CNN
@@ -815,10 +815,10 @@ $EndComp
 Wire Wire Line
 	2275 6350 2275 6450
 $Comp
-L Device:C C?
+L Device:C C40
 U 1 1 5AF6FC78
 P 10450 2600
-F 0 "C?" H 10335 2554 50  0000 R CNN
+F 0 "C40" H 10335 2554 50  0000 R CNN
 F 1 "0.1uF" H 10335 2645 50  0000 R CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 10488 2450 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 10450 2600 50  0001 C CNN
@@ -827,10 +827,10 @@ F 4 "C0603C104K5RACTU" H 10450 2600 50  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C33
 U 1 1 5AF77332
 P 6000 2450
-F 0 "C?" V 5775 2450 50  0000 C CNN
+F 0 "C33" V 5775 2450 50  0000 C CNN
 F 1 "0.47uF" V 5850 2425 50  0000 C CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 6038 2300 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB474/311-4116-1-ND/8025205" H 6000 2450 50  0001 C CNN
@@ -839,10 +839,10 @@ F 4 "CC0603ZRY5V7BB474" V 6000 2450 50  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C32
 U 1 1 5AF778D9
 P 5800 1900
-F 0 "C?" V 6000 1900 50  0000 C CNN
+F 0 "C32" V 6000 1900 50  0000 C CNN
 F 1 "0.47uF" V 5925 1900 50  0000 C CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 5838 1750 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB474/311-4116-1-ND/8025205" H 5800 1900 50  0001 C CNN
@@ -851,10 +851,10 @@ F 4 "CC0603ZRY5V7BB474" V 5800 1900 50  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:CP C?
+L Device:CP C31
 U 1 1 5AF78A50
 P 5800 1500
-F 0 "C?" V 6055 1500 50  0000 C CNN
+F 0 "C31" V 6055 1500 50  0000 C CNN
 F 1 "100uF" V 5964 1500 50  0000 C CNN
 F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.00mm" H 5838 1350 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/kemet/ESK107M010AC3AA/399-6600-ND/3083015" H 5800 1500 50  0001 C CNN
@@ -863,10 +863,10 @@ F 4 "ESK107M010AC3AA" H 5800 1500 50  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C35
 U 1 1 5AF80160
 P 9175 4125
-F 0 "C?" H 9060 4079 50  0000 R CNN
+F 0 "C35" H 9060 4079 50  0000 R CNN
 F 1 "22nF" H 9060 4170 50  0000 R CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 9213 3975 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B223KA8NNWC/1276-2000-1-ND/3890086" H 9175 4125 50  0001 C CNN
@@ -875,10 +875,10 @@ F 4 "CL10B223KA8NNWC" H 9175 4125 50  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C37
 U 1 1 5AF80E05
 P 9550 3600
-F 0 "C?" V 9298 3600 50  0000 C CNN
+F 0 "C37" V 9298 3600 50  0000 C CNN
 F 1 "0.39uF" V 9389 3600 50  0000 C CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 9588 3450 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R71C394KA88D/490-6428-1-ND/3845625" H 9550 3600 50  0001 C CNN
@@ -887,10 +887,10 @@ F 4 "GRM188R71C394KA88D" V 9550 3600 50  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C38
 U 1 1 5AF821A1
 P 9625 4125
-F 0 "C?" H 9510 4079 50  0000 R CNN
+F 0 "C38" H 9510 4079 50  0000 R CNN
 F 1 "0.1uF" H 9510 4170 50  0000 R CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 9663 3975 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 9625 4125 50  0001 C CNN
@@ -899,10 +899,10 @@ F 4 "C0603C104K5RACTU" H 9625 4125 50  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:C C?
+L Device:C C27
 U 1 1 5AF8259A
 P 2625 5350
-F 0 "C?" H 2510 5304 50  0000 R CNN
+F 0 "C27" H 2510 5304 50  0000 R CNN
 F 1 "0.1uF" H 2510 5395 50  0000 R CNN
 F 2 "Capacitors_SMD:C_0603_HandSoldering" H 2663 5200 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 2625 5350 50  0001 C CNN
@@ -911,10 +911,10 @@ F 4 "C0603C104K5RACTU" H 2625 5350 50  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L Device:Q_NJFET_SDG Q?
+L Device:Q_NJFET_SDG Q3
 U 1 1 5AE312AC
 P 5450 3800
-F 0 "Q?" H 5650 3925 50  0000 L CNN
+F 0 "Q3" H 5650 3925 50  0000 L CNN
 F 1 "Q_NJFET_DGS" H 5650 3850 50  0000 L CNN
 F 2 "TO_SOT_Packages_SMD:SOT-23" H 5650 3900 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/nxp-usa-inc/BF861C215/568-6169-1-ND/2531456" H 5450 3800 50  0001 C CNN
@@ -923,10 +923,10 @@ F 4 "BF861C,215" H 5450 3800 50  0001 C CNN "Part Number"
 	1    0    0    1   
 $EndComp
 $Comp
-L Device:Q_NPN_BEC Q?
+L Device:Q_NPN_BEC Q1
 U 1 1 5AE3496E
 P 3725 5850
-F 0 "Q?" H 3916 5896 50  0000 L CNN
+F 0 "Q1" H 3916 5896 50  0000 L CNN
 F 1 "Q_NPN_BEC" H 3916 5805 50  0000 L CNN
 F 2 "TO_SOT_Packages_SMD:SOT-23" H 3925 5950 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/on-semiconductor/KST10MTF/KST10MTFCT-ND/965649" H 3725 5850 50  0001 C CNN
@@ -937,10 +937,10 @@ $EndComp
 Wire Wire Line
 	3225 5850 3525 5850
 $Comp
-L Device:L L?
+L Device:L L6
 U 1 1 5AE3A452
 P 2050 3800
-F 0 "L?" H 2103 3846 50  0000 L CNN
+F 0 "L6" H 2103 3846 50  0000 L CNN
 F 1 "6.8uH" H 2103 3755 50  0000 L CNN
 F 2 "open-automation:Coilcraft_0805PS_Handsoldering" H 2050 3800 50  0001 C CNN
 F 3 "https://www.mouser.com/ProductDetail/Coilcraft/0805PS-682KLB?qs=sGAEpiMZZMsg%252by3WlYCkU2kWFds1hA9DACZH0%2fCmx5U%3d" H 2050 3800 50  0001 C CNN
@@ -952,10 +952,10 @@ $EndComp
 Wire Wire Line
 	2200 3800 2650 3800
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0135
 U 1 1 5AE6504B
 P 4575 4350
-F 0 "#PWR?" H 4575 4100 50  0001 C CNN
+F 0 "#PWR0135" H 4575 4100 50  0001 C CNN
 F 1 "GND" H 4580 4177 50  0000 C CNN
 F 2 "" H 4575 4350 50  0000 C CNN
 F 3 "" H 4575 4350 50  0000 C CNN
@@ -983,10 +983,10 @@ Wire Wire Line
 Wire Wire Line
 	3825 3800 4575 3800
 $Comp
-L Power_Protection:CM1213A-01SO D?
+L Power_Protection:CM1213A-01SO D7
 U 1 1 5AEB1DC3
 P 3800 1300
-F 0 "D?" H 3750 1025 60  0000 R CNN
+F 0 "D7" H 3750 1025 60  0000 R CNN
 F 1 "D1213A-01SO-7" H 3750 1125 60  0000 R CNN
 F 2 "digikey-footprints:SOT-23-3" H 4000 1500 60  0001 L CNN
 F 3 "https://www.digikey.com/product-detail/en/diodes-incorporated/D1213A-01SO-7/D1213A-01SO-7DICT-ND/3340430" H 4000 1600 60  0001 L CNN
@@ -995,10 +995,10 @@ F 4 "D1213A-01SO-7" H 4000 1700 60  0001 L CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0136
 U 1 1 5AEB1DCA
 P 3800 1500
-F 0 "#PWR?" H 3800 1250 50  0001 C CNN
+F 0 "#PWR0136" H 3800 1250 50  0001 C CNN
 F 1 "GND" H 3805 1327 50  0000 C CNN
 F 2 "" H 3800 1500 50  0000 C CNN
 F 3 "" H 3800 1500 50  0000 C CNN

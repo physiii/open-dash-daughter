@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 1 14
+Sheet 1 15
 Title ""
 Date ""
 Rev ""
@@ -48,6 +47,7 @@ F14 "TXD" I L 2450 1000 50
 F15 "FACTORY" I L 2450 900 50 
 F16 "5V" I L 2450 650 50 
 F17 "ESP_EN" I L 2450 200 50 
+F18 "SOFT_POWER" O L 2450 775 50 
 $EndSheet
 $Sheet
 S 2450 4750 1550 900 
@@ -349,6 +349,63 @@ Wire Wire Line
 	5200 2650 5200 4700
 Wire Wire Line
 	5200 4700 6450 4700
+$Sheet
+S 5525 600  1450 1100
+U 5AF5E3D2
+F0 "mainboard-interface" 50
+F1 "mainboard-interface.sch" 50
+F2 "3V3" I L 5525 750 50 
+F3 "PROG" I L 5525 1075 50 
+F4 "FACTORY" I L 5525 1000 50 
+F5 "SCL" I L 5525 1525 50 
+F6 "5V" I L 5525 650 50 
+F7 "TXD" I L 5525 1325 50 
+F8 "RXD" I L 5525 1400 50 
+F9 "SDA" I L 5525 1600 50 
+F10 "SOFT_POWER" O L 5525 1200 50 
+$EndSheet
+Wire Wire Line
+	2450 775  2375 775 
+Wire Wire Line
+	2375 775  2375 -125
+Wire Wire Line
+	2375 -125 5325 -125
+Wire Wire Line
+	5325 -125 5325 1200
+Wire Wire Line
+	5325 1200 5525 1200
+Entry Wire Line
+	4250 925  4350 1025
+Entry Wire Line
+	4250 1050 4350 1150
+Entry Wire Line
+	4250 1250 4350 1350
+Entry Wire Line
+	4250 1425 4350 1525
+Wire Wire Line
+	5525 1325 5225 1325
+Wire Wire Line
+	5225 1325 5225 1025
+Wire Wire Line
+	5225 1025 4350 1025
+Wire Wire Line
+	5525 1400 5150 1400
+Wire Wire Line
+	5150 1400 5150 1150
+Wire Wire Line
+	5150 1150 4350 1150
+Wire Wire Line
+	5525 1525 5075 1525
+Wire Wire Line
+	5075 1525 5075 1350
+Wire Wire Line
+	5075 1350 4350 1350
+Wire Wire Line
+	5525 1600 5000 1600
+Wire Wire Line
+	5000 1600 5000 1525
+Wire Wire Line
+	5000 1525 4350 1525
 Wire Bus Line
 	2300 250  2300 7500
 Wire Bus Line

@@ -177,13 +177,13 @@ Wire Notes Line
 Wire Notes Line
 	3000 4275 2075 4275
 Wire Wire Line
-	4850 5250 5150 5250
+	4515 4555 4815 4555
 Wire Wire Line
-	4850 5400 5150 5400
+	4515 4705 4815 4705
 Wire Wire Line
-	4850 5550 5150 5550
+	4515 4855 4815 4855
 Wire Wire Line
-	4850 5700 5150 5700
+	4515 5130 4815 5130
 Wire Wire Line
 	2625 3975 2825 3975
 Wire Wire Line
@@ -200,13 +200,13 @@ Text HLabel 3350 3925 3    60   Input ~ 0
 SDA
 Text HLabel 2625 3400 1    60   Input ~ 0
 3V3
-Text HLabel 4850 5250 0    60   Input ~ 0
+Text HLabel 4515 4555 0    60   Input ~ 0
 EN_5V_POWER
-Text HLabel 4850 5400 0    60   Input ~ 0
+Text HLabel 4515 4705 0    60   Input ~ 0
 EN_8V_POWER
-Text HLabel 4850 5550 0    60   Input ~ 0
+Text HLabel 4515 4855 0    60   Input ~ 0
 MUTE_AUDIO_AMP
-Text HLabel 4850 5700 0    60   Input ~ 0
+Text HLabel 4515 5130 0    60   Input ~ 0
 STBY_AUDIO_AMP
 Text HLabel 6175 4750 3    60   Input ~ 0
 IO2

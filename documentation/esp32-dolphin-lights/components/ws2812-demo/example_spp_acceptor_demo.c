@@ -6,6 +6,12 @@
    CONDITIONS OF ANY KIND, either express or implied.
 */
 
+/*
+#define BT_TRACE_VERBOSE TRUE
+#define BT_USE_TRACES TRUE
+#define LOG_LEVEL LOG_LEVEL_VERBOSE
+*/
+
 #include <stdint.h>
 #include <string.h>
 #include <stdbool.h>
@@ -151,6 +157,16 @@ static void print_speed(void)
     time_old.tv_usec = time_new.tv_usec;
 }
 
+void data_to_string(char * dst, size_t maxlen, unsigned char * src) {
+  int i;
+  if (dst && src) {
+    for (i = 0; i < maxlen && src[i]; i += 1) {
+      dst[i] = src[i];
+    }
+    dst[i] = 0;
+  }
+}
+
 static void esp_spp_cb(esp_spp_cb_event_t event, esp_spp_cb_param_t *param)
 {
     char msgbuf[MAXJSON]; // for incoming json messages
@@ -182,7 +198,10 @@ static void esp_spp_cb(esp_spp_cb_event_t event, esp_spp_cb_param_t *param)
         ESP_LOGI(SPP_TAG, "ESP_SPP_DATA_IND_EVT len=%d handle=%d",
                  param->data_ind.len, param->data_ind.handle);
         esp_log_buffer_hex("",param->data_ind.data,param->data_ind.len);
+        data_to_string(msgbuf, sizeof(msgbuf) / sizeof(msgbuf[0]), param->data_ind.data);
+        ESP_LOGI(SPP_TAG, "as string: '%s'", param->data_ind.data);
 
+/*
         memcpy(msgbuf, param->data_ind.data, param->data_ind.len < MAXJSON ? param->data_ind.len : MAXJSON);
         msgbuf[param->data_ind.len < MAXJSON ? param->data_ind.len : MAXJSON] = 0;
         cJSON * root = cJSON_Parse(msgbuf);
@@ -197,6 +216,7 @@ static void esp_spp_cb(esp_spp_cb_event_t event, esp_spp_cb_param_t *param)
         update_led_status(index, color, status);
 
         cJSON_Delete(root);
+        */
 #else
         gettimeofday(&time_new, NULL);
         data_num += param->data_ind.len;
@@ -232,8 +252,10 @@ void app_main()
     }
     ESP_ERROR_CHECK( ret );
 
-    ws2812_init(WS2812_PIN);
-    xTaskCreate(rainbow, "ws2812 rainbow demo", 4096, NULL, 10, NULL);
+    esp_log_level_set("BT", ESP_LOG_VERBOSE);
+
+    // ws2812_init(WS2812_PIN);
+    // xTaskCreate(rainbow, "ws2812 rainbow demo", 4096, NULL, 10, NULL);
 
     esp_bt_controller_config_t bt_cfg = BT_CONTROLLER_INIT_CONFIG_DEFAULT();
     if ((ret = esp_bt_controller_init(&bt_cfg)) != ESP_OK) {

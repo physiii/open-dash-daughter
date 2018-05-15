@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:GND #PWR026
+L open-dash-daughterboard-rescue:GND-open-automation #PWR026
 U 1 1 59C50BD3
 P 1850 1625
 F 0 "#PWR026" H 1850 1375 50  0001 C CNN
@@ -25,7 +26,7 @@ F 3 "" H 1850 1625 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:SI7020-A20 U5
+L open-dash-daughterboard-rescue:SI7020-A20-open-automation U5
 U 1 1 59C50BD4
 P 2350 1575
 F 0 "U5" H 2550 1475 60  0000 C CNN
@@ -37,7 +38,7 @@ F 4 "SI7020-A20-GM1R" H 2450 1375 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:C_0.1uF C9
+L open-dash-daughterboard-rescue:C_0.1uF-open-automation C9
 U 1 1 59C50BD5
 P 1550 1675
 F 0 "C9" H 1575 1775 50  0000 L CNN
@@ -49,7 +50,7 @@ F 4 "C0603C104K5RACTU" H 1675 1875 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR027
+L open-dash-daughterboard-rescue:GND-open-automation #PWR027
 U 1 1 59C50BD6
 P 1550 1875
 F 0 "#PWR027" H 1550 1625 50  0001 C CNN
@@ -62,7 +63,7 @@ $EndComp
 Text Label 2050 1250 0    60   ~ 0
 Temp-Humidty
 $Comp
-L open-automation:C_0.1uF C11
+L open-dash-daughterboard-rescue:C_0.1uF-open-automation C11
 U 1 1 5AC2BC67
 P 4200 1675
 F 0 "C11" V 4275 1725 50  0000 L CNN
@@ -74,7 +75,7 @@ F 4 "C0603C104K5RACTU" H 4325 1875 60  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L open-automation:GND #PWR030
+L open-dash-daughterboard-rescue:GND-open-automation #PWR030
 U 1 1 5AC2BC6E
 P 4200 1875
 F 0 "#PWR030" H 4200 1625 50  0001 C CNN
@@ -85,7 +86,7 @@ F 3 "" H 4200 1875 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR031
+L open-dash-daughterboard-rescue:GND-open-automation #PWR031
 U 1 1 5AC2BC85
 P 5400 1750
 F 0 "#PWR031" H 5400 1500 50  0001 C CNN
@@ -96,7 +97,7 @@ F 3 "" H 5400 1750 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:Power-Monitor-INA219 U7
+L open-dash-daughterboard-rescue:Power-Monitor-INA219-open-automation U7
 U 1 1 5AC2BC90
 P 5925 1575
 F 0 "U7" H 6125 1325 60  0000 C CNN
@@ -108,7 +109,7 @@ F 4 "INA219AIDCNR" H 6225 1425 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR032
+L open-dash-daughterboard-rescue:GND-open-automation #PWR032
 U 1 1 5AC2BC97
 P 6525 1400
 F 0 "#PWR032" H 6525 1150 50  0001 C CNN
@@ -169,7 +170,7 @@ Wire Wire Line
 Wire Wire Line
 	5075 1625 5450 1625
 $Comp
-L open-automation:R_10m R13
+L open-dash-daughterboard-rescue:R_10m-open-automation R13
 U 1 1 5AC78E3A
 P 4900 1750
 F 0 "R13" H 4875 1750 50  0000 C CNN

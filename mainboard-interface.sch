@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:GND #PWR0147
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0147
 U 1 1 590979B0
 P 5400 3000
 F 0 "#PWR0147" H 5400 2750 50  0001 C CNN
@@ -25,7 +26,7 @@ F 3 "" H 5400 3000 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L open-automation:GND #PWR0148
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0148
 U 1 1 590979B2
 P 6000 3000
 F 0 "#PWR0148" H 6000 2750 50  0001 C CNN
@@ -83,7 +84,7 @@ U 1 1 5AF62600
 P 5650 3250
 F 0 "J5" H 5700 3667 50  0000 C CNN
 F 1 "Conn_02x06_Odd_Even" H 5700 2800 50  0000 C CNN
-F 2 "" H 5650 3250 50  0001 C CNN
+F 2 "smart-regulator:Pin_Header_Straight_2x05_Pitch2.54mm" H 5650 3250 50  0001 C CNN
 F 3 "~" H 5650 3250 50  0001 C CNN
 	1    5650 3250
 	1    0    0    -1  
@@ -97,7 +98,7 @@ SOFT_POWER
 Text HLabel 3550 2975 1    60   Input ~ 0
 3V3
 $Comp
-L open-automation:R_10k R38
+L open-dash-daughterboard-rescue:R_10k-open-automation R38
 U 1 1 5AF64A9D
 P 3550 3200
 F 0 "R38" H 3620 3246 50  0000 L CNN

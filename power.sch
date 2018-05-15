@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
@@ -26,7 +27,7 @@ F 4 "25YXJ1000M10X20" H 5350 1325 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:L L1
+L open-dash-daughterboard-rescue:L-open-automation L1
 U 1 1 5969017D
 P 5025 1075
 F 0 "L1" V 4975 1075 50  0001 C CNN
@@ -38,7 +39,7 @@ F 4 "Wurth 7447709680" V 5025 1075 10  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:GND #PWR01
+L open-dash-daughterboard-rescue:GND-open-automation #PWR01
 U 1 1 59690AC9
 P 5350 1525
 F 0 "#PWR01" H 5350 1275 50  0001 C CNN
@@ -49,7 +50,7 @@ F 3 "" H 5350 1525 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR02
+L open-dash-daughterboard-rescue:GND-open-automation #PWR02
 U 1 1 59690B3F
 P 3275 1575
 F 0 "#PWR02" H 3275 1325 50  0001 C CNN
@@ -60,7 +61,7 @@ F 3 "" H 3275 1575 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR03
+L open-dash-daughterboard-rescue:GND-open-automation #PWR03
 U 1 1 59690D86
 P 4750 1475
 F 0 "#PWR03" H 4750 1225 50  0001 C CNN
@@ -71,7 +72,7 @@ F 3 "" H 4750 1475 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR04
+L open-dash-daughterboard-rescue:GND-open-automation #PWR04
 U 1 1 59757643
 P 1400 1450
 F 0 "#PWR04" H 1400 1200 50  0001 C CNN
@@ -82,7 +83,7 @@ F 3 "" H 1400 1450 50  0000 C CNN
 	-1   0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR05
+L open-dash-daughterboard-rescue:GND-open-automation #PWR05
 U 1 1 598F7A99
 P 6825 1850
 F 0 "#PWR05" H 6825 1600 50  0001 C CNN
@@ -104,7 +105,7 @@ F 3 "" H 8425 2425 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_10k R9
+L open-dash-daughterboard-rescue:R_10k-open-automation R9
 U 1 1 59E4131F
 P 6825 1650
 F 0 "R9" V 6825 1650 50  0000 C CNN
@@ -122,7 +123,7 @@ Text Notes 775  800  0    60   ~ 0
 Text Notes 2675 825  0    60   ~ 0
 V_MAIN is after the current sense resistor.
 $Comp
-L open-automation:L L2
+L open-dash-daughterboard-rescue:L-open-automation L2
 U 1 1 5AC413A9
 P 5900 2750
 F 0 "L2" V 5850 2750 50  0001 C CNN
@@ -134,7 +135,7 @@ F 4 "2100HT-101-H-RC" V 5900 2750 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:GND #PWR07
+L open-dash-daughterboard-rescue:GND-open-automation #PWR07
 U 1 1 5AC413AF
 P 6175 3200
 F 0 "#PWR07" H 6175 2950 50  0001 C CNN
@@ -145,7 +146,7 @@ F 3 "" H 6175 3200 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR08
+L open-dash-daughterboard-rescue:GND-open-automation #PWR08
 U 1 1 5AC413B5
 P 3225 3175
 F 0 "#PWR08" H 3225 2925 50  0001 C CNN
@@ -156,7 +157,7 @@ F 3 "" H 3225 3175 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR09
+L open-dash-daughterboard-rescue:GND-open-automation #PWR09
 U 1 1 5AC413BB
 P 5650 3150
 F 0 "#PWR09" H 5650 2900 50  0001 C CNN
@@ -167,7 +168,7 @@ F 3 "" H 5650 3150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_10k R1
+L open-dash-daughterboard-rescue:R_10k-open-automation R1
 U 1 1 5AC421CC
 P 4025 3025
 F 0 "R1" V 4025 3025 50  0000 C CNN
@@ -196,7 +197,7 @@ Main Board 5V Supply
 Text Notes 8075 2050 0    60   ~ 0
 Main Board Connections
 $Comp
-L open-automation:GND #PWR011
+L open-dash-daughterboard-rescue:GND-open-automation #PWR011
 U 1 1 5AC637C2
 P 6325 4675
 F 0 "#PWR011" H 6325 4425 50  0001 C CNN
@@ -207,7 +208,7 @@ F 3 "" H 6325 4675 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR012
+L open-dash-daughterboard-rescue:GND-open-automation #PWR012
 U 1 1 5AC637C8
 P 3200 4650
 F 0 "#PWR012" H 3200 4400 50  0001 C CNN
@@ -218,7 +219,7 @@ F 3 "" H 3200 4650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR013
+L open-dash-daughterboard-rescue:GND-open-automation #PWR013
 U 1 1 5AC637CE
 P 5675 4675
 F 0 "#PWR013" H 5675 4425 50  0001 C CNN
@@ -229,7 +230,7 @@ F 3 "" H 5675 4675 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_10k R8
+L open-dash-daughterboard-rescue:R_10k-open-automation R8
 U 1 1 5AC647A0
 P 6800 4875
 F 0 "R8" V 6800 4875 50  0000 C CNN
@@ -241,7 +242,7 @@ F 4 "RC0603FR-071K3L" V 6980 4975 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR014
+L open-dash-daughterboard-rescue:GND-open-automation #PWR014
 U 1 1 5AC64EC6
 P 6800 5125
 F 0 "#PWR014" H 6800 4875 50  0001 C CNN
@@ -280,7 +281,7 @@ F 4 "EKZN500ELL181MH20D" H 3200 4400 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:L L3
+L open-dash-daughterboard-rescue:L-open-automation L3
 U 1 1 5AC6A697
 P 6000 4225
 F 0 "L3" V 5950 4225 50  0001 C CNN
@@ -292,7 +293,7 @@ F 4 "2100HT-101-H-RC" V 6000 4225 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:D_Schottky D4
+L open-dash-daughterboard-rescue:D_Schottky-open-automation D4
 U 1 1 5AC6B09E
 P 5675 4450
 F 0 "D4" H 5675 4550 50  0000 C CNN
@@ -340,7 +341,7 @@ F 4 "25YXJ1000M10X20" H 6325 4475 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR015
+L open-dash-daughterboard-rescue:GND-open-automation #PWR015
 U 1 1 5AC73772
 P 4450 2950
 F 0 "#PWR015" H 4450 2700 50  0001 C CNN
@@ -351,7 +352,7 @@ F 3 "" H 4450 2950 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR016
+L open-dash-daughterboard-rescue:GND-open-automation #PWR016
 U 1 1 5AC740CE
 P 4475 4475
 F 0 "#PWR016" H 4475 4225 50  0001 C CNN
@@ -362,7 +363,7 @@ F 3 "" H 4475 4475 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:LM2576 U3
+L open-dash-daughterboard-rescue:LM2576-open-automation U3
 U 1 1 5AC686EE
 P 5025 4225
 F 0 "U3" H 5375 4425 60  0000 C CNN
@@ -374,7 +375,7 @@ F 4 "LM2576SX-ADJ/NOPB" H 5025 4225 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:LM2576 U2
+L open-dash-daughterboard-rescue:LM2576-open-automation U2
 U 1 1 5AC68B48
 P 5000 2750
 F 0 "U2" H 5350 2950 60  0000 C CNN
@@ -386,7 +387,7 @@ F 4 "LM2576SX-ADJ/NOPB" H 5000 2750 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:LM2576 U1
+L open-dash-daughterboard-rescue:LM2576-open-automation U1
 U 1 1 5AC68BC4
 P 4100 1075
 F 0 "U1" H 4450 1275 60  0000 C CNN
@@ -534,7 +535,7 @@ Wire Wire Line
 Wire Wire Line
 	3225 2650 3225 2775
 $Comp
-L open-automation:R_10k R5
+L open-dash-daughterboard-rescue:R_10k-open-automation R5
 U 1 1 5AC69CD6
 P 6650 2975
 F 0 "R5" V 6650 2975 50  0000 C CNN
@@ -546,7 +547,7 @@ F 4 "CRCW06037K15FKEA" V 6830 3075 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR017
+L open-dash-daughterboard-rescue:GND-open-automation #PWR017
 U 1 1 5AC69CE3
 P 6650 3650
 F 0 "#PWR017" H 6650 3400 50  0001 C CNN
@@ -573,7 +574,7 @@ Wire Wire Line
 Text Label 5800 2650 0    60   ~ 0
 5v_feedback
 $Comp
-L open-automation:GND #PWR018
+L open-dash-daughterboard-rescue:GND-open-automation #PWR018
 U 1 1 5AC6AB52
 P 5900 1975
 F 0 "#PWR018" H 5900 1725 50  0001 C CNN
@@ -600,7 +601,7 @@ Wire Wire Line
 Text Label 4875 975  0    60   ~ 0
 3v3_feedback
 $Comp
-L open-automation:CONN_01X02 BATT_OUT_1
+L open-dash-daughterboard-rescue:CONN_01X02-open-automation BATT_OUT_1
 U 1 1 5AC711D2
 P 8675 2325
 F 0 "BATT_OUT_1" H 8975 2300 50  0000 C CNN
@@ -611,7 +612,7 @@ F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-
 	1    0    0    1   
 $EndComp
 $Comp
-L open-automation:CONN_01X02 5V_OUT_1
+L open-dash-daughterboard-rescue:CONN_01X02-open-automation 5V_OUT_1
 U 1 1 5AC715BC
 P 8700 2850
 F 0 "5V_OUT_1" H 8950 2825 50  0000 C CNN
@@ -622,7 +623,7 @@ F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-
 	1    0    0    1   
 $EndComp
 $Comp
-L open-automation:CONN_01X02 BATT_IN_1
+L open-dash-daughterboard-rescue:CONN_01X02-open-automation BATT_IN_1
 U 1 1 5AC70F73
 P 1150 1025
 F 0 "BATT_IN_1" H 1400 1075 50  0000 C CNN
@@ -633,7 +634,7 @@ F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-
 	-1   0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_10k R6
+L open-dash-daughterboard-rescue:R_10k-open-automation R6
 U 1 1 5AC777F6
 P 6650 3400
 F 0 "R6" V 6650 3400 50  0000 C CNN
@@ -645,7 +646,7 @@ F 4 "RC0603FR-072K32L" V 6830 3500 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_10k R7
+L open-dash-daughterboard-rescue:R_10k-open-automation R7
 U 1 1 5AC77A5F
 P 6800 4450
 F 0 "R7" V 6800 4450 50  0000 C CNN
@@ -665,7 +666,7 @@ Wire Wire Line
 	1750 1375 1400 1375
 Connection ~ 1400 1375
 $Comp
-L open-automation:AGND #PWR019
+L open-dash-daughterboard-rescue:AGND-open-automation #PWR019
 U 1 1 5AC7AABD
 P 1700 2000
 F 0 "#PWR019" H 1700 1750 50  0001 C CNN
@@ -676,7 +677,7 @@ F 3 "" H 1700 2000 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR020
+L open-dash-daughterboard-rescue:GND-open-automation #PWR020
 U 1 1 5AC7ACFB
 P 1450 2000
 F 0 "#PWR020" H 1450 1750 50  0001 C CNN
@@ -757,7 +758,7 @@ Text HLabel 3700 4450 0    60   Input ~ 0
 Text HLabel 2950 4125 0    60   Input ~ 0
 V_MAIN
 $Comp
-L open-automation:GND #PWR0101
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0101
 U 1 1 5ACFFB2D
 P 1200 2000
 F 0 "#PWR0101" H 1200 1750 50  0001 C CNN
@@ -791,7 +792,7 @@ F 4 "SMBJ26CATR" H 1750 1175 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:D_Schottky D12
+L open-dash-daughterboard-rescue:D_Schottky-open-automation D12
 U 1 1 5AFA3A8A
 P 4750 1275
 F 0 "D12" H 4750 1375 50  0000 C CNN
@@ -803,7 +804,7 @@ F 4 "CDBA540-HF" H 4750 1275 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:R_10k R39
+L open-dash-daughterboard-rescue:R_10k-open-automation R39
 U 1 1 5AFA3C39
 P 4050 4450
 F 0 "R39" V 4050 4450 50  0000 C CNN
@@ -815,7 +816,7 @@ F 4 "RC0603JR-0710KL" V 4230 4550 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:R_10k R40
+L open-dash-daughterboard-rescue:R_10k-open-automation R40
 U 1 1 5AFA4154
 P 5900 1300
 F 0 "R40" V 5900 1300 50  0000 C CNN
@@ -827,7 +828,7 @@ F 4 "RC0603FR-073K92L" V 6080 1400 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_10k R41
+L open-dash-daughterboard-rescue:R_10k-open-automation R41
 U 1 1 5AFA41C0
 P 5900 1725
 F 0 "R41" V 5900 1725 50  0000 C CNN
@@ -839,7 +840,7 @@ F 4 "RC0603FR-072K32L" V 6080 1825 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:D_Schottky D13
+L open-dash-daughterboard-rescue:D_Schottky-open-automation D13
 U 1 1 5AFA48DE
 P 5650 2950
 F 0 "D13" H 5650 3050 50  0000 C CNN
@@ -851,7 +852,7 @@ F 4 "CDBA540-HF" H 5650 2950 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:LED D14
+L open-dash-daughterboard-rescue:LED-open-automation D14
 U 1 1 5AFA4A17
 P 6825 1300
 F 0 "D14" H 6825 1400 50  0000 C CNN

@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:TDA7297 U8
+L open-dash-daughterboard-rescue:TDA7297-open-automation U8
 U 1 1 5AC797FB
 P 6200 2650
 F 0 "U8" H 5850 1900 60  0000 C CNN
@@ -25,7 +26,7 @@ F 3 "https://www.digikey.com/product-detail/en/stmicroelectronics/TDA7297/497-39
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:AGND #PWR033
+L open-dash-daughterboard-rescue:AGND-open-automation #PWR033
 U 1 1 5AC7B29E
 P 5450 2700
 F 0 "#PWR033" H 5450 2450 50  0001 C CNN
@@ -36,7 +37,7 @@ F 3 "" H 5450 2700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR034
+L open-dash-daughterboard-rescue:GND-open-automation #PWR034
 U 1 1 5AC7B2BE
 P 4550 2750
 F 0 "#PWR034" H 4550 2500 50  0001 C CNN
@@ -83,7 +84,7 @@ F 4 "RC0603JR-0710KL" V 4400 3775 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:GND #PWR035
+L open-dash-daughterboard-rescue:GND-open-automation #PWR035
 U 1 1 5AC7C381
 P 4725 4225
 F 0 "#PWR035" H 4725 3975 50  0001 C CNN
@@ -94,7 +95,7 @@ F 3 "" H 4725 4225 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR036
+L open-dash-daughterboard-rescue:GND-open-automation #PWR036
 U 1 1 5AC7C45C
 P 4750 5025
 F 0 "#PWR036" H 4750 4775 50  0001 C CNN

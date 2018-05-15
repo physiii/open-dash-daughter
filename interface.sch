@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
@@ -14,12 +15,12 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:2098978-1 P1
+L open-dash-daughterboard-rescue:2098978-1-open-automation P1
 U 1 1 5ADA6B8C
 P 3850 10450
 F 0 "P1" H -2500 12815 50  0000 C CNN
 F 1 "2098978-1" H -2500 12724 50  0000 C CNN
-F 2 "" V -1450 12450 50  0001 C CNN
+F 2 "smart-regulator:2098978" V -1450 12450 50  0001 C CNN
 F 3 "" V -1450 12450 50  0001 C CNN
 	1    3850 10450
 	0    1    1    0   
@@ -30,7 +31,7 @@ U 1 1 5AE24043
 P 8200 1700
 F 0 "J1" H 8280 1692 50  0000 L CNN
 F 1 "Conn_01x02" H 8280 1601 50  0000 L CNN
-F 2 "" H 8200 1700 50  0001 C CNN
+F 2 "Connectors_JST:JST_JWPF_B02B-JWPF-SK-R_1x02_P2.00mm_Vertical" H 8200 1700 50  0001 C CNN
 F 3 "~" H 8200 1700 50  0001 C CNN
 	1    8200 1700
 	1    0    0    -1  
@@ -41,7 +42,7 @@ U 1 1 5AE240A7
 P 8250 2400
 F 0 "J2" H 8330 2392 50  0000 L CNN
 F 1 "Conn_01x02" H 8330 2301 50  0000 L CNN
-F 2 "" H 8250 2400 50  0001 C CNN
+F 2 "Connectors_JST:JST_JWPF_B02B-JWPF-SK-R_1x02_P2.00mm_Vertical" H 8250 2400 50  0001 C CNN
 F 3 "~" H 8250 2400 50  0001 C CNN
 	1    8250 2400
 	1    0    0    -1  
@@ -181,12 +182,12 @@ Wire Wire Line
 Wire Wire Line
 	4750 2650 5100 2650
 $Comp
-L Connector_Specialized:USB_B_Mini J?
+L Connector_Specialized:USB_B_Mini J6
 U 1 1 5AE8CF4C
 P 8800 4000
-F 0 "J?" H 8571 3991 50  0000 R CNN
+F 0 "J6" H 8571 3991 50  0000 R CNN
 F 1 "USB_B_Mini" H 8571 3900 50  0000 R CNN
-F 2 "" H 8950 3950 50  0001 C CNN
+F 2 "Connectors:USB_Mini-B" H 8950 3950 50  0001 C CNN
 F 3 "~" H 8950 3950 50  0001 C CNN
 	1    8800 4000
 	-1   0    0    -1  
@@ -208,7 +209,7 @@ U 1 1 5AE9BFA0
 P 6950 4000
 F 0 "C23" H 7065 4046 50  0000 L CNN
 F 1 "0.1uF" H 7065 3955 50  0000 L CNN
-F 2 "" H 6988 3850 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 6988 3850 50  0001 C CNN
 F 3 "~" H 6950 4000 50  0001 C CNN
 	1    6950 4000
 	1    0    0    -1  
@@ -219,7 +220,7 @@ U 1 1 5AE9C0EA
 P 7400 4000
 F 0 "C24" H 7515 4046 50  0000 L CNN
 F 1 "10uF" H 7515 3955 50  0000 L CNN
-F 2 "" H 7400 4000 50  0001 C CNN
+F 2 "Capacitors_SMD:CP_Elec_5x4.5" H 7400 4000 50  0001 C CNN
 F 3 "~" H 7400 4000 50  0001 C CNN
 	1    7400 4000
 	1    0    0    -1  
@@ -263,7 +264,7 @@ U 1 1 5AE9EE99
 P 8900 4550
 F 0 "L4" H 9000 4596 50  0000 L CNN
 F 1 "Ferrite_Bead_Small" H 9000 4505 50  0000 L CNN
-F 2 "" V 8830 4550 50  0001 C CNN
+F 2 "smart-regulator:R_0603_HandSoldering" V 8830 4550 50  0001 C CNN
 F 3 "~" H 8900 4550 50  0001 C CNN
 	1    8900 4550
 	1    0    0    -1  

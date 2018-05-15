@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:CM108AH U13
+L open-dash-daughterboard-rescue:CM108AH-open-automation U13
 U 1 1 5AE40241
 P 5575 3675
 F 0 "U13" H 5600 5490 50  0000 C CNN
@@ -32,7 +33,7 @@ U 1 1 5AE44C69
 P 4075 2150
 F 0 "C51" H 4167 2196 50  0000 L CNN
 F 1 "4.7uF" H 4167 2105 50  0000 L CNN
-F 2 "" H 4075 2150 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4075 2150 50  0001 C CNN
 F 3 "" H 4075 2150 50  0001 C CNN
 	1    4075 2150
 	1    0    0    -1  
@@ -45,7 +46,7 @@ Wire Wire Line
 Wire Wire Line
 	4075 2250 4075 2300
 $Comp
-L open-automation:GND #PWR0138
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0138
 U 1 1 5AE44DC5
 P 4075 2350
 F 0 "#PWR0138" H 4075 2100 50  0001 C CNN
@@ -68,7 +69,7 @@ U 1 1 5AE457CC
 P 4500 2150
 F 0 "C52" H 4592 2196 50  0000 L CNN
 F 1 "0.1uF" H 4592 2105 50  0000 L CNN
-F 2 "" H 4500 2150 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4500 2150 50  0001 C CNN
 F 3 "" H 4500 2150 50  0001 C CNN
 	1    4500 2150
 	1    0    0    -1  
@@ -85,7 +86,7 @@ U 1 1 5AE45EF6
 P 3075 2675
 F 0 "C45" H 3167 2721 50  0000 L CNN
 F 1 "4.7uF" H 3167 2630 50  0000 L CNN
-F 2 "" H 3075 2675 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 3075 2675 50  0001 C CNN
 F 3 "" H 3075 2675 50  0001 C CNN
 	1    3075 2675
 	1    0    0    -1  
@@ -110,7 +111,7 @@ U 1 1 5AE45F0B
 P 3500 2675
 F 0 "C47" H 3592 2721 50  0000 L CNN
 F 1 "0.1uF" H 3592 2630 50  0000 L CNN
-F 2 "" H 3500 2675 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 3500 2675 50  0001 C CNN
 F 3 "" H 3500 2675 50  0001 C CNN
 	1    3500 2675
 	1    0    0    -1  
@@ -134,13 +135,13 @@ U 1 1 5AE48B66
 P 3700 2975
 F 0 "C49" H 3775 3050 50  0000 L CNN
 F 1 "4.7uF" H 3775 2975 50  0000 L CNN
-F 2 "" H 3700 2975 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 3700 2975 50  0001 C CNN
 F 3 "" H 3700 2975 50  0001 C CNN
 	1    3700 2975
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0139
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0139
 U 1 1 5AE48D0C
 P 4800 2325
 F 0 "#PWR0139" H 4800 2075 50  0001 C CNN
@@ -151,7 +152,7 @@ F 3 "" H 4800 2325 50  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:AGND #PWR0140
+L open-dash-daughterboard-rescue:AGND-open-automation #PWR0140
 U 1 1 5AE49217
 P 4825 2625
 F 0 "#PWR0140" H 4825 2375 50  0001 C CNN
@@ -171,7 +172,7 @@ Wire Wire Line
 Wire Wire Line
 	3700 2875 3700 2825
 $Comp
-L open-automation:AGND #PWR0141
+L open-dash-daughterboard-rescue:AGND-open-automation #PWR0141
 U 1 1 5AE4B09D
 P 3075 2875
 F 0 "#PWR0141" H 3075 2625 50  0001 C CNN
@@ -182,7 +183,7 @@ F 3 "" H 3075 2875 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0142
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0142
 U 1 1 5AE4B108
 P 3700 3225
 F 0 "#PWR0142" H 3700 2975 50  0001 C CNN
@@ -200,7 +201,7 @@ U 1 1 5AE4B5C6
 P 4025 3050
 F 0 "C50" H 4100 3100 50  0000 L CNN
 F 1 "4.7uF" H 4100 3000 50  0000 L CNN
-F 2 "" H 4025 3050 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4025 3050 50  0001 C CNN
 F 3 "" H 4025 3050 50  0001 C CNN
 	1    4025 3050
 	1    0    0    -1  
@@ -222,7 +223,7 @@ U 1 1 5AE4EE03
 P 4550 3225
 F 0 "C54" V 4500 3125 50  0000 C CNN
 F 1 "?" V 4600 3100 50  0000 C CNN
-F 2 "" H 4550 3225 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4550 3225 50  0001 C CNN
 F 3 "" H 4550 3225 50  0001 C CNN
 	1    4550 3225
 	0    1    1    0   
@@ -233,7 +234,7 @@ U 1 1 5AE50258
 P 4550 3000
 F 0 "C53" V 4500 2925 50  0000 C CNN
 F 1 "?" V 4600 2925 50  0000 C CNN
-F 2 "" H 4550 3000 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4550 3000 50  0001 C CNN
 F 3 "" H 4550 3000 50  0001 C CNN
 	1    4550 3000
 	0    1    1    0   
@@ -293,7 +294,7 @@ U 1 1 5AE684BB
 P 4500 3425
 F 0 "R36" V 4425 3425 50  0000 C CNN
 F 1 "22" V 4575 3425 50  0000 C CNN
-F 2 "" V 4430 3425 50  0001 C CNN
+F 2 "smart-regulator:R_0603_HandSoldering" V 4430 3425 50  0001 C CNN
 F 3 "" H 4500 3425 50  0001 C CNN
 	1    4500 3425
 	0    1    1    0   
@@ -306,7 +307,7 @@ U 1 1 5AE6995C
 P 4275 3525
 F 0 "R35" V 4200 3525 50  0000 C CNN
 F 1 "22" V 4350 3525 50  0000 C CNN
-F 2 "" V 4205 3525 50  0001 C CNN
+F 2 "smart-regulator:R_0603_HandSoldering" V 4205 3525 50  0001 C CNN
 F 3 "" H 4275 3525 50  0001 C CNN
 	1    4275 3525
 	0    1    1    0   
@@ -325,7 +326,7 @@ U 1 1 5AE6F10A
 P 3375 3675
 F 0 "C46" H 3450 3725 50  0000 L CNN
 F 1 "47pF" H 3450 3625 50  0000 L CNN
-F 2 "" H 3375 3675 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 3375 3675 50  0001 C CNN
 F 3 "" H 3375 3675 50  0001 C CNN
 	1    3375 3675
 	1    0    0    -1  
@@ -336,7 +337,7 @@ U 1 1 5AE6F180
 P 3650 3675
 F 0 "C48" H 3725 3725 50  0000 L CNN
 F 1 "47pF" H 3725 3625 50  0000 L CNN
-F 2 "" H 3650 3675 50  0001 C CNN
+F 2 "Capacitors_SMD:C_0603_HandSoldering" H 3650 3675 50  0001 C CNN
 F 3 "" H 3650 3675 50  0001 C CNN
 	1    3650 3675
 	1    0    0    -1  
@@ -352,7 +353,7 @@ Connection ~ 3650 3425
 Wire Wire Line
 	3650 3425 4400 3425
 $Comp
-L open-automation:GND #PWR0143
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0143
 U 1 1 5AE70A91
 P 3375 3850
 F 0 "#PWR0143" H 3375 3600 50  0001 C CNN
@@ -372,7 +373,7 @@ U 1 1 5AE72A98
 P 3225 3225
 F 0 "R34" V 3150 3225 50  0000 C CNN
 F 1 "1k5" V 3300 3225 50  0000 C CNN
-F 2 "" V 3155 3225 50  0001 C CNN
+F 2 "smart-regulator:R_0603_HandSoldering" V 3155 3225 50  0001 C CNN
 F 3 "" H 3225 3225 50  0001 C CNN
 	1    3225 3225
 	0    1    1    0   
@@ -403,7 +404,7 @@ Wire Wire Line
 Text HLabel 4650 4025 0    50   Input ~ 0
 audio_mute
 $Comp
-L open-automation:GND #PWR0144
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0144
 U 1 1 5AE90C70
 P 4875 4325
 F 0 "#PWR0144" H 4875 4075 50  0001 C CNN
@@ -442,7 +443,7 @@ Connection ~ 4875 4825
 Wire Wire Line
 	4875 4825 4875 4925
 $Comp
-L open-automation:GND #PWR0145
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0145
 U 1 1 5AEA5FA4
 P 4875 4925
 F 0 "#PWR0145" H 4875 4675 50  0001 C CNN
@@ -470,7 +471,7 @@ U 1 1 5AEB573A
 P 6575 3225
 F 0 "C55" V 6625 3125 50  0000 C CNN
 F 1 "470uF" V 6525 3075 50  0000 C CNN
-F 2 "" H 6575 3225 50  0001 C CNN
+F 2 "Capacitors_SMD:CP_Elec_5x4.5" H 6575 3225 50  0001 C CNN
 F 3 "" H 6575 3225 50  0001 C CNN
 	1    6575 3225
 	0    -1   -1   0   
@@ -483,7 +484,7 @@ U 1 1 5AEBA252
 P 6875 3325
 F 0 "C56" V 6925 3225 50  0000 C CNN
 F 1 "470uF" V 6825 3150 50  0000 C CNN
-F 2 "" H 6875 3325 50  0001 C CNN
+F 2 "Capacitors_SMD:CP_Elec_5x4.5" H 6875 3325 50  0001 C CNN
 F 3 "" H 6875 3325 50  0001 C CNN
 	1    6875 3325
 	0    -1   -1   0   
@@ -511,7 +512,7 @@ U 1 1 5AED144E
 P 6475 4325
 F 0 "R37" V 6400 4325 50  0000 C CNN
 F 1 "?" V 6550 4325 50  0000 C CNN
-F 2 "" V 6405 4325 50  0001 C CNN
+F 2 "smart-regulator:R_0603_HandSoldering" V 6405 4325 50  0001 C CNN
 F 3 "" H 6475 4325 50  0001 C CNN
 	1    6475 4325
 	0    1    1    0   
@@ -519,12 +520,12 @@ $EndComp
 Wire Wire Line
 	6225 4325 6375 4325
 $Comp
-L open-automation:LED D11
+L open-dash-daughterboard-rescue:LED-open-automation D11
 U 1 1 5AED9DFE
 P 6825 4325
 F 0 "D11" H 6825 4125 50  0000 C CNN
 F 1 "LED" H 6825 4200 50  0000 C CNN
-F 2 "" H 6825 4325 50  0000 C CNN
+F 2 "smart-regulator:LED_0603" H 6825 4325 50  0001 C CNN
 F 3 "" H 6825 4325 50  0000 C CNN
 	1    6825 4325
 	-1   0    0    1   
@@ -536,7 +537,7 @@ Wire Wire Line
 Wire Wire Line
 	7100 4325 7100 4400
 $Comp
-L open-automation:GND #PWR0146
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0146
 U 1 1 5AEDD835
 P 7100 4400
 F 0 "#PWR0146" H 7100 4150 50  0001 C CNN

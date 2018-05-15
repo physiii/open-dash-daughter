@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:GND #PWR021
+L open-dash-daughterboard-rescue:GND-open-automation #PWR021
 U 1 1 59097974
 P 4825 2750
 F 0 "#PWR021" H 4825 2500 50  0001 C CNN
@@ -27,7 +28,7 @@ $EndComp
 Text Label 4200 1025 0    197  ~ 0
 Microcontroller
 $Comp
-L open-automation:C_1uF C8
+L open-dash-daughterboard-rescue:C_1uF-open-automation C8
 U 1 1 59C55B03
 P 2825 3775
 F 0 "C8" H 2825 3875 50  0000 L CNN
@@ -39,7 +40,7 @@ F 4 "CC0603ZRY5V7BB105" H 2950 3975 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR024
+L open-dash-daughterboard-rescue:GND-open-automation #PWR024
 U 1 1 59C55B05
 P 2625 4025
 F 0 "#PWR024" H 2625 3775 50  0001 C CNN
@@ -52,7 +53,7 @@ $EndComp
 Text Notes 2275 4400 0    60   ~ 0
 Bypass CAPs
 $Comp
-L open-automation:R_10k R12
+L open-dash-daughterboard-rescue:R_10k-open-automation R12
 U 1 1 59C609F8
 P 6400 4700
 F 0 "R12" V 6400 4700 50  0000 C CNN
@@ -64,7 +65,7 @@ F 4 "RC0603JR-0710KL" V 6580 4800 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:GND #PWR025
+L open-dash-daughterboard-rescue:GND-open-automation #PWR025
 U 1 1 5AF61DA0
 P 6600 4700
 F 0 "#PWR025" H 6600 4450 50  0001 C CNN
@@ -75,7 +76,7 @@ F 3 "" H 6600 4700 50  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:R_10k R11
+L open-dash-daughterboard-rescue:R_10k-open-automation R11
 U 1 1 59C83F25
 P 3450 3700
 F 0 "R11" V 3450 3700 50  0000 C CNN
@@ -87,7 +88,7 @@ F 4 "RC0603JR-0710KL" V 3630 3800 60  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L open-automation:R_10k R10
+L open-dash-daughterboard-rescue:R_10k-open-automation R10
 U 1 1 59C83F7C
 P 3350 3700
 F 0 "R10" V 3350 3700 50  0000 C CNN
@@ -99,7 +100,7 @@ F 4 "RC0603JR-0710KL" V 3530 3800 60  0001 C CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L open-automation:C_10uF C7
+L open-dash-daughterboard-rescue:C_10uF-open-automation C7
 U 1 1 5AF61DA3
 P 2425 3775
 F 0 "C7" H 2450 3875 50  0000 L CNN
@@ -234,7 +235,7 @@ SOFT_POWER
 Wire Wire Line
 	6625 4000 6725 4000
 $Comp
-L open-automation:ESP-WROOM-32 U14
+L open-dash-daughterboard-rescue:ESP-WROOM-32-open-automation U14
 U 1 1 5AFA4EFB
 P 5775 3450
 F 0 "U14" H 6325 2350 60  0000 C CNN

@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:Si4740 U11
+L open-dash-daughterboard-rescue:Si4740-open-automation U11
 U 1 1 5ADA9622
 P 7750 3300
 F 0 "U11" H 7950 4050 50  0000 L CNN
@@ -68,7 +69,7 @@ Connection ~ 2700 950
 Wire Wire Line
 	2200 950  2300 950 
 $Comp
-L open-automation:GND #PWR0109
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0109
 U 1 1 5ADAF4F6
 P 2700 1550
 F 0 "#PWR0109" H 2700 1300 50  0001 C CNN
@@ -110,7 +111,7 @@ F 4 "CL10C3R9CB8NNNC" H 1750 4050 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0110
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0110
 U 1 1 5ADAF7FC
 P 1750 4400
 F 0 "#PWR0110" H 1750 4150 50  0001 C CNN
@@ -209,7 +210,7 @@ F 4 "SRR0745A-102M" H 5550 4300 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0114
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0114
 U 1 1 5ADB27D1
 P 5550 4600
 F 0 "#PWR0114" H 5550 4350 50  0001 C CNN
@@ -286,7 +287,7 @@ Wire Wire Line
 Wire Wire Line
 	6400 2850 7000 2850
 $Comp
-L open-automation:GND #PWR0115
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0115
 U 1 1 5ADB4CF2
 P 6800 3000
 F 0 "#PWR0115" H 6800 2750 50  0001 C CNN
@@ -301,7 +302,7 @@ Wire Wire Line
 Wire Wire Line
 	6800 2750 7000 2750
 $Comp
-L open-automation:GND #PWR0116
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0116
 U 1 1 5ADB531F
 P 6500 2600
 F 0 "#PWR0116" H 6500 2350 50  0001 C CNN
@@ -333,7 +334,7 @@ Wire Wire Line
 	5550 1500 5650 1500
 Connection ~ 5550 1900
 $Comp
-L open-automation:GND #PWR0119
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0119
 U 1 1 5ADBBCBC
 P 6200 1950
 F 0 "#PWR0119" H 6200 1700 50  0001 C CNN
@@ -376,7 +377,7 @@ NoConn ~ 7950 1650
 Text HLabel 10750 2350 2    50   Input ~ 0
 3v3
 $Comp
-L open-automation:GND #PWR0120
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0120
 U 1 1 5ADC27BB
 P 10450 2850
 F 0 "#PWR0120" H 10450 2600 50  0001 C CNN
@@ -414,7 +415,7 @@ Wire Wire Line
 Wire Wire Line
 	10450 2750 10450 2850
 $Comp
-L open-automation:GND #PWR0125
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0125
 U 1 1 5ADEBD94
 P 9650 2500
 F 0 "#PWR0125" H 9650 2250 50  0001 C CNN
@@ -428,7 +429,7 @@ Connection ~ 10450 2350
 Wire Wire Line
 	8950 2350 10000 2350
 $Comp
-L open-automation:GND #PWR0126
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0126
 U 1 1 5ADED5D4
 P 10000 2850
 F 0 "#PWR0126" H 10000 2600 50  0001 C CNN
@@ -526,7 +527,7 @@ FM_RADIO_RST
 Text Notes 7800 4600 0    50   ~ 0
 i2c add: 0010001x
 $Comp
-L open-automation:GND #PWR0127
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0127
 U 1 1 5AE4AD4A
 P 7850 3600
 F 0 "#PWR0127" H 7850 3350 50  0001 C CNN
@@ -545,7 +546,7 @@ Wire Wire Line
 Text HLabel 9925 3875 2    50   Input ~ 0
 3v3
 $Comp
-L open-automation:GND #PWR0128
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0128
 U 1 1 5AE0458E
 P 9625 4375
 F 0 "#PWR0128" H 9625 4125 50  0001 C CNN
@@ -563,7 +564,7 @@ Wire Wire Line
 	9625 4275 9625 4375
 Connection ~ 9625 3875
 $Comp
-L open-automation:GND #PWR0129
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0129
 U 1 1 5AE045A0
 P 9175 4375
 F 0 "#PWR0129" H 9175 4125 50  0001 C CNN
@@ -611,7 +612,7 @@ Wire Wire Line
 Wire Wire Line
 	3475 4350 3475 4475
 $Comp
-L open-automation:GND #PWR0130
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0130
 U 1 1 5AE2977B
 P 3475 4475
 F 0 "#PWR0130" H 3475 4225 50  0001 C CNN
@@ -632,7 +633,7 @@ am_passive_ant_en
 Wire Wire Line
 	3825 6050 3825 6275
 $Comp
-L open-automation:GND #PWR0131
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0131
 U 1 1 5AE4F967
 P 3825 6275
 F 0 "#PWR0131" H 3825 6025 50  0001 C CNN
@@ -677,7 +678,7 @@ Wire Wire Line
 Wire Wire Line
 	5075 3150 5075 3250
 $Comp
-L open-automation:GND #PWR0132
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0132
 U 1 1 5AEDE11C
 P 5075 3300
 F 0 "#PWR0132" H 5075 3050 50  0001 C CNN
@@ -789,7 +790,7 @@ Connection ~ 2275 5175
 Wire Wire Line
 	2275 5175 2625 5175
 $Comp
-L open-automation:GND #PWR0133
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0133
 U 1 1 5AF5212A
 P 2625 5550
 F 0 "#PWR0133" H 2625 5300 50  0001 C CNN
@@ -802,7 +803,7 @@ $EndComp
 Wire Wire Line
 	2625 5500 2625 5550
 $Comp
-L open-automation:GND #PWR0134
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0134
 U 1 1 5AF5FA7F
 P 2275 6450
 F 0 "#PWR0134" H 2275 6200 50  0001 C CNN
@@ -952,7 +953,7 @@ $EndComp
 Wire Wire Line
 	2200 3800 2650 3800
 $Comp
-L open-automation:GND #PWR0135
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0135
 U 1 1 5AE6504B
 P 4575 4350
 F 0 "#PWR0135" H 4575 4100 50  0001 C CNN
@@ -995,7 +996,7 @@ F 4 "D1213A-01SO-7" H 4000 1700 60  0001 L CNN "Part Number"
 	-1   0    0    1   
 $EndComp
 $Comp
-L open-automation:GND #PWR0136
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0136
 U 1 1 5AEB1DCA
 P 3800 1500
 F 0 "#PWR0136" H 3800 1250 50  0001 C CNN

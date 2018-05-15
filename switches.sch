@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:LED D2
+L open-dash-daughterboard-rescue:LED-open-automation D2
 U 1 1 59092D24
 P 3225 3325
 F 0 "D2" V 3200 3425 50  0000 C CNN
@@ -26,7 +27,7 @@ F 4 "475-2512-2-ND" H 3225 3325 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:touchpad U10
+L open-dash-daughterboard-rescue:touchpad-open-automation U10
 U 1 1 590F8D3B
 P 7950 4800
 F 0 "U10" H 8100 4600 60  0000 C CNN
@@ -37,7 +38,7 @@ F 3 "" H 7950 4800 60  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:USB_A_2 P5
+L open-dash-daughterboard-rescue:USB_A_2-open-automation P5
 U 1 1 59693837
 P 7850 3000
 F 0 "P5" H 8100 2800 50  0000 C CNN
@@ -49,7 +50,7 @@ F 4 "1002-004-01010" H 7850 3000 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0121
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0121
 U 1 1 5969393D
 P 8000 3400
 F 0 "#PWR0121" H 8000 3150 50  0001 C CNN
@@ -71,7 +72,7 @@ Wire Wire Line
 Wire Wire Line
 	7400 3400 7350 3400
 $Comp
-L open-automation:housing-mounts U4
+L open-dash-daughterboard-rescue:housing-mounts-open-automation U4
 U 1 1 5978A2A6
 P 7925 4225
 F 0 "U4" H 8075 4125 60  0000 C CNN
@@ -82,7 +83,7 @@ F 3 "https://www.mcmaster.com/#catalog/123/904/=18nyvt2" H 7925 4275 60  0001 C 
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:SW_PUSH FACTORY1
+L open-dash-daughterboard-rescue:SW_PUSH-open-automation FACTORY1
 U 1 1 59C587B8
 P 3225 4175
 F 0 "FACTORY1" H 3225 4350 50  0000 C CNN
@@ -94,7 +95,7 @@ F 4 "KMR211NG LFS" H 3225 4175 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:GND #PWR0122
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0122
 U 1 1 59C59092
 P 3225 4550
 F 0 "#PWR0122" H 3225 4300 50  0001 C CNN
@@ -107,7 +108,7 @@ $EndComp
 Wire Wire Line
 	3225 4550 3225 4475
 $Comp
-L open-automation:R_10k R2
+L open-dash-daughterboard-rescue:R_10k-open-automation R2
 U 1 1 59E3E4D2
 P 3225 3675
 F 0 "R2" V 3225 3675 50  0000 C CNN
@@ -128,7 +129,7 @@ Wire Wire Line
 	3350 3850 3225 3850
 Connection ~ 3225 3850
 $Comp
-L open-automation:LED D3
+L open-dash-daughterboard-rescue:LED-open-automation D3
 U 1 1 59E3EE41
 P 4175 3325
 F 0 "D3" V 4150 3425 50  0000 C CNN
@@ -140,7 +141,7 @@ F 4 "475-2512-2-ND" H 4175 3325 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:SW_PUSH REBOOT1
+L open-dash-daughterboard-rescue:SW_PUSH-open-automation REBOOT1
 U 1 1 59E3EE49
 P 4175 4175
 F 0 "REBOOT1" H 4175 4350 50  0000 C CNN
@@ -152,7 +153,7 @@ F 4 "KMR211NG LFS" H 4175 4175 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:GND #PWR0123
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0123
 U 1 1 59E3EE50
 P 4175 4550
 F 0 "#PWR0123" H 4175 4300 50  0001 C CNN
@@ -165,7 +166,7 @@ $EndComp
 Wire Wire Line
 	4175 4550 4175 4475
 $Comp
-L open-automation:R_10k R3
+L open-dash-daughterboard-rescue:R_10k-open-automation R3
 U 1 1 59E3EE58
 P 4175 3675
 F 0 "R3" V 4175 3675 50  0000 C CNN
@@ -186,7 +187,7 @@ Wire Wire Line
 	4300 3850 4175 3850
 Connection ~ 4175 3850
 $Comp
-L open-automation:LED D5
+L open-dash-daughterboard-rescue:LED-open-automation D5
 U 1 1 59E3F1C3
 P 5000 3325
 F 0 "D5" V 4975 3425 50  0000 C CNN
@@ -198,7 +199,7 @@ F 4 "475-2512-2-ND" H 5000 3325 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:SW_PUSH PROG1
+L open-dash-daughterboard-rescue:SW_PUSH-open-automation PROG1
 U 1 1 59E3F1CB
 P 5000 4175
 F 0 "PROG1" H 5000 4350 50  0000 C CNN
@@ -210,7 +211,7 @@ F 4 "KMR211NG LFS" H 5000 4175 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:GND #PWR0124
+L open-dash-daughterboard-rescue:GND-open-automation #PWR0124
 U 1 1 59E3F1D2
 P 5000 4550
 F 0 "#PWR0124" H 5000 4300 50  0001 C CNN
@@ -223,7 +224,7 @@ $EndComp
 Wire Wire Line
 	5000 4550 5000 4475
 $Comp
-L open-automation:R_10k R4
+L open-dash-daughterboard-rescue:R_10k-open-automation R4
 U 1 1 59E3F1DA
 P 5000 3675
 F 0 "R4" V 5000 3675 50  0000 C CNN

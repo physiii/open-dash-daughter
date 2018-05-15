@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
@@ -38,7 +39,7 @@ F 4 "MCP2515-I/ST" H 3350 3450 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_10k R18
+L open-dash-daughterboard-rescue:R_10k-open-automation R18
 U 1 1 5AD70852
 P 5100 3325
 F 0 "R18" H 5170 3371 50  0000 L CNN
@@ -72,7 +73,7 @@ Text HLabel 5450 1900 0    50   Input ~ 0
 Wire Wire Line
 	5650 1900 5825 1900
 $Comp
-L open-automation:R_10k R20
+L open-dash-daughterboard-rescue:R_10k-open-automation R20
 U 1 1 5AD72887
 P 7100 3275
 F 0 "R20" H 7170 3321 50  0000 L CNN
@@ -291,7 +292,7 @@ Wire Wire Line
 Wire Wire Line
 	4625 2750 4700 2750
 $Comp
-L open-automation:R_10k R19
+L open-dash-daughterboard-rescue:R_10k-open-automation R19
 U 1 1 5ADA3415
 P 6650 3275
 F 0 "R19" H 6720 3321 50  0000 L CNN
@@ -401,7 +402,7 @@ U 1 1 5AE8F142
 P 4300 1800
 F 0 "R16" H 4230 1754 50  0000 R CNN
 F 1 "Jumper 0ohm" H 4230 1845 50  0000 R CNN
-F 2 "" V 4230 1800 50  0001 C CNN
+F 2 "smart-regulator:R_0603_HandSoldering" V 4230 1800 50  0001 C CNN
 F 3 "~" H 4300 1800 50  0001 C CNN
 	1    4300 1800
 	1    0    0    1   
@@ -412,7 +413,7 @@ U 1 1 5AE8F18A
 P 4700 1800
 F 0 "R17" H 4770 1846 50  0000 L CNN
 F 1 "Jumper 0ohm" H 4770 1755 50  0000 L CNN
-F 2 "" V 4630 1800 50  0001 C CNN
+F 2 "smart-regulator:R_0603_HandSoldering" V 4630 1800 50  0001 C CNN
 F 3 "~" H 4700 1800 50  0001 C CNN
 	1    4700 1800
 	1    0    0    -1  

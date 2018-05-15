@@ -1,10 +1,9 @@
 EESchema Schematic File Version 4
-LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 3 13
+Sheet 3 15
 Title ""
 Date ""
 Rev ""
@@ -23,39 +22,6 @@ F 1 "GND" H 4825 2600 50  0000 C CNN
 F 2 "" H 4825 2750 50  0000 C CNN
 F 3 "" H 4825 2750 50  0000 C CNN
 	1    4825 2750
-	-1   0    0    1   
-$EndComp
-$Comp
-L open-automation:ESP-WROOM-32 U4
-U 1 1 590979AF
-P 5775 3450
-F 0 "U4" H 6325 2350 60  0000 C CNN
-F 1 "ESP-WROOM-32" H 5775 4250 60  0000 C CNN
-F 2 "open-automation:ESP-WROOM-32" H 5425 4050 60  0001 C CNN
-F 3 "https://www.espressif.com/sites/default/files/documentation/esp_wroom_32_datasheet_en.pdf" H 5425 4050 60  0001 C CNN
-	1    5775 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:GND #PWR022
-U 1 1 590979B0
-P 8150 3500
-F 0 "#PWR022" H 8150 3250 50  0001 C CNN
-F 1 "GND" H 8150 3350 50  0000 C CNN
-F 2 "" H 8150 3500 50  0000 C CNN
-F 3 "" H 8150 3500 50  0000 C CNN
-	1    8150 3500
-	-1   0    0    1   
-$EndComp
-$Comp
-L open-automation:GND #PWR023
-U 1 1 590979B2
-P 8750 3500
-F 0 "#PWR023" H 8750 3250 50  0001 C CNN
-F 1 "GND" H 8750 3350 50  0000 C CNN
-F 2 "" H 8750 3500 50  0000 C CNN
-F 3 "" H 8750 3500 50  0000 C CNN
-	1    8750 3500
 	-1   0    0    1   
 $EndComp
 Text Label 4200 1025 0    197  ~ 0
@@ -99,7 +65,7 @@ F 4 "RC0603JR-0710KL" V 6580 4800 60  0001 C CNN "Part Number"
 $EndComp
 $Comp
 L open-automation:GND #PWR025
-U 1 1 59C60A9D
+U 1 1 5AF61DA0
 P 6600 4700
 F 0 "#PWR025" H 6600 4450 50  0001 C CNN
 F 1 "GND" H 6600 4550 50  0000 C CNN
@@ -134,7 +100,7 @@ F 4 "RC0603JR-0710KL" V 3530 3800 60  0001 C CNN "Part Number"
 $EndComp
 $Comp
 L open-automation:C_10uF C7
-U 1 1 5A10664F
+U 1 1 5AF61DA3
 P 2425 3775
 F 0 "C7" H 2450 3875 50  0000 L CNN
 F 1 "C_10uF" H 2125 3675 50  0000 L CNN
@@ -144,33 +110,6 @@ F 4 "GRM188R61A106ME69D" H 2550 3975 60  0001 C CNN "Part Number"
 	1    2425 3775
 	1    0    0    -1  
 $EndComp
-$Comp
-L open-automation:Conn_02x05_Odd_Even J1
-U 1 1 5AC7372F
-P 8400 3750
-F 0 "J1" H 8450 4050 50  0000 C CNN
-F 1 "Conn_02x05_Odd_Even" H 8450 3450 50  0000 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_2x05_Pitch2.54mm" H 8400 3750 50  0001 C CNN
-F 3 "" H 8400 3750 50  0001 C CNN
-	1    8400 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8750 3550 8750 3500
-Wire Wire Line
-	8700 3550 8750 3550
-Wire Wire Line
-	8150 3550 8200 3550
-Wire Wire Line
-	8150 3500 8150 3550
-Wire Wire Line
-	8700 3650 8800 3650
-Wire Wire Line
-	8800 3850 8700 3850
-Wire Wire Line
-	8700 3750 8800 3750
-Wire Wire Line
-	8100 3650 8200 3650
 Wire Wire Line
 	6625 3800 6725 3800
 Wire Wire Line
@@ -205,18 +144,10 @@ Wire Wire Line
 	2625 4025 2625 3975
 Connection ~ 2625 3975
 Wire Wire Line
-	8100 3850 8200 3850
-Wire Wire Line
-	8100 3750 8200 3750
-Wire Wire Line
 	6250 4700 6175 4700
 Connection ~ 6175 4700
 Wire Wire Line
 	6600 4700 6550 4700
-Wire Wire Line
-	8100 3950 8200 3950
-Wire Wire Line
-	8700 3950 8800 3950
 Wire Wire Line
 	6725 3900 6625 3900
 Wire Wire Line
@@ -292,26 +223,25 @@ Text HLabel 6725 3050 2    60   Input ~ 0
 RXD
 Text HLabel 6725 2950 2    60   Input ~ 0
 TXD
-Text HLabel 8100 3650 0    60   Input ~ 0
-3V3
-Text HLabel 8100 3750 0    60   Input ~ 0
-PROG
-Text HLabel 8100 3850 0    60   Input ~ 0
-FACTORY
-Text HLabel 8100 3950 0    60   Input ~ 0
-SCL
-Text HLabel 8800 3650 2    60   Input ~ 0
-5V
-Text HLabel 8800 3750 2    60   Input ~ 0
-TXD
-Text HLabel 8800 3850 2    60   Input ~ 0
-RXD
-Text HLabel 8800 3950 2    60   Input ~ 0
-SDA
 Text HLabel 4775 4100 0    60   Input ~ 0
 FACTORY
 Text HLabel 4775 2900 0    60   Input ~ 0
 3V3
 Text HLabel 4775 3000 0    60   Input ~ 0
 ESP_EN
+Text HLabel 6725 4000 2    50   Output ~ 0
+SOFT_POWER
+Wire Wire Line
+	6625 4000 6725 4000
+$Comp
+L open-automation:ESP-WROOM-32 U14
+U 1 1 5AFA4EFB
+P 5775 3450
+F 0 "U14" H 6325 2350 60  0000 C CNN
+F 1 "ESP-WROOM-32" H 5775 4250 60  0000 C CNN
+F 2 "open-automation:ESP-WROOM-32" H 5425 4050 60  0001 C CNN
+F 3 "https://www.espressif.com/sites/default/files/documentation/esp_wroom_32_datasheet_en.pdf" H 5425 4050 60  0001 C CNN
+	1    5775 3450
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

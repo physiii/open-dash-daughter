@@ -49,13 +49,17 @@ void task_CAN( void *pvParameters ){
         	//do stuff!
         	if(__RX_frame.FIR.B.FF==CAN_frame_std)
         		printf("%lu\t%lu\tNew standard frame", ctr, clock());
-        	else
-        		printf("%lu\t%lu\tNew extended frame", ctr, clock());
+        	/*else
+        		printf("%lu\t%lu\tNew extended frame", ctr, clock());*/
 
         	if(__RX_frame.FIR.B.RTR==CAN_RTR)
         		printf(" RTR from 0x%08x, DLC %d\r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC);
-        	else
-        		printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
+        	else {
+        		//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
+			if(__RX_frame.MsgID==6214000) printf("engine status change!");
+			if(__RX_frame.MsgID==6284000) printf("steering wheel controls!");
+			if(__RX_frame.MsgID==6314018) printf("gear change!");
+		}
 
         	//loop back frame
         	// CAN_write_frame(&__RX_frame);

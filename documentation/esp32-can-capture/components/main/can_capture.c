@@ -55,10 +55,29 @@ void task_CAN( void *pvParameters ){
         	if(__RX_frame.FIR.B.RTR==CAN_RTR)
         		printf(" RTR from 0x%08x, DLC %d\r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC);
         	else {
+			uint64_t message_data = (uint64_t) __RX_frame.data.u32[1] << 32 | __RX_frame.data.u32[0];
         		//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
-			if(__RX_frame.MsgID==6214000) printf("engine status change!");
-			if(__RX_frame.MsgID==6284000) printf("steering wheel controls!");
-			if(__RX_frame.MsgID==6314018) printf("gear change!");
+			if(__RX_frame.MsgID==0x6214000) {
+				//printf("\nengine status change! %llx", message_data);
+				//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
+				if(message_data==0xf000000180400) {
+					printf("\nKEY IN OFF POSITION!");
+				}
+
+				if(message_data==0xb440000480400) {
+					printf("\nKEY MOVED TO START POSITION!");
+				}
+
+				if(message_data==0xb440000400400) {
+					printf("\nENGINE STARTED!");
+				}
+			}
+			/*if(__RX_frame.MsgID==0x6284000) {
+				printf("\nMUTE from steering wheel! %lli", message_data);
+			}
+			if(__RX_frame.MsgID==0x6314018) {
+				 printf("\ngear change! %lli", message_data);
+			}*/
 		}
 
         	//loop back frame

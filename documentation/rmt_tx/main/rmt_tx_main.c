@@ -14,10 +14,10 @@
 static const char *RMT_TX_TAG = "RMT Tx";
 
 // count of light positions
-#define WS2812_PIXELS (60)
+#define WS2812_PIXELS (300)
 
 #define RMT_TX_CHANNEL RMT_CHANNEL_0
-#define RMT_TX_GPIO 18
+#define RMT_TX_GPIO 17
 
 // RMT_BASECLK_APB is not defined anywhere I can see, assuming default 80MHz
 #define MY_RMT_BASECLK_APB (80)

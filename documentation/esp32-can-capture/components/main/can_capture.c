@@ -19,8 +19,10 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 // from <http://www.barth-dev.de/can-driver-esp32/> and
 // <http://www.barth-dev.de/wp-content/uploads/2017/01/ESP32_CAN_demo.zip>
 // as accessed 2018-04-26
+
 void task_CAN( void *pvParameters ){
     (void)pvParameters;
+
 
     //frame buffer
     CAN_frame_t __RX_frame;
@@ -39,7 +41,7 @@ void task_CAN( void *pvParameters ){
     }
 
     printf("Entering CAN loop\n");
-
+    bool was_started = false;
     unsigned long ctr = 0;
     while (1){
         //receive next CAN frame from queue
@@ -62,10 +64,20 @@ void task_CAN( void *pvParameters ){
 				//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
 				if(message_data==0xf000000180400) {
 					printf("\nKEY IN OFF POSITION!");
+					if (was_started) {
+					        gpio_set_level(GPIO_NUM_5, 0);
+					        vTaskDelay(2000 / portTICK_PERIOD_MS);
+					        gpio_set_level(GPIO_NUM_5, 1);
+						was_started = false;
+					}
 				}
 
 				if(message_data==0xb440000480400) {
 					printf("\nKEY MOVED TO START POSITION!");
+				        gpio_set_level(GPIO_NUM_5, 0);
+				        vTaskDelay(2000 / portTICK_PERIOD_MS);
+				        gpio_set_level(GPIO_NUM_5, 1);
+					was_started = true;
 				}
 
 				if(message_data==0xb440000400400) {
@@ -93,7 +105,8 @@ void app_main(void)
     ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
 
     gpio_set_direction(GPIO_NUM_2, GPIO_MODE_OUTPUT);
-
+    gpio_set_direction(GPIO_NUM_5, GPIO_MODE_OUTPUT);
+    gpio_set_level(GPIO_NUM_5, 1);
     xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
 
     while (1) {

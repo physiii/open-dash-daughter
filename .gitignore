@@ -7,6 +7,6 @@
 # *-rescue.lib
 ftp-lib-table
 sdkconfig
-
+build
 # for external tools
 *.dsn

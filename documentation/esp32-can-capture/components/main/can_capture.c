@@ -42,6 +42,7 @@ void task_CAN( void *pvParameters ){
 
     printf("Entering CAN loop\n");
     bool was_started = false;
+    bool engine_started = false;
     unsigned long ctr = 0;
     while (1){
         //receive next CAN frame from queue
@@ -60,19 +61,24 @@ void task_CAN( void *pvParameters ){
 			uint64_t message_data = (uint64_t) __RX_frame.data.u32[1] << 32 | __RX_frame.data.u32[0];
         		//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
 			if(__RX_frame.MsgID==0x6214000) {
-				//printf("\nengine status change! %llx", message_data);
+				printf("\n%llx", message_data);
 				//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
 				if(message_data==0xf000000180400) {
-					printf("\nKEY IN OFF POSITION!");
-					if (was_started) {
-					        gpio_set_level(GPIO_NUM_5, 0);
-					        vTaskDelay(2000 / portTICK_PERIOD_MS);
-					        gpio_set_level(GPIO_NUM_5, 1);
-						was_started = false;
-					}
+					if (!was_started) continue;
+					printf("\nKEY MOVED TO OFF POSITION!");
+					gpio_set_level(GPIO_NUM_5, 0);
+					vTaskDelay(2000 / portTICK_PERIOD_MS);
+					gpio_set_level(GPIO_NUM_5, 1);
+					was_started = false;
+					engine_started = false;
 				}
 
-				if(message_data==0xb440000480400) {
+				//b430000480404
+				//b430000480c04
+				uint64_t message_data_1 = message_data & 0x0000000000000f00; 
+				printf(" %llx", message_data_1);
+				if(message_data==0xb430000480404) {
+					if (was_started) continue;
 					printf("\nKEY MOVED TO START POSITION!");
 				        gpio_set_level(GPIO_NUM_5, 0);
 				        vTaskDelay(2000 / portTICK_PERIOD_MS);
@@ -81,7 +87,9 @@ void task_CAN( void *pvParameters ){
 				}
 
 				if(message_data==0xb440000400400) {
+					if(engine_started) continue;
 					printf("\nENGINE STARTED!");
+					engine_started = true;
 				}
 			}
 			/*if(__RX_frame.MsgID==0x6284000) {

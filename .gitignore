@@ -6,7 +6,8 @@
 *-cache.lib
 # *-rescue.lib
 ftp-lib-table
-*sdkconfig*
+sdkconfig
+sdkconfig.*
 build
 # for external tools
 *.dsn

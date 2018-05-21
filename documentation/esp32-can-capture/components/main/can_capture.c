@@ -49,6 +49,7 @@ void task_CAN( void *pvParameters ){
         if(xQueueReceive(CAN_cfg.rx_queue,&__RX_frame, 3*portTICK_PERIOD_MS)==pdTRUE){
 
 
+
         	//do stuff!
         	if(__RX_frame.FIR.B.FF==CAN_frame_std)
         		printf("%lu\t%lu\tNew standard frame", ctr, clock());
@@ -59,9 +60,12 @@ void task_CAN( void *pvParameters ){
         		printf(" RTR from 0x%08x, DLC %d\r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC);
         	else {
 			uint64_t message_data = (uint64_t) __RX_frame.data.u32[1] << 32 | __RX_frame.data.u32[0];
+
         		//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
+
+			printf("%08x %llx\n", __RX_frame.MsgID, message_data);
 			if(__RX_frame.MsgID==0x6214000) {
-				printf("\n%llx", message_data);
+				//printf("\n%llx", message_data);
 				//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
 
 
@@ -73,13 +77,14 @@ void task_CAN( void *pvParameters ){
 
 			        //uint64_t message_data = 0xb430000480404;
 
-			        uint64_t message_data_invariant = message_data | 0x0000000000000f00;
-			        printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
+			        uint64_t message_data_invariant = message_data | 0x00000000000f0f00;
+			        uint64_t message_data_variant = message_data & 0x00000000000f0f00;
 
-			        uint64_t message_data_variant = message_data & 0x0000000000000f00;
-			        printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
+				//printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
+				//printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
 
-				if(message_data==0xf000000180400) {
+
+				if(message_data_invariant==0xb0000001f0f00) {
 					if (!was_started) continue;
 					printf("\nKEY MOVED TO OFF POSITION!");
 					gpio_set_level(GPIO_NUM_5, 0);
@@ -87,10 +92,17 @@ void task_CAN( void *pvParameters ){
 					gpio_set_level(GPIO_NUM_5, 1);
 					was_started = false;
 					engine_started = false;
+
+				        printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
+				        printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
 				}
 
-				if(message_data==0xb430000480404) {
+				if(message_data_invariant==0xb4100004f0f04) {
 					if (was_started) continue;
+
+			        printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
+			        printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
+
 					printf("\nKEY MOVED TO START POSITION!");
 				        gpio_set_level(GPIO_NUM_5, 0);
 				        vTaskDelay(2000 / portTICK_PERIOD_MS);
@@ -136,12 +148,12 @@ void app_main(void)
     //b430000480404 off, driver door open
     //b430000480c04 off, passenger door
 
-    uint64_t message_data = 0xb430000480404;
+    /*uint64_t message_data = 0xb430000480404;
     uint64_t message_data_invariant = message_data | 0x0000000000000f00;
     printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
 
     uint64_t message_data_variant = message_data & 0x0000000000000f00;
-    printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
+    printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);*/
 
 
     while (1) {

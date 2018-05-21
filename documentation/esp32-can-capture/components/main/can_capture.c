@@ -63,6 +63,22 @@ void task_CAN( void *pvParameters ){
 			if(__RX_frame.MsgID==0x6214000) {
 				printf("\n%llx", message_data);
 				//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
+
+
+			        //b430000480404 start, driver door open
+			        //b430000480c04 start, passenger door
+
+			        //b430000480404 off, driver door open
+			        //b430000480c04 off, passenger door
+
+			        //uint64_t message_data = 0xb430000480404;
+
+			        uint64_t message_data_invariant = message_data | 0x0000000000000f00;
+			        printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
+
+			        uint64_t message_data_variant = message_data & 0x0000000000000f00;
+			        printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
+
 				if(message_data==0xf000000180400) {
 					if (!was_started) continue;
 					printf("\nKEY MOVED TO OFF POSITION!");
@@ -73,10 +89,6 @@ void task_CAN( void *pvParameters ){
 					engine_started = false;
 				}
 
-				//b430000480404
-				//b430000480c04
-				uint64_t message_data_1 = message_data & 0x0000000000000f00; 
-				printf(" %llx", message_data_1);
 				if(message_data==0xb430000480404) {
 					if (was_started) continue;
 					printf("\nKEY MOVED TO START POSITION!");
@@ -116,6 +128,21 @@ void app_main(void)
     gpio_set_direction(GPIO_NUM_5, GPIO_MODE_OUTPUT);
     gpio_set_level(GPIO_NUM_5, 1);
     xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
+
+
+    //b430000480404 start, driver door open
+    //b430000480c04 start, passenger door
+
+    //b430000480404 off, driver door open
+    //b430000480c04 off, passenger door
+
+    uint64_t message_data = 0xb430000480404;
+    uint64_t message_data_invariant = message_data | 0x0000000000000f00;
+    printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
+
+    uint64_t message_data_variant = message_data & 0x0000000000000f00;
+    printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
+
 
     while (1) {
         gpio_set_level(GPIO_NUM_2, 1);

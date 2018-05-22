@@ -63,28 +63,27 @@ void task_CAN( void *pvParameters ){
 
         		//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
 
-			printf("%08x %llx\n", __RX_frame.MsgID, message_data);
 			if(__RX_frame.MsgID==0x6214000) {
-				//printf("\n%llx", message_data);
+				//printf("%08x %llx\n", __RX_frame.MsgID, message_data);
 				//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
 
 
+			        //b3f0000480004 start, driver door closed
 			        //b430000480404 start, driver door open
 			        //b430000480c04 start, passenger door
 
-			        //b430000480404 off, driver door open
-			        //b430000480c04 off, passenger door
-
 			        //uint64_t message_data = 0xb430000480404;
 
-			        uint64_t message_data_invariant = message_data | 0x00000000000f0f00;
-			        uint64_t message_data_variant = message_data & 0x00000000000f0f00;
+			        uint64_t message_data_invariant = message_data | 0x0000f00000ffff0f;
+			        uint64_t message_data_variant = message_data & 0x0000f00000ffff0f;
+
 
 				//printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
 				//printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
 
+				printf("%08x %llx\n", __RX_frame.MsgID, message_data_invariant);
 
-				if(message_data_invariant==0xb0000001f0f00) {
+				if(message_data_invariant==0xbf00000ffff0f) {
 					if (!was_started) continue;
 					printf("\nKEY MOVED TO OFF POSITION!");
 					gpio_set_level(GPIO_NUM_5, 0);
@@ -97,13 +96,13 @@ void task_CAN( void *pvParameters ){
 				        printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
 				}
 
-				if(message_data_invariant==0xb4100004f0f04) {
+				if(message_data_invariant==0xbff0000ffff0f) {
 					if (was_started) continue;
 
 			        printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
 			        printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
 
-					printf("\nKEY MOVED TO START POSITION!");
+					printf("\nKEY MOVED TO RUN POSITION!");
 				        gpio_set_level(GPIO_NUM_5, 0);
 				        vTaskDelay(2000 / portTICK_PERIOD_MS);
 				        gpio_set_level(GPIO_NUM_5, 1);

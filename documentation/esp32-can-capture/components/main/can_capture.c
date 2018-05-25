@@ -78,7 +78,7 @@ void task_CAN( void *pvParameters ){
 			        uint64_t message_data_variant = message_data & 0x0000f00000ffff0f;
 
 
-				//printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
+				printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
 				//printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
 
 				printf("%08x %llx\n", __RX_frame.MsgID, message_data_invariant);
@@ -136,8 +136,16 @@ void app_main(void)
     ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
 
     gpio_set_direction(GPIO_NUM_2, GPIO_MODE_OUTPUT);
-    gpio_set_direction(GPIO_NUM_5, GPIO_MODE_OUTPUT);
-    gpio_set_level(GPIO_NUM_5, 1);
+    gpio_set_direction(GPIO_NUM_5, GPIO_MODE_OUTPUT); //mainboard soft power
+    gpio_set_direction(GPIO_NUM_17, GPIO_MODE_OUTPUT); //display power
+    gpio_set_direction(GPIO_NUM_19, GPIO_MODE_OUTPUT); //audio amp power
+    gpio_set_direction(GPIO_NUM_21, GPIO_MODE_OUTPUT); //mainboard power
+
+    gpio_set_level(GPIO_NUM_17, 1); //display power
+    gpio_set_level(GPIO_NUM_19, 1); //audio amp power
+    gpio_set_level(GPIO_NUM_21, 1); //mainboard power
+    //gpio_set_level(GPIO_NUM_5, 1); //mainboard softpower
+
     xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
 
 
@@ -156,10 +164,22 @@ void app_main(void)
 
 
     while (1) {
+	//status light on esp32
         gpio_set_level(GPIO_NUM_2, 1);
         vTaskDelay(25 / portTICK_PERIOD_MS);
         gpio_set_level(GPIO_NUM_2, 0);
         vTaskDelay(1475 / portTICK_PERIOD_MS);
+
+	//test switches
+        /*gpio_set_level(GPIO_NUM_17, 1);
+        gpio_set_level(GPIO_NUM_19, 1);
+        gpio_set_level(GPIO_NUM_21, 1);
+        vTaskDelay(3000 / portTICK_PERIOD_MS);
+        gpio_set_level(GPIO_NUM_17, 0);
+        gpio_set_level(GPIO_NUM_19, 0);
+        gpio_set_level(GPIO_NUM_21, 0);
+        vTaskDelay(3000 / portTICK_PERIOD_MS);*/
+
     }
 }
 

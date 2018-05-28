@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
@@ -14,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:LED D2
+L open-dash-daughterboard-rescue:LED-open-automation D2
 U 1 1 59092D24
 P 3225 3325
 F 0 "D2" V 3200 3425 50  0000 C CNN
@@ -128,7 +129,7 @@ Wire Wire Line
 	3350 3850 3225 3850
 Connection ~ 3225 3850
 $Comp
-L open-automation:LED D3
+L open-dash-daughterboard-rescue:LED-open-automation D3
 U 1 1 59E3EE41
 P 4175 3325
 F 0 "D3" V 4150 3425 50  0000 C CNN
@@ -186,7 +187,7 @@ Wire Wire Line
 	4300 3850 4175 3850
 Connection ~ 4175 3850
 $Comp
-L open-automation:LED D5
+L open-dash-daughterboard-rescue:LED-open-automation D5
 U 1 1 59E3F1C3
 P 5000 3325
 F 0 "D5" V 4975 3425 50  0000 C CNN

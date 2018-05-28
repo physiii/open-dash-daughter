@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
@@ -711,18 +712,6 @@ F 4 "CDBA540-HF" H 5650 2950 60  0001 C CNN "Part Number"
 	1    5650 2950
 	0    1    1    0   
 $EndComp
-$Comp
-L open-automation:LED D14
-U 1 1 5AFA4A17
-P 6825 1300
-F 0 "D14" H 6825 1400 50  0000 C CNN
-F 1 "LED" H 6825 1200 50  0000 C CNN
-F 2 "LEDs:LED_0603_HandSoldering" H 6825 1300 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 6825 1300 50  0001 C CNN
-F 4 "SML-D12M8WT86" H 6825 1300 60  0001 C CNN "Part Number"
-	1    6825 1300
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	1200 1175 1250 1175
 Wire Wire Line
@@ -758,5 +747,17 @@ F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-071KL/311-1.0KGRCT
 F 4 "RC0603JR-071KL" V 6830 3500 60  0001 C CNN "Part Number"
 	1    6650 3400
 	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:LED-0603-G D14
+U 1 1 5B0C9F67
+P 6825 1300
+F 0 "D14" V 6863 1183 50  0000 R CNN
+F 1 "LED-0603-G" V 6772 1183 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 6725 1300 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 6825 1400 50  0001 C CNN
+F 4 "SML-D12M8WT86" H 6925 1500 50  0001 C CNN "Part Number"
+	1    6825 1300
+	0    -1   -1   0   
 $EndComp
 $EndSCHEMATC

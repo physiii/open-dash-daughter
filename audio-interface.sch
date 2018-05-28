@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
@@ -519,7 +520,7 @@ $EndComp
 Wire Wire Line
 	6225 4325 6375 4325
 $Comp
-L open-automation:LED D11
+L open-dash-daughterboard-rescue:LED-open-automation D11
 U 1 1 5AED9DFE
 P 6825 4325
 F 0 "D11" H 6825 4125 50  0000 C CNN

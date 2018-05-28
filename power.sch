@@ -73,12 +73,12 @@ $EndComp
 $Comp
 L open-automation:GND #PWR04
 U 1 1 59757643
-P 1400 1450
-F 0 "#PWR04" H 1400 1200 50  0001 C CNN
-F 1 "GND" H 1400 1300 50  0000 C CNN
-F 2 "" H 1400 1450 50  0000 C CNN
-F 3 "" H 1400 1450 50  0000 C CNN
-	1    1400 1450
+P 1250 1625
+F 0 "#PWR04" H 1250 1375 50  0001 C CNN
+F 1 "GND" H 1250 1475 50  0000 C CNN
+F 2 "" H 1250 1625 50  0000 C CNN
+F 3 "" H 1250 1625 50  0000 C CNN
+	1    1250 1625
 	-1   0    0    -1  
 $EndComp
 $Comp
@@ -93,17 +93,6 @@ F 3 "" H 6825 1850 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR06
-U 1 1 59C5AB58
-P 8425 2425
-F 0 "#PWR06" H 8425 2175 50  0001 C CNN
-F 1 "GND" H 8425 2275 50  0000 C CNN
-F 2 "" H 8425 2425 50  0000 C CNN
-F 3 "" H 8425 2425 50  0000 C CNN
-	1    8425 2425
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:R_10k R9
 U 1 1 59E4131F
 P 6825 1650
@@ -115,11 +104,7 @@ F 4 "RC0603FR-071K4L" V 7005 1750 60  0001 C CNN "Part Number"
 	1    6825 1650
 	1    0    0    -1  
 $EndComp
-Text Notes 9350 2350 0    60   ~ 0
-Battery Passthrough
-Text Notes 775  800  0    60   ~ 0
-12V Battery Input
-Text Notes 2675 825  0    60   ~ 0
+Text Notes 2575 2525 0    60   ~ 0
 V_MAIN is after the current sense resistor.
 $Comp
 L open-automation:L L2
@@ -180,21 +165,6 @@ F 4 "RC0603JR-0710KL" V 4205 3125 60  0001 C CNN "Part Number"
 $EndComp
 Text Notes 6900 1675 0    60   ~ 0
 1mA current through LED
-$Comp
-L power:GND #PWR010
-U 1 1 5AC54EB6
-P 8450 2950
-F 0 "#PWR010" H 8450 2700 50  0001 C CNN
-F 1 "GND" H 8450 2800 50  0000 C CNN
-F 2 "" H 8450 2950 50  0000 C CNN
-F 3 "" H 8450 2950 50  0000 C CNN
-	1    8450 2950
-	1    0    0    -1  
-$EndComp
-Text Notes 9350 2875 0    60   ~ 0
-Main Board 5V Supply
-Text Notes 8075 2050 0    60   ~ 0
-Main Board Connections
 $Comp
 L open-automation:GND #PWR011
 U 1 1 5AC637C2
@@ -415,8 +385,6 @@ Wire Wire Line
 Wire Wire Line
 	5175 1075 5350 1075
 Wire Wire Line
-	8150 2275 8475 2275
-Wire Wire Line
 	3275 1175 3275 975 
 Connection ~ 3275 975 
 Wire Wire Line
@@ -425,16 +393,6 @@ Wire Wire Line
 	3550 1075 3550 1175
 Wire Wire Line
 	3550 1175 3600 1175
-Wire Wire Line
-	1400 1075 1400 1375
-Wire Wire Line
-	1400 1075 1350 1075
-Wire Wire Line
-	1350 975  1750 975 
-Wire Wire Line
-	8425 2425 8425 2375
-Wire Wire Line
-	8425 2375 8475 2375
 Wire Wire Line
 	5350 1075 5350 1175
 Connection ~ 5350 1075
@@ -469,12 +427,6 @@ Wire Wire Line
 	2975 2650 3225 2650
 Wire Wire Line
 	4450 2950 4450 2850
-Wire Wire Line
-	8175 2800 8500 2800
-Wire Wire Line
-	8450 2950 8450 2900
-Wire Wire Line
-	8450 2900 8500 2900
 Wire Wire Line
 	5675 4300 5675 4225
 Connection ~ 5675 4225
@@ -534,18 +486,6 @@ Wire Wire Line
 Wire Wire Line
 	3225 2650 3225 2775
 $Comp
-L open-automation:R_10k R5
-U 1 1 5AC69CD6
-P 6650 2975
-F 0 "R5" V 6650 2975 50  0000 C CNN
-F 1 "R_7k15" V 6550 2975 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 6580 2975 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/vishay-dale/CRCW06037K15FKEA/541-7.15KHCT-ND/1179907" V 6730 2975 50  0001 C CNN
-F 4 "CRCW06037K15FKEA" V 6830 3075 60  0001 C CNN "Part Number"
-	1    6650 2975
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:GND #PWR017
 U 1 1 5AC69CE3
 P 6650 3650
@@ -557,7 +497,7 @@ F 3 "" H 6650 3650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Text Label 6825 3200 0    60   ~ 0
-5v_feedback
+12v_feedback
 Wire Wire Line
 	6650 3550 6650 3650
 Wire Wire Line
@@ -571,7 +511,7 @@ Connection ~ 6650 2750
 Wire Wire Line
 	5600 2650 5800 2650
 Text Label 5800 2650 0    60   ~ 0
-5v_feedback
+12v_feedback
 $Comp
 L open-automation:GND #PWR018
 U 1 1 5AC6AB52
@@ -600,51 +540,6 @@ Wire Wire Line
 Text Label 4875 975  0    60   ~ 0
 3v3_feedback
 $Comp
-L open-automation:CONN_01X02 BATT_OUT_1
-U 1 1 5AC711D2
-P 8675 2325
-F 0 "BATT_OUT_1" H 8975 2300 50  0000 C CNN
-F 1 "CONN_01X02" H 9000 2400 50  0000 C CNN
-F 2 "open-automation:XT60" H 8675 2325 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 8675 2325 50  0001 C CNN
-	1    8675 2325
-	1    0    0    1   
-$EndComp
-$Comp
-L open-automation:CONN_01X02 5V_OUT_1
-U 1 1 5AC715BC
-P 8700 2850
-F 0 "5V_OUT_1" H 8950 2825 50  0000 C CNN
-F 1 "CONN_01X02" H 9025 2925 50  0000 C CNN
-F 2 "open-automation:XT60" H 8700 2850 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 8700 2850 50  0001 C CNN
-	1    8700 2850
-	1    0    0    1   
-$EndComp
-$Comp
-L open-automation:CONN_01X02 BATT_IN_1
-U 1 1 5AC70F73
-P 1150 1025
-F 0 "BATT_IN_1" H 1400 1075 50  0000 C CNN
-F 1 "CONN_01X02" H 1475 975 50  0000 C CNN
-F 2 "open-automation:XT60" H 1150 1025 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/phoenix-contact/1934861/277-1607-ND/568644" H 1150 1025 50  0001 C CNN
-	1    1150 1025
-	-1   0    0    -1  
-$EndComp
-$Comp
-L open-automation:R_10k R6
-U 1 1 5AC777F6
-P 6650 3400
-F 0 "R6" V 6650 3400 50  0000 C CNN
-F 1 "R_2k32" V 6550 3400 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 6580 3400 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-072K32L/311-2.32KHRCT-ND/729968" V 6730 3400 50  0001 C CNN
-F 4 "RC0603FR-072K32L" V 6830 3500 60  0001 C CNN "Part Number"
-	1    6650 3400
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:R_10k R7
 U 1 1 5AC77A5F
 P 6800 4450
@@ -656,34 +551,28 @@ F 4 "CRCW06037K15FKEA" V 6980 4550 60  0001 C CNN "Part Number"
 	1    6800 4450
 	1    0    0    -1  
 $EndComp
-Connection ~ 1750 975 
 Wire Wire Line
-	1750 975  1750 1025
-Wire Wire Line
-	1750 1325 1750 1375
-Wire Wire Line
-	1750 1375 1400 1375
-Connection ~ 1400 1375
+	1250 1575 1250 1625
 $Comp
 L open-automation:AGND #PWR019
 U 1 1 5AC7AABD
-P 1700 2000
-F 0 "#PWR019" H 1700 1750 50  0001 C CNN
-F 1 "AGND" H 1700 1850 50  0000 C CNN
-F 2 "" H 1700 2000 50  0000 C CNN
-F 3 "" H 1700 2000 50  0000 C CNN
-	1    1700 2000
+P 1800 1650
+F 0 "#PWR019" H 1800 1400 50  0001 C CNN
+F 1 "AGND" H 1800 1500 50  0000 C CNN
+F 2 "" H 1800 1650 50  0000 C CNN
+F 3 "" H 1800 1650 50  0000 C CNN
+	1    1800 1650
 	1    0    0    -1  
 $EndComp
 $Comp
 L open-automation:GND #PWR020
 U 1 1 5AC7ACFB
-P 1450 2000
-F 0 "#PWR020" H 1450 1750 50  0001 C CNN
-F 1 "GND" H 1450 1850 50  0000 C CNN
-F 2 "" H 1450 2000 50  0000 C CNN
-F 3 "" H 1450 2000 50  0000 C CNN
-	1    1450 2000
+P 1550 1650
+F 0 "#PWR020" H 1550 1400 50  0001 C CNN
+F 1 "GND" H 1550 1500 50  0000 C CNN
+F 2 "" H 1550 1650 50  0000 C CNN
+F 3 "" H 1550 1650 50  0000 C CNN
+	1    1550 1650
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
@@ -726,68 +615,40 @@ Wire Wire Line
 	5900 1525 5900 1575
 Wire Wire Line
 	5900 1075 6825 1075
-Wire Wire Line
-	1750 975  1975 975 
-Wire Wire Line
-	1400 1375 1400 1450
 Text HLabel 7075 4225 2    60   Input ~ 0
 8V
 Text HLabel 6925 2750 2    60   Input ~ 0
-5V
-Text HLabel 8175 2800 0    60   Input ~ 0
-5V
-Text HLabel 8150 2275 0    60   Input ~ 0
-BATTERY
+12V
 Text HLabel 7175 1075 2    60   Input ~ 0
 3V3
-Text HLabel 1975 975  2    60   Input ~ 0
+Text HLabel 1200 1175 0    60   Input ~ 0
 BATTERY
-Text HLabel 3025 975  0    60   Input ~ 0
-V_MAIN
 Text HLabel 2975 2650 0    60   Input ~ 0
 V_MAIN
 Text HLabel 4125 2750 0    60   Input ~ 0
-EN_5V_POWER
+EN_MAIN
 Text HLabel 3700 3025 0    60   Input ~ 0
 3V3
 Text HLabel 4125 4225 0    60   Input ~ 0
-EN_8V_POWER
+EN_AUDIO
 Text HLabel 3700 4450 0    60   Input ~ 0
 3V3
-Text HLabel 2950 4125 0    60   Input ~ 0
-V_MAIN
-$Comp
-L open-automation:GND #PWR0101
-U 1 1 5ACFFB2D
-P 1200 2000
-F 0 "#PWR0101" H 1200 1750 50  0001 C CNN
-F 1 "GND" H 1205 1827 50  0000 C CNN
-F 2 "" H 1200 2000 50  0000 C CNN
-F 3 "" H 1200 2000 50  0000 C CNN
-	1    1200 2000
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	1200 2000 1200 1850
+	1550 1500 1550 1650
 Wire Wire Line
-	1200 1850 1450 1850
+	1550 1500 1800 1500
 Wire Wire Line
-	1450 1850 1450 2000
-Wire Wire Line
-	1450 1850 1700 1850
-Wire Wire Line
-	1700 1850 1700 2000
-Connection ~ 1450 1850
+	1800 1500 1800 1650
 $Comp
 L Device:D_Zener D1
 U 1 1 5AFA3889
-P 1750 1175
-F 0 "D1" H 1750 1275 50  0000 C CNN
-F 1 "26V Zener" H 1750 1075 50  0000 C CNN
-F 2 "Diodes_SMD:D_SMB" H 1750 1175 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/smc-diode-solutions/SMBJ26CATR/1655-1628-1-ND/6023073" H 1750 1175 50  0001 C CNN
-F 4 "SMBJ26CATR" H 1750 1175 60  0001 C CNN "Part Number"
-	1    1750 1175
+P 1250 1425
+F 0 "D1" H 1250 1525 50  0000 C CNN
+F 1 "26V Zener" H 1250 1325 50  0000 C CNN
+F 2 "Diodes_SMD:D_SMB" H 1250 1425 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/smc-diode-solutions/SMBJ26CATR/1655-1628-1-ND/6023073" H 1250 1425 50  0001 C CNN
+F 4 "SMBJ26CATR" H 1250 1425 60  0001 C CNN "Part Number"
+	1    1250 1425
 	0    1    1    0   
 $EndComp
 $Comp
@@ -861,5 +722,41 @@ F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/
 F 4 "SML-D12M8WT86" H 6825 1300 60  0001 C CNN "Part Number"
 	1    6825 1300
 	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1200 1175 1250 1175
+Wire Wire Line
+	1250 1175 1250 1275
+Text HLabel 3025 975  0    60   Input ~ 0
+BATTERY
+Text HLabel 2950 4125 0    60   Input ~ 0
+BATTERY
+Text Notes 950  925  0    60   ~ 0
+12V Battery Protection
+Text Notes 5575 950  0    60   ~ 0
+output voltage = 1.23 (1 + R2/R1)\nR2 is on high side
+$Comp
+L open-automation:R_8k87 R5
+U 1 1 5B0ECFEA
+P 6650 2975
+F 0 "R5" V 6650 2925 50  0000 L CNN
+F 1 "R_8k87" V 6550 2850 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" V 6580 2975 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-2RKF8871X/P8.87KLCT-ND/194529" V 6730 2975 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 6830 3075 60  0001 C CNN "Part Number"
+	1    6650 2975
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_1k R6
+U 1 1 5B0ED412
+P 6650 3400
+F 0 "R6" V 6650 3350 50  0000 L CNN
+F 1 "R_1k" V 6550 3325 50  0000 L CNN
+F 2 "Resistors_SMD:R_0603" V 6580 3400 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-071KL/311-1.0KGRCT-ND/729624" V 6730 3400 50  0001 C CNN
+F 4 "RC0603JR-071KL" V 6830 3500 60  0001 C CNN "Part Number"
+	1    6650 3400
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

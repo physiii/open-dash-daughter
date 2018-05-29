@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 3 15
+Sheet 3 14
 Title ""
 Date ""
 Rev ""
@@ -111,11 +112,11 @@ F 4 "GRM188R61A106ME69D" H 2550 3975 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6625 3800 6725 3800
+	6625 3900 6725 3900
 Wire Wire Line
-	6725 3500 6625 3500
+	6725 3400 6625 3400
 Wire Wire Line
-	6625 3600 6725 3600
+	6625 3500 6725 3500
 Wire Wire Line
 	6725 3050 6625 3050
 Wire Wire Line
@@ -145,11 +146,8 @@ Wire Wire Line
 Connection ~ 2625 3975
 Wire Wire Line
 	6250 4700 6175 4700
-Connection ~ 6175 4700
 Wire Wire Line
 	6600 4700 6550 4700
-Wire Wire Line
-	6725 3900 6625 3900
 Wire Wire Line
 	3450 3850 3450 3925
 Wire Wire Line
@@ -176,48 +174,32 @@ Wire Notes Line
 Wire Notes Line
 	3000 4275 2075 4275
 Wire Wire Line
-	4850 5250 5150 5250
-Wire Wire Line
-	4850 5400 5150 5400
-Wire Wire Line
-	4850 5550 5150 5550
-Wire Wire Line
-	4850 5700 5150 5700
-Wire Wire Line
 	2625 3975 2825 3975
-Wire Wire Line
-	6175 4700 6175 4750
 Wire Wire Line
 	2625 3525 2825 3525
 Text HLabel 3350 3425 1    60   Input ~ 0
-3V3
+3v3
 Text HLabel 3450 3425 1    60   Input ~ 0
-3V3
+3v3
 Text HLabel 3450 3925 3    60   Input ~ 0
 SCL
 Text HLabel 3350 3925 3    60   Input ~ 0
 SDA
 Text HLabel 2625 3400 1    60   Input ~ 0
-3V3
-Text HLabel 4850 5250 0    60   Input ~ 0
-EN_5V_POWER
-Text HLabel 4850 5400 0    60   Input ~ 0
-EN_8V_POWER
-Text HLabel 4850 5550 0    60   Input ~ 0
-MUTE_AUDIO_AMP
-Text HLabel 4850 5700 0    60   Input ~ 0
-STBY_AUDIO_AMP
-Text HLabel 6175 4750 3    60   Input ~ 0
-IO2
+3v3
+Text HLabel 6725 3600 2    60   Input ~ 0
+EN_MAIN
+Text HLabel 6725 3900 2    60   Input ~ 0
+EN_AUDIO
+Text HLabel 6725 3700 2    60   Input ~ 0
+MUTE_AUDIO
+Text HLabel 6725 3800 2    60   Input ~ 0
+STBY_AUDIO
 Text HLabel 6725 4100 2    60   Input ~ 0
 PROG
-Text HLabel 6725 3900 2    60   Input ~ 0
-PANEL_SW
-Text HLabel 6725 3800 2    60   Input ~ 0
-POWER_EN
-Text HLabel 6725 3600 2    60   Input ~ 0
-SDA
 Text HLabel 6725 3500 2    60   Input ~ 0
+SDA
+Text HLabel 6725 3400 2    60   Input ~ 0
 SCL
 Text HLabel 6725 3050 2    60   Input ~ 0
 RXD
@@ -226,9 +208,9 @@ TXD
 Text HLabel 4775 4100 0    60   Input ~ 0
 FACTORY
 Text HLabel 4775 2900 0    60   Input ~ 0
-3V3
+3v3
 Text HLabel 4775 3000 0    60   Input ~ 0
-ESP_EN
+EN_ESP
 Text HLabel 6725 4000 2    50   Output ~ 0
 SOFT_POWER
 Wire Wire Line
@@ -244,4 +226,10 @@ F 3 "https://www.espressif.com/sites/default/files/documentation/esp_wroom_32_da
 	1    5775 3450
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6625 3700 6725 3700
+Wire Wire Line
+	6725 3800 6625 3800
+Wire Wire Line
+	6625 3600 6725 3600
 $EndSCHEMATC

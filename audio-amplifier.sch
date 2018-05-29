@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 7 15
+Sheet 7 14
 Title ""
 Date ""
 Rev ""
@@ -69,18 +70,6 @@ F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B10
 F 4 "CL10B104KA8NFNC" H 4875 2500 60  0001 C CNN "Part Number"
 	1    4875 2500
 	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R14
-U 1 1 5AC7BCAE
-P 4400 3775
-F 0 "R14" V 4480 3775 50  0000 C CNN
-F 1 "R_10k" V 4300 3775 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 4330 3775 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" H 4400 3775 50  0001 C CNN
-F 4 "RC0603JR-0710KL" V 4400 3775 60  0001 C CNN "Part Number"
-	1    4400 3775
-	0    1    1    0   
 $EndComp
 $Comp
 L open-automation:GND #PWR035
@@ -168,14 +157,6 @@ Wire Wire Line
 Wire Wire Line
 	4300 3475 4100 3475
 Wire Wire Line
-	6750 2550 6925 2550
-Wire Wire Line
-	6750 2650 6925 2650
-Wire Wire Line
-	6750 2900 6925 2900
-Wire Wire Line
-	6750 3000 6925 3000
-Wire Wire Line
 	5300 3775 5300 3150
 Wire Wire Line
 	5375 4550 5375 3250
@@ -191,42 +172,6 @@ F 4 "CL10B224KO8NNNC" V 4450 3475 60  0001 C CNN "Part Number"
 	1    4450 3475
 	0    1    1    0   
 $EndComp
-$Comp
-L Device:C C15
-U 1 1 5AC80ED0
-P 4725 4000
-F 0 "C15" H 4850 3975 50  0000 L CNN
-F 1 "1uF" H 4825 4050 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4763 3850 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B105MO8NNWC/1276-6524-1-ND/5961383" H 4725 4000 50  0001 C CNN
-F 4 "CL10B105MO8NNWC" V 4725 4000 60  0001 C CNN "Part Number"
-	1    4725 4000
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:C C16
-U 1 1 5AC81549
-P 4750 4775
-F 0 "C16" H 4775 4875 50  0000 L CNN
-F 1 "10uF" H 4775 4675 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D5.0mm_P2.00mm" H 4788 4625 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/kemet/ESH106M050AC3AA/399-6543-ND/3082958" H 4750 4775 50  0001 C CNN
-F 4 "ESH106M050AC3AA" H 4750 4775 60  0001 C CNN "Part Number"
-	1    4750 4775
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R15
-U 1 1 5AC82122
-P 4400 4550
-F 0 "R15" V 4480 4550 50  0000 C CNN
-F 1 "R_10k" V 4300 4550 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603_HandSoldering" V 4330 4550 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" H 4400 4550 50  0001 C CNN
-F 4 "RC0603JR-0710KL" V 4400 4550 60  0001 C CNN "Part Number"
-	1    4400 4550
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	4550 2300 4875 2300
 Wire Wire Line
@@ -240,23 +185,23 @@ Wire Wire Line
 Wire Wire Line
 	4725 3775 5300 3775
 Text HLabel 4425 2300 0    60   Input ~ 0
-8V
+AUDIO_POWER
 Text HLabel 4100 3225 0    60   Input ~ 0
 L_AUDIO_IN
 Text HLabel 4100 3475 0    60   Input ~ 0
 R_AUDIO_IN
 Text HLabel 4125 3775 0    60   Input ~ 0
-MUTE_AUDIO_AMP
-Text HLabel 6925 2550 2    60   Input ~ 0
-L_AUDIO_OUT+
-Text HLabel 6925 2900 2    60   Input ~ 0
-R_AUDIO_OUT+
-Text HLabel 6925 2650 2    60   Input ~ 0
-L_AUDIO_OUT-
-Text HLabel 6925 3000 2    60   Input ~ 0
-R_AUDIO_OUT-
+MUTE_AUDIO
+Text HLabel 7000 2450 2    60   Input ~ 0
+RL_AUDIO_OUT+
+Text HLabel 7000 3000 2    60   Input ~ 0
+RR_AUDIO_OUT+
+Text HLabel 7000 2550 2    60   Input ~ 0
+FL_AUDIO_OUT-
+Text HLabel 7000 3100 2    60   Input ~ 0
+RL_AUDIO_OUT-
 Text HLabel 4125 4550 0    60   Input ~ 0
-STBY_AUDIO_AMP
+STBY_AUDIO
 Wire Wire Line
 	5500 2400 5600 2400
 Wire Wire Line
@@ -273,4 +218,120 @@ Wire Wire Line
 	5150 2900 5600 2900
 Wire Wire Line
 	5500 2300 5600 2300
+Text HLabel 7000 2900 2    60   Input ~ 0
+FR_AUDIO_OUT+
+Text HLabel 7000 3200 2    60   Input ~ 0
+RR_AUDIO_OUT-
+Text HLabel 7000 2350 2    60   Input ~ 0
+FL_AUDIO_OUT+
+Text HLabel 7000 2650 2    60   Input ~ 0
+RL_AUDIO_OUT-
+Wire Wire Line
+	7000 2550 6950 2550
+Wire Wire Line
+	6950 2550 6950 2600
+Wire Wire Line
+	6750 2550 6850 2550
+Wire Wire Line
+	7000 2350 6925 2350
+Wire Wire Line
+	6925 2350 6925 2400
+Wire Wire Line
+	7000 2900 6950 2900
+Wire Wire Line
+	6950 2900 6950 2950
+Wire Wire Line
+	6950 3000 7000 3000
+Wire Wire Line
+	7000 3100 6950 3100
+Wire Wire Line
+	6950 3100 6950 3150
+Wire Wire Line
+	6950 3200 7000 3200
+Wire Wire Line
+	6750 3000 6825 3000
+Wire Wire Line
+	6825 3000 6825 3150
+Wire Wire Line
+	6825 3150 6950 3150
+Connection ~ 6950 3150
+Wire Wire Line
+	6950 3150 6950 3200
+Wire Wire Line
+	6750 2900 6900 2900
+Wire Wire Line
+	6900 2900 6900 2950
+Wire Wire Line
+	6900 2950 6950 2950
+Connection ~ 6950 2950
+Wire Wire Line
+	6950 2950 6950 3000
+Wire Wire Line
+	7000 2450 6925 2450
+Wire Wire Line
+	6950 2650 7000 2650
+Wire Wire Line
+	6750 2650 6850 2650
+Wire Wire Line
+	6850 2650 6850 2600
+Wire Wire Line
+	6850 2600 6950 2600
+Connection ~ 6950 2600
+Wire Wire Line
+	6950 2600 6950 2650
+Wire Wire Line
+	6850 2400 6925 2400
+Wire Wire Line
+	6850 2400 6850 2550
+Connection ~ 6925 2400
+Wire Wire Line
+	6925 2400 6925 2450
+$Comp
+L open-automation:R_10k R?
+U 1 1 5B1BCAC5
+P 4400 4550
+F 0 "R?" V 4400 4550 50  0000 C CNN
+F 1 "R_10k" V 4300 4550 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4330 4550 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 4480 4550 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 4580 4650 60  0001 C CNN "Part Number"
+	1    4400 4550
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:R_10k R?
+U 1 1 5B1BD0E6
+P 4400 3775
+F 0 "R?" V 4400 3775 50  0000 C CNN
+F 1 "R_10k" V 4300 3775 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4330 3775 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 4480 3775 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 4580 3875 60  0001 C CNN "Part Number"
+	1    4400 3775
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:C_10uF C?
+U 1 1 5B1BD541
+P 4750 4775
+F 0 "C?" H 4865 4821 50  0000 L CNN
+F 1 "C_10uF" H 4865 4730 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 4850 5075 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R61A106ME69D/490-10475-1-ND/5026393" H 4750 4525 50  0001 C CNN
+F 4 "GRM188R61A106ME69D" H 4875 4975 60  0001 C CNN "Part Number"
+	1    4750 4775
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:C_1uF C?
+U 1 1 5B1BD64D
+P 4725 4000
+F 0 "C?" H 4840 4046 50  0000 L CNN
+F 1 "C_1uF" H 4840 3955 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 4825 4300 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB105/311-1372-1-ND/2103156" H 4725 3750 50  0001 C CNN
+F 4 "CC0603ZRY5V7BB105" H 4850 4200 60  0001 C CNN "Part Number"
+	1    4725 4000
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

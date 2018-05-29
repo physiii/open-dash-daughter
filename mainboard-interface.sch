@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 15 15
+Sheet 15 14
 Title ""
 Date ""
 Rev ""
@@ -62,7 +63,7 @@ Wire Wire Line
 Wire Wire Line
 	5950 3450 6050 3450
 Text HLabel 5350 3150 0    60   Input ~ 0
-3V3
+3v3
 Text HLabel 5350 3250 0    60   Input ~ 0
 PROG
 Text HLabel 5350 3350 0    60   Input ~ 0
@@ -95,7 +96,7 @@ Wire Wire Line
 Text HLabel 3650 3450 2    50   Output ~ 0
 SOFT_POWER
 Text HLabel 3550 2975 1    60   Input ~ 0
-3V3
+3v3
 $Comp
 L open-automation:R_10k R38
 U 1 1 5AF64A9D

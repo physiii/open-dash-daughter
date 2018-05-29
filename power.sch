@@ -1,9 +1,10 @@
 EESchema Schematic File Version 4
+LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 2 15
+Sheet 2 14
 Title ""
 Date ""
 Rev ""
@@ -616,11 +617,11 @@ Wire Wire Line
 Wire Wire Line
 	5900 1075 6825 1075
 Text HLabel 7075 4225 2    60   Input ~ 0
-8V
+AUDIO_POWER
 Text HLabel 6925 2750 2    60   Input ~ 0
-12V
+MAIN_POWER
 Text HLabel 7175 1075 2    60   Input ~ 0
-3V3
+3v3
 Text HLabel 1200 1175 0    60   Input ~ 0
 BATTERY
 Text HLabel 2975 2650 0    60   Input ~ 0
@@ -628,11 +629,11 @@ V_MAIN
 Text HLabel 4125 2750 0    60   Input ~ 0
 EN_MAIN
 Text HLabel 3700 3025 0    60   Input ~ 0
-3V3
+3v3
 Text HLabel 4125 4225 0    60   Input ~ 0
 EN_AUDIO
 Text HLabel 3700 4450 0    60   Input ~ 0
-3V3
+3v3
 Wire Wire Line
 	1550 1500 1550 1650
 Wire Wire Line

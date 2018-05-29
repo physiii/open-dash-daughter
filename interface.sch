@@ -1,5 +1,4 @@
 EESchema Schematic File Version 4
-LIBS:open-dash-daughterboard-cache
 EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
@@ -14,17 +13,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L open-automation:2098978-1 P1
-U 1 1 5ADA6B8C
-P 3850 10450
-F 0 "P1" H -2500 12815 50  0000 C CNN
-F 1 "2098978-1" H -2500 12724 50  0000 C CNN
-F 2 "" V -1450 12450 50  0001 C CNN
-F 3 "" V -1450 12450 50  0001 C CNN
-	1    3850 10450
-	0    1    1    0   
-$EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J1
 U 1 1 5AE24043
@@ -179,8 +167,6 @@ Text HLabel 4750 2550 0    50   Input ~ 0
 auxL
 Wire Wire Line
 	5100 2550 4750 2550
-Wire Wire Line
-	4750 2650 5100 2650
 $Comp
 L Connector_Specialized:USB_B_Mini J?
 U 1 1 5AE8CF4C
@@ -296,4 +282,17 @@ Wire Wire Line
 	8500 4100 7950 4100
 Wire Wire Line
 	7400 3800 8500 3800
+$Comp
+L open-automation:RADIO-CONN-776932-1 P?
+U 1 1 5B0E3305
+P 4650 8000
+F 0 "P?" V -2500 9250 50  0000 L CNN
+F 1 "RADIO-CONN-776932-1" V -2650 8450 50  0000 L CNN
+F 2 "" V 1800 9200 50  0001 C CNN
+F 3 "https://www.mouser.com/ProductDetail/?qs=jDDLxflrbZ8Jr72cLXTEfA%3D%3D" H 800 9450 50  0001 C CNN
+	1    4650 8000
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4750 2650 5100 2650
 $EndSCHEMATC

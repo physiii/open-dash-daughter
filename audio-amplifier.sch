@@ -287,10 +287,10 @@ Connection ~ 6925 2400
 Wire Wire Line
 	6925 2400 6925 2450
 $Comp
-L open-automation:R_10k R?
+L open-automation:R_10k R15
 U 1 1 5B1BCAC5
 P 4400 4550
-F 0 "R?" V 4400 4550 50  0000 C CNN
+F 0 "R15" V 4400 4550 50  0000 C CNN
 F 1 "R_10k" V 4300 4550 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 4330 4550 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 4480 4550 50  0001 C CNN
@@ -299,10 +299,10 @@ F 4 "RC0603JR-0710KL" V 4580 4650 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:R_10k R?
+L open-automation:R_10k R14
 U 1 1 5B1BD0E6
 P 4400 3775
-F 0 "R?" V 4400 3775 50  0000 C CNN
+F 0 "R14" V 4400 3775 50  0000 C CNN
 F 1 "R_10k" V 4300 3775 50  0000 C CNN
 F 2 "Resistors_SMD:R_0603" V 4330 3775 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 4480 3775 50  0001 C CNN
@@ -311,10 +311,10 @@ F 4 "RC0603JR-0710KL" V 4580 3875 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:C_10uF C?
+L open-automation:C_10uF C16
 U 1 1 5B1BD541
 P 4750 4775
-F 0 "C?" H 4865 4821 50  0000 L CNN
+F 0 "C16" H 4865 4821 50  0000 L CNN
 F 1 "C_10uF" H 4865 4730 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4850 5075 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R61A106ME69D/490-10475-1-ND/5026393" H 4750 4525 50  0001 C CNN
@@ -323,10 +323,10 @@ F 4 "GRM188R61A106ME69D" H 4875 4975 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:C_1uF C?
+L open-automation:C_1uF C15
 U 1 1 5B1BD64D
 P 4725 4000
-F 0 "C?" H 4840 4046 50  0000 L CNN
+F 0 "C15" H 4840 4046 50  0000 L CNN
 F 1 "C_1uF" H 4840 3955 50  0000 L CNN
 F 2 "Capacitors_SMD:C_0603" H 4825 4300 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB105/311-1372-1-ND/2103156" H 4725 3750 50  0001 C CNN

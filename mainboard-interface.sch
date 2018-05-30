@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 15 14
+Sheet 12 13
 Title ""
 Date ""
 Rev ""
@@ -15,10 +15,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:GND #PWR0147
+L open-automation:GND #PWR065
 U 1 1 590979B0
 P 5400 3000
-F 0 "#PWR0147" H 5400 2750 50  0001 C CNN
+F 0 "#PWR065" H 5400 2750 50  0001 C CNN
 F 1 "GND" H 5400 2850 50  0000 C CNN
 F 2 "" H 5400 3000 50  0000 C CNN
 F 3 "" H 5400 3000 50  0000 C CNN
@@ -26,10 +26,10 @@ F 3 "" H 5400 3000 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L open-automation:GND #PWR0148
+L open-automation:GND #PWR066
 U 1 1 590979B2
 P 6000 3000
-F 0 "#PWR0148" H 6000 2750 50  0001 C CNN
+F 0 "#PWR066" H 6000 2750 50  0001 C CNN
 F 1 "GND" H 6000 2850 50  0000 C CNN
 F 2 "" H 6000 3000 50  0000 C CNN
 F 3 "" H 6000 3000 50  0000 C CNN
@@ -79,10 +79,10 @@ RXD
 Text HLabel 6050 3450 2    60   Input ~ 0
 SDA
 $Comp
-L Connector_Generic:Conn_02x06_Odd_Even J5
+L Connector_Generic:Conn_02x06_Odd_Even J3
 U 1 1 5AF62600
 P 5650 3250
-F 0 "J5" H 5700 3667 50  0000 C CNN
+F 0 "J3" H 5700 3667 50  0000 C CNN
 F 1 "Conn_02x06_Odd_Even" H 5700 2800 50  0000 C CNN
 F 2 "" H 5650 3250 50  0001 C CNN
 F 3 "~" H 5650 3250 50  0001 C CNN
@@ -98,12 +98,12 @@ SOFT_POWER
 Text HLabel 3550 2975 1    60   Input ~ 0
 3v3
 $Comp
-L open-automation:R_10k R38
+L open-automation:R_10k R37
 U 1 1 5AF64A9D
 P 3550 3200
-F 0 "R38" H 3620 3246 50  0000 L CNN
+F 0 "R37" H 3620 3246 50  0000 L CNN
 F 1 "R_10k" H 3620 3155 50  0000 L CNN
-F 2 "Resistors_SMD:R_0603" V 3480 3200 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 3480 3200 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 3630 3200 50  0001 C CNN
 F 4 "RC0603JR-0710KL" V 3730 3300 60  0001 C CNN "Part Number"
 	1    3550 3200

@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 7 14
+Sheet 7 13
 Title ""
 Date ""
 Rev ""
@@ -15,10 +15,10 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:TDA7297 U8
+L open-automation:TDA7297 U11
 U 1 1 5AC797FB
 P 6200 2650
-F 0 "U8" H 5850 1900 60  0000 C CNN
+F 0 "U11" H 5850 1900 60  0000 C CNN
 F 1 "TDA7297" H 6375 1900 60  0000 C CNN
 F 2 "TO_SOT_Packages_THT:TO-220-15_Vertical_StaggeredType1" H 6050 2500 60  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/stmicroelectronics/TDA7297/497-3967-5-ND/715883" H 6050 2500 60  0001 C CNN
@@ -26,10 +26,10 @@ F 3 "https://www.digikey.com/product-detail/en/stmicroelectronics/TDA7297/497-39
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:AGND #PWR033
+L open-automation:AGND #PWR044
 U 1 1 5AC7B29E
 P 5450 2700
-F 0 "#PWR033" H 5450 2450 50  0001 C CNN
+F 0 "#PWR044" H 5450 2450 50  0001 C CNN
 F 1 "AGND" H 5450 2550 50  0000 C CNN
 F 2 "" H 5450 2700 50  0000 C CNN
 F 3 "" H 5450 2700 50  0000 C CNN
@@ -37,10 +37,10 @@ F 3 "" H 5450 2700 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR034
+L open-automation:GND #PWR041
 U 1 1 5AC7B2BE
 P 4550 2750
-F 0 "#PWR034" H 4550 2500 50  0001 C CNN
+F 0 "#PWR041" H 4550 2500 50  0001 C CNN
 F 1 "GND" H 4550 2600 50  0000 C CNN
 F 2 "" H 4550 2750 50  0000 C CNN
 F 3 "" H 4550 2750 50  0000 C CNN
@@ -48,10 +48,10 @@ F 3 "" H 4550 2750 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C14
+L Device:C C22
 U 1 1 5AC7B472
 P 4550 2500
-F 0 "C14" H 4575 2600 50  0000 L CNN
+F 0 "C22" H 4575 2600 50  0000 L CNN
 F 1 "470uF" H 4575 2400 50  0000 L CNN
 F 2 "Capacitors_THT:CP_Radial_D8.0mm_P3.50mm" H 4588 2350 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/rubycon/16YXJ470M8X11.5/1189-1146-ND/3134104" H 4550 2500 50  0001 C CNN
@@ -60,22 +60,22 @@ F 4 "16YXJ470M8X11.5" H 4550 2500 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C17
+L Device:C C25
 U 1 1 5AC7B4BE
 P 4875 2500
-F 0 "C17" H 4900 2600 50  0000 L CNN
+F 0 "C25" H 4900 2600 50  0000 L CNN
 F 1 "100nF" H 4900 2400 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4913 2350 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4913 2350 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B104KA8NFNC/1276-1931-1-ND/3890017" H 4875 2500 50  0001 C CNN
 F 4 "CL10B104KA8NFNC" H 4875 2500 60  0001 C CNN "Part Number"
 	1    4875 2500
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR035
+L open-automation:GND #PWR042
 U 1 1 5AC7C381
 P 4725 4225
-F 0 "#PWR035" H 4725 3975 50  0001 C CNN
+F 0 "#PWR042" H 4725 3975 50  0001 C CNN
 F 1 "GND" H 4725 4075 50  0000 C CNN
 F 2 "" H 4725 4225 50  0000 C CNN
 F 3 "" H 4725 4225 50  0000 C CNN
@@ -83,10 +83,10 @@ F 3 "" H 4725 4225 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR036
+L open-automation:GND #PWR043
 U 1 1 5AC7C45C
 P 4750 5025
-F 0 "#PWR036" H 4750 4775 50  0001 C CNN
+F 0 "#PWR043" H 4750 4775 50  0001 C CNN
 F 1 "GND" H 4750 4875 50  0000 C CNN
 F 2 "" H 4750 5025 50  0000 C CNN
 F 3 "" H 4750 5025 50  0000 C CNN
@@ -133,12 +133,12 @@ Wire Wire Line
 Wire Wire Line
 	4750 4925 4750 5025
 $Comp
-L Device:C C12
+L Device:C C20
 U 1 1 5AC7CAB7
 P 4450 3225
-F 0 "C12" V 4500 3300 50  0000 L CNN
+F 0 "C20" V 4500 3300 50  0000 L CNN
 F 1 "0.22uF" V 4400 3300 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4488 3075 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4488 3075 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B224KO8NNNC/1276-1112-1-ND/3889198" H 4450 3225 50  0001 C CNN
 F 4 "CL10B224KO8NNNC" V 4450 3225 60  0001 C CNN "Part Number"
 	1    4450 3225
@@ -161,12 +161,12 @@ Wire Wire Line
 Wire Wire Line
 	5375 4550 5375 3250
 $Comp
-L Device:C C13
+L Device:C C21
 U 1 1 5AC80604
 P 4450 3475
-F 0 "C13" V 4500 3550 50  0000 L CNN
+F 0 "C21" V 4500 3550 50  0000 L CNN
 F 1 "0.22uF" V 4400 3550 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603_HandSoldering" H 4488 3325 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4488 3325 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B224KO8NNNC/1276-1112-1-ND/3889198" H 4450 3475 50  0001 C CNN
 F 4 "CL10B224KO8NNNC" V 4450 3475 60  0001 C CNN "Part Number"
 	1    4450 3475
@@ -287,48 +287,48 @@ Connection ~ 6925 2400
 Wire Wire Line
 	6925 2400 6925 2450
 $Comp
-L open-automation:R_10k R15
+L open-automation:R_10k R23
 U 1 1 5B1BCAC5
 P 4400 4550
-F 0 "R15" V 4400 4550 50  0000 C CNN
+F 0 "R23" V 4400 4550 50  0000 C CNN
 F 1 "R_10k" V 4300 4550 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 4330 4550 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4330 4550 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 4480 4550 50  0001 C CNN
 F 4 "RC0603JR-0710KL" V 4580 4650 60  0001 C CNN "Part Number"
 	1    4400 4550
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:R_10k R14
+L open-automation:R_10k R22
 U 1 1 5B1BD0E6
 P 4400 3775
-F 0 "R14" V 4400 3775 50  0000 C CNN
+F 0 "R22" V 4400 3775 50  0000 C CNN
 F 1 "R_10k" V 4300 3775 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 4330 3775 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4330 3775 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 4480 3775 50  0001 C CNN
 F 4 "RC0603JR-0710KL" V 4580 3875 60  0001 C CNN "Part Number"
 	1    4400 3775
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:C_10uF C16
+L open-automation:C_10uF C24
 U 1 1 5B1BD541
 P 4750 4775
-F 0 "C16" H 4865 4821 50  0000 L CNN
+F 0 "C24" H 4865 4821 50  0000 L CNN
 F 1 "C_10uF" H 4865 4730 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 4850 5075 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4850 5075 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R61A106ME69D/490-10475-1-ND/5026393" H 4750 4525 50  0001 C CNN
 F 4 "GRM188R61A106ME69D" H 4875 4975 60  0001 C CNN "Part Number"
 	1    4750 4775
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:C_1uF C15
+L open-automation:C_1uF C23
 U 1 1 5B1BD64D
 P 4725 4000
-F 0 "C15" H 4840 4046 50  0000 L CNN
+F 0 "C23" H 4840 4046 50  0000 L CNN
 F 1 "C_1uF" H 4840 3955 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 4825 4300 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4825 4300 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB105/311-1372-1-ND/2103156" H 4725 3750 50  0001 C CNN
 F 4 "CC0603ZRY5V7BB105" H 4850 4200 60  0001 C CNN "Part Number"
 	1    4725 4000

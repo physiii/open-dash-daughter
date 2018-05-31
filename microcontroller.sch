@@ -236,9 +236,9 @@ Wire Wire Line
 	6075 4725 6075 4650
 Wire Wire Line
 	4875 4200 4765 4200
-Text HLabel 6720 4000 2    60   Input ~ 0
+Text HLabel 6725 4000 2    60   Input ~ 0
 CAN_RX
-Text HLabel 6720 3700 2    60   Input ~ 0
+Text HLabel 6725 3700 2    60   Input ~ 0
 CAN_TX
 Wire Wire Line
 	4775 3700 4875 3700

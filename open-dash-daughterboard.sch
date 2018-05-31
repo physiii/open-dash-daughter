@@ -136,21 +136,6 @@ F3 "SDA" I L 8525 4150 50
 F4 "SCL" I L 8525 4250 50 
 F5 "GPS_Antenna" I L 8525 4400 50 
 $EndSheet
-$Sheet
-S 8500 2350 1450 1100
-U 5AF5E3D2
-F0 "mainboard-interface" 50
-F1 "mainboard-interface.sch" 50
-F2 "3v3" I L 8500 2475 50 
-F3 "PROG" I L 8500 2825 50 
-F4 "FACTORY" I L 8500 2750 50 
-F5 "SCL" I R 9950 2750 50 
-F6 "5V" I L 8500 2400 50 
-F7 "TXD" I R 9950 2500 50 
-F8 "RXD" I R 9950 2600 50 
-F9 "SDA" I R 9950 2850 50 
-F10 "SOFT_POWER" O L 8500 2950 50 
-$EndSheet
 Text Label 7000 2125 0    50   ~ 0
 SCL
 Text Label 7000 2200 0    50   ~ 0
@@ -399,4 +384,46 @@ Wire Wire Line
 	8100 6275 8325 6275
 Wire Wire Line
 	8325 6350 8100 6350
+Wire Wire Line
+	6975 4350 7025 4350
+Wire Wire Line
+	6975 4425 7025 4425
+Wire Wire Line
+	6975 4500 7025 4500
+Wire Wire Line
+	6975 4575 7025 4575
+Wire Wire Line
+	6975 4850 7025 4850
+Wire Wire Line
+	6975 4925 7025 4925
+Wire Wire Line
+	6975 5000 7025 5000
+Wire Wire Line
+	6975 5075 7025 5075
+Text Label 10025 6525 0    50   ~ 0
+TXD
+Text Label 10025 6450 0    50   ~ 0
+RXD
+Wire Wire Line
+	9975 6450 10025 6450
+Wire Wire Line
+	9975 6525 10025 6525
+Text Label 10025 6700 0    50   ~ 0
+FACTORY
+Text Label 10025 6850 0    50   ~ 0
+PROG
+Text Label 10025 6775 0    50   ~ 0
+EN_ESP
+Wire Wire Line
+	9975 6700 10025 6700
+Wire Wire Line
+	10025 6775 9975 6775
+Wire Wire Line
+	9975 6850 10025 6850
+$Sheet
+S 8350 8300 1650 1250
+U 5B15E02A
+F0 "USB interface" 50
+F1 "usb-interface.sch" 50
+$EndSheet
 $EndSCHEMATC

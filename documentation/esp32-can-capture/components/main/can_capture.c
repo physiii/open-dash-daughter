@@ -198,8 +198,10 @@ void app_main(void)
     gpio_set_level(GPIO_NUM_21, 1); //mainboard power
     //gpio_set_level(GPIO_NUM_5, 1); //mainboard softpower
 
+    /*
     xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
     xTaskCreate(&task_DashSerial, "MSG", 2048, NULL, 5, NULL);
+    */
 
     //b430000480404 start, driver door open
     //b430000480c04 start, passenger door

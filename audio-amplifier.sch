@@ -20,8 +20,9 @@ U 1 1 5AC797FB
 P 6200 2650
 F 0 "U11" H 5850 1900 60  0000 C CNN
 F 1 "TDA7297" H 6375 1900 60  0000 C CNN
-F 2 "TO_SOT_Packages_THT:TO-220-15_Vertical_StaggeredType1" H 6050 2500 60  0001 C CNN
+F 2 "Package_TO_SOT_THT:TO-220-15_Vertical_StaggeredType1_Py5.08mm" H 6050 2500 60  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/stmicroelectronics/TDA7297/497-3967-5-ND/715883" H 6050 2500 60  0001 C CNN
+F 4 "TDA7297" H 6200 2650 50  0001 C CNN "Part Number"
 	1    6200 2650
 	1    0    0    -1  
 $EndComp
@@ -53,7 +54,7 @@ U 1 1 5AC7B472
 P 4550 2500
 F 0 "C22" H 4575 2600 50  0000 L CNN
 F 1 "470uF" H 4575 2400 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D8.0mm_P3.50mm" H 4588 2350 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 4588 2350 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/rubycon/16YXJ470M8X11.5/1189-1146-ND/3134104" H 4550 2500 50  0001 C CNN
 F 4 "16YXJ470M8X11.5" H 4550 2500 60  0001 C CNN "Part Number"
 	1    4550 2500

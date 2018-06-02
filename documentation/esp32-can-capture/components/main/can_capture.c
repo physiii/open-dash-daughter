@@ -1,16 +1,83 @@
 #include "freertos/FreeRTOS.h"
-#include "esp_wifi.h"
 #include "esp_system.h"
 #include "esp_event.h"
 #include "esp_event_loop.h"
-#include "nvs_flash.h"
+#include "esp_log.h"
 #include "driver/gpio.h"
+#include "rom/uart.h"
+#include "cJSON.h"
 
 #include "CAN.h"
 
-#include "rom/uart.h"
+// if the dash does not respond, assume it is off
+#define DASH_RESPONSE_TIMEOUT_MS    (2000)
+
+#define MASTER_LOOP_PERIOD_MS       (100)
+
+#define GPIO_STATUS_LED             (GPIO_NUM_2)
+#define GPIO_CAN_RX                 (GPIO_NUM_4)
+#define GPIO_MAINBOARD_SOFT_POWER   (GPIO_NUM_5)
+#define GPIO_DISPLAY_POWER          (GPIO_NUM_17)
+#define GPIO_AUDIO_AMP_POWER        (GPIO_NUM_19)
+#define GPIO_MAINBOARD_POWER        (GPIO_NUM_21)
+
+static const char * TAG = "DashDaughter";
+
+enum eMasterState {
+  MasterStarted,
+  MasterQueryingDash,
+  MasterForwardingCAN,
+} MasterState = MasterStarted;
+
+enum eIgnitionState {
+  IgnitionOff,
+  // IgnitionAccessory,
+  IgnitionEngine,
+  IgnitionInvalid,
+} IgnitionState = IgnitionInvalid;
+
+// keep these in sync with eDashStateString
+enum eDashState {
+  DashTimedOut,
+  DashOn,
+  DashUpdating, // do not interrupt us
+
+  // tail
+  DashInvalid,
+} DashState = DashInvalid;
+
+// passed by CAN and DashSerial task to the Master task
+struct sInternalMessage {
+  enum {
+    InternalMessageDash,
+    InternalMessageIgnition,
+  } InternalMessage;
+  union {
+    enum eDashState DashState;
+    enum eIgnitionState IgnitionState;
+  };
+};
+
+// keep these in sync with eDashState
+static const char * eDashStateString[] = {
+  "Off",
+  "On",
+  "Updating",
+
+  // tail
+  0
+};
 
 CAN_device_t CAN_cfg = {0};
+QueueHandle_t internal_queue = NULL;
+
+void initialize_gpio() {
+  gpio_set_direction(GPIO_STATUS_LED, GPIO_MODE_OUTPUT);
+  gpio_set_direction(GPIO_MAINBOARD_SOFT_POWER, GPIO_MODE_OUTPUT);
+  gpio_set_direction(GPIO_DISPLAY_POWER, GPIO_MODE_OUTPUT);
+  gpio_set_direction(GPIO_AUDIO_AMP_POWER, GPIO_MODE_OUTPUT);
+  gpio_set_direction(GPIO_MAINBOARD_POWER, GPIO_MODE_OUTPUT);
+}
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
 {
@@ -57,9 +124,37 @@ size_t read_uart_string(char * out, size_t outsize, int xTickDelay, int xTicksTi
 }
 
 /***
-monitor the serial port for messages from the dash; posts them to the master message queue
+given some serial input, parse and take action
+***/
+void interpret_JSON_message(char * msg) {
+  cJSON * root = cJSON_Parse(msg);
+  if (root) {
+    cJSON * status = cJSON_GetObjectItem(root, "status");
+    if (status) {
+      if (cJSON_True == status->type) {
+        DashState = DashOn;
+      } else {
+        ESP_LOGW(TAG, "status wrong type/value in '%s': %02x", msg, status->type);
+      }
+    } else {
+      ESP_LOGW(TAG, "status key missing from JSON response '%s'", msg);
+    }
+    cJSON_Delete(root);
+  } else {
+    ESP_LOGW(TAG, "failed to parse JSON response '%s'", msg);
+  }
+}
+
+/***
+monitor the serial port for messages from the dash, post them to the master message queue
 ***/
 void task_DashSerial(void *pvParameters) {
+  char dash_input[100];
+  while (1) {
+    if (0 < read_uart_string(dash_input, sizeof(dash_input), 25 / portTICK_PERIOD_MS, 2000 / portTICK_PERIOD_MS)) {
+      interpret_JSON_message(dash_input);
+    }
+  }
 }
 
 /***
@@ -68,6 +163,49 @@ maintain local dash power state variable
 toggle dash power state or send JSON-wrapped CAN messages
 ***/
 void task_Master(void *pvParameters) {
+    struct sInternalMessage msg;
+    clock_t dash_power_query_timeout;
+
+    while (1) {
+      if (pdTRUE == xQueueReceive(internal_queue, &msg, MASTER_LOOP_PERIOD_MS / portTICK_PERIOD_MS)) {
+        switch (msg.InternalMessage) {
+          case InternalMessageDash:
+            switch (msg.DashState) {
+              case DashOn:
+                reset_dash_timeout();
+                break;
+            }
+            break;
+
+          case InternalMessageIgnition:
+            switch (msg.IgnitionState) {
+              case IgnitionOff:
+                turn_dash_off();
+                break;
+
+              case IgnitionEngine:
+                turn_dash_on();
+                break;
+            }
+            break;
+        }
+      }
+    }
+}
+
+/***
+return this frame's IgnitionStatus value, or IgnitionInvalid if it is not an ignition frame
+***/
+enum eIgnitionState check_ignition_status(const CAN_frame_t * frame) {
+  // TODO: adapt Andy's ignition code
+  return IgnitionInvalid;
+}
+
+/***
+wrap this in JSON and send to dash via serial link
+***/
+void forward_frame(const CAN_frame_t * frame) {
+  // TODO
 }
 
 // from <http://www.barth-dev.de/can-driver-esp32/> and
@@ -82,13 +220,12 @@ if dash power state is on then transmit (printf) JSON-wrapped copies of non-igni
 void task_CAN( void *pvParameters ){
     (void)pvParameters;
 
-
     //frame buffer
     CAN_frame_t __RX_frame;
 
     //create CAN RX Queue
     CAN_cfg.rx_queue = xQueueCreate(10,sizeof(CAN_frame_t));
-    CAN_cfg.rx_pin_id = GPIO_NUM_4;
+    CAN_cfg.rx_pin_id = GPIO_CAN_RX;
     CAN_cfg.speed = 50;
 
     //start CAN Module
@@ -99,6 +236,8 @@ void task_CAN( void *pvParameters ){
       esp_restart();
     }
 
+    struct sInternalMessage msg = { InternalMessageIgnition, {0} };
+
     printf("Entering CAN loop\n");
     bool was_started = false;
     bool engine_started = false;
@@ -107,7 +246,15 @@ void task_CAN( void *pvParameters ){
         //receive next CAN frame from queue
         if(xQueueReceive(CAN_cfg.rx_queue,&__RX_frame, 3*portTICK_PERIOD_MS)==pdTRUE){
 
+          msg.IgnitionState = check_ignition_status(&__RX_frame);
 
+          if (IgnitionInvalid != msg.IgnitionState) {
+            // TODO how long should we wait if at all?
+            xQueueSend(internal_queue, &msg, 100 / portTICK_PERIOD_MS);
+          }
+
+          // unconditionally forward all frames
+          forward_frame(&__RX_frame);
 
         	//do stuff!
         	if(__RX_frame.FIR.B.FF==CAN_frame_std)
@@ -145,20 +292,22 @@ void task_CAN( void *pvParameters ){
 				if(message_data_invariant==0xbf00000ffff0f) {
 					if (!was_started) continue;
 					printf("\nKEY MOVED TO OFF POSITION!");
-					gpio_set_level(GPIO_NUM_5, 0);
+					gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
 					vTaskDelay(2000 / portTICK_PERIOD_MS);
-					gpio_set_level(GPIO_NUM_5, 1);
+					gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
 					was_started = false;
 					engine_started = false;
+          IgnitionState = IgnitionOff;
 				}
 				else if(message_data_invariant==0xbff0000ffff0f) {
 					if (was_started) continue;
 
 					printf("\nKEY MOVED TO RUN POSITION!");
-				        gpio_set_level(GPIO_NUM_5, 0);
+				        gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
 				        vTaskDelay(2000 / portTICK_PERIOD_MS);
-				        gpio_set_level(GPIO_NUM_5, 1);
+				        gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
 					was_started = true;
+          IgnitionState = IgnitionEngine;
 				}
 
 				if(message_data==0xb440000400400) {
@@ -187,21 +336,16 @@ void app_main(void)
 {
     ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
 
-    gpio_set_direction(GPIO_NUM_2, GPIO_MODE_OUTPUT);
-    gpio_set_direction(GPIO_NUM_5, GPIO_MODE_OUTPUT); //mainboard soft power
-    gpio_set_direction(GPIO_NUM_17, GPIO_MODE_OUTPUT); //display power
-    gpio_set_direction(GPIO_NUM_19, GPIO_MODE_OUTPUT); //audio amp power
-    gpio_set_direction(GPIO_NUM_21, GPIO_MODE_OUTPUT); //mainboard power
-
-    gpio_set_level(GPIO_NUM_17, 1); //display power
-    gpio_set_level(GPIO_NUM_19, 1); //audio amp power
-    gpio_set_level(GPIO_NUM_21, 1); //mainboard power
+    gpio_set_level(GPIO_DISPLAY_POWER, 1); //display power
+    gpio_set_level(GPIO_AUDIO_AMP_POWER, 1); //audio amp power
+    gpio_set_level(GPIO_MAINBOARD_POWER, 1); //mainboard power
     //gpio_set_level(GPIO_NUM_5, 1); //mainboard softpower
 
-    /*
+    internal_queue = xQueueCreate(10, sizeof(struct sInternalMessage));
+
+    xTaskCreate(&task_Master, "MASTER", 2048, NULL, 5, NULL);
     xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
     xTaskCreate(&task_DashSerial, "MSG", 2048, NULL, 5, NULL);
-    */
 
     //b430000480404 start, driver door open
     //b430000480c04 start, passenger door
@@ -216,25 +360,21 @@ void app_main(void)
     uint64_t message_data_variant = message_data & 0x0000000000000f00;
     printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);*/
 
-    int i = 0;
-    size_t count;
-    char buf[50];
     while (1) {
-	//status light on esp32
-        gpio_set_level(GPIO_NUM_2, 1);
+        // blink the status light
+        gpio_set_level(GPIO_STATUS_LED, 1);
         vTaskDelay(25 / portTICK_PERIOD_MS);
-        gpio_set_level(GPIO_NUM_2, 0);
-        // vTaskDelay(1475 / portTICK_PERIOD_MS);
-        printf("loop %d\n", i);
+        gpio_set_level(GPIO_STATUS_LED, 0);
+        vTaskDelay(2975 / portTICK_PERIOD_MS);
 
+        /*
         count = read_uart_string(buf, sizeof(buf), 25 / portTICK_PERIOD_MS, 1500 / portTICK_PERIOD_MS);
         if (count > 0) {
           printf("read %d chars, last was %02x: '%s'\n", count, buf[count - 1], buf);
         } else {
           printf("no string\n");
         }
-
-        i += 1;
+        */
     }
 }
 

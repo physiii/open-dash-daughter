@@ -36,7 +36,7 @@ enum eMasterState {
 
 enum eIgnitionState {
   IgnitionOff,
-  // IgnitionAccessory,
+  IgnitionAccessory,
   IgnitionEngine,
   IgnitionInvalid,
 } IgnitionState = IgnitionInvalid;
@@ -240,6 +240,7 @@ void task_Master(void *pvParameters) {
               }
               break;
 
+            case IgnitionAccessory:
             case IgnitionEngine:
               if (DashOn != DashState) {
                 turn_dash_on();
@@ -271,8 +272,8 @@ enum eIgnitionState check_ignition_status(const CAN_frame_t * frame) {
       case 0x6214000:
         switch (frame->data.u64 | 0x0000f00000ffff0f) {
           case 0xbf00000ffff0f: return IgnitionOff;
-          case 0xbff0000ffff0f: return IgnitionEngine; // should this be accessory?
-          // case 0xb440000400400: // engine on
+          case 0xbff0000ffff0f: return IgnitionAccessory;
+          case 0xb440000400400: return IgnitionEngine;
         }
         break;
       case 0x6284000: break; // mute from steering wheel
@@ -355,6 +356,7 @@ void task_CAN (void *pvParameters) {
   ESP_LOGI(TAG, "Entering CAN loop\n");
   for (unsigned long ctr = 0; ;) {
     if (pdTRUE == xQueueReceive(CAN_cfg.rx_queue,&__RX_frame, 3 * portTICK_PERIOD_MS)) {
+      ESP_LOGI(TAG, "received message %lu\n", ctr);
 
       msg.IgnitionState = check_ignition_status(&__RX_frame);
 
@@ -364,7 +366,7 @@ void task_CAN (void *pvParameters) {
         xQueueSend(internal_queue, &msg, 0);
       }
 
-      if (DashOn == DashState) {
+      if (1 || DashOn == DashState) {
         forward_frame(&__RX_frame, ctr);
       }
 
@@ -381,7 +383,7 @@ void app_main(void) {
 
   internal_queue = xQueueCreate(10, sizeof(struct sInternalMessage));
 
-  xTaskCreate(&task_Master, "MASTER", 2048, NULL, 5, NULL);
+  // xTaskCreate(&task_Master, "MASTER", 2048, NULL, 5, NULL);
   xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
 
   while (1) {

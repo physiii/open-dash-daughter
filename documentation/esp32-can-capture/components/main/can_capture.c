@@ -3,25 +3,30 @@
 #include "esp_event.h"
 #include "esp_event_loop.h"
 #include "esp_log.h"
+#include "esp_timer.h"
 #include "driver/gpio.h"
 #include "rom/uart.h"
 #include "cJSON.h"
 
 #include "CAN.h"
 
-// if the dash does not respond, assume it is off
-#define DASH_RESPONSE_TIMEOUT_MS    (2000)
-
-#define MASTER_LOOP_PERIOD_MS       (100)
-
-#define GPIO_STATUS_LED             (GPIO_NUM_2)
-#define GPIO_CAN_RX                 (GPIO_NUM_4)
-#define GPIO_MAINBOARD_SOFT_POWER   (GPIO_NUM_5)
-#define GPIO_DISPLAY_POWER          (GPIO_NUM_17)
-#define GPIO_AUDIO_AMP_POWER        (GPIO_NUM_19)
-#define GPIO_MAINBOARD_POWER        (GPIO_NUM_21)
-
 static const char * TAG = "DashDaughter";
+
+// if the dash does not respond, assume it is off
+#define DASH_RESPONSE_TIMEOUT         (2000 / portTICK_PERIOD_MS)
+// how long to snooze between characters to avoid busy looping
+#define DASH_CHARACTER_DELAY          (25 / portTICK_PERIOD_MS)
+// master loop queue timeout
+#define MASTER_LOOP_PERIOD            (100 / portTICK_PERIOD_MS)
+
+// GPIO assignments
+#define GPIO_STATUS_LED               (GPIO_NUM_2)
+#define GPIO_CAN_RX                   (GPIO_NUM_4)
+// #define GPIO_CAN_TX                   (GPIO_NUM_???)
+#define GPIO_MAINBOARD_SOFT_POWER     (GPIO_NUM_5)
+#define GPIO_DISPLAY_POWER            (GPIO_NUM_17)
+#define GPIO_AUDIO_AMP_POWER          (GPIO_NUM_19)
+#define GPIO_MAINBOARD_POWER          (GPIO_NUM_21)
 
 enum eMasterState {
   MasterStarted,
@@ -58,16 +63,6 @@ struct sInternalMessage {
   };
 };
 
-// keep these in sync with eDashState
-static const char * eDashStateString[] = {
-  "Off",
-  "On",
-  "Updating",
-
-  // tail
-  0
-};
-
 CAN_device_t CAN_cfg = {0};
 QueueHandle_t internal_queue = NULL;
 
@@ -79,6 +74,16 @@ void initialize_gpio() {
   gpio_set_direction(GPIO_MAINBOARD_POWER, GPIO_MODE_OUTPUT);
 }
 
+/***
+apply power to peripherals
+***/
+void apply_dash_power() {
+  gpio_set_level(GPIO_DISPLAY_POWER, 1); //display power
+  gpio_set_level(GPIO_AUDIO_AMP_POWER, 1); //audio amp power
+  gpio_set_level(GPIO_MAINBOARD_POWER, 1); //mainboard power
+  // gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1); //mainboard softpower
+}
+
 esp_err_t event_handler(void *ctx, system_event_t *event)
 {
   // printf("event: %s\n", fmt_event_id(event->event_id));
@@ -86,7 +91,7 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
 }
 
 /***
-TODO: the documentation discourages use of this method
+TODO: the documentation discourages uart_rx_one_char
 
 read a string from the serial port, until newline (either '\r' or '\n'), outsize, or timeout
 
@@ -100,10 +105,10 @@ Return value: number of characters stored (excluding terminal null).
 
 This is blocking and as such is meant to be used from a separate task.
 ***/
-size_t read_uart_string(char * out, size_t outsize, int xTickDelay, int xTicksTimeout) {
+size_t read_uart_string(char * out, size_t outsize) {
   char * outp = out;
   unsigned char in;
-  clock_t xTimeout = xTaskGetTickCount() + xTicksTimeout;
+  clock_t xTimeout = xTaskGetTickCount() + DASH_RESPONSE_TIMEOUT;
 
   while (xTaskGetTickCount() < xTimeout && 0 < outsize) {
     if (OK == uart_rx_one_char(&in)) {
@@ -112,10 +117,10 @@ size_t read_uart_string(char * out, size_t outsize, int xTickDelay, int xTicksTi
       } else {
         *outp ++ = in;
         outsize -= 1;
-        xTimeout = xTaskGetTickCount() + xTicksTimeout;
+        xTimeout = xTaskGetTickCount() + DASH_RESPONSE_TIMEOUT;
       }
     }
-    vTaskDelay(xTickDelay);
+    vTaskDelay(DASH_CHARACTER_DELAY);
   }
 
   *outp = 0;
@@ -124,257 +129,267 @@ size_t read_uart_string(char * out, size_t outsize, int xTickDelay, int xTicksTi
 }
 
 /***
-given some serial input, parse and take action
+given a JSON string from the dash, populate an sInternalMessage
+return non-zero if filled in (even invalid), zero if no message
 ***/
-void interpret_JSON_message(char * msg) {
-  cJSON * root = cJSON_Parse(msg);
+int interpret_JSON_message(char * json_string, struct sInternalMessage * msg) {
+  cJSON * root = cJSON_Parse(json_string);
   if (root) {
     cJSON * status = cJSON_GetObjectItem(root, "status");
     if (status) {
       if (cJSON_True == status->type) {
-        DashState = DashOn;
+        if (msg) {
+          msg->InternalMessage = InternalMessageDash;
+          msg->DashState = DashOn;
+        }
       } else {
-        ESP_LOGW(TAG, "status wrong type/value in '%s': %02x", msg, status->type);
+        ESP_LOGW(TAG, "status wrong type/value in '%s': %02x", json_string, status->type);
+        if (msg) {
+          msg->InternalMessage = InternalMessageDash;
+          msg->DashState = DashInvalid;
+        }
       }
     } else {
-      ESP_LOGW(TAG, "status key missing from JSON response '%s'", msg);
+      ESP_LOGW(TAG, "status key missing from JSON response '%s'", json_string);
+      if (msg) {
+        msg->InternalMessage = InternalMessageDash;
+        msg->DashState = DashInvalid;
+      }
     }
     cJSON_Delete(root);
+    return 1;
   } else {
-    ESP_LOGW(TAG, "failed to parse JSON response '%s'", msg);
+    ESP_LOGW(TAG, "failed to parse JSON response '%s'", json_string);
   }
+
+  return 0;
 }
 
 /***
-monitor the serial port for messages from the dash, post them to the master message queue
+wait for one message from the serial port, or set DashTimedOut
 ***/
-void task_DashSerial(void *pvParameters) {
+void task_DashSerialOneShot(void *pvParameters) {
+  struct sInternalMessage msg;
   char dash_input[100];
-  while (1) {
-    if (0 < read_uart_string(dash_input, sizeof(dash_input), 25 / portTICK_PERIOD_MS, 2000 / portTICK_PERIOD_MS)) {
-      interpret_JSON_message(dash_input);
+
+  ESP_LOGI(TAG, "task_DashSerialOneShot...");
+  if (0 < read_uart_string(dash_input, sizeof(dash_input))) {
+    if (interpret_JSON_message(dash_input, &msg)) {
+      if (InternalMessageDash == msg.InternalMessage) {
+        if (DashOn == msg.DashState) {
+          DashState = DashOn;
+        } else {
+          // invalid or dash off
+        }
+      } else {
+        // uh-oh
+      }
     }
+  } else {
+    DashState = DashTimedOut;
   }
+
+  ESP_LOGI(TAG, "task_DashSerialOneShot result: %d", DashState);
+
+  // we have done our job
+  vTaskDelete(NULL);
+}
+
+/***
+"press the button" for two seconds
+***/
+void toggle_dash_power() {
+  gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
+  vTaskDelay(2000 / portTICK_PERIOD_MS);
+  gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
+}
+
+/***
+these two are the same for now, but could be different later
+***/
+void turn_dash_off() {
+  toggle_dash_power();
+}
+
+void turn_dash_on() {
+  toggle_dash_power();
 }
 
 /***
 receive messages from the dash and CAN via queue
 maintain local dash power state variable
-toggle dash power state or send JSON-wrapped CAN messages
+toggle dash power state
 ***/
 void task_Master(void *pvParameters) {
-    struct sInternalMessage msg;
-    clock_t dash_power_query_timeout;
+  struct sInternalMessage msg;
 
-    while (1) {
-      if (pdTRUE == xQueueReceive(internal_queue, &msg, MASTER_LOOP_PERIOD_MS / portTICK_PERIOD_MS)) {
-        switch (msg.InternalMessage) {
-          case InternalMessageDash:
-            switch (msg.DashState) {
-              case DashOn:
-                reset_dash_timeout();
-                break;
-            }
-            break;
+  // determine the initial state of the dash, blocks for upto 2 seconds
+  // but can frames are still forwarding in a separate task
+  task_DashSerialOneShot(NULL);
 
-          case InternalMessageIgnition:
-            switch (msg.IgnitionState) {
-              case IgnitionOff:
+  while (1) {
+    if (pdTRUE == xQueueReceive(internal_queue, &msg, MASTER_LOOP_PERIOD)) {
+      switch (msg.InternalMessage) {
+        case InternalMessageIgnition:
+          switch (msg.IgnitionState) {
+            case IgnitionOff:
+              if (DashOn == DashState) {
                 turn_dash_off();
-                break;
+              } else {
+                ESP_LOGI(TAG, "dash not on");
+              }
+              break;
 
-              case IgnitionEngine:
+            case IgnitionEngine:
+              if (DashOn != DashState) {
                 turn_dash_on();
-                break;
-            }
-            break;
-        }
+              } else {
+                ESP_LOGI(TAG, "dash already on");
+              }
+              break;
+
+            default:
+              // who sent this?
+              break;
+          }
+          break;
+
+        case InternalMessageDash:
+          DashState = msg.DashState;
+          break;
       }
     }
+  }
 }
 
 /***
 return this frame's IgnitionStatus value, or IgnitionInvalid if it is not an ignition frame
 ***/
 enum eIgnitionState check_ignition_status(const CAN_frame_t * frame) {
-  // TODO: adapt Andy's ignition code
+  if (CAN_RTR != frame->FIR.B.RTR) {
+    switch (frame->MsgID) {
+      case 0x6214000:
+        switch (frame->data.u64 | 0x0000f00000ffff0f) {
+          case 0xbf00000ffff0f: return IgnitionOff;
+          case 0xbff0000ffff0f: return IgnitionEngine; // should this be accessory?
+          // case 0xb440000400400: // engine on
+        }
+        break;
+      case 0x6284000: break; // mute from steering wheel
+      case 0x6314018: break; // gear change
+    }
+  }
   return IgnitionInvalid;
 }
 
 /***
 wrap this in JSON and send to dash via serial link
 ***/
-void forward_frame(const CAN_frame_t * frame) {
-  // TODO
+void forward_frame(const CAN_frame_t * frame, const unsigned int ctr) {
+  int64_t ticks = esp_timer_get_time();
+  printf("{\"ctr\":%u,\"ticks\":{\"l32\":%u,\"h32\":%u},\"CAN\":{\"RTR\":%d,\"MsgID\":%d,\"DLC\":%d,\"data\":{\"l32\":%u,\"h32\":%u}}}\n",
+      ctr, (uint32_t)(ticks & 0xffffffff), (uint32_t)((ticks >> 32) & 0xffffffff),
+      frame->FIR.B.RTR, frame->MsgID,
+      frame->FIR.B.DLC, frame->data.u32[0], frame->data.u32[1]
+      );
 }
 
-// from <http://www.barth-dev.de/can-driver-esp32/> and
-// <http://www.barth-dev.de/wp-content/uploads/2017/01/ESP32_CAN_demo.zip>
-// as accessed 2018-04-26
+/*
+// reduce dynamic allocations with a fixed buffer
+#define JSON_OUTPUT_BUFFER_SIZE       (200)
+void forward_frame_JSON(const CAN_frame_t * frame, const unsigned int ctr) {
+  char outbuf[JSON_OUTPUT_BUFFER_SIZE];
+  cJSON * jwrapper, * jframe, * jticks, * jdata;
+  int64_t ticks = esp_timer_get_time();
+  jwrapper = cJSON_CreateObject();
+  cJSON_AddNumberToObject(jwrapper, "ctr", ctr);
+  cJSON_AddItemToObject(jwrapper, "ticks", (jticks = cJSON_CreateObject()));
+  cJSON_AddNumberToObject(jticks, "l32", (uint32_t) (ticks & 0xffffffff));
+  cJSON_AddNumberToObject(jticks, "h32", (uint32_t) ((ticks >> 32) & 0xffffffff));
+  cJSON_AddItemToObject(jwrapper, "CAN", (jframe = cJSON_CreateObject()));
+  cJSON_AddNumberToObject(jframe, "MsgID", frame->MsgID);
+  cJSON_AddNumberToObject(jframe, "DLC", frame->FIR.B.DLC);
+  cJSON_AddItemToObject(jframe, "data", (jdata = cJSON_CreateObject()));
+  cJSON_AddNumberToObject(jdata, "l32", frame->data.u32[0]);
+  cJSON_AddNumberToObject(jdata, "h32", frame->data.u32[1]);
+
+  if (cJSON_PrintPreallocated(jwrapper, outbuf, sizeof(outbuf) - 5, 0)) {
+    printf("%s\n", outbuf);
+  } else {
+    // UHOH
+  }
+
+  cJSON_Delete(jwrapper);
+}
+*/
 
 /***
 receive CAN bus messages
 let ignition on/off messages update car power state
 if dash power state is on then transmit (printf) JSON-wrapped copies of non-ignition messages
+
+based on <http://www.barth-dev.de/can-driver-esp32/> and
+<http://www.barth-dev.de/wp-content/uploads/2017/01/ESP32_CAN_demo.zip>
+as accessed 2018-04-26
 ***/
-void task_CAN( void *pvParameters ){
-    (void)pvParameters;
+void task_CAN (void *pvParameters) {
+  //frame buffer
+  CAN_frame_t __RX_frame;
+  struct sInternalMessage msg = { InternalMessageIgnition, {0} };
 
-    //frame buffer
-    CAN_frame_t __RX_frame;
+  // configure CAN receiver
+  CAN_cfg.rx_queue = xQueueCreate(10, sizeof(CAN_frame_t));
+  CAN_cfg.rx_pin_id = GPIO_CAN_RX;
+  CAN_cfg.speed = 50;
 
-    //create CAN RX Queue
-    CAN_cfg.rx_queue = xQueueCreate(10,sizeof(CAN_frame_t));
-    CAN_cfg.rx_pin_id = GPIO_CAN_RX;
-    CAN_cfg.speed = 50;
-
-    //start CAN Module
+  //start CAN module
+  {
     int ret;
     if (0 != (ret = CAN_init())) {
-      printf("CAN_init failed with %d\n", ret);
+      ESP_LOGE(TAG, "!!! CAN_init failed with %d\n", ret);
       vTaskDelay(1500 / portTICK_PERIOD_MS);
       esp_restart();
     }
+  }
 
-    struct sInternalMessage msg = { InternalMessageIgnition, {0} };
+  ESP_LOGI(TAG, "Entering CAN loop\n");
+  for (unsigned long ctr = 0; ;) {
+    if (pdTRUE == xQueueReceive(CAN_cfg.rx_queue,&__RX_frame, 3 * portTICK_PERIOD_MS)) {
 
-    printf("Entering CAN loop\n");
-    bool was_started = false;
-    bool engine_started = false;
-    unsigned long ctr = 0;
-    while (1){
-        //receive next CAN frame from queue
-        if(xQueueReceive(CAN_cfg.rx_queue,&__RX_frame, 3*portTICK_PERIOD_MS)==pdTRUE){
+      msg.IgnitionState = check_ignition_status(&__RX_frame);
 
-          msg.IgnitionState = check_ignition_status(&__RX_frame);
+      if (IgnitionInvalid != msg.IgnitionState) {
+        // TODO how long should we wait, if at all?
+        // the messages come quickly but are repeated
+        xQueueSend(internal_queue, &msg, 0);
+      }
 
-          if (IgnitionInvalid != msg.IgnitionState) {
-            // TODO how long should we wait if at all?
-            xQueueSend(internal_queue, &msg, 100 / portTICK_PERIOD_MS);
-          }
+      if (DashOn == DashState) {
+        forward_frame(&__RX_frame, ctr);
+      }
 
-          // unconditionally forward all frames
-          forward_frame(&__RX_frame);
-
-        	//do stuff!
-        	if(__RX_frame.FIR.B.FF==CAN_frame_std)
-        		printf("%lu\t%lu\tNew standard frame", ctr, clock());
-        	/*else
-        		printf("%lu\t%lu\tNew extended frame", ctr, clock());*/
-
-        	if(__RX_frame.FIR.B.RTR==CAN_RTR)
-        		printf(" RTR from 0x%08x, DLC %d\r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC);
-        	else {
-			uint64_t message_data = (uint64_t) __RX_frame.data.u32[1] << 32 | __RX_frame.data.u32[0];
-
-        		//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
-
-			if(__RX_frame.MsgID==0x6214000) {
-				//printf("%08x %llx\n", __RX_frame.MsgID, message_data);
-				//printf(" from 0x%08x, DLC %d, dataL: 0x%08x, dataH: 0x%08x \r\n",__RX_frame.MsgID,  __RX_frame.FIR.B.DLC, __RX_frame.data.u32[0],__RX_frame.data.u32[1]);
-
-
-			        //b3f0000480004 start, driver door closed
-			        //b430000480404 start, driver door open
-			        //b430000480c04 start, passenger door
-
-			        //uint64_t message_data = 0xb430000480404;
-
-			        uint64_t message_data_invariant = message_data | 0x0000f00000ffff0f;
-			        uint64_t message_data_variant = message_data & 0x0000f00000ffff0f;
-
-
-				printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
-				printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
-
-				printf("%08x %llx\n", __RX_frame.MsgID, message_data_invariant);
-
-				if(message_data_invariant==0xbf00000ffff0f) {
-					if (!was_started) continue;
-					printf("\nKEY MOVED TO OFF POSITION!");
-					gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
-					vTaskDelay(2000 / portTICK_PERIOD_MS);
-					gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
-					was_started = false;
-					engine_started = false;
-          IgnitionState = IgnitionOff;
-				}
-				else if(message_data_invariant==0xbff0000ffff0f) {
-					if (was_started) continue;
-
-					printf("\nKEY MOVED TO RUN POSITION!");
-				        gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
-				        vTaskDelay(2000 / portTICK_PERIOD_MS);
-				        gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
-					was_started = true;
-          IgnitionState = IgnitionEngine;
-				}
-
-				if(message_data==0xb440000400400) {
-					if(engine_started) continue;
-					printf("\nENGINE STARTED!");
-					engine_started = true;
-				}
-			}
-			/*if(__RX_frame.MsgID==0x6284000) {
-				printf("\nMUTE from steering wheel! %lli", message_data);
-			}
-			if(__RX_frame.MsgID==0x6314018) {
-				 printf("\ngear change! %lli", message_data);
-			}*/
-		}
-
-        	//loop back frame
-        	// CAN_write_frame(&__RX_frame);
-
-          ctr += 1;
-        }
+      ctr += 1;
     }
+  }
 }
 
-void app_main(void)
-{
-    ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
+void app_main(void) {
+  ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
 
-    gpio_set_level(GPIO_DISPLAY_POWER, 1); //display power
-    gpio_set_level(GPIO_AUDIO_AMP_POWER, 1); //audio amp power
-    gpio_set_level(GPIO_MAINBOARD_POWER, 1); //mainboard power
-    //gpio_set_level(GPIO_NUM_5, 1); //mainboard softpower
+  initialize_gpio();
+  apply_dash_power();
 
-    internal_queue = xQueueCreate(10, sizeof(struct sInternalMessage));
+  internal_queue = xQueueCreate(10, sizeof(struct sInternalMessage));
 
-    xTaskCreate(&task_Master, "MASTER", 2048, NULL, 5, NULL);
-    xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
-    xTaskCreate(&task_DashSerial, "MSG", 2048, NULL, 5, NULL);
+  xTaskCreate(&task_Master, "MASTER", 2048, NULL, 5, NULL);
+  xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
 
-    //b430000480404 start, driver door open
-    //b430000480c04 start, passenger door
-
-    //b430000480404 off, driver door open
-    //b430000480c04 off, passenger door
-
-    /*uint64_t message_data = 0xb430000480404;
-    uint64_t message_data_invariant = message_data | 0x0000000000000f00;
-    printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
-
-    uint64_t message_data_variant = message_data & 0x0000000000000f00;
-    printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);*/
-
-    while (1) {
-        // blink the status light
-        gpio_set_level(GPIO_STATUS_LED, 1);
-        vTaskDelay(25 / portTICK_PERIOD_MS);
-        gpio_set_level(GPIO_STATUS_LED, 0);
-        vTaskDelay(2975 / portTICK_PERIOD_MS);
-
-        /*
-        count = read_uart_string(buf, sizeof(buf), 25 / portTICK_PERIOD_MS, 1500 / portTICK_PERIOD_MS);
-        if (count > 0) {
-          printf("read %d chars, last was %02x: '%s'\n", count, buf[count - 1], buf);
-        } else {
-          printf("no string\n");
-        }
-        */
-    }
+  while (1) {
+    // blink the status light
+    gpio_set_level(GPIO_STATUS_LED, 1);
+    vTaskDelay(25 / portTICK_PERIOD_MS);
+    gpio_set_level(GPIO_STATUS_LED, 0);
+    vTaskDelay(1475 / portTICK_PERIOD_MS);
+  }
 }
 

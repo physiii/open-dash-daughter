@@ -134,6 +134,7 @@ F2 "3v3" I L 8525 3900 50
 F3 "SDA" I L 8525 4150 50 
 F4 "SCL" I L 8525 4250 50 
 F5 "GPS_Antenna" I L 8525 4400 50 
+F6 "RST_GPS" I L 8525 4550 50 
 $EndSheet
 Text Label 7000 2125 0    50   ~ 0
 SCL
@@ -490,4 +491,12 @@ Text Label 10050 6000 0    50   ~ 0
 AMF_Antenna
 Wire Wire Line
 	10050 6000 9975 6000
+Text Label 8025 4400 0    50   ~ 0
+GPS_Antenna
+Wire Wire Line
+	8025 4400 8525 4400
+Text Label 10050 6075 0    50   ~ 0
+GPS_Antenna
+Wire Wire Line
+	10050 6075 9975 6075
 $EndSCHEMATC

@@ -15,23 +15,23 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector_Generic:Conn_01x02 J6
+L Connector_Generic:Conn_01x02 AMF_Antenna1
 U 1 1 5B15E1EC
 P 6975 925
-F 0 "J6" H 7055 917 50  0000 L CNN
+F 0 "AMF_Antenna1" H 7055 917 50  0000 L CNN
 F 1 "Conn_01x02" H 7055 826 50  0000 L CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 6975 925 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6975 925 50  0001 C CNN
 F 3 "~" H 6975 925 50  0001 C CNN
 	1    6975 925 
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x02 J7
+L Connector_Generic:Conn_01x02 GPS_ANT1
 U 1 1 5AE240A7
 P 8600 925
-F 0 "J7" H 8680 917 50  0000 L CNN
+F 0 "GPS_ANT1" H 8680 917 50  0000 L CNN
 F 1 "Conn_01x02" H 8680 826 50  0000 L CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 8600 925 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 8600 925 50  0001 C CNN
 F 3 "~" H 8600 925 50  0001 C CNN
 	1    8600 925 
 	1    0    0    -1  
@@ -531,12 +531,12 @@ SOFT_POWER
 Wire Wire Line
 	6550 2525 6650 2525
 $Comp
-L Connector_Generic:Conn_01x02 J5
+L Connector_Generic:Conn_01x02 AUDIO_IN1
 U 1 1 5B16C30A
 P 7570 3645
-F 0 "J5" H 7650 3637 50  0000 L CNN
+F 0 "AUDIO_IN1" H 7650 3637 50  0000 L CNN
 F 1 "Conn_01x02" H 7650 3546 50  0000 L CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm" H 7570 3645 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 7570 3645 50  0001 C CNN
 F 3 "~" H 7570 3645 50  0001 C CNN
 	1    7570 3645
 	1    0    0    -1  

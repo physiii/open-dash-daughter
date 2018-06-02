@@ -70,8 +70,6 @@ F 3 "" H 2700 1550 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	2700 1550 2700 1400
-Text Label 1550 950  2    50   ~ 0
-Antenna
 Wire Wire Line
 	1550 950  1750 950 
 $Comp
@@ -152,7 +150,7 @@ U 1 1 5ADB0B33
 P 4575 4150
 F 0 "D9" H 4525 3875 60  0000 R CNN
 F 1 "D1213A-01SO-7" H 4525 3975 60  0000 R CNN
-F 2 "digikey-footprints:SOT-23-3" H 4775 4350 60  0001 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 4775 4350 60  0001 L CNN
 F 3 "https://www.digikey.com/product-detail/en/diodes-incorporated/D1213A-01SO-7/D1213A-01SO-7DICT-ND/3340430" H 4775 4450 60  0001 L CNN
 F 4 "D1213A-01SO-7" H 4775 4550 60  0001 L CNN "Part Number"
 	1    4575 4150
@@ -615,8 +613,6 @@ Wire Wire Line
 	8050 1650 8050 1475
 Text Label 8050 1475 1    50   ~ 0
 am_passive_ant_en
-Wire Wire Line
-	2925 5850 2675 5850
 Text Label 1375 5850 2    50   ~ 0
 am_passive_ant_en
 Wire Wire Line
@@ -746,12 +742,12 @@ Wire Wire Line
 Wire Wire Line
 	2950 3800 3475 3800
 $Comp
-L dk_Logic-Buffers-Drivers-Receivers-Transceivers:SN74LVC1G17DBVR U?
+L dk_Logic-Buffers-Drivers-Receivers-Transceivers:SN74LVC1G17DBVR U18
 U 1 1 5AF11A0F
 P 2275 5950
-F 0 "U?" H 2400 5700 60  0000 L CNN
+F 0 "U18" H 2400 5700 60  0000 L CNN
 F 1 "74LVC1G17SE-7" H 2375 5600 60  0000 L CNN
-F 2 "digikey-footprints:SOT-353" H 2475 6150 60  0001 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-353_SC-70-5_Handsoldering" H 2475 6150 60  0001 L CNN
 F 3 "https://www.digikey.com/product-detail/en/diodes-incorporated/74LVC1G17SE-7/74LVC1G17SE-7CT-ND/3829456" H 2475 6250 60  0001 L CNN
 F 4 "74LVC1G17SE-7" H 2475 6350 60  0001 L CNN "Part Number"
 	1    2275 5950
@@ -761,23 +757,13 @@ Wire Wire Line
 	1650 5650 1650 5850
 Wire Wire Line
 	1375 5850 1650 5850
-Connection ~ 1650 5850
-Wire Wire Line
-	1650 5850 1875 5850
 Connection ~ 1650 5175
 Wire Wire Line
 	1650 5175 1650 5075
 Wire Wire Line
 	2625 5200 2625 5175
 Wire Wire Line
-	1650 5175 2275 5175
-Wire Wire Line
 	1650 5175 1650 5350
-Wire Wire Line
-	2275 5175 2275 5450
-Connection ~ 2275 5175
-Wire Wire Line
-	2275 5175 2625 5175
 $Comp
 L open-automation:GND #PWR047
 U 1 1 5AF5212A
@@ -978,7 +964,7 @@ U 1 1 5AEB1DC3
 P 3800 1300
 F 0 "D8" H 3750 1025 60  0000 R CNN
 F 1 "D1213A-01SO-7" H 3750 1125 60  0000 R CNN
-F 2 "digikey-footprints:SOT-23-3" H 4000 1500 60  0001 L CNN
+F 2 "TO_SOT_Packages_SMD:SOT-23" H 4000 1500 60  0001 L CNN
 F 3 "https://www.digikey.com/product-detail/en/diodes-incorporated/D1213A-01SO-7/D1213A-01SO-7DICT-ND/3340430" H 4000 1600 60  0001 L CNN
 F 4 "D1213A-01SO-7" H 4000 1700 60  0001 L CNN "Part Number"
 	1    3800 1300
@@ -1019,9 +1005,24 @@ U 1 1 5B1B14DB
 P 7750 3300
 F 0 "U12" H 8991 4046 50  0000 L CNN
 F 1 "Si4740" H 8991 3955 50  0000 L CNN
-F 2 "" H 7950 4050 50  0001 C CNN
-F 3 "DOCUMENTATION" H 7950 3850 50  0001 C CNN
+F 2 "Housings_DFN_QFN:QFN-24-1EP_4x4mm_Pitch0.5mm" H 7950 4050 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/silicon-labs/SI4740-C10-GMR/336-4880-1-ND/8619844" H 7950 3850 50  0001 C CNN
+F 4 "TDA7297" H 7750 3300 50  0001 C CNN "Part Number"
 	1    7750 3300
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	1650 5175 2275 5175
+Wire Wire Line
+	1875 5850 1650 5850
+Connection ~ 1650 5850
+Wire Wire Line
+	2275 5450 2275 5175
+Connection ~ 2275 5175
+Wire Wire Line
+	2275 5175 2625 5175
+Wire Wire Line
+	2675 5850 2925 5850
+Text HLabel 1550 950  0    50   Input ~ 0
+AMF_Antenna
 $EndSCHEMATC

@@ -15,63 +15,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Connector_Generic:Conn_01x04 J1
-U 1 1 5AE2E72E
-P 5350 3500
-F 0 "J1" H 5430 3492 50  0000 L CNN
-F 1 "Conn_01x04" H 5430 3401 50  0000 L CNN
-F 2 "" H 5350 3500 50  0001 C CNN
-F 3 "~" H 5350 3500 50  0001 C CNN
-	1    5350 3500
-	1    0    0    -1  
-$EndComp
-Text HLabel 3650 3400 0    50   Input ~ 0
-3v3
-Text HLabel 3650 3600 0    50   Input ~ 0
-SDA
-Text HLabel 3650 3500 0    50   Input ~ 0
-SCL
-$Comp
-L open-automation:GND #PWR064
-U 1 1 5AE2E7DF
-P 3550 3800
-F 0 "#PWR064" H 3550 3550 50  0001 C CNN
-F 1 "GND" H 3555 3627 50  0000 C CNN
-F 2 "" H 3550 3800 50  0000 C CNN
-F 3 "" H 3550 3800 50  0000 C CNN
-	1    3550 3800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3650 3400 5000 3400
-Wire Wire Line
-	5150 3500 4600 3500
-Wire Wire Line
-	3650 3600 4200 3600
-Wire Wire Line
-	5150 3700 3800 3700
-Wire Wire Line
-	3550 3700 3550 3800
-$Comp
-L Connector_Generic:Conn_01x04 J2
-U 1 1 5AE2E8B5
-P 6650 3500
-F 0 "J2" H 6730 3492 50  0000 L CNN
-F 1 "Conn_01x04" H 6730 3401 50  0000 L CNN
-F 2 "" H 6650 3500 50  0001 C CNN
-F 3 "~" H 6650 3500 50  0001 C CNN
-	1    6650 3500
-	-1   0    0    -1  
-$EndComp
-Wire Wire Line
-	6850 3700 7200 3700
-Text Label 7100 3400 2    50   ~ 0
-3v3
-Text Label 7100 3600 2    50   ~ 0
-SDA
-Text Label 7100 3500 2    50   ~ 0
-SCL
-$Comp
 L open-automation:A2235-H-dk_RF-Receivers U13
 U 1 1 5AE2F0AB
 P 9150 3250
@@ -92,157 +35,23 @@ F 12 "Active" H 9350 4450 60  0001 L CNN "Status"
 	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	7650 3400 7650 2350
-Wire Wire Line
 	7650 2350 7850 2350
 Wire Wire Line
 	9050 2350 9050 2650
-Wire Wire Line
-	6850 3400 7650 3400
-Wire Wire Line
-	7200 4750 8850 4750
-Wire Wire Line
-	8850 4750 8850 4450
-Wire Wire Line
-	7200 3700 7200 4750
-Wire Wire Line
-	8850 4750 8950 4750
-Wire Wire Line
-	8950 4750 8950 4450
-Connection ~ 8850 4750
-Wire Wire Line
-	9050 4450 9050 4750
-Wire Wire Line
-	9050 4750 8950 4750
-Connection ~ 8950 4750
-Text Label 7600 4750 0    50   ~ 0
-GND_Plane
 Wire Wire Line
 	8050 3500 8050 3350
 Wire Wire Line
 	8050 3350 8350 3350
 Wire Wire Line
-	6850 3500 8050 3500
-Wire Wire Line
 	8200 3600 8200 3450
 Wire Wire Line
 	8200 3450 8350 3450
 Wire Wire Line
-	6850 3600 8200 3600
-Text HLabel 8050 3850 0    50   Input ~ 0
-GPS_Antenna
-Wire Wire Line
 	8350 3850 8050 3850
 Text Label 8050 3950 2    50   ~ 0
 3v3
-$Comp
-L Device:R R36
-U 1 1 5AEA67C5
-P 5000 3050
-F 0 "R36" H 5070 3096 50  0000 L CNN
-F 1 "Jumper" H 5070 3005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4930 3050 50  0001 C CNN
-F 3 "~" H 5000 3050 50  0001 C CNN
-	1    5000 3050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R35
-U 1 1 5AEA683D
-P 4600 3050
-F 0 "R35" H 4670 3096 50  0000 L CNN
-F 1 "Jumper" H 4670 3005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4530 3050 50  0001 C CNN
-F 3 "~" H 4600 3050 50  0001 C CNN
-	1    4600 3050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R34
-U 1 1 5AEA685D
-P 4200 3050
-F 0 "R34" H 4270 3096 50  0000 L CNN
-F 1 "Jumper" H 4270 3005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4130 3050 50  0001 C CNN
-F 3 "~" H 4200 3050 50  0001 C CNN
-	1    4200 3050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R33
-U 1 1 5AEA687F
-P 3800 3050
-F 0 "R33" H 3870 3096 50  0000 L CNN
-F 1 "Jumper" H 3870 3005 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 3730 3050 50  0001 C CNN
-F 3 "~" H 3800 3050 50  0001 C CNN
-	1    3800 3050
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3800 3200 3800 3700
-Connection ~ 3800 3700
-Wire Wire Line
-	3800 3700 3550 3700
-Wire Wire Line
-	4200 3200 4200 3600
-Connection ~ 4200 3600
-Wire Wire Line
-	4200 3600 5150 3600
-Wire Wire Line
-	4600 3200 4600 3500
-Connection ~ 4600 3500
-Wire Wire Line
-	4600 3500 3650 3500
-Wire Wire Line
-	5000 3200 5000 3400
-Connection ~ 5000 3400
-Wire Wire Line
-	5000 3400 5150 3400
-Text Label 5000 2750 2    50   ~ 0
-3v3
-Text Label 4600 2750 2    50   ~ 0
-SCL
-Text Label 4200 2750 2    50   ~ 0
-SDA
-Text Label 3800 2750 2    50   ~ 0
-GND_Plane
-Wire Wire Line
-	5000 2900 5000 2750
-Wire Wire Line
-	4600 2750 4600 2900
-Wire Wire Line
-	4200 2900 4200 2750
-Wire Wire Line
-	3800 2750 3800 2900
 Wire Wire Line
 	8050 3950 8350 3950
-$Comp
-L Device:C C42
-U 1 1 5AEADD26
-P 7850 2550
-F 0 "C42" H 7965 2596 50  0000 L CNN
-F 1 "C" H 7965 2505 50  0000 L CNN
-F 2 "" H 7888 2400 50  0001 C CNN
-F 3 "~" H 7850 2550 50  0001 C CNN
-	1    7850 2550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C44
-U 1 1 5AEADD96
-P 8200 2550
-F 0 "C44" H 8315 2596 50  0000 L CNN
-F 1 "C" H 8315 2505 50  0000 L CNN
-F 2 "" H 8238 2400 50  0001 C CNN
-F 3 "~" H 8200 2550 50  0001 C CNN
-	1    8200 2550
-	1    0    0    -1  
-$EndComp
-Text Label 8350 2800 0    50   ~ 0
-GND_Plane
-Wire Wire Line
-	8350 2800 8200 2800
 Wire Wire Line
 	8200 2800 8200 2700
 Wire Wire Line
@@ -258,38 +67,71 @@ Wire Wire Line
 Wire Wire Line
 	7850 2700 7850 2800
 Wire Wire Line
-	7850 2800 8200 2800
-Connection ~ 8200 2800
+	7850 2800 8000 2800
 $Comp
-L Device:C C45
-U 1 1 5AEB1B71
-P 10150 3350
-F 0 "C45" V 9898 3350 50  0000 C CNN
-F 1 "C" V 9989 3350 50  0000 C CNN
-F 2 "" H 10188 3200 50  0001 C CNN
-F 3 "~" H 10150 3350 50  0001 C CNN
-	1    10150 3350
-	0    1    1    0   
+L open-automation:C_1uF C42
+U 1 1 5B14A0F4
+P 7850 2550
+F 0 "C42" H 7750 2650 50  0000 L CNN
+F 1 "C_1uF" H 7625 2450 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 7950 2850 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB105/311-1372-1-ND/2103156" H 7850 2300 50  0001 C CNN
+F 4 "CC0603ZRY5V7BB105" H 7975 2750 60  0001 C CNN "Part Number"
+	1    7850 2550
+	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C43
-U 1 1 5AEB1C00
-P 8100 2950
-F 0 "C43" V 7848 2950 50  0000 C CNN
-F 1 "C" V 7939 2950 50  0000 C CNN
-F 2 "" H 8138 2800 50  0001 C CNN
-F 3 "~" H 8100 2950 50  0001 C CNN
-	1    8100 2950
-	0    1    1    0   
+L open-automation:C_0.1uF C43
+U 1 1 5B14A2C2
+P 8200 2550
+F 0 "C43" H 8225 2625 50  0000 L CNN
+F 1 "C_0.1uF" H 8225 2450 50  0000 L CNN
+F 2 "Capacitors_SMD:C_0603" H 8300 2850 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 8200 2300 50  0001 C CNN
+F 4 "C0603C104K5RACTU" H 8325 2750 60  0001 C CNN "Part Number"
+	1    8200 2550
+	1    0    0    -1  
 $EndComp
-Text Notes 5250 1450 0    50   ~ 0
-This block will be a piece that can be either left on the board and the antenna can be installed, or can be broken off and wired up to the bezel \n
-Wire Notes Line
-	6100 5750 10800 5750
-Wire Notes Line
-	10800 5750 10800 1550
-Wire Notes Line
-	10800 1550 6100 1550
-Wire Notes Line
-	6100 1550 6100 5750
+$Comp
+L open-automation:GND #PWR0109
+U 1 1 5B14A58A
+P 8000 2850
+F 0 "#PWR0109" H 8000 2600 50  0001 C CNN
+F 1 "GND" H 8005 2677 50  0000 C CNN
+F 2 "" H 8000 2850 50  0000 C CNN
+F 3 "" H 8000 2850 50  0000 C CNN
+	1    8000 2850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8000 2850 8000 2800
+Wire Wire Line
+	8000 2800 8200 2800
+Connection ~ 8000 2800
+$Comp
+L open-automation:GND #PWR0110
+U 1 1 5B14BBD1
+P 8950 4550
+F 0 "#PWR0110" H 8950 4300 50  0001 C CNN
+F 1 "GND" H 8955 4377 50  0000 C CNN
+F 2 "" H 8950 4550 50  0000 C CNN
+F 3 "" H 8950 4550 50  0000 C CNN
+	1    8950 4550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8850 4450 8850 4500
+Wire Wire Line
+	8850 4500 8950 4500
+Wire Wire Line
+	9050 4500 9050 4450
+Wire Wire Line
+	8950 4450 8950 4500
+Wire Wire Line
+	8950 4500 9050 4500
+Connection ~ 8950 4500
+Wire Wire Line
+	8950 4550 8950 4500
+Text HLabel 7650 2350 0    50   Input ~ 0
+3v3
 $EndSCHEMATC

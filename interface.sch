@@ -419,7 +419,7 @@ Text HLabel 3175 2300 0    60   Input ~ 0
 PROG
 Text HLabel 3175 2400 0    60   Input ~ 0
 FACTORY
-Text HLabel 3175 2500 0    60   Input ~ 0
+Text HLabel 3875 2500 2    60   Input ~ 0
 SCL
 Text HLabel 3875 2200 2    60   Input ~ 0
 5V
@@ -427,7 +427,7 @@ Text HLabel 3875 2300 2    60   Input ~ 0
 TXD
 Text HLabel 3875 2400 2    60   Input ~ 0
 RXD
-Text HLabel 3875 2500 2    60   Input ~ 0
+Text HLabel 3175 2500 0    60   Input ~ 0
 SDA
 $Comp
 L Connector_Generic:Conn_02x06_Odd_Even J4
@@ -530,23 +530,38 @@ Text HLabel 6550 2525 0    50   Output ~ 0
 SOFT_POWER
 Wire Wire Line
 	6550 2525 6650 2525
+Text HLabel 7300 3650 0    60   Input ~ 0
+L_MAIN_AUDIO
+Text HLabel 7300 3750 0    60   Input ~ 0
+R_MAIN_AUDIO
 $Comp
-L Connector_Generic:Conn_01x02 AUDIO_IN1
+L open-automation:GND #PWR0120
+U 1 1 5B1495DE
+P 7325 3500
+F 0 "#PWR0120" H 7325 3250 50  0001 C CNN
+F 1 "GND" H 7325 3350 50  0000 C CNN
+F 2 "" H 7325 3500 50  0000 C CNN
+F 3 "" H 7325 3500 50  0000 C CNN
+	1    7325 3500
+	-1   0    0    1   
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 AUDIO_IN1
 U 1 1 5B16C30A
-P 7570 3645
-F 0 "AUDIO_IN1" H 7650 3637 50  0000 L CNN
-F 1 "Conn_01x02" H 7650 3546 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 7570 3645 50  0001 C CNN
-F 3 "~" H 7570 3645 50  0001 C CNN
-	1    7570 3645
+P 7575 3650
+F 0 "AUDIO_IN1" H 7655 3642 50  0000 L CNN
+F 1 "Conn_01x02" H 7655 3551 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 7575 3650 50  0001 C CNN
+F 3 "~" H 7575 3650 50  0001 C CNN
+	1    7575 3650
 	1    0    0    -1  
 $EndComp
-Text HLabel 7310 3645 0    60   Input ~ 0
-L_AUDIO_IN
 Wire Wire Line
-	7310 3645 7370 3645
-Text HLabel 7310 3745 0    60   Input ~ 0
-R_AUDIO_IN
+	7325 3500 7325 3550
 Wire Wire Line
-	7310 3745 7370 3745
+	7325 3550 7375 3550
+Wire Wire Line
+	7375 3650 7300 3650
+Wire Wire Line
+	7300 3750 7375 3750
 $EndSCHEMATC

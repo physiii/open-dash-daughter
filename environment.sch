@@ -169,18 +169,6 @@ Wire Wire Line
 	5675 3350 5675 3450
 Wire Wire Line
 	6550 3550 6925 3550
-$Comp
-L open-automation:R_10m R21
-U 1 1 5AC78E3A
-P 6375 3675
-F 0 "R21" H 6350 3675 50  0000 C CNN
-F 1 "R_10m" H 6350 3575 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 6350 3500 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/bourns-inc/CRA2512-FZ-R010ELF/CRA2512-FZ-R010ELFCT-ND/1775054" H 6375 3425 50  0001 C CNN
-F 4 "CRA2512-FZ-R010ELF" H 6375 3750 60  0001 C CNN "Part Number"
-	1    6375 3675
-	0    1    1    0   
-$EndComp
 Wire Wire Line
 	3025 3400 3375 3400
 Wire Wire Line
@@ -207,4 +195,16 @@ Text HLabel 7975 3550 2    60   Input ~ 0
 SDA
 Text HLabel 7975 3650 2    60   Input ~ 0
 SCL
+$Comp
+L open-automation:R_10 R21
+U 1 1 5B2CA473
+P 6375 3650
+F 0 "R21" V 6375 3575 50  0000 L CNN
+F 1 "R_10" V 6275 3550 50  0000 L CNN
+F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.49x3.40mm_HandSolder" V 6305 3650 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/te-connectivity-passive-product/CPF0603B10RE/A119908CT-ND/4966506" V 6455 3650 50  0001 C CNN
+F 4 "CPF0603B10RE" V 6555 3750 60  0001 C CNN "Part Number"
+	1    6375 3650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

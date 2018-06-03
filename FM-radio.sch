@@ -388,9 +388,9 @@ SCL
 Text HLabel 8175 4300 3    50   Input ~ 0
 SDA
 Text HLabel 9900 3600 2    50   Input ~ 0
-LOUT
+L_FM_AUDIO
 Text HLabel 9900 3200 2    50   Input ~ 0
-ROUT
+R_FM_AUDIO
 Text HLabel 8150 1500 1    50   Input ~ 0
 FM_INT
 Wire Wire Line

@@ -11,8 +11,13 @@
 
 #include <string.h>
 
-// for debug purposes flash the LED instead of turning on dash power
-// #define DASH_POWER_LED 1
+/***
+_DEBUG mode:
+dash sleep check with spacebar=alive, any other key=timeout
+blink LED instead of turn engine on
+print status
+***/
+// #define _DEBUG 1
 
 static const char * TAG = "DashDaughter";
 
@@ -39,44 +44,30 @@ static const char * TAG = "DashDaughter";
 #define KEY_POSITION_START            0x0000c00000000b00
 #define KEY_POSITION_RUN              0x0000400000000b00
 
-enum eMasterState {
-  MasterStarted,
-  MasterQueryingDash,
-  MasterForwardingCAN,
-} MasterState = MasterStarted;
-
 enum eIgnitionState {
   IgnitionOff,
   IgnitionRun,
   IgnitionStart,
-  IgnitionInvalid,
-} IgnitionState = IgnitionInvalid;
+  IgnitionUnknown,
+} IgnitionState = IgnitionUnknown;
 
-// keep these in sync with eDashStateString
+const char * get_ignition_state_label(enum eIgnitionState ignition_state) {
+  switch (ignition_state) {
+    case IgnitionOff: return "Off";
+    case IgnitionRun: return "Run";
+    case IgnitionStart: return "Start";
+    case IgnitionUnknown: return "Unknown";
+  }
+  return "what";
+}
+
 enum eDashState {
   DashTimedOut,
   DashOn,
-  DashUpdating, // do not interrupt us
-
-  // tail
-  DashInvalid,
-} DashState = DashInvalid;
-
-// passed by CAN and DashSerial task to the Master task
-struct sInternalMessage {
-  enum {
-    InternalMessageDash,
-    InternalMessageIgnition,
-  } InternalMessage;
-  union {
-    enum eDashState DashState;
-    enum eIgnitionState IgnitionState;
-  };
-};
+  DashUnknown,
+} DashState = DashUnknown;
 
 CAN_device_t CAN_cfg = {0};
-QueueHandle_t master_queue = NULL;
-QueueHandle_t power_queue = NULL;
 
 void initialize_gpio() {
   gpio_set_direction(GPIO_STATUS_LED, GPIO_MODE_OUTPUT);
@@ -146,7 +137,8 @@ return non-zero if filled in (even invalid), zero if no message
 primarily looking for:
 {"type":"status","payload":{"power_state":true}}
 ***/
-int interpret_JSON_message(char * json_string, struct sInternalMessage * msg) {
+enum eDashState interpret_JSON_message(char * json_string) {
+  enum eDashState retval = DashUnknown;
   cJSON * root = cJSON_Parse(json_string);
   if (root) {
     cJSON * type = cJSON_GetObjectItem(root, "type");
@@ -158,96 +150,61 @@ int interpret_JSON_message(char * json_string, struct sInternalMessage * msg) {
             cJSON * power_state = cJSON_GetObjectItem(payload, "power_state");
             if (power_state) {
               if (cJSON_True == power_state->type) {
-                if (msg) {
-                  msg->InternalMessage = InternalMessageDash;
-                  msg->DashState = DashOn;
-                }
-              } else {
-                if (msg) {
-                  msg->InternalMessage = InternalMessageDash;
-                  msg->DashState = DashInvalid;
-                }
+                retval = DashOn;
               }
-              cJSON_Delete(root);
-              return 1;
             } else {
-              // ESP_LOGW("json", "power_state key missing from payload of '%s'", json_string);
+              ESP_LOGW("json", "power_state key missing from payload of '%s'", json_string);
             }
           } else {
-            // ESP_LOGW("json", "payload key missing from '%s'", json_string);
+            ESP_LOGW("json", "payload key missing from '%s'", json_string);
           }
         } else {
-          // ESP_LOGW("json", "wrong type '%s' in '%s'", type->valuestring, json_string);
+          ESP_LOGW("json", "wrong type '%s' in '%s'", type->valuestring, json_string);
         }
       } else {
-        // ESP_LOGW(TAG, "type wrong type in '%s': %02x", json_string, type->type);
+        ESP_LOGW(TAG, "type wrong type in '%s': %02x", json_string, type->type);
       }
     } else {
-      // ESP_LOGW("json", "type key missing from '%s'", json_string);
-    }
-    if (msg) {
-      msg->InternalMessage = InternalMessageDash;
-      msg->DashState = DashInvalid;
+      ESP_LOGW("json", "type key missing from '%s'", json_string);
     }
     cJSON_Delete(root);
-    return 1;
   } else {
-    // ESP_LOGW(TAG, "failed to parse JSON response '%s'", json_string);
+    ESP_LOGW(TAG, "failed to parse JSON response '%s'", json_string);
   }
 
-  return 0;
+  return retval;
 }
 
-// debug version
-#ifdef DASH_POWER_LED
-enum eDashState DEBUG_query_dash_power_state() {
-  // ESP_LOGW("query", "space for on, anything else times out");
-  unsigned char in;
-  while (1) {
-    if (OK == uart_rx_one_char(&in)) {
-      if (0x20 == in) {
-        return DashOn;
-      } else {
-        return DashTimedOut;
-      }
-    }
-    vTaskDelay(100);
+#ifdef _DEBUG
+enum eDashState query_dash_power_state() {
+  ESP_LOGW("query", "DEBUG BLOCKING! space for DashOn, anything else for DashTimedOut");
+  if (0x20 == uart_rx_one_char_block()) {
+    return DashOn;
+  } else {
+    return DashTimedOut;
   }
 }
-#else // DASH_POWER_LED
+#else // !_DEBUG
 /***
 wait for one message from the serial port, or set DashTimedOut
 ***/
 enum eDashState query_dash_power_state() {
-  struct sInternalMessage msg;
   char dash_input[100];
+  enum eDashState retval = DashTimedOut;
 
-  // dash must respond to this message
+  ESP_LOGI("query", "querying dash...");
+
   printf("{\"type\":\"status\",\"payload\":{\"power_state\":true}}\n");
 
-  // // ESP_LOGI(TAG, "task_DashSerialOneShot...");
   if (0 < read_uart_string(dash_input, sizeof(dash_input))) {
-    if (interpret_JSON_message(dash_input, &msg)) {
-      if (InternalMessageDash == msg.InternalMessage) {
-        if (DashOn == msg.DashState) {
-          // ESP_LOGI("query", "dash alive");
-        } else {
-          // ESP_LOGW("query", "unexpected message '%s'", dash_input);
-        }
-      } else {
-        // ESP_LOGW("query", "unexpected message '%s'", dash_input);
-      }
-    } else {
-      // ESP_LOGW("query", "could not parse JSON '%s'", dash_input);
-    }
-
-    // if we got anything back it should technically be on
-    return DashOn;
+    retval = interpret_JSON_message(dash_input);
+  } else {
+    ESP_LOGI("query", "real timeout");
   }
 
-  return DashTimedOut;
+  return retval;
 }
-#endif // DASH_POWER_LED
+#endif // _DEBUG
 
 /***
 "press the button" for two seconds
@@ -268,86 +225,83 @@ void toggle_dash_power() {
 these two are the same for now, but could be different later
 ***/
 void turn_dash_off() {
-  // ESP_LOGI(TAG, "turning dash off");
+#ifdef _DEBUG
+  ESP_LOGI(TAG, "turning dash off");
+#endif // _DEBUG
   toggle_dash_power();
 }
 
 void turn_dash_on() {
-  // // ESP_LOGI(TAG, "turning dash on");
-  // ESP_LOGI("power", "turning dash on... (10s delay)");
+  // ESP_LOGI(TAG, "turning dash on");
+  ESP_LOGI("power", "turning dash on... (10s delay)");
   toggle_dash_power();
   vTaskDelay(DASH_POWERUP_DELAY);
-  // ESP_LOGI("power", "powerup delay complete");
+  ESP_LOGI("power", "powerup delay complete");
+}
+
+void change_dash_state(enum eDashState newstate) {
+  switch (newstate) {
+    case DashOn:
+      turn_dash_on();
+      break;
+
+    case DashTimedOut:
+      turn_dash_off();
+      break;
+
+    default:
+  }
 }
 
 /***
-holding down the light button takes 2 seconds so do it in a separate task
+transition the dash's state from a specific current state.
+if the precondition (current state) is not met, no transition occurs
 ***/
-void task_PowerState(void *pvParameters) {
-  bool cur_state, new_state;
+void update_dash_state(enum eDashState precondition, enum eDashState postcondition) {
+  if (DashState == precondition) {
+    change_dash_state(postcondition);
+  } else {
+    ESP_LOGI("power", "state change from %s to %s fails to meet precondition %s", get_dash_state_label(DashState), get_dash_state_label(postcondition), get_dash_state_label(precondition));
+  }
+}
+
+/***
+monitor and maintain the dash state based on the current ignition state
+***/
+void task_Dash(void *pvParameters) {
   while (1) {
-    if (pdTRUE == xQueueReceive(power_queue, &new_state, MASTER_LOOP_PERIOD)) {
-      DashState = query_dash_power_state();
-      // ESP_LOGI("power", "DashState: %s", DashOn == DashState ? "On" : (DashTimedOut == DashState ? "TimedOut" : "Other"));
-      cur_state = (DashOn == DashState);
-      if (new_state != cur_state) {
-        // ESP_LOGI("power", "changing state to %d", new_state);
-        if (new_state) {
-          // ESP_LOGI("power", "SWITCHING ON");
-          turn_dash_on();
-        } else {
-          // ESP_LOGI("power", "SWITCHING OFF");
-          turn_dash_off();
-        }
-      } else {
-        // ESP_LOGI("power", "already %d, ignoring", cur_state);
-      }
+    DashState = query_dash_power_state();
+
+    switch (IgnitionState) {
+      case IgnitionRun:
+      case IgnitionStart:
+        update_dash_state(DashTimedOut, DashOn);
+        break;
+
+      case IgnitionOff:
+        update_dash_state(DashOn, DashTimedOut);
+        break;
+
+      case IgnitionInvalid:
+        // do nothing
     }
   }
 }
 
 /***
-receive messages from the dash and CAN via queue
-maintain local dash power state variable
-toggle dash power state
-***/
-void task_Master(void *pvParameters) {
-  struct sInternalMessage msg;
-  bool new_power_state;
-
-  // // ESP_LOGI("master", "master task message loop");
-  while (1) {
-    if (pdTRUE == xQueueReceive(master_queue, &msg, MASTER_LOOP_PERIOD)) {
-      // // ESP_LOGI("master", "received message");
-      switch (msg.InternalMessage) {
-        case InternalMessageIgnition:
-          new_power_state = (IgnitionRun == msg.IgnitionState || IgnitionStart == msg.IgnitionState);
-          if (pdTRUE != xQueueSend(power_queue, &new_power_state, 0)) {
-            // ESP_LOGW("master", "power queue full sending %d", new_power_state);
-          }
-          break;
-
-        case InternalMessageDash:
-          DashState = msg.DashState;
-          break;
-      }
-    }
-  }
-}
-
-/***
-return this frame's IgnitionStatus value, or IgnitionInvalid if it is not an ignition frame
+return this frame's IgnitionStatus, or IgnitionUnknown if it is not an ignition frame
 ***/
 enum eIgnitionState check_ignition_status(const CAN_frame_t * frame) {
   if (CAN_RTR != frame->FIR.B.RTR) {
     switch (frame->MsgID) {
       case 0x6214000:
-        // // ESP_LOGI("canbus", "data %d %016llx", frame->FIR.B.DLC, frame->data.u64);
+        // ESP_LOGI("canbus", "data %d %016llx", frame->FIR.B.DLC, frame->data.u64);
         // printf("data %016llx\n", frame->data.u64);
         switch (frame->data.u64 & KEY_POSITION_MASK) {
           case KEY_POSITION_OFF: return IgnitionOff;
           case KEY_POSITION_RUN: return IgnitionRun;
           case KEY_POSITION_START: return IgnitionStart;
+          default: return IgnitionUnknown;
         }
         break;
       case 0x6284000: break; // mute from steering wheel
@@ -358,23 +312,23 @@ enum eIgnitionState check_ignition_status(const CAN_frame_t * frame) {
         break;
     }
   }
-  return IgnitionInvalid;
+  return IgnitionUnknown;
 }
 
 /***
 wrap this in JSON and send to dash via serial link
 ***/
 void forward_frame(const CAN_frame_t * frame, const unsigned int ctr) {
-#ifdef DASH_POWER_LED
-  // printf(".");
-#else
+#ifdef _DEBUG
+  printf(".");
+#else // !_DEBUG
   int64_t ticks = esp_timer_get_time();
   printf("{\"ctr\":%u,\"ticks\":{\"l32\":%u,\"h32\":%u},\"CAN\":{\"RTR\":%d,\"MsgID\":%d,\"DLC\":%d,\"data\":{\"l32\":%u,\"h32\":%u}}}\n",
       ctr, (uint32_t)(ticks & 0xffffffff), (uint32_t)((ticks >> 32) & 0xffffffff),
       frame->FIR.B.RTR, frame->MsgID,
       frame->FIR.B.DLC, frame->data.u32[0], frame->data.u32[1]
       );
-#endif // DASH_POWER_LED
+#endif // _DEBUG
 }
 
 /*
@@ -409,7 +363,6 @@ void forward_frame_JSON(const CAN_frame_t * frame, const unsigned int ctr) {
 // 64-bit endian reversal
 // <https://stackoverflow.com/a/21507710> 2018-06-02
 uint64_t swapLong(uint64_t x) {
-    // uint64_t x = (uint64_t) X;
     x = (x & 0x00000000FFFFFFFF) << 32 | (x & 0xFFFFFFFF00000000) >> 32;
     x = (x & 0x0000FFFF0000FFFF) << 16 | (x & 0xFFFF0000FFFF0000) >> 16;
     x = (x & 0x00FF00FF00FF00FF) << 8  | (x & 0xFF00FF00FF00FF00) >> 8;
@@ -428,7 +381,6 @@ as accessed 2018-04-26
 void task_CAN (void *pvParameters) {
   //frame buffer
   CAN_frame_t __RX_frame;
-  struct sInternalMessage msg = { InternalMessageIgnition, {0} };
 
   // configure CAN receiver
   CAN_cfg.rx_queue = xQueueCreate(10, sizeof(CAN_frame_t));
@@ -439,39 +391,36 @@ void task_CAN (void *pvParameters) {
   {
     int ret;
     if (0 != (ret = CAN_init())) {
-      // // ESP_LOGE(TAG, "!!! CAN_init failed with %d\n", ret);
+      ESP_LOGE(TAG, "!!! CAN_init failed with %d\n", ret);
       vTaskDelay(1500 / portTICK_PERIOD_MS);
       esp_restart();
     }
   }
 
-  // // ESP_LOGI("canbus", "Entering CAN loop\n");
+  // ESP_LOGI("canbus", "Entering CAN loop\n");
   for (unsigned long ctr = 0; ;) {
     if (pdTRUE == xQueueReceive(CAN_cfg.rx_queue,&__RX_frame, 3 * portTICK_PERIOD_MS)) {
-      // // // ESP_LOGI(TAG, "received message %lu\n", ctr);
+      // // ESP_LOGI(TAG, "received message %lu\n", ctr);
 
-      __RX_frame.data.u64 = swapLong(__RX_frame.data.u64);
+      // RTR frames don't have data
+      if (CAN_RTR != __RX_frame.FIR.B.RTR) {
+        // ESP32 CAN data payloads are reversed from what we captured with
+        // SparkFun CAN Shield
+        __RX_frame.data.u64 = swapLong(__RX_frame.data.u64);
+      }
 
-      msg.IgnitionState = check_ignition_status(&__RX_frame);
+      enum eIgnitionState NewIgnitionState = check_ignition_status(&__RX_frame);
 
-      if (IgnitionInvalid != msg.IgnitionState) {
-        char * label;
-        switch (msg.IgnitionState) {
-          case IgnitionOff: label = "Off"; break;
-          case IgnitionRun: label = "Run"; break;
-          case IgnitionStart: label = "Start"; break;
-          case IgnitionInvalid: label = "Invalid"; break;
-          default: label = "wtf";
-        }
-        // ESP_LOGI("canbus", "sending %s", label);
-        // TODO how long should we wait, if at all?
-        // the messages come quickly but are repeated
-        if (pdTRUE != xQueueSend(master_queue, &msg, 0)) {
-          // ESP_LOGW("canbus", "queue full trying to send %s", label);
+      if (NewIgnitionState != IgnitionUnknown) {
+        if (NewIgnitionState != IgnitionState) {
+          ESP_LOGI("canbus", "ignition state change from %s to %s", get_ignition_state_label(IgnitionState), get_ignition_state_label(NewIgnitionState));
+          IgnitionState = NewIgnitionState;
+        } else {
+          ESP_LOGI("canbus", "repeat ignition state %s", get_ignition_state_label(IgnitionState));
         }
       }
 
-      if (1 || DashOn == DashState) {
+      if (DashOn == DashState) {
         forward_frame(&__RX_frame, ctr);
       }
 
@@ -483,26 +432,27 @@ void task_CAN (void *pvParameters) {
 void app_main(void) {
   ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
 
+#ifdef _DEBUG
+  esp_log_level_set("*", ESP_LOG_VERBOSE);
+#else // !_DEBUG
+  esp_log_level_set("*", ESP_LOG_VERBOSE);
+#endif // _DEBUG
+
   initialize_gpio();
   apply_dash_power();
 
-  master_queue = xQueueCreate(10, sizeof(struct sInternalMessage));
-  power_queue = xQueueCreate(1, sizeof(bool));
-
-  xTaskCreate(&task_Master, "MASTER", 2048, NULL, 5, NULL);
+  xTaskCreate(&task_Dash, "Dash", 2048, NULL, 5, NULL);
   xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
-  xTaskCreate(&task_PowerState, "POWER", 2048, NULL, 5, NULL);
 
   while (1) {
-    // blink the status light
-#ifndef DASH_POWER_LED
+#ifdef _DEBUG
     gpio_set_level(GPIO_STATUS_LED, 1);
     vTaskDelay(25 / portTICK_PERIOD_MS);
     gpio_set_level(GPIO_STATUS_LED, 0);
     vTaskDelay(1475 / portTICK_PERIOD_MS);
-#else
-    vTaskDelay(1500 / portTICK_PERIOD_MS);
-#endif // DASH_POWER_LED
+#else // !_DEBUG
+    vTaskSuspend(NULL);
+#endif // _DEBUG
   }
 }
 

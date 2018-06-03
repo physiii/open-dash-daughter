@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
-Sheet 12 13
+Sheet 12 14
 Title ""
 Date ""
 Rev ""
@@ -15,7 +15,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L open-automation:LED D2
+L open-dash-daughterboard-rescue:LED-open-automation D2
 U 1 1 59092D24
 P 3225 3325
 F 0 "D2" V 3200 3425 50  0000 C CNN
@@ -51,7 +51,7 @@ F 4 "1002-004-01010" H 7850 3000 60  0001 C CNN "Part Number"
 $EndComp
 $Comp
 L open-automation:GND #PWR0121
-U 1 1 5969393D
+U 1 1 5B1799B0
 P 8000 3400
 F 0 "#PWR0121" H 8000 3150 50  0001 C CNN
 F 1 "GND" H 8000 3250 50  0000 C CNN
@@ -73,7 +73,7 @@ Wire Wire Line
 	7400 3400 7350 3400
 $Comp
 L open-automation:housing-mounts U4
-U 1 1 5978A2A6
+U 1 1 5B1799B1
 P 7925 4225
 F 0 "U4" H 8075 4125 60  0000 C CNN
 F 1 "housing-mounts" H 7925 4425 60  0000 C CNN
@@ -96,7 +96,7 @@ F 4 "KMR211NG LFS" H 3225 4175 60  0001 C CNN "Part Number"
 $EndComp
 $Comp
 L open-automation:GND #PWR0122
-U 1 1 59C59092
+U 1 1 5B1799B3
 P 3225 4550
 F 0 "#PWR0122" H 3225 4300 50  0001 C CNN
 F 1 "GND" H 3225 4400 50  0000 C CNN
@@ -129,7 +129,7 @@ Wire Wire Line
 	3350 3850 3225 3850
 Connection ~ 3225 3850
 $Comp
-L open-automation:LED D3
+L open-dash-daughterboard-rescue:LED-open-automation D3
 U 1 1 59E3EE41
 P 4175 3325
 F 0 "D3" V 4150 3425 50  0000 C CNN
@@ -187,7 +187,7 @@ Wire Wire Line
 	4300 3850 4175 3850
 Connection ~ 4175 3850
 $Comp
-L open-automation:LED D5
+L open-dash-daughterboard-rescue:LED-open-automation D5
 U 1 1 59E3F1C3
 P 5000 3325
 F 0 "D5" V 4975 3425 50  0000 C CNN
@@ -212,7 +212,7 @@ F 4 "KMR211NG LFS" H 5000 4175 60  0001 C CNN "Part Number"
 $EndComp
 $Comp
 L open-automation:GND #PWR0124
-U 1 1 59E3F1D2
+U 1 1 5B1799BB
 P 5000 4550
 F 0 "#PWR0124" H 5000 4300 50  0001 C CNN
 F 1 "GND" H 5000 4400 50  0000 C CNN
@@ -281,9 +281,9 @@ EN
 Text HLabel 5125 3850 2    60   Input ~ 0
 PROG
 Text HLabel 4175 3125 1    60   Input ~ 0
-3V3
+3v3
 Text HLabel 5000 3125 1    60   Input ~ 0
-3V3
+3v3
 Text HLabel 3225 3125 1    60   Input ~ 0
-3V3
+3v3
 $EndSCHEMATC

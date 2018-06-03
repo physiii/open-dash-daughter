@@ -1,3 +1,4 @@
 (sym_lib_table
-  (lib (name open-automation)(type Legacy)(uri /home/loki/code/kicad-parts/libraries/open-automation.lib)(options "")(descr ""))
+  (lib (name open-automation)(type Legacy)(uri ${KIPRJMOD}/../kicad-parts/libraries/open-automation.lib)(options "")(descr ""))
+  (lib (name open-dash-daughterboard-rescue)(type Legacy)(uri ${KIPRJMOD}/open-dash-daughterboard-rescue.lib)(options "")(descr ""))
 )

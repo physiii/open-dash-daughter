@@ -8,6 +8,8 @@
 
 #include "CAN.h"
 
+#include "rom/uart.h"
+
 CAN_device_t CAN_cfg = {0};
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
@@ -16,10 +18,67 @@ esp_err_t event_handler(void *ctx, system_event_t *event)
   return ESP_OK;
 }
 
+/***
+TODO: the documentation discourages use of this method
+
+read a string from the serial port, until newline (either '\r' or '\n'), outsize, or timeout
+
+Parameters:
+out is where to store the characters
+outsize is the maximum number of characters to read. callers should leave space for a terminal null.
+xTickDelay is how long to sleep after each character to avoid busy looping
+xTicksTimeout is how soon we should quit if we did not reach outsize characters, reset after each character.
+
+Return value: number of characters stored (excluding terminal null).
+
+This is blocking and as such is meant to be used from a separate task.
+***/
+size_t read_uart_string(char * out, size_t outsize, int xTickDelay, int xTicksTimeout) {
+  char * outp = out;
+  unsigned char in;
+  clock_t xTimeout = xTaskGetTickCount() + xTicksTimeout;
+
+  while (xTaskGetTickCount() < xTimeout && 0 < outsize) {
+    if (OK == uart_rx_one_char(&in)) {
+      if ('\r' == in || '\n' == in) {
+        break;
+      } else {
+        *outp ++ = in;
+        outsize -= 1;
+        xTimeout = xTaskGetTickCount() + xTicksTimeout;
+      }
+    }
+    vTaskDelay(xTickDelay);
+  }
+
+  *outp = 0;
+
+  return outp - out;
+}
+
+/***
+monitor the serial port for messages from the dash; posts them to the master message queue
+***/
+void task_DashSerial(void *pvParameters) {
+}
+
+/***
+receive messages from the dash and CAN via queue
+maintain local dash power state variable
+toggle dash power state or send JSON-wrapped CAN messages
+***/
+void task_Master(void *pvParameters) {
+}
+
 // from <http://www.barth-dev.de/can-driver-esp32/> and
 // <http://www.barth-dev.de/wp-content/uploads/2017/01/ESP32_CAN_demo.zip>
 // as accessed 2018-04-26
 
+/***
+receive CAN bus messages
+let ignition on/off messages update car power state
+if dash power state is on then transmit (printf) JSON-wrapped copies of non-ignition messages
+***/
 void task_CAN( void *pvParameters ){
     (void)pvParameters;
 
@@ -79,7 +138,7 @@ void task_CAN( void *pvParameters ){
 
 
 				printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
-				//printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
+				printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
 
 				printf("%08x %llx\n", __RX_frame.MsgID, message_data_invariant);
 
@@ -91,16 +150,9 @@ void task_CAN( void *pvParameters ){
 					gpio_set_level(GPIO_NUM_5, 1);
 					was_started = false;
 					engine_started = false;
-
-				        printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
-				        printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
 				}
-
-				if(message_data_invariant==0xbff0000ffff0f) {
+				else if(message_data_invariant==0xbff0000ffff0f) {
 					if (was_started) continue;
-
-			        printf("\nInvariant: %llx -> %llx", message_data, message_data_invariant);
-			        printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);
 
 					printf("\nKEY MOVED TO RUN POSITION!");
 				        gpio_set_level(GPIO_NUM_5, 0);
@@ -146,8 +198,10 @@ void app_main(void)
     gpio_set_level(GPIO_NUM_21, 1); //mainboard power
     //gpio_set_level(GPIO_NUM_5, 1); //mainboard softpower
 
+    /*
     xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
-
+    xTaskCreate(&task_DashSerial, "MSG", 2048, NULL, 5, NULL);
+    */
 
     //b430000480404 start, driver door open
     //b430000480c04 start, passenger door
@@ -162,24 +216,25 @@ void app_main(void)
     uint64_t message_data_variant = message_data & 0x0000000000000f00;
     printf("\nVariant: %llx -> %llx\n", message_data, message_data_variant);*/
 
-
+    int i = 0;
+    size_t count;
+    char buf[50];
     while (1) {
 	//status light on esp32
         gpio_set_level(GPIO_NUM_2, 1);
         vTaskDelay(25 / portTICK_PERIOD_MS);
         gpio_set_level(GPIO_NUM_2, 0);
-        vTaskDelay(1475 / portTICK_PERIOD_MS);
+        // vTaskDelay(1475 / portTICK_PERIOD_MS);
+        printf("loop %d\n", i);
 
-	//test switches
-        /*gpio_set_level(GPIO_NUM_17, 1);
-        gpio_set_level(GPIO_NUM_19, 1);
-        gpio_set_level(GPIO_NUM_21, 1);
-        vTaskDelay(3000 / portTICK_PERIOD_MS);
-        gpio_set_level(GPIO_NUM_17, 0);
-        gpio_set_level(GPIO_NUM_19, 0);
-        gpio_set_level(GPIO_NUM_21, 0);
-        vTaskDelay(3000 / portTICK_PERIOD_MS);*/
+        count = read_uart_string(buf, sizeof(buf), 25 / portTICK_PERIOD_MS, 1500 / portTICK_PERIOD_MS);
+        if (count > 0) {
+          printf("read %d chars, last was %02x: '%s'\n", count, buf[count - 1], buf);
+        } else {
+          printf("no string\n");
+        }
 
+        i += 1;
     }
 }
 

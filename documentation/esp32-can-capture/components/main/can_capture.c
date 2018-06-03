@@ -13,9 +13,7 @@
 
 /***
 _DEBUG mode:
-dash sleep check with spacebar=alive, any other key=timeout
-blink LED instead of turn engine on
-print status
+logging is verbose, blink LED instead of turn engine on
 ***/
 // #define _DEBUG 1
 
@@ -27,8 +25,9 @@ static const char * TAG = "DashDaughter";
 #define DASH_CHARACTER_DELAY          (25 / portTICK_PERIOD_MS)
 // master loop queue timeout
 #define MASTER_LOOP_PERIOD            (50 / portTICK_PERIOD_MS)
-// how long to wait after powering up before checking status again?
-#define DASH_POWERUP_DELAY            (10000 / portTICK_PERIOD_MS)
+// how long to wait after toggling power before checking status again?
+#define DASH_POWERUP_WAIT             (10000 / portTICK_PERIOD_MS)
+#define DASH_POWERDOWN_WAIT           (10000 / portTICK_PERIOD_MS)
 
 // GPIO assignments
 #define GPIO_STATUS_LED               (GPIO_NUM_2)
@@ -66,6 +65,16 @@ enum eDashState {
   DashOn,
   DashUnknown,
 } DashState = DashUnknown;
+
+const char * get_dash_state_label(enum eDashState dash_state) {
+  switch (dash_state) {
+    case DashTimedOut: return "TimedOut";
+    case DashOn: return "On";
+    case DashUnknown: return "Unknown";
+  }
+
+  return "what";
+}
 
 CAN_device_t CAN_cfg = {0};
 
@@ -175,16 +184,6 @@ enum eDashState interpret_JSON_message(char * json_string) {
   return retval;
 }
 
-#ifdef _DEBUG
-enum eDashState query_dash_power_state() {
-  ESP_LOGW("query", "DEBUG BLOCKING! space for DashOn, anything else for DashTimedOut");
-  if (0x20 == uart_rx_one_char_block()) {
-    return DashOn;
-  } else {
-    return DashTimedOut;
-  }
-}
-#else // !_DEBUG
 /***
 wait for one message from the serial port, or set DashTimedOut
 ***/
@@ -194,7 +193,7 @@ enum eDashState query_dash_power_state() {
 
   ESP_LOGI("query", "querying dash...");
 
-  printf("{\"type\":\"status\",\"payload\":{\"power_state\":true}}\n");
+  printf("{\"type\":\"status\",\"payload\":{\"get_power_state\":true}}\n");
 
   if (0 < read_uart_string(dash_input, sizeof(dash_input))) {
     retval = interpret_JSON_message(dash_input);
@@ -204,41 +203,42 @@ enum eDashState query_dash_power_state() {
 
   return retval;
 }
-#endif // _DEBUG
 
 /***
 "press the button" for two seconds
 ***/
 void toggle_dash_power() {
-#ifdef DASH_POWER_LED
+#ifdef _DEBUG
   gpio_set_level(GPIO_STATUS_LED, 1);
   vTaskDelay(2000 / portTICK_PERIOD_MS);
   gpio_set_level(GPIO_STATUS_LED, 0);
-#else
+#else // !_DEBUG
   gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
   vTaskDelay(2000 / portTICK_PERIOD_MS);
   gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
-#endif // DASH_POWER_LED
+#endif // _DEBUG
 }
 
 /***
 these two are the same for now, but could be different later
 ***/
 void turn_dash_off() {
-#ifdef _DEBUG
-  ESP_LOGI(TAG, "turning dash off");
-#endif // _DEBUG
+  ESP_LOGI("power", "turning dash off... (%0.2fs wait)", (1.0 * DASH_POWERDOWN_WAIT * portTICK_PERIOD_MS) / 1000.0);
   toggle_dash_power();
+  vTaskDelay(DASH_POWERDOWN_WAIT);
+  ESP_LOGI("power", "powerdown wait complete");
 }
 
 void turn_dash_on() {
-  // ESP_LOGI(TAG, "turning dash on");
-  ESP_LOGI("power", "turning dash on... (10s delay)");
+  ESP_LOGI("power", "turning dash on... (%0.2fs wait)", (1.0 * DASH_POWERUP_WAIT * portTICK_PERIOD_MS) / 1000.0);
   toggle_dash_power();
-  vTaskDelay(DASH_POWERUP_DELAY);
-  ESP_LOGI("power", "powerup delay complete");
+  vTaskDelay(DASH_POWERUP_WAIT);
+  ESP_LOGI("power", "powerup wait complete");
 }
 
+/***
+execute the state change operator
+***/
 void change_dash_state(enum eDashState newstate) {
   switch (newstate) {
     case DashOn:
@@ -250,6 +250,7 @@ void change_dash_state(enum eDashState newstate) {
       break;
 
     default:
+      break;
   }
 }
 
@@ -271,6 +272,11 @@ monitor and maintain the dash state based on the current ignition state
 void task_Dash(void *pvParameters) {
   while (1) {
     DashState = query_dash_power_state();
+    switch (DashState) {
+      case DashOn: ESP_LOGI("dash", "power state: on"); break;
+      case DashTimedOut: ESP_LOGI("dash", "timed out"); break;
+      default: ESP_LOGW("dash", "invalid power state");
+    }
 
     switch (IgnitionState) {
       case IgnitionRun:
@@ -282,8 +288,8 @@ void task_Dash(void *pvParameters) {
         update_dash_state(DashOn, DashTimedOut);
         break;
 
-      case IgnitionInvalid:
-        // do nothing
+      case IgnitionUnknown:
+        break;
     }
   }
 }
@@ -319,16 +325,12 @@ enum eIgnitionState check_ignition_status(const CAN_frame_t * frame) {
 wrap this in JSON and send to dash via serial link
 ***/
 void forward_frame(const CAN_frame_t * frame, const unsigned int ctr) {
-#ifdef _DEBUG
-  printf(".");
-#else // !_DEBUG
   int64_t ticks = esp_timer_get_time();
   printf("{\"ctr\":%u,\"ticks\":{\"l32\":%u,\"h32\":%u},\"CAN\":{\"RTR\":%d,\"MsgID\":%d,\"DLC\":%d,\"data\":{\"l32\":%u,\"h32\":%u}}}\n",
       ctr, (uint32_t)(ticks & 0xffffffff), (uint32_t)((ticks >> 32) & 0xffffffff),
       frame->FIR.B.RTR, frame->MsgID,
       frame->FIR.B.DLC, frame->data.u32[0], frame->data.u32[1]
       );
-#endif // _DEBUG
 }
 
 /*
@@ -435,7 +437,7 @@ void app_main(void) {
 #ifdef _DEBUG
   esp_log_level_set("*", ESP_LOG_VERBOSE);
 #else // !_DEBUG
-  esp_log_level_set("*", ESP_LOG_VERBOSE);
+  esp_log_level_set("*", ESP_LOG_ERROR);
 #endif // _DEBUG
 
   initialize_gpio();

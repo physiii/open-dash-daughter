@@ -21,7 +21,7 @@ port.on('data', function (data) {
         console.log(printme); // print all messages
         if (dash_power_state) {
             var msg;
-            try { msg = JSON.parse(printme); } catch {}
+            try { msg = JSON.parse(printme); } catch (e){}
             if (msg && msg.type == 'status' && msg.payload.get_power_state) {
                 console.log('received power status query, reponding with', dash_alive_response, '(press m to turn off)');
                 port.write(JSON.stringify(dash_alive_response) + '\n');

@@ -86,22 +86,22 @@ Text HLabel 1875 1025 2    50   Input ~ 0
 CAMERA-
 Text HLabel 1375 825  0    50   Input ~ 0
 BATTERY
-Text HLabel 3400 825  0    50   Input ~ 0
-LF_AUDIO_OUT+
-Text HLabel 3400 925  0    50   Input ~ 0
-LR_AUDIO_OUT+
 Text HLabel 3400 1025 0    50   Input ~ 0
-RF_AUDIO_OUT+
+FL_AUDIO_OUT+
+Text HLabel 3400 925  0    50   Input ~ 0
+FR_AUDIO_OUT+
+Text HLabel 3400 825  0    50   Input ~ 0
+RL_AUDIO_OUT+
 Text HLabel 3400 1125 0    50   Input ~ 0
 RR_AUDIO_OUT+
 Text HLabel 3900 1125 2    50   Input ~ 0
 RR_AUDIO_OUT-
-Text HLabel 3900 1025 2    50   Input ~ 0
-RF_AUDIO_OUT-
-Text HLabel 3900 925  2    50   Input ~ 0
-LR_AUDIO_OUT-
 Text HLabel 3900 825  2    50   Input ~ 0
-LF_AUDIO_OUT-
+RL_AUDIO_OUT-
+Text HLabel 3900 925  2    50   Input ~ 0
+FR_AUDIO_OUT-
+Text HLabel 3900 1025 2    50   Input ~ 0
+FL_AUDIO_OUT-
 $Comp
 L open-dash-daughterboard-rescue:LED-open-automation D10
 U 1 1 5B1799AD

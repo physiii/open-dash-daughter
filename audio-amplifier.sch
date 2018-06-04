@@ -58,7 +58,7 @@ F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 6563 2750 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/rubycon/16YXJ470M8X11.5/1189-1146-ND/3134104" H 6525 2900 50  0001 C CNN
 F 4 "16YXJ470M8X11.5" H 6525 2900 60  0001 C CNN "Part Number"
 	1    6525 2900
-	1    0    0    -1  
+	1    0    0    1   
 $EndComp
 $Comp
 L Device:C C25
@@ -194,7 +194,7 @@ RR_AUDIO_OUT+
 Text HLabel 8975 2950 2    60   Input ~ 0
 FL_AUDIO_OUT-
 Text HLabel 8975 3500 2    60   Input ~ 0
-RL_AUDIO_OUT-
+FR_AUDIO_OUT-
 Text HLabel 6100 4950 0    60   Input ~ 0
 STBY_AUDIO
 Wire Wire Line

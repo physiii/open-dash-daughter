@@ -1,18 +1,19 @@
 
-var SerialPort = require('serialport');
-var port = new SerialPort('/dev/ttyUSB0', { baudRate: 115200 });
+const SerialPort = require('serialport'),
+ port = new SerialPort('/dev/ttyUSB0', { baudRate: 115200 });
 
 // this is controlled by the keys 'a' for on, 'm' for off
-var dash_power_state = false;
+let dash_power_state = false;
 
-var dash_alive_response = {
+let dash_alive_response = {
     "type": "status",
     "payload": {
        "power_state": true
     }
 };
 
-var buffer = '';
+let buffer = '';
+
 port.on('data', function (data) {
     buffer += data.toString('utf8');
     lines = buffer.split('\n');
@@ -20,7 +21,7 @@ port.on('data', function (data) {
     if (printme.length > 0) {
         console.log(printme); // print all messages
         if (dash_power_state) {
-            var msg;
+            let msg;
             try { msg = JSON.parse(printme); } catch (e){}
             if (msg && msg.type == 'status' && msg.payload.get_power_state) {
                 console.log('received power status query, reponding with', dash_alive_response, '(press m to turn off)');
@@ -33,7 +34,8 @@ port.on('data', function (data) {
     buffer = lines.slice(-1);
 });
 
-var stdin = process.openStdin();
+let stdin = process.openStdin();
+
 stdin.setRawMode(true);
 stdin.resume();
 stdin.setEncoding('utf8');
@@ -52,4 +54,3 @@ stdin.on('data', function (key) {
             break;
     }
 });
-

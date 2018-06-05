@@ -306,18 +306,6 @@ F 4 "0768290008" H 1625 725 50  0001 C CNN "Part Number"
 	1    1625 975 
 	1    0    0    -1  
 $EndComp
-$Comp
-L open-automation:molex-2x4-5.7mm U14
-U 1 1 5B1A09A6
-P 3650 975
-F 0 "U14" H 3650 1225 50  0000 C CNN
-F 1 "molex-2x4-5.7mm" H 3650 725 50  0000 C CNN
-F 2 "open-automation:molex-2x4-5.7mm" H 3650 575 50  0001 C CNN
-F 3 "https://www.digikey.com/products/en?keywords=768290008" H 3650 675 50  0001 C CNN
-F 4 "0768290008" H 3650 725 50  0001 C CNN "Part Number"
-	1    3650 975 
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	1375 825  1425 825 
 Wire Wire Line
@@ -333,13 +321,9 @@ Wire Wire Line
 Wire Wire Line
 	1375 1025 1425 1025
 Wire Wire Line
-	3400 825  3450 825 
-Wire Wire Line
 	3450 925  3400 925 
 Wire Wire Line
 	3450 1025 3400 1025
-Wire Wire Line
-	3400 1125 3450 1125
 Wire Wire Line
 	3850 1125 3900 1125
 Wire Wire Line
@@ -564,4 +548,20 @@ Wire Wire Line
 	7375 3650 7300 3650
 Wire Wire Line
 	7300 3750 7375 3750
+$Comp
+L open-automation:molex-2x4-5.7mm U14
+U 1 1 5B1795E3
+P 3650 975
+F 0 "U14" H 3650 1350 50  0000 C CNN
+F 1 "molex-2x4-5.7mm" H 3650 1259 50  0000 C CNN
+F 2 "open-automation:molex-2x4-5.7mm" H 3650 575 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=768290008" H 3650 675 50  0001 C CNN
+F 4 "0768290008" H 3650 725 50  0001 C CNN "Part Number"
+	1    3650 975 
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 1125 3450 1125
+Wire Wire Line
+	3400 825  3450 825 
 $EndSCHEMATC

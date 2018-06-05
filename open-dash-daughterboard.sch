@@ -286,52 +286,6 @@ Text Label 10000 7050 0    50   ~ 0
 SOFT_POWER
 Wire Wire Line
 	9975 7050 10000 7050
-Text Label 8325 1100 0    50   ~ 0
-FL_AUDIO_OUT+
-Text Label 8325 1175 0    50   ~ 0
-RL_AUDIO_OUT+
-Text Label 8325 1250 0    50   ~ 0
-FR_AUDIO_OUT+
-Text Label 8325 1325 0    50   ~ 0
-RR_AUDIO_OUT+
-Text Label 8325 1600 0    50   ~ 0
-FL_AUDIO_OUT-
-Text Label 8325 1675 0    50   ~ 0
-RR_AUDIO_OUT-
-Text Label 8325 1750 0    50   ~ 0
-FR_AUDIO_OUT-
-Text Label 8325 1825 0    50   ~ 0
-RL_AUDIO_OUT-
-Text Label 6700 9475 0    50   ~ 0
-FL_AUDIO_OUT+
-Text Label 6700 9625 0    50   ~ 0
-FR_AUDIO_OUT+
-Text Label 6700 9700 0    50   ~ 0
-RR_AUDIO_OUT+
-Text Label 6700 9825 0    50   ~ 0
-FL_AUDIO_OUT-
-Text Label 6700 9900 0    50   ~ 0
-RR_AUDIO_OUT-
-Text Label 6700 9975 0    50   ~ 0
-FR_AUDIO_OUT-
-Text Label 6700 10050 0    50   ~ 0
-RL_AUDIO_OUT-
-Wire Wire Line
-	6700 9825 7325 9825
-Wire Wire Line
-	7325 9900 6700 9900
-Wire Wire Line
-	6700 9975 7325 9975
-Wire Wire Line
-	7325 10050 6700 10050
-Wire Wire Line
-	6700 9700 7325 9700
-Wire Wire Line
-	7325 9625 6700 9625
-Wire Wire Line
-	6700 9550 7325 9550
-Wire Wire Line
-	7325 9475 6700 9475
 Text Label 10025 7250 0    50   ~ 0
 DISPLAY_POWER
 Text Label 10025 7325 0    50   ~ 0
@@ -384,22 +338,6 @@ Wire Wire Line
 	8100 6275 8325 6275
 Wire Wire Line
 	8325 6350 8100 6350
-Wire Wire Line
-	8275 1100 8325 1100
-Wire Wire Line
-	8275 1175 8325 1175
-Wire Wire Line
-	8275 1250 8325 1250
-Wire Wire Line
-	8275 1325 8325 1325
-Wire Wire Line
-	8275 1600 8325 1600
-Wire Wire Line
-	8275 1675 8325 1675
-Wire Wire Line
-	8275 1750 8325 1750
-Wire Wire Line
-	8275 1825 8325 1825
 Text Label 10025 6525 0    50   ~ 0
 TXD
 Text Label 10025 6450 0    50   ~ 0
@@ -559,8 +497,6 @@ Wire Wire Line
 	6975 4425 7050 4425
 Wire Wire Line
 	7050 4425 7050 4350
-Text Label 6700 9550 0    50   ~ 0
-RL_AUDIO_OUT+
 Wire Wire Line
 	8325 6900 8250 6900
 Wire Wire Line

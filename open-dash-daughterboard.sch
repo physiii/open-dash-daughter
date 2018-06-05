@@ -578,4 +578,55 @@ Wire Wire Line
 	7050 4500 7050 4575
 Wire Wire Line
 	7050 4575 6975 4575
+Text Label 7050 4500 0    50   ~ 0
+FR_AUDIO_OUT+
+Wire Wire Line
+	6975 4850 7050 4850
+Wire Wire Line
+	7050 4850 7050 4925
+Wire Wire Line
+	7050 4925 6975 4925
+Wire Wire Line
+	6975 5000 7050 5000
+Wire Wire Line
+	7050 5000 7050 5075
+Wire Wire Line
+	7050 5075 6975 5075
+Text Label 7050 4850 0    50   ~ 0
+FL_AUDIO_OUT-
+Text Label 7050 5000 0    50   ~ 0
+FR_AUDIO_OUT-
+Wire Wire Line
+	8325 7050 8250 7050
+Wire Wire Line
+	8250 7050 8250 7125
+Wire Wire Line
+	8250 7125 8325 7125
+Wire Wire Line
+	8325 7250 8250 7250
+Wire Wire Line
+	8250 7250 8250 7325
+Wire Wire Line
+	8250 7325 8325 7325
+Wire Wire Line
+	8325 7400 8250 7400
+Wire Wire Line
+	8250 7400 8250 7475
+Wire Wire Line
+	8250 7475 8325 7475
+Text Label 7700 7050 0    50   ~ 0
+FR_AUDIO_OUT+
+Wire Wire Line
+	8250 7050 7700 7050
+Connection ~ 8250 7050
+Text Label 7700 7250 0    50   ~ 0
+FL_AUDIO_OUT-
+Wire Wire Line
+	8250 7250 7700 7250
+Connection ~ 8250 7250
+Text Label 7700 7400 0    50   ~ 0
+FR_AUDIO_OUT-
+Wire Wire Line
+	8250 7400 7700 7400
+Connection ~ 8250 7400
 $EndSCHEMATC

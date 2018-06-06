@@ -14,26 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L open-automation:A2235-H-dk_RF-Receivers U13
-U 1 1 5AE2F0AB
-P 7025 3150
-F 0 "U13" H 7550 3600 60  0000 C CNN
-F 1 "A2235-H" H 6825 3600 60  0000 C CNN
-F 2 "digikey-footprints:GSM_Module_17.8x16.5mm_A2235-H" H 7225 3350 60  0001 L CNN
-F 3 "http://update.maestro-wireless.com/GNSS/A2235-H/Maestro_A2135_HA2235_H_v11.pdf" H 7225 3450 60  0001 L CNN
-F 4 "1530-1011-1-ND" H 7225 3550 60  0001 L CNN "Digi-Key_PN"
-F 5 "A2235-H" H 7225 3650 60  0001 L CNN "MPN"
-F 6 "RF/IF and RFID" H 7225 3750 60  0001 L CNN "Category"
-F 7 "RF Receivers" H 7225 3850 60  0001 L CNN "Family"
-F 8 "http://update.maestro-wireless.com/GNSS/A2235-H/Maestro_A2135_HA2235_H_v11.pdf" H 7225 3950 60  0001 L CNN "DK_Datasheet_Link"
-F 9 "/product-detail/en/maestro-wireless-solutions/A2235-H/1530-1011-1-ND/4898055" H 7225 4050 60  0001 L CNN "DK_Detail_Page"
-F 10 "MODULE GPS SIRFSTARIV" H 7225 4150 60  0001 L CNN "Description"
-F 11 "Maestro Wireless Solutions" H 7225 4250 60  0001 L CNN "Manufacturer"
-F 12 "Active" H 7225 4350 60  0001 L CNN "Status"
-	1    7025 3150
-	-1   0    0    -1  
-$EndComp
 Wire Wire Line
 	6225 3750 5925 3750
 Wire Wire Line
@@ -50,7 +30,7 @@ U 1 1 5B14A0F4
 P 3475 2900
 F 0 "C42" H 3375 3000 50  0000 L CNN
 F 1 "C_1uF" H 3250 2800 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 3575 3200 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3575 3200 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB105/311-1372-1-ND/2103156" H 3475 2650 50  0001 C CNN
 F 4 "CC0603ZRY5V7BB105" H 3600 3100 60  0001 C CNN "Part Number"
 	1    3475 2900
@@ -62,7 +42,7 @@ U 1 1 5B14A2C2
 P 3825 2900
 F 0 "C43" H 3850 2975 50  0000 L CNN
 F 1 "C_0.1uF" H 3850 2800 50  0000 L CNN
-F 2 "Capacitors_SMD:C_0603" H 3925 3200 50  0001 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3925 3200 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 3825 2650 50  0001 C CNN
 F 4 "C0603C104K5RACTU" H 3950 3100 60  0001 C CNN "Part Number"
 	1    3825 2900
@@ -312,4 +292,16 @@ Wire Wire Line
 	8025 3650 7950 3650
 Wire Wire Line
 	2050 2675 2050 2750
+$Comp
+L open-automation:GPS-A2235-H U13
+U 1 1 5B1940C2
+P 7025 3150
+F 0 "U13" H 6700 2100 60  0000 C CNN
+F 1 "GPS-A2235-H" H 6775 3600 60  0000 C CNN
+F 2 "digikey-footprints:GSM_Module_17.8x16.5mm_A2235-H" H 7225 3350 60  0001 L CNN
+F 3 "https://www.digikey.com/product-detail/en/maestro-wireless-solutions/A2235-H/1530-1011-1-ND/4898055" H 7225 3450 60  0001 L CNN
+F 4 "A2235-H" H 7225 3650 60  0001 L CNN "Part Number"
+	1    7025 3150
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC

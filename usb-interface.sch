@@ -46,7 +46,7 @@ F 3 "" H 5275 6125 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5275 6075 5275 6125
+	5275 6075 5275 6100
 Text HLabel 3425 4475 0    60   Input ~ 0
 5V
 $Comp
@@ -322,4 +322,11 @@ Text Label 9400 2350 0    50   ~ 0
 RTS
 Wire Wire Line
 	9400 2350 9350 2350
+Wire Wire Line
+	5375 6075 5375 6100
+Wire Wire Line
+	5375 6100 5275 6100
+Connection ~ 5275 6100
+Wire Wire Line
+	5275 6100 5275 6125
 $EndSCHEMATC

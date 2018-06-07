@@ -7,3 +7,11 @@ PROJECT_NAME := myhw
 
 include $(IDF_PATH)/make/project.mk
 
+debug: CFLAGS += -D_DEBUG
+debug:
+	touch components/main/can_capture.c
+	make -j8 app flash monitor
+
+verbose: CFLAGS += -D_DEBUG -D_VERBOSE
+verbose: debug
+

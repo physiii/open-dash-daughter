@@ -2,6 +2,9 @@
 // _DEBUG blinks status LED and prints all frames
 #define LOG_LOCAL_LEVEL ESP_LOG_VERBOSE
 #endif // _DEBUG
+#ifdef _VERBOSE
+#define LOG_LOCAL_LEVEL ESP_LOG_VERBOSE
+#endif // _VERBOSE
 
 #include "freertos/FreeRTOS.h"
 #include "esp_system.h"
@@ -90,7 +93,7 @@ void apply_dash_power() {
   gpio_set_level(GPIO_DISPLAY_POWER, 1); //display power
   gpio_set_level(GPIO_AUDIO_AMP_POWER, 1); //audio amp power
   gpio_set_level(GPIO_MAINBOARD_POWER, 1); //mainboard power
-  // gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1); //mainboard softpower
+  gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1); //mainboard softpower
 }
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
@@ -216,6 +219,7 @@ these two are the same for now, but could be different later
 void turn_dash_off() {
   ESP_LOGI("power", "turning dash off... (%0.2fs wait)", (1.0 * DASH_POWERDOWN_WAIT * portTICK_PERIOD_MS) / 1000.0);
   toggle_dash_power();
+  // gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
   vTaskDelay(DASH_POWERDOWN_WAIT);
   ESP_LOGI("power", "powerdown wait complete");
 }
@@ -223,6 +227,7 @@ void turn_dash_off() {
 void turn_dash_on() {
   ESP_LOGI("power", "turning dash on... (%0.2fs wait)", (1.0 * DASH_POWERUP_WAIT * portTICK_PERIOD_MS) / 1000.0);
   toggle_dash_power();
+  // gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
   vTaskDelay(DASH_POWERUP_WAIT);
   ESP_LOGI("power", "powerup wait complete");
 }
@@ -423,10 +428,14 @@ void task_CAN (void *pvParameters) {
 void app_main(void) {
 #ifdef _DEBUG
   esp_log_level_set("*", ESP_LOG_INFO);
-  esp_log_level_set("canbus", ESP_LOG_VERBOSE);
 #else // !_DEBUG
   esp_log_level_set("*", ESP_LOG_ERROR);
 #endif // _DEBUG
+
+#ifdef _VERBOSE
+  // this prints *every* CAN message (except RTR frames which have no data)
+  esp_log_level_set("canbus", ESP_LOG_VERBOSE);
+#endif // _VERBOSE
 
   ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
 

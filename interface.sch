@@ -93,10 +93,10 @@ F 4 "475-2512-2-ND" H 2100 4775 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:SW_PUSH FACTORY1
+L open-automation:SW_PUSH SW1
 U 1 1 5B15E1FC
 P 2100 5625
-F 0 "FACTORY1" H 2100 5800 50  0000 C CNN
+F 0 "SW1" H 2100 5800 50  0000 C CNN
 F 1 "SW_PUSH" H 2100 5545 50  0000 C CNN
 F 2 "Buttons_Switches_SMD:SW_SPST_KMR2" H 2100 5625 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/60/KMR2_9aug12-25127.pdf" H 2100 5625 50  0001 C CNN
@@ -151,10 +151,10 @@ F 4 "475-2512-2-ND" H 3050 4775 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:SW_PUSH REBOOT1
+L open-automation:SW_PUSH SW2
 U 1 1 5B15E1FF
 P 3050 5625
-F 0 "REBOOT1" H 3050 5800 50  0000 C CNN
+F 0 "SW2" H 3050 5800 50  0000 C CNN
 F 1 "SW_PUSH" H 3050 5545 50  0000 C CNN
 F 2 "Buttons_Switches_SMD:SW_SPST_KMR2" H 3050 5625 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/60/KMR2_9aug12-25127.pdf" H 3050 5625 50  0001 C CNN
@@ -209,10 +209,10 @@ F 4 "475-2512-2-ND" H 3875 4775 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:SW_PUSH PROG1
+L open-automation:SW_PUSH SW3
 U 1 1 5B15E203
 P 3875 5625
-F 0 "PROG1" H 3875 5800 50  0000 C CNN
+F 0 "SW3" H 3875 5800 50  0000 C CNN
 F 1 "SW_PUSH" H 3875 5545 50  0000 C CNN
 F 2 "Buttons_Switches_SMD:SW_SPST_KMR2" H 3875 5625 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/60/KMR2_9aug12-25127.pdf" H 3875 5625 50  0001 C CNN

@@ -1,3 +1,8 @@
+#ifdef _DEBUG
+// _DEBUG blinks status LED and prints all frames
+#define LOG_LOCAL_LEVEL ESP_LOG_VERBOSE
+#endif // _DEBUG
+
 #include "freertos/FreeRTOS.h"
 #include "esp_system.h"
 #include "esp_event.h"
@@ -10,14 +15,6 @@
 #include "CAN.h"
 
 #include <string.h>
-
-/***
-_DEBUG mode:
-logging is verbose, blink LED instead of turn engine on
-***/
-// #define _DEBUG 1
-
-static const char * TAG = "DashDaughter";
 
 // if the dash does not respond, assume it is off
 #define DASH_RESPONSE_TIMEOUT         (2000 / portTICK_PERIOD_MS)
@@ -171,14 +168,14 @@ enum eDashState interpret_JSON_message(char * json_string) {
           ESP_LOGW("json", "wrong type '%s' in '%s'", type->valuestring, json_string);
         }
       } else {
-        ESP_LOGW(TAG, "type wrong type in '%s': %02x", json_string, type->type);
+        ESP_LOGW("json", "type wrong type in '%s': %02x", json_string, type->type);
       }
     } else {
       ESP_LOGW("json", "type key missing from '%s'", json_string);
     }
     cJSON_Delete(root);
   } else {
-    ESP_LOGW(TAG, "failed to parse JSON response '%s'", json_string);
+    ESP_LOGW("json", "failed to parse JSON response '%s'", json_string);
   }
 
   return retval;
@@ -198,7 +195,7 @@ enum eDashState query_dash_power_state() {
   if (0 < read_uart_string(dash_input, sizeof(dash_input))) {
     retval = interpret_JSON_message(dash_input);
   } else {
-    ESP_LOGI("query", "real timeout");
+    ESP_LOGI("query", "dash response timed out (%d ms)", DASH_RESPONSE_TIMEOUT * portTICK_PERIOD_MS);
   }
 
   return retval;
@@ -208,15 +205,9 @@ enum eDashState query_dash_power_state() {
 "press the button" for two seconds
 ***/
 void toggle_dash_power() {
-#ifdef _DEBUG
-  gpio_set_level(GPIO_STATUS_LED, 1);
-  vTaskDelay(2000 / portTICK_PERIOD_MS);
-  gpio_set_level(GPIO_STATUS_LED, 0);
-#else // !_DEBUG
   gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
   vTaskDelay(2000 / portTICK_PERIOD_MS);
   gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
-#endif // _DEBUG
 }
 
 /***
@@ -301,8 +292,6 @@ enum eIgnitionState check_ignition_status(const CAN_frame_t * frame) {
   if (CAN_RTR != frame->FIR.B.RTR) {
     switch (frame->MsgID) {
       case 0x6214000:
-        // ESP_LOGI("canbus", "data %d %016llx", frame->FIR.B.DLC, frame->data.u64);
-        // printf("data %016llx\n", frame->data.u64);
         switch (frame->data.u64 & KEY_POSITION_MASK) {
           case KEY_POSITION_OFF: return IgnitionOff;
           case KEY_POSITION_RUN: return IgnitionRun;
@@ -326,11 +315,11 @@ wrap this in JSON and send to dash via serial link
 ***/
 void forward_frame(const CAN_frame_t * frame, const unsigned int ctr) {
   int64_t ticks = esp_timer_get_time();
-  printf("{\"ctr\":%u,\"ticks\":{\"l32\":%u,\"h32\":%u},\"CAN\":{\"RTR\":%d,\"MsgID\":%d,\"DLC\":%d,\"data\":{\"l32\":%u,\"h32\":%u}}}\n",
-      ctr, (uint32_t)(ticks & 0xffffffff), (uint32_t)((ticks >> 32) & 0xffffffff),
-      frame->FIR.B.RTR, frame->MsgID,
-      frame->FIR.B.DLC, frame->data.u32[0], frame->data.u32[1]
-      );
+  printf("{\"type\": \"CAN\", \"payload\": {\"message_id\": \"0x%08x\", \"message\": {\"l32\": \"0x%08x\", \"h32\": \"0x%08x\"}, \"length\": %d, \"ticks\": {\"l32\": \"0x%08x\", \"h32\": \"0x%08x\"}, \"counter\": %u}}\n",
+    frame->MsgID, frame->data.u32[0], frame->data.u32[1],
+    frame->FIR.B.DLC, (uint32_t)(ticks & 0xffffffff), (uint32_t)((ticks >> 32) & 0xffffffff),
+    ctr
+  );
 }
 
 /*
@@ -393,17 +382,15 @@ void task_CAN (void *pvParameters) {
   {
     int ret;
     if (0 != (ret = CAN_init())) {
-      ESP_LOGE(TAG, "!!! CAN_init failed with %d\n", ret);
+      ESP_LOGE("canbus", "!!! CAN_init failed with %d\n", ret);
       vTaskDelay(1500 / portTICK_PERIOD_MS);
       esp_restart();
     }
   }
 
-  // ESP_LOGI("canbus", "Entering CAN loop\n");
+  ESP_LOGD("canbus", "Entering CAN loop");
   for (unsigned long ctr = 0; ;) {
-    if (pdTRUE == xQueueReceive(CAN_cfg.rx_queue,&__RX_frame, 3 * portTICK_PERIOD_MS)) {
-      // // ESP_LOGI(TAG, "received message %lu\n", ctr);
-
+    if (pdTRUE == xQueueReceive(CAN_cfg.rx_queue,&__RX_frame, 100 / portTICK_PERIOD_MS)) {
       // RTR frames don't have data
       if (CAN_RTR != __RX_frame.FIR.B.RTR) {
         // ESP32 CAN data payloads are reversed from what we captured with
@@ -424,6 +411,8 @@ void task_CAN (void *pvParameters) {
 
       if (DashOn == DashState) {
         forward_frame(&__RX_frame, ctr);
+      } else if (CAN_RTR != __RX_frame.FIR.B.RTR) {
+        ESP_LOGV("canbus", "(dash off) MsgID: 0x%08x, DLC: %d, Payload: 0x%016llx", __RX_frame.MsgID, __RX_frame.FIR.B.DLC, __RX_frame.data.u64);
       }
 
       ctr += 1;
@@ -432,13 +421,14 @@ void task_CAN (void *pvParameters) {
 }
 
 void app_main(void) {
-  ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
-
 #ifdef _DEBUG
-  esp_log_level_set("*", ESP_LOG_VERBOSE);
+  esp_log_level_set("*", ESP_LOG_INFO);
+  esp_log_level_set("canbus", ESP_LOG_VERBOSE);
 #else // !_DEBUG
   esp_log_level_set("*", ESP_LOG_ERROR);
 #endif // _DEBUG
+
+  ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
 
   initialize_gpio();
   apply_dash_power();

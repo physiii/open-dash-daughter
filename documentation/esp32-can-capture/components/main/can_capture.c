@@ -327,35 +327,6 @@ void forward_frame(const CAN_frame_t * frame, const unsigned int ctr) {
   );
 }
 
-/*
-// reduce dynamic allocations with a fixed buffer
-#define JSON_OUTPUT_BUFFER_SIZE       (200)
-void forward_frame_JSON(const CAN_frame_t * frame, const unsigned int ctr) {
-  char outbuf[JSON_OUTPUT_BUFFER_SIZE];
-  cJSON * jwrapper, * jframe, * jticks, * jdata;
-  int64_t ticks = esp_timer_get_time();
-  jwrapper = cJSON_CreateObject();
-  cJSON_AddNumberToObject(jwrapper, "ctr", ctr);
-  cJSON_AddItemToObject(jwrapper, "ticks", (jticks = cJSON_CreateObject()));
-  cJSON_AddNumberToObject(jticks, "l32", (uint32_t) (ticks & 0xffffffff));
-  cJSON_AddNumberToObject(jticks, "h32", (uint32_t) ((ticks >> 32) & 0xffffffff));
-  cJSON_AddItemToObject(jwrapper, "CAN", (jframe = cJSON_CreateObject()));
-  cJSON_AddNumberToObject(jframe, "MsgID", frame->MsgID);
-  cJSON_AddNumberToObject(jframe, "DLC", frame->FIR.B.DLC);
-  cJSON_AddItemToObject(jframe, "data", (jdata = cJSON_CreateObject()));
-  cJSON_AddNumberToObject(jdata, "l32", frame->data.u32[0]);
-  cJSON_AddNumberToObject(jdata, "h32", frame->data.u32[1]);
-
-  if (cJSON_PrintPreallocated(jwrapper, outbuf, sizeof(outbuf) - 5, 0)) {
-    printf("%s\n", outbuf);
-  } else {
-    // UHOH
-  }
-
-  cJSON_Delete(jwrapper);
-}
-*/
-
 // 64-bit endian reversal
 // <https://stackoverflow.com/a/21507710> 2018-06-02
 uint64_t swapLong(uint64_t x) {
@@ -414,10 +385,12 @@ void task_CAN (void *pvParameters) {
         }
       }
 
-      if (DashOn == DashState) {
+      ESP_LOGV("canbus", "queue size: %d", uxQueueMessagesWaiting(CAN_cfg.rx_queue));
+
+      if (1 || DashOn == DashState) {
         forward_frame(&__RX_frame, ctr);
       } else if (CAN_RTR != __RX_frame.FIR.B.RTR) {
-        ESP_LOGV("canbus", "(dash off) MsgID: 0x%08x, DLC: %d, Payload: 0x%016llx", __RX_frame.MsgID, __RX_frame.FIR.B.DLC, __RX_frame.data.u64);
+        // ESP_LOGV("canbus", "(dash off, q:%d) MsgID: 0x%08x, DLC: %d, Payload: 0x%016llx", uxQueueMessagesWaiting(CAN_cfg.rx_queue), __RX_frame.MsgID, __RX_frame.FIR.B.DLC, __RX_frame.data.u64);
       }
 
       ctr += 1;

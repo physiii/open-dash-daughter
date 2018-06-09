@@ -41,6 +41,8 @@
 #include "can_regdef.h"
 #include "CAN_config.h"
 
+#include "esp_log.h"
+
 
 static void CAN_read_frame();
 static void CAN_isr(void *arg_p);
@@ -118,7 +120,9 @@ static void CAN_read_frame(){
     }
 
     //send frame to input queue
-    xQueueSendFromISR(CAN_cfg.rx_queue,&__frame,0);
+    if (pdTRUE != xQueueSendFromISR(CAN_cfg.rx_queue,&__frame,0)) {
+      ESP_EARLY_LOGE("can", "{\"type\": \"status\", \"payload\": {\"message\": \"frame dropped\"}}");
+    }
 
     //Let the hardware know the frame has been read.
     MODULE_CAN->CMR.B.RRB=1;

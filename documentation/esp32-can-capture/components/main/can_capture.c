@@ -43,6 +43,8 @@
 #define KEY_POSITION_START            0x0000c00000000b00
 #define KEY_POSITION_RUN              0x0000400000000b00
 
+TaskHandle_t xBlink = NULL;
+
 enum eIgnitionState {
   IgnitionOff,
   IgnitionRun,
@@ -208,9 +210,9 @@ enum eDashState query_dash_power_state() {
 "press the button" for two seconds
 ***/
 void toggle_dash_power() {
-  gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
-  vTaskDelay(2000 / portTICK_PERIOD_MS);
   gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
+  vTaskDelay(500 / portTICK_PERIOD_MS);
+  gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
 }
 
 /***
@@ -263,13 +265,40 @@ void update_dash_state(enum eDashState precondition, enum eDashState postconditi
 }
 
 /***
+pulse the status LED
+***/
+void pulse_ms(int pulse_count, int high_ms, int low_ms) {
+  for (; pulse_count >= 0; pulse_count -= 1) {
+    gpio_set_level(GPIO_STATUS_LED, 1);
+    vTaskDelay(high_ms / portTICK_PERIOD_MS);
+    gpio_set_level(GPIO_STATUS_LED, 0);
+    if (pulse_count > 0) {
+      vTaskDelay(low_ms / portTICK_PERIOD_MS);
+    }
+  }
+}
+
+/***
+block until dash tells us to blink once
+***/
+void task_BlinkOnce(void * pvParameters) {
+  while (1) {
+    ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+    pulse_ms(3, 100, 100);
+  }
+}
+
+/***
 monitor and maintain the dash state based on the current ignition state
 ***/
 void task_Dash(void *pvParameters) {
   while (1) {
     DashState = query_dash_power_state();
     switch (DashState) {
-      case DashOn: ESP_LOGI("dash", "power state: on"); break;
+      case DashOn:
+        xTaskNotifyGive(xBlink);
+        ESP_LOGI("dash", "power state: on");
+        break;
       case DashTimedOut: ESP_LOGI("dash", "timed out"); break;
       default: ESP_LOGW("dash", "invalid power state");
     }
@@ -415,8 +444,9 @@ void app_main(void) {
   initialize_gpio();
   apply_dash_power();
 
-  xTaskCreate(&task_Dash, "Dash", 2048, NULL, 5, NULL);
-  xTaskCreate(&task_CAN, "CAN", 2048, NULL, 5, NULL);
+  xTaskCreate(task_Dash, "Dash", 2048, NULL, 5, NULL);
+  xTaskCreate(task_CAN, "CAN", 2048, NULL, 5, NULL);
+  xTaskCreate(task_BlinkOnce, "blink", configMINIMAL_STACK_SIZE, NULL, 5, &xBlink);
 
   while (1) {
 #ifdef _DEBUG

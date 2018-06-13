@@ -26,8 +26,8 @@
 // master loop queue timeout
 #define MASTER_LOOP_PERIOD            (50 / portTICK_PERIOD_MS)
 // how long to wait after toggling power before checking status again?
-#define DASH_POWERUP_WAIT             (10000 / portTICK_PERIOD_MS)
-#define DASH_POWERDOWN_WAIT           (10000 / portTICK_PERIOD_MS)
+#define DASH_POWERUP_WAIT             (10 * 1000 / portTICK_PERIOD_MS)
+#define DASH_POWERDOWN_WAIT           (10 * 1000 / portTICK_PERIOD_MS)
 
 // GPIO assignments
 #define GPIO_STATUS_LED               (GPIO_NUM_2)
@@ -44,6 +44,7 @@
 #define KEY_POSITION_RUN              0x0000400000000b00
 
 TaskHandle_t xBlink = NULL;
+bool dash_wait_flag = false;
 
 enum eIgnitionState {
   IgnitionOff,
@@ -95,7 +96,7 @@ void apply_dash_power() {
   gpio_set_level(GPIO_DISPLAY_POWER, 1); //display power
   gpio_set_level(GPIO_AUDIO_AMP_POWER, 1); //audio amp power
   gpio_set_level(GPIO_MAINBOARD_POWER, 1); //mainboard power
-  gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1); //mainboard softpower
+  gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0); //mainboard softpower
 }
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
@@ -207,11 +208,11 @@ enum eDashState query_dash_power_state() {
 }
 
 /***
-"press the button" for two seconds
+"press the button" for one second
 ***/
 void toggle_dash_power() {
   gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
-  vTaskDelay(500 / portTICK_PERIOD_MS);
+  vTaskDelay(1000 / portTICK_PERIOD_MS);
   gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
 }
 
@@ -221,7 +222,6 @@ these two are the same for now, but could be different later
 void turn_dash_off() {
   ESP_LOGI("power", "turning dash off... (%0.2fs wait)", (1.0 * DASH_POWERDOWN_WAIT * portTICK_PERIOD_MS) / 1000.0);
   toggle_dash_power();
-  // gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0);
   vTaskDelay(DASH_POWERDOWN_WAIT);
   ESP_LOGI("power", "powerdown wait complete");
 }
@@ -229,8 +229,9 @@ void turn_dash_off() {
 void turn_dash_on() {
   ESP_LOGI("power", "turning dash on... (%0.2fs wait)", (1.0 * DASH_POWERUP_WAIT * portTICK_PERIOD_MS) / 1000.0);
   toggle_dash_power();
-  // gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 1);
+  dash_wait_flag = true;
   vTaskDelay(DASH_POWERUP_WAIT);
+  dash_wait_flag = false;
   ESP_LOGI("power", "powerup wait complete");
 }
 
@@ -240,11 +241,15 @@ execute the state change operator
 void change_dash_state(enum eDashState newstate) {
   switch (newstate) {
     case DashOn:
+      if (!dash_wait_flag)  {
+        ESP_LOGI("power", "waiting on dash to boot");
+        break;
+      }
       turn_dash_on();
       break;
 
     case DashTimedOut:
-      turn_dash_off();
+      //turn_dash_off(); //turning off from the OS via CAN
       break;
 
     default:
@@ -408,9 +413,17 @@ void task_CAN (void *pvParameters) {
       if (NewIgnitionState != IgnitionUnknown) {
         if (NewIgnitionState != IgnitionState) {
           ESP_LOGI("canbus", "ignition state change from %s to %s", get_ignition_state_label(IgnitionState), get_ignition_state_label(NewIgnitionState));
+          if (NewIgnitionState == IgnitionRun) {
+						dash_wait_flag = true;
+	  			}
+
+          if (NewIgnitionState == IgnitionOff) {
+						dash_wait_flag = false;
+	  			}
           IgnitionState = NewIgnitionState;
+          
         } else {
-          ESP_LOGI("canbus", "repeat ignition state %s", get_ignition_state_label(IgnitionState));
+          //ESP_LOGI("canbus", "repeat ignition state %s", get_ignition_state_label(IgnitionState));
         }
       }
 

@@ -9,3 +9,5 @@ ftp-lib-table
 build
 # for external tools
 *.dsn
+
+sdkconfig.old

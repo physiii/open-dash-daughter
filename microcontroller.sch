@@ -28,26 +28,14 @@ $EndComp
 Text Label 4200 1025 0    197  ~ 0
 Microcontroller
 $Comp
-L open-automation:C_1uF C11
-U 1 1 59C55B03
-P 2825 3775
-F 0 "C11" H 2825 3875 50  0000 L CNN
-F 1 "C_1uF" H 2575 3675 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 2925 4075 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB105/311-1372-1-ND/2103156" H 2825 3525 50  0001 C CNN
-F 4 "CC0603ZRY5V7BB105" H 2950 3975 60  0001 C CNN "Part Number"
-	1    2825 3775
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:GND #PWR026
 U 1 1 59C55B05
-P 2625 4025
-F 0 "#PWR026" H 2625 3775 50  0001 C CNN
-F 1 "GND" H 2625 3875 50  0000 C CNN
-F 2 "" H 2625 4025 50  0000 C CNN
-F 3 "" H 2625 4025 50  0000 C CNN
-	1    2625 4025
+P 2600 4000
+F 0 "#PWR026" H 2600 3750 50  0001 C CNN
+F 1 "GND" H 2600 3850 50  0000 C CNN
+F 2 "" H 2600 4000 50  0000 C CNN
+F 3 "" H 2600 4000 50  0000 C CNN
+	1    2600 4000
 	1    0    0    -1  
 $EndComp
 Text Notes 2275 4400 0    60   ~ 0
@@ -99,18 +87,6 @@ F 4 "RC0603JR-0710KL" V 3530 3800 60  0001 C CNN "Part Number"
 	1    3350 3700
 	-1   0    0    1   
 $EndComp
-$Comp
-L open-automation:C_10uF C10
-U 1 1 5AF61DA3
-P 2425 3775
-F 0 "C10" H 2450 3875 50  0000 L CNN
-F 1 "C_10uF" H 2125 3675 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 2525 4075 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R61A106ME69D/490-10475-1-ND/5026393" H 2425 3525 50  0001 C CNN
-F 4 "GRM188R61A106ME69D" H 2550 3975 60  0001 C CNN "Part Number"
-	1    2425 3775
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	6625 3900 6725 3900
 Wire Wire Line
@@ -136,15 +112,6 @@ Wire Wire Line
 Wire Wire Line
 	4775 4100 4875 4100
 Wire Wire Line
-	2425 3925 2425 3975
-Wire Wire Line
-	2425 3975 2625 3975
-Wire Wire Line
-	2825 3975 2825 3925
-Wire Wire Line
-	2625 4025 2625 3975
-Connection ~ 2625 3975
-Wire Wire Line
 	6250 4700 6175 4700
 Wire Wire Line
 	6600 4700 6550 4700
@@ -156,15 +123,6 @@ Wire Wire Line
 	3350 3550 3350 3425
 Wire Wire Line
 	3450 3425 3450 3550
-Wire Wire Line
-	2425 3625 2425 3525
-Wire Wire Line
-	2425 3525 2625 3525
-Wire Wire Line
-	2625 3525 2625 3400
-Wire Wire Line
-	2825 3525 2825 3625
-Connection ~ 2625 3525
 Wire Notes Line
 	2075 4275 2075 3150
 Wire Notes Line
@@ -173,10 +131,6 @@ Wire Notes Line
 	3000 3150 3000 4275
 Wire Notes Line
 	3000 4275 2075 4275
-Wire Wire Line
-	2625 3975 2825 3975
-Wire Wire Line
-	2625 3525 2825 3525
 Text HLabel 3350 3425 1    60   Input ~ 0
 3v3
 Text HLabel 3450 3425 1    60   Input ~ 0
@@ -185,7 +139,7 @@ Text HLabel 3450 3925 3    60   Input ~ 0
 SCL
 Text HLabel 3350 3925 3    60   Input ~ 0
 SDA
-Text HLabel 2625 3400 1    60   Input ~ 0
+Text HLabel 2600 3300 1    60   Input ~ 0
 3v3
 Text HLabel 6725 3600 2    60   Input ~ 0
 EN_MAIN
@@ -244,4 +198,50 @@ Wire Wire Line
 	4775 3700 4875 3700
 Wire Wire Line
 	4775 3600 4875 3600
+Wire Wire Line
+	2600 4000 2600 3950
+Wire Wire Line
+	2600 3950 2400 3950
+Wire Wire Line
+	2400 3950 2400 3900
+Wire Wire Line
+	2600 3950 2800 3950
+Wire Wire Line
+	2800 3950 2800 3900
+Connection ~ 2600 3950
+Wire Wire Line
+	2800 3600 2800 3450
+Wire Wire Line
+	2800 3450 2600 3450
+Wire Wire Line
+	2400 3450 2400 3600
+Wire Wire Line
+	2600 3450 2600 3300
+Wire Wire Line
+	2600 3450 2400 3450
+Connection ~ 2600 3450
+$Comp
+L open-automation:C_10uF C10
+U 1 1 5B2706A8
+P 2400 3750
+F 0 "C10" H 2515 3796 50  0000 L CNN
+F 1 "C_10uF" H 2515 3705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 2500 4050 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10A106MP8NNNC/1276-1871-1-ND/3889957" H 2400 3500 50  0001 C CNN
+F 4 "CL10A106MP8NNNC" H 2525 3950 60  0001 C CNN "Part Number"
+	1    2400 3750
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:C_1uF C12
+U 1 1 5B2CA474
+P 2800 3750
+F 0 "C12" H 2915 3796 50  0000 L CNN
+F 1 "C_1uF" H 2915 3705 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 2900 4050 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 2800 3500 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 2925 3950 60  0001 C CNN "Part Number"
+	1    2800 3750
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -16,38 +16,6 @@ Comment4 ""
 $EndDescr
 Wire Wire Line
 	6225 3750 5925 3750
-Wire Wire Line
-	3475 2750 3475 2700
-Wire Wire Line
-	3475 2700 3650 2700
-Wire Wire Line
-	3475 3050 3475 3150
-Wire Wire Line
-	3475 3150 3625 3150
-$Comp
-L open-automation:C_1uF C42
-U 1 1 5B14A0F4
-P 3475 2900
-F 0 "C42" H 3375 3000 50  0000 L CNN
-F 1 "C_1uF" H 3250 2800 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3575 3200 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB105/311-1372-1-ND/2103156" H 3475 2650 50  0001 C CNN
-F 4 "CC0603ZRY5V7BB105" H 3600 3100 60  0001 C CNN "Part Number"
-	1    3475 2900
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:C_0.1uF C43
-U 1 1 5B14A2C2
-P 3825 2900
-F 0 "C43" H 3850 2975 50  0000 L CNN
-F 1 "C_0.1uF" H 3850 2800 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3925 3200 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 3825 2650 50  0001 C CNN
-F 4 "C0603C104K5RACTU" H 3950 3100 60  0001 C CNN "Part Number"
-	1    3825 2900
-	1    0    0    -1  
-$EndComp
 $Comp
 L open-automation:GND #PWR0109
 U 1 1 5B14A58A
@@ -61,9 +29,6 @@ F 3 "" H 3625 3200 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	3625 3200 3625 3150
-Wire Wire Line
-	3625 3150 3825 3150
-Connection ~ 3625 3150
 $Comp
 L open-automation:GND #PWR0110
 U 1 1 5B14BBD1
@@ -105,7 +70,7 @@ F 4 "RC0603JR-0710KL" V 7880 2850 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7625 2950 7700 2950
+	7625 2950 7650 2950
 Wire Wire Line
 	7700 2950 7700 2900
 Text HLabel 7700 2525 1    50   Input ~ 0
@@ -133,7 +98,7 @@ $EndComp
 Wire Wire Line
 	8100 3050 8000 3050
 Wire Wire Line
-	7700 3050 7625 3050
+	7700 3050 7650 3050
 Text HLabel 6150 3250 0    50   Input ~ 0
 SCL
 Text HLabel 6150 3350 0    50   Input ~ 0
@@ -154,13 +119,13 @@ F 3 "" H 7950 3800 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7750 3750 7625 3750
+	7750 3750 7650 3750
 Wire Wire Line
-	7625 3850 7750 3850
+	7625 3850 7650 3850
 Text Label 7750 3550 0    50   ~ 0
 WAKEUP
 Wire Wire Line
-	7750 3550 7625 3550
+	7750 3550 7650 3550
 Text Label 5925 3050 0    50   ~ 0
 WAKEUP
 Wire Wire Line
@@ -224,22 +189,15 @@ Wire Wire Line
 Wire Wire Line
 	7675 3175 7675 3150
 Wire Wire Line
-	7675 3150 7625 3150
+	7675 3150 7650 3150
 Text Label 2525 2625 1    50   ~ 0
 EN_I2C
-Wire Wire Line
-	3825 2750 3825 2700
-Wire Wire Line
-	3825 3050 3825 3150
 Wire Wire Line
 	6925 2550 6925 2475
 Text HLabel 3650 2650 1    50   Input ~ 0
 3v3
 Wire Wire Line
 	3650 2650 3650 2700
-Connection ~ 3650 2700
-Wire Wire Line
-	3650 2700 3825 2700
 Wire Wire Line
 	2525 2625 2525 2725
 $Comp
@@ -260,7 +218,7 @@ Wire Wire Line
 Wire Wire Line
 	7675 3275 7675 3250
 Wire Wire Line
-	7675 3250 7625 3250
+	7675 3250 7650 3250
 Text Label 2050 2675 1    50   ~ 0
 ANT_SW
 $Comp
@@ -292,16 +250,80 @@ Wire Wire Line
 	8025 3650 7950 3650
 Wire Wire Line
 	2050 2675 2050 2750
+Wire Wire Line
+	3650 2700 3825 2700
+Wire Wire Line
+	3825 2750 3825 2700
+Wire Wire Line
+	3825 3050 3825 3150
+Wire Wire Line
+	3450 3050 3450 3150
+Wire Wire Line
+	3450 3150 3625 3150
+Connection ~ 3625 3150
+Wire Wire Line
+	3625 3150 3825 3150
+Wire Wire Line
+	3650 2700 3450 2700
+Wire Wire Line
+	3450 2700 3450 2750
+Connection ~ 3650 2700
 $Comp
-L open-automation:GPS-A2235-H U13
-U 1 1 5B1940C2
+L open-automation:C_0.1uF C43
+U 1 1 5B27EDBD
+P 3825 2900
+F 0 "C43" H 3940 2946 50  0000 L CNN
+F 1 "C_0.1uF" H 3940 2855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3925 3200 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X8R1H104K080AB/445-8818-1-ND/3248223" H 3825 2650 50  0001 C CNN
+F 4 "C1608X8R1H104K080AB" H 3950 3100 60  0001 C CNN "Part Number"
+	1    3825 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:C_1uF C49
+U 1 1 5B2CB9BD
+P 3450 2900
+F 0 "C49" H 3565 2946 50  0000 L CNN
+F 1 "C_1uF" H 3565 2855 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3550 3200 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 3450 2650 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 3575 3100 60  0001 C CNN "Part Number"
+	1    3450 2900
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:A2235-H U13
+U 1 1 5B1FACC9
 P 7025 3150
-F 0 "U13" H 6700 2100 60  0000 C CNN
-F 1 "GPS-A2235-H" H 6775 3600 60  0000 C CNN
+F 0 "U13" H 6700 3600 60  0000 C CNN
+F 1 "A2235-H" H 6850 2100 60  0000 C CNN
 F 2 "digikey-footprints:GSM_Module_17.8x16.5mm_A2235-H" H 7225 3350 60  0001 L CNN
 F 3 "https://www.digikey.com/product-detail/en/maestro-wireless-solutions/A2235-H/1530-1011-1-ND/4898055" H 7225 3450 60  0001 L CNN
 F 4 "A2235-H" H 7225 3650 60  0001 L CNN "Part Number"
 	1    7025 3150
 	-1   0    0    -1  
 $EndComp
+Connection ~ 7650 2950
+Wire Wire Line
+	7650 2950 7700 2950
+Connection ~ 7650 3250
+Wire Wire Line
+	7650 3250 7625 3250
+Connection ~ 7650 3550
+Wire Wire Line
+	7650 3550 7625 3550
+Connection ~ 7650 3650
+Connection ~ 7650 3750
+Wire Wire Line
+	7650 3750 7625 3750
+Connection ~ 7650 3850
+Wire Wire Line
+	7650 3850 7750 3850
+Connection ~ 7650 3050
+Wire Wire Line
+	7650 3050 7625 3050
+Connection ~ 7650 3150
+Wire Wire Line
+	7650 3150 7625 3150
 $EndSCHEMATC

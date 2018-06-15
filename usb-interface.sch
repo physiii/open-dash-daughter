@@ -49,42 +49,6 @@ Wire Wire Line
 	5275 6075 5275 6100
 Text HLabel 3425 4475 0    60   Input ~ 0
 5V
-$Comp
-L open-automation:C_10uF C13
-U 1 1 5B160737
-P 3775 4625
-F 0 "C13" H 3675 4700 50  0000 L CNN
-F 1 "C_10uF" H 3500 4550 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3875 4925 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R61A106ME69D/490-10475-1-ND/5026393" H 3775 4375 50  0001 C CNN
-F 4 "GRM188R61A106ME69D" H 3900 4825 60  0001 C CNN "Part Number"
-	1    3775 4625
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:C_0.1uF C14
-U 1 1 5B1608B3
-P 4000 4625
-F 0 "C14" H 4115 4671 50  0000 L CNN
-F 1 "C_0.1uF" H 4115 4580 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4100 4925 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 4000 4375 50  0001 C CNN
-F 4 "C0603C104K5RACTU" H 4125 4825 60  0001 C CNN "Part Number"
-	1    4000 4625
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3425 4475 3775 4475
-Wire Wire Line
-	3775 4475 4000 4475
-Connection ~ 3775 4475
-Wire Wire Line
-	4000 4475 4475 4475
-Connection ~ 4000 4475
-Wire Wire Line
-	4000 4775 4000 4825
-Wire Wire Line
-	4000 4825 3900 4825
 Wire Wire Line
 	3775 4825 3775 4775
 $Comp
@@ -99,9 +63,6 @@ F 3 "" H 3900 4875 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3900 4825 3900 4875
-Connection ~ 3900 4825
-Wire Wire Line
 	3900 4825 3775 4825
 Text Label 4400 4975 0    50   ~ 0
 D_N
@@ -115,7 +76,6 @@ Wire Wire Line
 	4575 4675 4475 4675
 Wire Wire Line
 	4475 4675 4475 4475
-Connection ~ 4475 4475
 Wire Wire Line
 	4475 4475 4575 4475
 Text Label 6025 4675 0    50   ~ 0
@@ -271,18 +231,6 @@ Wire Wire Line
 Connection ~ 7400 4175
 Wire Wire Line
 	7400 4175 7425 4175
-$Comp
-L open-automation:C_1uF C46
-U 1 1 5B17F58C
-P 5275 3950
-F 0 "C46" H 5300 4050 50  0000 L CNN
-F 1 "C_1uF" H 5300 3850 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5375 4250 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/CC0603ZRY5V7BB105/311-1372-1-ND/2103156" H 5275 3700 50  0001 C CNN
-F 4 "CC0603ZRY5V7BB105" H 5400 4150 60  0001 C CNN "Part Number"
-	1    5275 3950
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5275 4100 5275 4175
 $Comp
@@ -329,4 +277,56 @@ Wire Wire Line
 Connection ~ 5275 6100
 Wire Wire Line
 	5275 6100 5275 6125
+Connection ~ 4475 4475
+Wire Wire Line
+	3900 4825 3900 4875
+Connection ~ 3900 4825
+Wire Wire Line
+	4000 4825 3900 4825
+Wire Wire Line
+	4000 4775 4000 4825
+Wire Wire Line
+	4000 4475 4475 4475
+Connection ~ 4000 4475
+$Comp
+L open-automation:C_0.1uF C14
+U 1 1 5B1608B3
+P 4000 4625
+F 0 "C14" H 4115 4671 50  0000 L CNN
+F 1 "C_0.1uF" H 4115 4580 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4100 4925 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X7S0J475K080AC/445-9120-1-ND/3661604" H 4000 4375 50  0001 C CNN
+F 4 "C1608X8R1H104K080AB" H 4125 4825 60  0001 C CNN "Part Number"
+	1    4000 4625
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3425 4475 3775 4475
+$Comp
+L open-automation:C_10uF C52
+U 1 1 5B27C012
+P 3775 4625
+F 0 "C52" H 3890 4671 50  0000 L CNN
+F 1 "C_10uF" H 3890 4580 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3875 4925 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10A106MP8NNNC/1276-1871-1-ND/3889957" H 3775 4375 50  0001 C CNN
+F 4 "CL10A106MP8NNNC" H 3900 4825 60  0001 C CNN "Part Number"
+	1    3775 4625
+	1    0    0    -1  
+$EndComp
+Connection ~ 3775 4475
+Wire Wire Line
+	3775 4475 4000 4475
+$Comp
+L open-automation:C_1uF C50
+U 1 1 5B2C9FB8
+P 5275 3950
+F 0 "C50" H 5390 3996 50  0000 L CNN
+F 1 "C_1uF" H 5390 3905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5375 4250 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 5275 3700 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 5400 4150 60  0001 C CNN "Part Number"
+	1    5275 3950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

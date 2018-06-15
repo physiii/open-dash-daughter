@@ -26,26 +26,8 @@ F 4 "MCP2551-I/SN" H 5825 2950 50  0001 C CNN "Part Number"
 	1    5825 2950
 	1    0    0    -1  
 $EndComp
-$Comp
-L open-automation:R_10k R18
-U 1 1 5AD70852
-P 5100 3325
-F 0 "R18" H 5170 3371 50  0000 L CNN
-F 1 "4.7k" H 5170 3280 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 5030 3325 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-074K7L/311-4.7KGRCT-ND/729732" V 5180 3325 50  0001 C CNN
-F 4 "RC0603JR-074K7L" H 5100 3325 50  0001 C CNN "Part Number"
-	1    5100 3325
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5825 3350 5825 3525
-Wire Wire Line
-	5325 3150 5100 3150
-Wire Wire Line
-	5100 3150 5100 3175
-Wire Wire Line
-	5100 3475 5100 3525
 NoConn ~ 5325 3050
 Wire Wire Line
 	5650 2325 5650 2250
@@ -148,18 +130,6 @@ F 4 "RC0603JR-07100RL" H 6650 3275 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:C C15
-U 1 1 5ADA50A9
-P 5650 2100
-F 0 "C15" H 5375 2150 50  0000 L CNN
-F 1 "0.1uF" H 5350 2075 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5688 1950 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/kemet/C0603C104K5RACTU/399-5089-1-ND/1465623" H 5650 2100 50  0001 C CNN
-F 4 "C0603C104K5RACTU" H 5650 2100 50  0001 C CNN "Part Number"
-	1    5650 2100
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C17
 U 1 1 5ADA5772
 P 7100 3650
@@ -174,12 +144,12 @@ $EndComp
 $Comp
 L power:GND #PWR032
 U 1 1 5ADD74BB
-P 5100 3525
-F 0 "#PWR032" H 5100 3275 50  0001 C CNN
-F 1 "GND" H 5105 3352 50  0000 C CNN
-F 2 "" H 5100 3525 50  0001 C CNN
-F 3 "" H 5100 3525 50  0001 C CNN
-	1    5100 3525
+P 5100 3600
+F 0 "#PWR032" H 5100 3350 50  0001 C CNN
+F 1 "GND" H 5105 3427 50  0000 C CNN
+F 2 "" H 5100 3600 50  0001 C CNN
+F 3 "" H 5100 3600 50  0001 C CNN
+	1    5100 3600
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -227,4 +197,34 @@ Text HLabel 8275 3050 2    50   Input ~ 0
 CAN-
 Text HLabel 8275 2850 2    50   Input ~ 0
 CAN+
+$Comp
+L open-automation:C_0.1uF C15
+U 1 1 5B19B412
+P 5650 2100
+F 0 "C15" H 5765 2146 50  0000 L CNN
+F 1 "C_0.1uF" H 5765 2055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5750 2400 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X8R1H104K080AB/445-8818-1-ND/3248223" H 5650 1850 50  0001 C CNN
+F 4 "C1608X8R1H104K080AB" H 5775 2300 60  0001 C CNN "Part Number"
+	1    5650 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_4K7 R18
+U 1 1 5B29BD7E
+P 5100 3400
+F 0 "R18" V 5029 3470 50  0000 L CNN
+F 1 "R_4K7" V 5120 3470 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5075 3225 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ472V/P4.7KGCT-ND/135199" H 5100 3150 50  0001 C CNN
+F 4 "ERJ-3GEYJ472V" H 5100 3475 60  0001 C CNN "Part Number"
+	1    5100 3400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5325 3150 5100 3150
+Wire Wire Line
+	5100 3150 5100 3225
+Wire Wire Line
+	5100 3525 5100 3600
 $EndSCHEMATC

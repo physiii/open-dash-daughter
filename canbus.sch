@@ -215,7 +215,7 @@ U 1 1 5B29BD7E
 P 5100 3400
 F 0 "R18" V 5029 3470 50  0000 L CNN
 F 1 "R_4K7" V 5120 3470 50  0000 L CNN
-F 2 "Resistors_SMD:R_2512_HandSoldering" H 5075 3225 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5075 3225 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ472V/P4.7KGCT-ND/135199" H 5100 3150 50  0001 C CNN
 F 4 "ERJ-3GEYJ472V" H 5100 3475 60  0001 C CNN "Part Number"
 	1    5100 3400

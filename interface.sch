@@ -98,7 +98,7 @@ U 1 1 5B15E1FC
 P 2100 5625
 F 0 "SW1" H 2100 5800 50  0000 C CNN
 F 1 "SW_PUSH" H 2100 5545 50  0000 C CNN
-F 2 "Buttons_Switches_SMD:SW_SPST_KMR2" H 2100 5625 50  0001 C CNN
+F 2 "Button_Switch_SMD:SW_SPST_KMR2" H 2100 5625 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/60/KMR2_9aug12-25127.pdf" H 2100 5625 50  0001 C CNN
 F 4 "KMR211NG LFS" H 2100 5625 60  0001 C CNN "Part Number"
 	1    2100 5625
@@ -156,7 +156,7 @@ U 1 1 5B15E1FF
 P 3050 5625
 F 0 "SW2" H 3050 5800 50  0000 C CNN
 F 1 "SW_PUSH" H 3050 5545 50  0000 C CNN
-F 2 "Buttons_Switches_SMD:SW_SPST_KMR2" H 3050 5625 50  0001 C CNN
+F 2 "Button_Switch_SMD:SW_SPST_KMR2" H 3050 5625 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/60/KMR2_9aug12-25127.pdf" H 3050 5625 50  0001 C CNN
 F 4 "KMR211NG LFS" H 3050 5625 60  0001 C CNN "Part Number"
 	1    3050 5625
@@ -214,7 +214,7 @@ U 1 1 5B15E203
 P 3875 5625
 F 0 "SW3" H 3875 5800 50  0000 C CNN
 F 1 "SW_PUSH" H 3875 5545 50  0000 C CNN
-F 2 "Buttons_Switches_SMD:SW_SPST_KMR2" H 3875 5625 50  0001 C CNN
+F 2 "Button_Switch_SMD:SW_SPST_KMR2" H 3875 5625 50  0001 C CNN
 F 3 "http://www.mouser.com/ds/2/60/KMR2_9aug12-25127.pdf" H 3875 5625 50  0001 C CNN
 F 4 "KMR211NG LFS" H 3875 5625 60  0001 C CNN "Part Number"
 	1    3875 5625
@@ -488,10 +488,8 @@ Text HLabel 6550 2425 0    60   Input ~ 0
 5V
 Wire Wire Line
 	6550 2425 6650 2425
-Text HLabel 6550 2525 0    50   Output ~ 0
+Text HLabel 4950 2775 0    50   Output ~ 0
 SOFT_POWER
-Wire Wire Line
-	6550 2525 6650 2525
 Text HLabel 7300 3650 0    60   Input ~ 0
 L_MAIN_AUDIO
 Text HLabel 7300 3750 0    60   Input ~ 0
@@ -562,6 +560,100 @@ F 1 "GND" H 8250 975 50  0000 C CNN
 F 2 "" H 8250 1125 50  0000 C CNN
 F 3 "" H 8250 1125 50  0000 C CNN
 	1    8250 1125
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_1k R52
+U 1 1 5B1B9666
+P 5225 2775
+F 0 "R52" V 5018 2775 50  0000 C CNN
+F 1 "R_1k" V 5109 2775 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 5155 2775 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5305 2775 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 5405 2875 60  0001 C CNN "Part Number"
+	1    5225 2775
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:R_1k R51
+U 1 1 5B1BAEB5
+P 5025 2950
+F 0 "R51" H 5095 2996 50  0000 L CNN
+F 1 "R_1k" H 5095 2905 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4955 2950 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5105 2950 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 5205 3050 60  0001 C CNN "Part Number"
+	1    5025 2950
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_1k R53
+U 1 1 5B1BB164
+P 5700 2350
+F 0 "R53" H 5500 2425 50  0000 L CNN
+F 1 "R_1k" H 5475 2350 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 5630 2350 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5780 2350 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 5880 2450 60  0001 C CNN "Part Number"
+	1    5700 2350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 2525 6650 2525
+Wire Wire Line
+	5700 2975 5700 3125
+$Comp
+L open-automation:GND #PWR0124
+U 1 1 5B1CB05C
+P 5025 3125
+F 0 "#PWR0124" H 5025 2875 50  0001 C CNN
+F 1 "GND" H 5030 2952 50  0000 C CNN
+F 2 "" H 5025 3125 50  0000 C CNN
+F 3 "" H 5025 3125 50  0000 C CNN
+	1    5025 3125
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:GND #PWR0125
+U 1 1 5B1CB0C0
+P 5700 3125
+F 0 "#PWR0125" H 5700 2875 50  0001 C CNN
+F 1 "GND" H 5705 2952 50  0000 C CNN
+F 2 "" H 5700 3125 50  0000 C CNN
+F 3 "" H 5700 3125 50  0000 C CNN
+	1    5700 3125
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5700 2575 5700 2525
+Wire Wire Line
+	5400 2775 5375 2775
+Wire Wire Line
+	5025 2775 5075 2775
+Wire Wire Line
+	5025 3125 5025 3100
+Wire Wire Line
+	5025 2775 5025 2800
+Wire Wire Line
+	5025 2775 4950 2775
+Connection ~ 5025 2775
+Wire Wire Line
+	5700 2525 5700 2500
+Connection ~ 5700 2525
+Wire Wire Line
+	5700 2200 5700 2175
+Text HLabel 5700 2175 1    60   Input ~ 0
+3v3
+$Comp
+L open-automation:Q_NPN_BEC Q6
+U 1 1 5B1F6997
+P 5600 2775
+F 0 "Q6" H 5791 2821 50  0000 L CNN
+F 1 "Q_NPN_BEC" H 5791 2730 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5800 2875 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/on-semiconductor/KST10MTF/KST10MTFCT-ND/965649" H 5800 2825 50  0001 C CNN
+F 4 "KST10MTF" H 5900 2925 50  0001 C CNN "Part Number"
+	1    5600 2775
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

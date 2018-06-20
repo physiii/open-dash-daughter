@@ -73,19 +73,6 @@ Wire Wire Line
 Wire Wire Line
 	1550 950  1750 950 
 $Comp
-L Device:L L5
-U 1 1 5ADAF6D2
-P 1750 3500
-F 0 "L5" H 1803 3546 50  0000 L CNN
-F 1 "6.8uH" H 1803 3455 50  0000 L CNN
-F 2 "open-automation:Coilcraft_0805PS_Handsoldering" H 1750 3500 50  0001 C CNN
-F 3 "https://www.mouser.com/ProductDetail/Coilcraft/0805PS-682KLB?qs=sGAEpiMZZMsg%252by3WlYCkU2kWFds1hA9DACZH0%2fCmx5U%3d" H 1750 3500 50  0001 C CNN
-F 4 "Coilcraft" H 1750 3500 50  0001 C CNN "Manufacture"
-F 5 "0805PS-682KLB" H 1750 3500 50  0001 C CNN "Part number"
-	1    1750 3500
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C26
 U 1 1 5ADAF7B2
 P 1750 4050
@@ -244,18 +231,6 @@ Wire Wire Line
 	6450 4050 6600 4050
 Wire Wire Line
 	6600 4050 6600 3950
-$Comp
-L Device:L L9
-U 1 1 5ADB3533
-P 5550 2150
-F 0 "L9" H 5603 2196 50  0000 L CNN
-F 1 "220uH" H 5603 2105 50  0000 L CNN
-F 2 "open-automation:Coilcraft_1008PS_Handsoldering" H 5550 2150 50  0001 C CNN
-F 3 "https://www.mouser.com/ProductDetail/Coilcraft/1008PS-224KLB?qs=zCSbvcPd3pbbzsho0wjAGQ%3D%3D" H 5550 2150 50  0001 C CNN
-F 4 "1008PS-224KLB" H 5550 2150 50  0001 C CNN "Part Number"
-	1    5550 2150
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5850 2450 5550 2450
 Wire Wire Line
@@ -801,19 +776,6 @@ F 4 "KST10MTF" H 3725 5850 50  0001 C CNN "Part Number"
 $EndComp
 Wire Wire Line
 	3225 5850 3525 5850
-$Comp
-L Device:L L6
-U 1 1 5AE3A452
-P 2050 3800
-F 0 "L6" H 2103 3846 50  0000 L CNN
-F 1 "6.8uH" H 2103 3755 50  0000 L CNN
-F 2 "open-automation:Coilcraft_0805PS_Handsoldering" H 2050 3800 50  0001 C CNN
-F 3 "https://www.mouser.com/ProductDetail/Coilcraft/0805PS-682KLB?qs=sGAEpiMZZMsg%252by3WlYCkU2kWFds1hA9DACZH0%2fCmx5U%3d" H 2050 3800 50  0001 C CNN
-F 4 "Coilcraft" H 2050 3800 50  0001 C CNN "Manufacture"
-F 5 "0805PS-682KLB" H 2050 3800 50  0001 C CNN "Part number"
-	1    2050 3800
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	2200 3800 2650 3800
 $Comp
@@ -1033,5 +995,41 @@ F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/E
 F 4 "ERJ-3GEYJ472V" H 1650 5600 60  0001 C CNN "Part Number"
 	1    1650 5525
 	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:L_6.8uH L?
+U 1 1 5B2ACCB3
+P 1750 3500
+F 0 "L?" H 1803 3546 50  0000 L CNN
+F 1 "L_6.8uH" H 1803 3455 50  0000 L CNN
+F 2 "Inductor_SMD:L_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 1600 3400 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/GLFR1608T6R8M-LR/445-6156-1-ND/2465482" V 1700 3500 50  0001 C CNN
+F 4 "GLFR1608T6R8M-LR" V 1800 3600 50  0001 C CNN "Part Number"
+	1    1750 3500
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:L_6.8uH L?
+U 1 1 5B2B1F69
+P 2050 3800
+F 0 "L?" V 2240 3800 50  0000 C CNN
+F 1 "L_6.8uH" V 2149 3800 50  0000 C CNN
+F 2 "Inductor_SMD:L_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 1900 3700 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/GLFR1608T6R8M-LR/445-6156-1-ND/2465482" V 2000 3800 50  0001 C CNN
+F 4 "GLFR1608T6R8M-LR" V 2100 3900 50  0001 C CNN "Part Number"
+	1    2050 3800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L open-automation:L_220uH L?
+U 1 1 5B2CD872
+P 5550 2150
+F 0 "L?" H 5603 2196 50  0000 L CNN
+F 1 "L_220uH" H 5603 2105 50  0000 L CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.39x1.80mm_HandSolder" V 5400 2050 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/taiyo-yuden/CB2518T221K/587-2193-1-ND/2002891" V 5500 2150 50  0001 C CNN
+F 4 "CB2518T221K" V 5600 2250 50  0001 C CNN "Part Number"
+	1    5550 2150
+	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

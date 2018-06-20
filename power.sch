@@ -15,18 +15,6 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L Device:C C5
-U 1 1 5968D146
-P 9275 2500
-F 0 "C5" H 9300 2600 50  0000 L CNN
-F 1 "1000uF" H 9300 2400 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D10.0mm_P5.00mm" H 9313 2350 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/rubycon/25YXJ1000M10X20/1189-1241-ND/3134197" H 9275 2500 50  0001 C CNN
-F 4 "25YXJ1000M10X20" H 9275 2500 60  0001 C CNN "Part Number"
-	1    9275 2500
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:GND #PWR015
 U 1 1 59690AC9
 P 9275 2700
@@ -151,17 +139,6 @@ F 3 "" H 9100 7650 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR022
-U 1 1 5AC64EC6
-P 10225 8100
-F 0 "#PWR022" H 10225 7850 50  0001 C CNN
-F 1 "GND" H 10225 7950 50  0000 C CNN
-F 2 "" H 10225 8100 50  0000 C CNN
-F 3 "" H 10225 8100 50  0000 C CNN
-	1    10225 8100
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:C C2
 U 1 1 5AC68E0B
 P 6800 4075
@@ -207,18 +184,6 @@ F 2 "Capacitors_THT:CP_Radial_D8.0mm_P3.50mm" H 7238 2350 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/united-chemi-con/EKZN500ELL181MH20D/565-4066-ND/4843876" H 7200 2500 50  0001 C CNN
 F 4 "EKZN500ELL181MH20D" H 7200 2500 60  0001 C CNN "Part Number"
 	1    7200 2500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C6
-U 1 1 5AC6DA75
-P 9750 4150
-F 0 "C6" H 9775 4250 50  0000 L CNN
-F 1 "1000uF" H 9775 4050 50  0000 L CNN
-F 2 "Capacitors_THT:CP_Radial_D10.0mm_P5.00mm" H 9788 4000 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/rubycon/25YXJ1000M10X20/1189-1241-ND/3134197" H 9750 4150 50  0001 C CNN
-F 4 "25YXJ1000M10X20" H 9750 4150 60  0001 C CNN "Part Number"
-	1    9750 4150
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -320,8 +285,6 @@ Wire Wire Line
 	6375 7100 6625 7100
 Wire Wire Line
 	7900 7450 7900 7300
-Wire Wire Line
-	10225 8000 10225 8100
 Wire Wire Line
 	10225 7275 10225 7200
 Connection ~ 10225 7200
@@ -529,18 +492,6 @@ Text Notes 2450 1750 0    60   ~ 0
 Text Notes 7850 1775 0    60   ~ 0
 output voltage = 1.23 (1 + R2/R1)\nR2 is on high side
 $Comp
-L open-automation:R_8k87 R6
-U 1 1 5B0ECFEA
-P 10225 4125
-F 0 "R6" V 10225 4075 50  0000 L CNN
-F 1 "R_8k87" V 10125 4000 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 10155 4125 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-2RKF8871X/P8.87KLCT-ND/194529" V 10305 4125 50  0001 C CNN
-F 4 "ERJ-2RKF8871X" V 10405 4225 60  0001 C CNN "Part Number"
-	1    10225 4125
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:GND #PWR017
 U 1 1 5B10399B
 P 9750 6000
@@ -722,16 +673,9 @@ Connection ~ 10225 6000
 Wire Wire Line
 	10225 6000 10225 6050
 Wire Wire Line
-	10225 7575 10225 7650
-Wire Wire Line
-	10225 7650 10075 7650
-Wire Wire Line
 	10075 7650 10075 7100
 Wire Wire Line
 	10075 7100 9050 7100
-Connection ~ 10225 7650
-Wire Wire Line
-	10225 7650 10225 7700
 Text HLabel 13175 2400 2    60   Input ~ 0
 3v3
 $Comp
@@ -979,18 +923,6 @@ F 4 "ERJ-3GEYJ102V" V 10405 6300 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_1.3K R11
-U 1 1 5B299B37
-P 10225 7850
-F 0 "R11" H 10295 7896 50  0000 L CNN
-F 1 "R_1.3K" H 10295 7805 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 10155 7850 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RT0603BRD071K3L/YAG1565CT-ND/5139013" V 10305 7850 50  0001 C CNN
-F 4 "RT0603BRD071K3L" V 10405 7950 60  0001 C CNN "Part Number"
-	1    10225 7850
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:LM2576 U4
 U 1 1 5B2B3A4B
 P 8575 5550
@@ -1039,27 +971,322 @@ F 4 "MIC4576WU-TR" H 8075 2483 50  0000 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_10k R10
-U 1 1 5AC77A5F
-P 10225 7425
-F 0 "R10" V 10225 7425 50  0000 C CNN
-F 1 "R_7k15" V 10125 7425 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 10155 7425 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/vishay-dale/CRCW06037K15FKEA/541-7.15KHCT-ND/1179907" V 10305 7425 50  0001 C CNN
-F 4 "CRCW06037K15FKEA" V 10405 7525 60  0001 C CNN "Part Number"
-	1    10225 7425
+L open-automation:R_8k87 R?
+U 1 1 5B3556FD
+P 10225 5775
+F 0 "R?" H 10295 5821 50  0000 L CNN
+F 1 "R_8k87" H 10295 5730 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 10155 5775 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-078K87L/311-8.87KHRCT-ND/730341" V 10305 5775 50  0001 C CNN
+F 4 "RC0603FR-078K87L" V 10405 5875 60  0001 C CNN "Part Number"
+	1    10225 5775
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_8k87 R8
-U 1 1 5B103A03
-P 10225 5775
-F 0 "R8" V 10225 5725 50  0000 L CNN
-F 1 "R_8k87" V 10125 5650 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 10155 5775 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-2RKF8871X/P8.87KLCT-ND/194529" V 10305 5775 50  0001 C CNN
-F 4 "ERJ-2RKF8871X" V 10405 5875 60  0001 C CNN "Part Number"
-	1    10225 5775
+L open-automation:R_8k87 R?
+U 1 1 5B3594CE
+P 10225 4125
+F 0 "R?" H 10295 4171 50  0000 L CNN
+F 1 "R_8k87" H 10295 4080 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 10155 4125 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-078K87L/311-8.87KHRCT-ND/730341" V 10305 4125 50  0001 C CNN
+F 4 "RC0603FR-078K87L" V 10405 4225 60  0001 C CNN "Part Number"
+	1    10225 4125
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_10k R?
+U 1 1 5B360DF3
+P 2200 6600
+F 0 "R?" H 2270 6646 50  0000 L CNN
+F 1 "R_10k" H 2270 6555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 2130 6600 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 2280 6600 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 2380 6700 60  0001 C CNN "Part Number"
+	1    2200 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:LED-0603-G D?
+U 1 1 5B3612D0
+P 2200 6975
+F 0 "D?" V 2238 6858 50  0000 R CNN
+F 1 "LED-0603-G" V 2147 6858 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 2100 6975 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 2200 7075 50  0001 C CNN
+F 4 "SML-D12M8WT86" H 2300 7175 50  0001 C CNN "Part Number"
+	1    2200 6975
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2200 6750 2200 6825
+Wire Wire Line
+	2200 7125 2200 7225
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B38480D
+P 2200 7225
+F 0 "#PWR?" H 2200 6975 50  0001 C CNN
+F 1 "GND" H 2200 7075 50  0000 C CNN
+F 2 "" H 2200 7225 50  0000 C CNN
+F 3 "" H 2200 7225 50  0000 C CNN
+	1    2200 7225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 6450 2200 6400
+$Comp
+L open-automation:R_10k R?
+U 1 1 5B390273
+P 2900 6600
+F 0 "R?" H 2970 6646 50  0000 L CNN
+F 1 "R_10k" H 2970 6555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 2830 6600 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 2980 6600 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 3080 6700 60  0001 C CNN "Part Number"
+	1    2900 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:LED-0603-G D?
+U 1 1 5B39027B
+P 2900 6975
+F 0 "D?" V 2938 6858 50  0000 R CNN
+F 1 "LED-0603-G" V 2847 6858 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 2800 6975 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 2900 7075 50  0001 C CNN
+F 4 "SML-D12M8WT86" H 3000 7175 50  0001 C CNN "Part Number"
+	1    2900 6975
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2900 6750 2900 6825
+Wire Wire Line
+	2900 7125 2900 7225
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B390284
+P 2900 7225
+F 0 "#PWR?" H 2900 6975 50  0001 C CNN
+F 1 "GND" H 2900 7075 50  0000 C CNN
+F 2 "" H 2900 7225 50  0000 C CNN
+F 3 "" H 2900 7225 50  0000 C CNN
+	1    2900 7225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2900 6450 2900 6400
+$Comp
+L open-automation:R_10k R?
+U 1 1 5B394391
+P 3575 6600
+F 0 "R?" H 3645 6646 50  0000 L CNN
+F 1 "R_10k" H 3645 6555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 3505 6600 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 3655 6600 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 3755 6700 60  0001 C CNN "Part Number"
+	1    3575 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:LED-0603-G D?
+U 1 1 5B394399
+P 3575 6975
+F 0 "D?" V 3613 6858 50  0000 R CNN
+F 1 "LED-0603-G" V 3522 6858 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 3475 6975 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 3575 7075 50  0001 C CNN
+F 4 "SML-D12M8WT86" H 3675 7175 50  0001 C CNN "Part Number"
+	1    3575 6975
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	3575 6750 3575 6825
+Wire Wire Line
+	3575 7125 3575 7225
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B3943A2
+P 3575 7225
+F 0 "#PWR?" H 3575 6975 50  0001 C CNN
+F 1 "GND" H 3575 7075 50  0000 C CNN
+F 2 "" H 3575 7225 50  0000 C CNN
+F 3 "" H 3575 7225 50  0000 C CNN
+	1    3575 7225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3575 6450 3575 6400
+$Comp
+L open-automation:R_10k R?
+U 1 1 5B39DB7B
+P 4250 6600
+F 0 "R?" H 4320 6646 50  0000 L CNN
+F 1 "R_10k" H 4320 6555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4180 6600 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 4330 6600 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 4430 6700 60  0001 C CNN "Part Number"
+	1    4250 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:LED-0603-G D?
+U 1 1 5B39DB83
+P 4250 6975
+F 0 "D?" V 4288 6858 50  0000 R CNN
+F 1 "LED-0603-G" V 4197 6858 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 4150 6975 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 4250 7075 50  0001 C CNN
+F 4 "SML-D12M8WT86" H 4350 7175 50  0001 C CNN "Part Number"
+	1    4250 6975
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4250 6750 4250 6825
+Wire Wire Line
+	4250 7125 4250 7225
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B39DB8C
+P 4250 7225
+F 0 "#PWR?" H 4250 6975 50  0001 C CNN
+F 1 "GND" H 4250 7075 50  0000 C CNN
+F 2 "" H 4250 7225 50  0000 C CNN
+F 3 "" H 4250 7225 50  0000 C CNN
+	1    4250 7225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4250 6450 4250 6400
+Text HLabel 4250 6400 1    60   Input ~ 0
+AUDIO_POWER
+Text HLabel 2900 6400 1    60   Input ~ 0
+MAIN_POWER
+Text HLabel 3575 6400 1    60   Input ~ 0
+DISPLAY_POWER
+Text HLabel 2200 6400 1    60   Input ~ 0
+5V
+Wire Notes Line
+	4525 5450 1850 5450
+Wire Notes Line
+	1850 5450 1850 7575
+Wire Notes Line
+	1850 7575 4950 7575
+Wire Notes Line
+	4950 7575 4950 5450
+Wire Notes Line
+	4950 5450 4575 5450
+Text Notes 3050 5425 0    50   ~ 0
+Power Out LEDs
+$Comp
+L open-automation:C_1000uF C?
+U 1 1 5B3CD053
+P 9275 2500
+F 0 "C?" H 9390 2546 50  0000 L CNN
+F 1 "C_1000uF" H 9390 2455 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P3.50mm" H 9375 2800 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/nichicon/UVR0J102MPD1TD/493-12738-1-ND/4328447" H 9275 2250 50  0001 C CNN
+F 4 "UVR0J102MPD1TD" H 9400 2700 60  0001 C CNN "Part Number"
+	1    9275 2500
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:C_1000uF C?
+U 1 1 5B3CD15E
+P 9750 4150
+F 0 "C?" H 9865 4196 50  0000 L CNN
+F 1 "C_1000uF" H 9865 4105 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P3.50mm" H 9850 4450 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/nichicon/UVR0J102MPD1TD/493-12738-1-ND/4328447" H 9750 3900 50  0001 C CNN
+F 4 "UVR0J102MPD1TD" H 9875 4350 60  0001 C CNN "Part Number"
+	1    9750 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_10k R?
+U 1 1 5B3CE0CA
+P 1225 6600
+F 0 "R?" H 1295 6646 50  0000 L CNN
+F 1 "R_10k" H 1295 6555 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 1155 6600 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 1305 6600 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 1405 6700 60  0001 C CNN "Part Number"
+	1    1225 6600
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:LED-0603-G D?
+U 1 1 5B3CE0D2
+P 1225 6975
+F 0 "D?" V 1263 6858 50  0000 R CNN
+F 1 "LED-0603-G" V 1172 6858 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 1125 6975 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/rohm-semiconductor/SML-D12M8WT86/511-1578-1-ND/1641810" H 1225 7075 50  0001 C CNN
+F 4 "SML-D12M8WT86" H 1325 7175 50  0001 C CNN "Part Number"
+	1    1225 6975
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	1225 6750 1225 6825
+Wire Wire Line
+	1225 7125 1225 7225
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B3CE0DB
+P 1225 7225
+F 0 "#PWR?" H 1225 6975 50  0001 C CNN
+F 1 "GND" H 1225 7075 50  0000 C CNN
+F 2 "" H 1225 7225 50  0000 C CNN
+F 3 "" H 1225 7225 50  0000 C CNN
+	1    1225 7225
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1225 6450 1225 6400
+Text HLabel 1225 6400 1    60   Input ~ 0
+BATTERY
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B403D88
+P 10225 8100
+F 0 "#PWR?" H 10225 7850 50  0001 C CNN
+F 1 "GND" H 10225 7950 50  0000 C CNN
+F 2 "" H 10225 8100 50  0000 C CNN
+F 3 "" H 10225 8100 50  0000 C CNN
+	1    10225 8100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10225 8000 10225 8100
+Wire Wire Line
+	10225 7575 10225 7650
+Wire Wire Line
+	10225 7650 10075 7650
+Connection ~ 10225 7650
+Wire Wire Line
+	10225 7650 10225 7700
+$Comp
+L open-automation:R_1k R?
+U 1 1 5B403D94
+P 10225 7850
+F 0 "R?" H 10295 7896 50  0000 L CNN
+F 1 "R_1k" H 10295 7805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 10155 7850 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 10305 7850 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 10405 7950 60  0001 C CNN "Part Number"
+	1    10225 7850
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_8k87 R?
+U 1 1 5B403D9C
+P 10225 7425
+F 0 "R?" H 10295 7471 50  0000 L CNN
+F 1 "R_8k87" H 10295 7380 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 10155 7425 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-078K87L/311-8.87KHRCT-ND/730341" V 10305 7425 50  0001 C CNN
+F 4 "RC0603FR-078K87L" V 10405 7525 60  0001 C CNN "Part Number"
+	1    10225 7425
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

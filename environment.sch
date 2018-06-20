@@ -142,18 +142,6 @@ SDA
 Text HLabel 7975 3650 2    60   Input ~ 0
 SCL
 $Comp
-L open-automation:R_10 R21
-U 1 1 5B2CA473
-P 6375 3650
-F 0 "R21" V 6375 3575 50  0000 L CNN
-F 1 "R_10" V 6275 3550 50  0000 L CNN
-F 2 "Resistor_SMD:R_2512_6332Metric_Pad1.49x3.40mm_HandSolder" V 6305 3650 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/te-connectivity-passive-product/CPF0603B10RE/A119908CT-ND/4966506" V 6455 3650 50  0001 C CNN
-F 4 "CPF0603B10RE" V 6555 3750 60  0001 C CNN "Part Number"
-	1    6375 3650
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:C_0.1uF C18
 U 1 1 5B22240F
 P 3050 3600
@@ -206,5 +194,17 @@ F 3 "https://www.digikey.com/product-detail/en/texas-instruments/INA219AIDCNT/29
 F 4 "INA219AIDCNT" H 7700 3350 60  0001 C CNN "Part Number"
 	1    7400 3500
 	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_10m R?
+U 1 1 5B3C5EA6
+P 6375 3675
+F 0 "R?" V 6304 3745 50  0000 L CNN
+F 1 "R_10m" V 6395 3745 50  0000 L CNN
+F 2 "Resistors_SMD:R_2512_HandSoldering" H 6350 3500 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/bourns-inc/CRA2512-FZ-R010ELF/CRA2512-FZ-R010ELFCT-ND/1775054" H 6375 3425 50  0001 C CNN
+F 4 "CRA2512-FZ-R010ELF" H 6375 3750 60  0001 C CNN "Part Number"
+	1    6375 3675
+	0    1    1    0   
 $EndComp
 $EndSCHEMATC

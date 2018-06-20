@@ -337,10 +337,6 @@ F 3 "" H 10450 2850 50  0000 C CNN
 	1    10450 2850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	9650 2500 9650 2450
-Wire Wire Line
-	9650 2450 8950 2450
 NoConn ~ 8950 2850
 NoConn ~ 8950 2750
 NoConn ~ 8250 1650
@@ -364,17 +360,6 @@ Wire Wire Line
 	10450 2350 10450 2450
 Wire Wire Line
 	10450 2750 10450 2850
-$Comp
-L open-automation:GND #PWR061
-U 1 1 5ADEBD94
-P 9650 2500
-F 0 "#PWR061" H 9650 2250 50  0001 C CNN
-F 1 "GND" H 9655 2327 50  0000 C CNN
-F 2 "" H 9650 2500 50  0000 C CNN
-F 3 "" H 9650 2500 50  0000 C CNN
-	1    9650 2500
-	1    0    0    -1  
-$EndComp
 Connection ~ 10450 2350
 Wire Wire Line
 	8950 2350 10000 2350
@@ -850,18 +835,6 @@ Wire Wire Line
 Connection ~ 3800 950 
 Wire Wire Line
 	2700 950  3800 950 
-$Comp
-L open-automation:Si4740 U12
-U 1 1 5B1B14DB
-P 7750 3300
-F 0 "U12" H 8991 4046 50  0000 L CNN
-F 1 "Si4740" H 8991 3955 50  0000 L CNN
-F 2 "Housings_DFN_QFN:QFN-24-1EP_4x4mm_Pitch0.5mm" H 7950 4050 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/silicon-labs/SI4740-C10-GMR/336-4880-1-ND/8619844" H 7950 3850 50  0001 C CNN
-F 4 "SI4740-C10-GMR" H 7750 3300 50  0001 C CNN "Part Number"
-	1    7750 3300
-	1    0    0    -1  
-$EndComp
 Text HLabel 1550 950  0    50   Input ~ 0
 AMF_Antenna
 $Comp
@@ -1030,6 +1003,38 @@ F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.39x1.80mm_HandSolder" V 5400 2050 50  0
 F 3 "https://www.digikey.com/product-detail/en/taiyo-yuden/CB2518T221K/587-2193-1-ND/2002891" V 5500 2150 50  0001 C CNN
 F 4 "CB2518T221K" V 5600 2250 50  0001 C CNN "Part Number"
 	1    5550 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:Si4740 U12
+U 1 1 5B1B14DB
+P 7750 3300
+F 0 "U12" H 8991 4046 50  0000 L CNN
+F 1 "Si4740" H 8991 3955 50  0000 L CNN
+F 2 "open-automation:QFN-24_4x4mm_P0.5mm" H 7950 4050 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/silicon-labs/SI4740-C10-GMR/336-4880-1-ND/8619844" H 7950 3850 50  0001 C CNN
+F 4 "SI4740-C10-GMR" H 7750 3300 50  0001 C CNN "Part Number"
+	1    7750 3300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8950 2450 9025 2450
+Wire Wire Line
+	9025 2450 9025 3050
+Wire Wire Line
+	8950 3050 9025 3050
+Connection ~ 9025 3050
+Wire Wire Line
+	9025 3050 9025 3150
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B42E917
+P 9025 3150
+F 0 "#PWR?" H 9025 2900 50  0001 C CNN
+F 1 "GND" H 9030 2977 50  0000 C CNN
+F 2 "" H 9025 3150 50  0000 C CNN
+F 3 "" H 9025 3150 50  0000 C CNN
+	1    9025 3150
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

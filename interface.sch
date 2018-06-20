@@ -81,18 +81,6 @@ FR_AUDIO_OUT-
 Text HLabel 3900 1025 2    50   Input ~ 0
 FL_AUDIO_OUT-
 $Comp
-L open-dash-daughterboard-rescue:LED-open-automation D10
-U 1 1 5B1799AD
-P 2100 4775
-F 0 "D10" V 2075 4875 50  0000 C CNN
-F 1 "LED" V 2200 4700 50  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 2100 4775 50  0001 C CNN
-F 3 "http://www.osram-os.com/Graphics/XPic9/00128792_0.pdf" H 2100 4775 50  0001 C CNN
-F 4 "475-2512-2-ND" H 2100 4775 60  0001 C CNN "Part Number"
-	1    2100 4775
-	0    -1   -1   0   
-$EndComp
-$Comp
 L open-automation:SW_PUSH SW1
 U 1 1 5B15E1FC
 P 2100 5625
@@ -139,18 +127,6 @@ Wire Wire Line
 	2225 5300 2100 5300
 Connection ~ 2100 5300
 $Comp
-L open-dash-daughterboard-rescue:LED-open-automation D11
-U 1 1 5B15E1FE
-P 3050 4775
-F 0 "D11" V 3025 4875 50  0000 C CNN
-F 1 "LED" V 3150 4700 50  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 3050 4775 50  0001 C CNN
-F 3 "http://www.osram-os.com/Graphics/XPic9/00128792_0.pdf" H 3050 4775 50  0001 C CNN
-F 4 "475-2512-2-ND" H 3050 4775 60  0001 C CNN "Part Number"
-	1    3050 4775
-	0    -1   -1   0   
-$EndComp
-$Comp
 L open-automation:SW_PUSH SW2
 U 1 1 5B15E1FF
 P 3050 5625
@@ -196,18 +172,6 @@ Wire Wire Line
 Wire Wire Line
 	3175 5300 3050 5300
 Connection ~ 3050 5300
-$Comp
-L open-dash-daughterboard-rescue:LED-open-automation D12
-U 1 1 5B15E202
-P 3875 4775
-F 0 "D12" V 3850 4875 50  0000 C CNN
-F 1 "LED" V 3975 4700 50  0000 C CNN
-F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 3875 4775 50  0001 C CNN
-F 3 "http://www.osram-os.com/Graphics/XPic9/00128792_0.pdf" H 3875 4775 50  0001 C CNN
-F 4 "475-2512-2-ND" H 3875 4775 60  0001 C CNN "Part Number"
-	1    3875 4775
-	0    -1   -1   0   
-$EndComp
 $Comp
 L open-automation:SW_PUSH SW3
 U 1 1 5B15E203
@@ -654,6 +618,66 @@ F 2 "Package_TO_SOT_SMD:SOT-23" H 5800 2875 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/on-semiconductor/KST10MTF/KST10MTFCT-ND/965649" H 5800 2825 50  0001 C CNN
 F 4 "KST10MTF" H 5900 2925 50  0001 C CNN "Part Number"
 	1    5600 2775
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:LED-0603-R D?
+U 1 1 5B35FE49
+P 2100 4775
+F 0 "D?" V 2138 4658 50  0000 R CNN
+F 1 "LED-0603-R" V 2047 4658 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 2000 4775 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=475-2512-2-ND" H 2100 4875 50  0001 C CNN
+F 4 "LS Q976-NR-1" H 2200 4975 50  0001 C CNN "Part Number"
+	1    2100 4775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L open-automation:LED-0603-R D?
+U 1 1 5B35FF8B
+P 3050 4775
+F 0 "D?" V 3088 4658 50  0000 R CNN
+F 1 "LED-0603-R" V 2997 4658 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 2950 4775 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=475-2512-2-ND" H 3050 4875 50  0001 C CNN
+F 4 "LS Q976-NR-1" H 3150 4975 50  0001 C CNN "Part Number"
+	1    3050 4775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L open-automation:LED-0603-R D?
+U 1 1 5B3600BD
+P 3875 4775
+F 0 "D?" V 3913 4658 50  0000 R CNN
+F 1 "LED-0603-R" V 3822 4658 50  0000 R CNN
+F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 3775 4775 50  0001 C CNN
+F 3 "https://www.digikey.com/products/en?keywords=475-2512-2-ND" H 3875 4875 50  0001 C CNN
+F 4 "LS Q976-NR-1" H 3975 4975 50  0001 C CNN "Part Number"
+	1    3875 4775
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x08_Counter_Clockwise J?
+U 1 1 5B5067C0
+P 7150 5150
+F 0 "J?" H 7200 5667 50  0000 C CNN
+F 1 "Conn_02x08_Counter_Clockwise" H 7200 5576 50  0000 C CNN
+F 2 "Connector_Molex:Molex_Mini-Fit_Jr_5566-16A2_2x08_P4.20mm_Vertical" H 7150 5150 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/molex-llc/0015978162/WM7202-ND/3044417" H 7150 5150 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/molex-llc/0015978162/WM7202-ND/3044417" H 7150 5150 50  0001 C CNN "Part Number"
+	1    7150 5150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_02x08_Counter_Clockwise J?
+U 1 1 5B506A12
+P 8575 5200
+F 0 "J?" H 8625 5717 50  0000 C CNN
+F 1 "Conn_02x08_Counter_Clockwise" H 8625 5626 50  0000 C CNN
+F 2 "" H 8575 5200 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/molex-llc/0015975161/WM2595-ND/2405484" H 8575 5200 50  0001 C CNN
+F 4 "0015975161" H 8575 5200 50  0001 C CNN "Part Number"
+	1    8575 5200
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

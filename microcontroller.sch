@@ -244,4 +244,244 @@ F 4 "CGA3E1X7R1C105M080AC" H 2925 3950 60  0001 C CNN "Part Number"
 	1    2800 3750
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	6625 3300 6725 3300
+Text HLabel 6725 3300 2    50   Input ~ 0
+I2S_DATA_IN
+Wire Wire Line
+	4875 3800 4775 3800
+Text HLabel 4775 3800 0    50   Input ~ 0
+I2S_DATA_OUT
+$Comp
+L liger-rescue:R_47.5 R?
+U 1 1 5B2E2168
+P 4450 3900
+F 0 "R?" V 4450 3900 50  0000 C CNN
+F 1 "R_47.5" V 4550 3900 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 4380 3900 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3EKF4752V/P47.5KHCT-ND/198404" V 4530 3900 50  0001 C CNN
+F 4 "ERJ-3EKF4752V" V 4630 4000 60  0001 C CNN "Part Number"
+	1    4450 3900
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4300 3900 4250 3900
+Text HLabel 4250 3900 0    50   Input ~ 0
+I2S_BCLK
+Wire Wire Line
+	4875 3900 4600 3900
+Wire Wire Line
+	6625 3200 7025 3200
+$Comp
+L liger-rescue:R_47.5 R?
+U 1 1 5B308AD6
+P 7175 3200
+F 0 "R?" V 7175 3200 50  0000 C CNN
+F 1 "R_47.5" V 7075 3200 50  0000 C CNN
+F 2 "Resistors_SMD:R_0603" V 7105 3200 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3EKF4752V/P47.5KHCT-ND/198404" V 7255 3200 50  0001 C CNN
+F 4 "ERJ-3EKF4752V" V 7355 3300 60  0001 C CNN "Part Number"
+	1    7175 3200
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7325 3200 7450 3200
+Text HLabel 7450 3200 2    50   Input ~ 0
+I2S_WS
+$Comp
+L open-automation:R_1k R?
+U 1 1 5B33C581
+P 2225 5350
+F 0 "R?" V 2018 5350 50  0000 C CNN
+F 1 "R_1k" V 2109 5350 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 2155 5350 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 2305 5350 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 2405 5450 60  0001 C CNN "Part Number"
+	1    2225 5350
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:R_1k R?
+U 1 1 5B33C589
+P 2025 5525
+F 0 "R?" H 2095 5571 50  0000 L CNN
+F 1 "R_1k" H 2095 5480 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 1955 5525 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 2105 5525 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 2205 5625 60  0001 C CNN "Part Number"
+	1    2025 5525
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_1k R?
+U 1 1 5B33C591
+P 2700 4925
+F 0 "R?" H 2500 5000 50  0000 L CNN
+F 1 "R_1k" H 2475 4925 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 2630 4925 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 2780 4925 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 2880 5025 60  0001 C CNN "Part Number"
+	1    2700 4925
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 5100 3650 5100
+Wire Wire Line
+	2700 5550 2700 5700
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B33C59A
+P 2025 5700
+F 0 "#PWR?" H 2025 5450 50  0001 C CNN
+F 1 "GND" H 2030 5527 50  0000 C CNN
+F 2 "" H 2025 5700 50  0000 C CNN
+F 3 "" H 2025 5700 50  0000 C CNN
+	1    2025 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B33C5A0
+P 2700 5700
+F 0 "#PWR?" H 2700 5450 50  0001 C CNN
+F 1 "GND" H 2705 5527 50  0000 C CNN
+F 2 "" H 2700 5700 50  0000 C CNN
+F 3 "" H 2700 5700 50  0000 C CNN
+	1    2700 5700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 5150 2700 5100
+Wire Wire Line
+	2400 5350 2375 5350
+Wire Wire Line
+	2025 5350 2075 5350
+Wire Wire Line
+	2025 5700 2025 5675
+Wire Wire Line
+	2025 5350 2025 5375
+Wire Wire Line
+	2025 5350 1950 5350
+Connection ~ 2025 5350
+Wire Wire Line
+	2700 5100 2700 5075
+Connection ~ 2700 5100
+$Comp
+L open-automation:Q_NPN_BEC Q?
+U 1 1 5B33C5B0
+P 2600 5350
+F 0 "Q?" H 2791 5396 50  0000 L CNN
+F 1 "Q_NPN_BEC" H 2791 5305 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2800 5450 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/on-semiconductor/KST10MTF/KST10MTFCT-ND/965649" H 2800 5400 50  0001 C CNN
+F 4 "KST10MTF" H 2900 5500 50  0001 C CNN "Part Number"
+	1    2600 5350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 4775 2700 4675
+Text HLabel 3650 5100 2    60   Input ~ 0
+MUTE_AUDIO
+Text HLabel 1950 6950 0    60   Input ~ 0
+STBY_AUDIO
+Text HLabel 1950 5350 0    60   Input ~ 0
+MUTE_AUDIO
+Text HLabel 3650 6700 2    60   Input ~ 0
+STBY_AUDIO
+$Comp
+L open-automation:R_1k R?
+U 1 1 5B346765
+P 2225 6950
+F 0 "R?" V 2018 6950 50  0000 C CNN
+F 1 "R_1k" V 2109 6950 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 2155 6950 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 2305 6950 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 2405 7050 60  0001 C CNN "Part Number"
+	1    2225 6950
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:R_1k R?
+U 1 1 5B34676D
+P 2025 7125
+F 0 "R?" H 2095 7171 50  0000 L CNN
+F 1 "R_1k" H 2095 7080 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 1955 7125 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 2105 7125 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 2205 7225 60  0001 C CNN "Part Number"
+	1    2025 7125
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_1k R?
+U 1 1 5B346775
+P 2700 6525
+F 0 "R?" H 2500 6600 50  0000 L CNN
+F 1 "R_1k" H 2475 6525 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 2630 6525 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 2780 6525 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 2880 6625 60  0001 C CNN "Part Number"
+	1    2700 6525
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 6700 3650 6700
+Wire Wire Line
+	2700 7150 2700 7300
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B34677E
+P 2025 7300
+F 0 "#PWR?" H 2025 7050 50  0001 C CNN
+F 1 "GND" H 2030 7127 50  0000 C CNN
+F 2 "" H 2025 7300 50  0000 C CNN
+F 3 "" H 2025 7300 50  0000 C CNN
+	1    2025 7300
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B346784
+P 2700 7300
+F 0 "#PWR?" H 2700 7050 50  0001 C CNN
+F 1 "GND" H 2705 7127 50  0000 C CNN
+F 2 "" H 2700 7300 50  0000 C CNN
+F 3 "" H 2700 7300 50  0000 C CNN
+	1    2700 7300
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 6750 2700 6700
+Wire Wire Line
+	2400 6950 2375 6950
+Wire Wire Line
+	2025 6950 2075 6950
+Wire Wire Line
+	2025 7300 2025 7275
+Wire Wire Line
+	2025 6950 2025 6975
+Wire Wire Line
+	2025 6950 1950 6950
+Connection ~ 2025 6950
+Wire Wire Line
+	2700 6700 2700 6675
+Connection ~ 2700 6700
+$Comp
+L open-automation:Q_NPN_BEC Q?
+U 1 1 5B346794
+P 2600 6950
+F 0 "Q?" H 2791 6996 50  0000 L CNN
+F 1 "Q_NPN_BEC" H 2791 6905 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2800 7050 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/on-semiconductor/KST10MTF/KST10MTFCT-ND/965649" H 2800 7000 50  0001 C CNN
+F 4 "KST10MTF" H 2900 7100 50  0001 C CNN "Part Number"
+	1    2600 6950
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 6375 2700 6275
+Text HLabel 2700 4675 1    50   Input ~ 0
+5V
+Text HLabel 2700 6275 1    50   Input ~ 0
+5V
 $EndSCHEMATC

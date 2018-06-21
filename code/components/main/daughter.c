@@ -16,7 +16,7 @@
 #include "rom/uart.h"
 #include "cJSON.h"
 #include "CAN.h"
-
+#include "driver/i2c.h"
 #include <string.h>
 
 // if the dash does not respond, assume it is off
@@ -45,6 +45,306 @@
 
 TaskHandle_t xBlink = NULL;
 bool dash_wait_flag = false;
+
+/************************** power detection ********************************/
+
+#define DATA_LENGTH                        512              /*!<Data buffer length for test buffer*/
+#define RW_TEST_LENGTH                     129              /*!<Data length for r/w test, any value from 0-DATA_LENGTH*/
+#define MAINBOARD_ON_CURRENT		   100		
+
+#define I2C_EXAMPLE_MASTER_SCL_IO          21               /*!< gpio number for I2C master clock */
+#define I2C_EXAMPLE_MASTER_SDA_IO          19               /*!< gpio number for I2C master data  */
+#define I2C_EXAMPLE_MASTER_NUM             I2C_NUM_1        /*!< I2C port number for master dev */
+#define I2C_EXAMPLE_MASTER_TX_BUF_DISABLE  0                /*!< I2C master do not need buffer */
+#define I2C_EXAMPLE_MASTER_RX_BUF_DISABLE  0                /*!< I2C master do not need buffer */
+#define I2C_EXAMPLE_MASTER_FREQ_HZ         100000           /*!< I2C master clock frequency */
+
+#define WRITE_BIT                          I2C_MASTER_WRITE /*!< I2C master write */
+#define READ_BIT                           I2C_MASTER_READ  /*!< I2C master read */
+#define ACK_CHECK_EN                       0x1              /*!< I2C master will check ack from slave*/
+#define ACK_CHECK_DIS                      0x0              /*!< I2C master will not check ack from slave */
+#define ACK_VAL                            0x0              /*!< I2C ack value */
+#define NACK_VAL                           0x1              /*!< I2C nack value */
+
+// GPIO assignments
+#define GPIO_STATUS_LED               (GPIO_NUM_2)
+#define GPIO_CAN_RX                   (GPIO_NUM_4)
+// #define GPIO_CAN_TX                   (GPIO_NUM_???)
+#define GPIO_MAINBOARD_SOFT_POWER     (GPIO_NUM_5)
+#define GPIO_DISPLAY_POWER            (GPIO_NUM_15)
+#define GPIO_AUDIO_AMP_POWER          (GPIO_NUM_16)
+#define GPIO_MAINBOARD_POWER          (GPIO_NUM_18)
+
+#define POWER_DELAY_TIME   1234 /*!< delay time between different test items */
+
+#define INA219_SENSOR_ADDR            0x41    /*!< slave address for SI7020 sensor */
+#define INA219_CMD_CONFIGURE          0x00    /*!< Command to set measure mode */
+#define INA219_CONFIGURATION_MSB      0x11    /*!< Command to set measure mode */
+#define INA219_CONFIGURATION_LSB      0x9F    /*!< Command to set measure mode */
+#define INA219_CMD_MEASURE_CURRENT    0x01    /*!< Command to set measure mode */
+#define INA219_CMD_MEASURE_VOLTAGE    0x02    /*!< Command to set measure mode */
+#define INA219_CMD_MEASURE_POWER      0x03    /*!< Command to set measure mode */
+
+char temp_str[50];
+bool power_received = false;
+uint8_t mac[6];
+char power_rx_data[256];
+char power_command[100];
+
+char current_str[100] = "0";
+char voltage_str[100] = "0";
+
+bool power_data_ready = false;
+
+char power_command[100];
+char front_power_str[100];
+char i_str[10];
+int power_linked = 0;
+//bool power_connected = false;
+
+char power_str[250] = "";
+static bool s_pad_activated[TOUCH_PAD_MAX];
+static bool s_pad_activated_notify[TOUCH_PAD_MAX];
+static bool s_pad_activated_USB_POWER_PIN[TOUCH_PAD_MAX];
+char power_req_str[1024];
+
+uint32_t low_battery_off = 0 * 1000;
+uint32_t low_battery_on = 0 * 1000;
+uint32_t high_battery_off = 20 * 1000;
+uint32_t high_battery_on =  20 * 1000;
+uint32_t battery_power = 0;
+
+uint32_t current_cf = 1000;
+uint32_t current_cb = 0;
+uint32_t voltage_cf =  1000;
+uint32_t voltage_cb = 0;
+uint32_t power_cf =  1000;
+uint32_t power_cb = 0;
+
+
+char temp_str[50];
+char mac_str[20];
+char power[512];
+char power_message[512];
+char previous_power[256];
+char battery_power_str[50];
+char usb_state[10];
+
+
+bool low_battery = false;
+bool power_req_sent = false;
+bool power_connect = true;
+//bool power_connecting = false;
+bool INA219_CONFIGURED = false;
+uint8_t mac[6];
+
+int battery_voltage = 0;
+int battery_current = 0;
+int usb_power_value = 0;
+int panel_en_value = 0;
+
+/**
+ * @brief i2c master initialization
+ */
+static void i2c_example_master_init()
+{
+    int i2c_master_port = I2C_EXAMPLE_MASTER_NUM;
+    i2c_config_t conf;
+    conf.mode = I2C_MODE_MASTER;
+    conf.sda_io_num = I2C_EXAMPLE_MASTER_SDA_IO;
+    conf.sda_pullup_en = GPIO_PULLUP_ENABLE;
+    conf.scl_io_num = I2C_EXAMPLE_MASTER_SCL_IO;
+    conf.scl_pullup_en = GPIO_PULLUP_ENABLE;
+    conf.master.clk_speed = I2C_EXAMPLE_MASTER_FREQ_HZ;
+    i2c_param_config(i2c_master_port, &conf);
+    i2c_driver_install(i2c_master_port, conf.mode,
+                       I2C_EXAMPLE_MASTER_RX_BUF_DISABLE,
+                       I2C_EXAMPLE_MASTER_TX_BUF_DISABLE, 0);
+}
+
+
+static esp_err_t INA219_configure(i2c_port_t i2c_num, uint8_t* data_msb, uint8_t* data_lsb, size_t size)
+{
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+
+    i2c_master_write_byte(cmd, ( INA219_SENSOR_ADDR << 1 ) | WRITE_BIT, ACK_CHECK_EN);
+    i2c_master_write_byte(cmd, INA219_CMD_CONFIGURE, ACK_CHECK_EN);
+    i2c_master_write_byte(cmd, INA219_CONFIGURATION_MSB, ACK_CHECK_EN);
+    i2c_master_write_byte(cmd, INA219_CONFIGURATION_LSB, ACK_CHECK_EN);
+    /*i2c_master_write(cmd, data_msb, size, ACK_CHECK_EN);
+    i2c_master_write(cmd, data_lsb, size, ACK_CHECK_EN);*/
+
+    i2c_master_stop(cmd);
+    esp_err_t ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    return ESP_OK;
+}
+
+static esp_err_t INA219_measure_current(i2c_port_t i2c_num, uint8_t* data_h, uint8_t* data_l)
+{
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, INA219_SENSOR_ADDR << 1 | WRITE_BIT, ACK_CHECK_EN);
+    i2c_master_write_byte(cmd, INA219_CMD_MEASURE_CURRENT, ACK_CHECK_EN);
+    i2c_master_stop(cmd);
+
+    int ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_FAIL) {
+        return ret;
+    }
+
+    vTaskDelay(30 / portTICK_RATE_MS);
+
+    cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, INA219_SENSOR_ADDR << 1 | READ_BIT, ACK_CHECK_EN);
+    i2c_master_read_byte(cmd, data_h, ACK_VAL);
+    i2c_master_read_byte(cmd, data_l, NACK_VAL);
+    i2c_master_stop(cmd);
+
+    ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_FAIL) {
+        return ESP_FAIL;
+    }
+    return ESP_OK;
+}
+
+static esp_err_t INA219_measure_voltage(i2c_port_t i2c_num, uint8_t* data_h, uint8_t* data_l)
+{
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, INA219_SENSOR_ADDR << 1 | WRITE_BIT, ACK_CHECK_EN);
+    i2c_master_write_byte(cmd, INA219_CMD_MEASURE_VOLTAGE, ACK_CHECK_EN);
+    i2c_master_stop(cmd);
+
+    int ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_FAIL) {
+        return ret;
+    }
+
+    vTaskDelay(30 / portTICK_RATE_MS);
+
+    cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, INA219_SENSOR_ADDR << 1 | READ_BIT, ACK_CHECK_EN);
+    i2c_master_read_byte(cmd, data_h, ACK_VAL);
+    i2c_master_read_byte(cmd, data_l, NACK_VAL);
+    i2c_master_stop(cmd);
+
+    ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_FAIL) {
+        return ESP_FAIL;
+    }
+    return ESP_OK;
+}
+
+static esp_err_t INA219_measure_power(i2c_port_t i2c_num, uint8_t* data_h, uint8_t* data_l)
+{
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, INA219_SENSOR_ADDR << 1 | WRITE_BIT, ACK_CHECK_EN);
+    i2c_master_write_byte(cmd, INA219_CMD_MEASURE_POWER, ACK_CHECK_EN);
+    i2c_master_stop(cmd);
+
+    int ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_FAIL) {
+        return ret;
+    }
+
+    vTaskDelay(100 / portTICK_RATE_MS);
+
+    cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, INA219_SENSOR_ADDR << 1 | READ_BIT, ACK_CHECK_EN);
+    i2c_master_read_byte(cmd, data_h, ACK_VAL);
+    i2c_master_read_byte(cmd, data_l, NACK_VAL);
+    i2c_master_stop(cmd);
+
+    ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_FAIL) {
+        return ESP_FAIL;
+    }
+    return ESP_OK;
+}
+
+static void power_task(void* arg)
+{
+    char tag[20] = "[climate-protocol]";
+    int i = 0;
+    int ret;
+    uint32_t task_idx = (uint32_t) arg;
+    uint8_t* data = (uint8_t*) malloc(DATA_LENGTH);
+    uint8_t* data_wr = (uint8_t*) malloc(DATA_LENGTH);
+    uint8_t* data_rd = (uint8_t*) malloc(DATA_LENGTH);
+    uint8_t sensor_data_h, sensor_data_l;
+
+    uint8_t* data_msb = (uint8_t*) INA219_CONFIGURATION_MSB;
+    uint8_t* data_lsb = (uint8_t*) INA219_CONFIGURATION_LSB;
+    
+    /*low_battery_on = get_u32("low_battery_on",low_battery_on);
+    low_battery_off = get_u32("low_battery_off",low_battery_off);
+    high_battery_on = get_u32("high_battery_on",high_battery_on);
+    high_battery_off = get_u32("high_battery_off",high_battery_off);
+
+    voltage_cf = get_u32("voltage_cf",voltage_cf);
+    voltage_cb = get_u32("voltage_cb",voltage_cb);
+    current_cf = get_u32("current_cf",current_cf);
+    current_cb = get_u32("current_cb",current_cb);*/
+
+    while (1) {
+
+        //--------------------------------------------------//
+	if (!INA219_CONFIGURED) {
+		ret = INA219_configure( I2C_EXAMPLE_MASTER_NUM, data_msb, data_lsb, RW_TEST_LENGTH);
+        	if (ret == ESP_OK) {
+        	    printf("INA219 configured\n");
+		    INA219_CONFIGURED = true;
+	        } else {
+        	    printf("INA219_CONFIGURED No ack, sensor not connected\n");
+	        }
+	        vTaskDelay(( POWER_DELAY_TIME * ( task_idx + 1 ) ) / portTICK_RATE_MS);
+	}
+
+        //--------------------------------------------------//
+	ret = INA219_measure_current( I2C_EXAMPLE_MASTER_NUM, &sensor_data_h, &sensor_data_l);
+        if (ret == ESP_OK) {
+            //printf("data_h: %02x\n", sensor_data_h);
+            //printf("data_l: %02x\n", sensor_data_l);
+            //printf("sensor val: %f\n", ( sensor_data_h << 8 | sensor_data_l ) / 1.2);
+            printf("MEASURE CURRENT INA219 (%d)\n", ( sensor_data_h << 8 | sensor_data_l ));
+	    battery_current = ( sensor_data_h << 8 | sensor_data_l ) * current_cf / 1000 - current_cb;
+            sprintf(current_str,"%d", battery_current);
+	    //power_data_ready = true;
+        } else {
+            printf("INA219_measure_current No ack, sensor not connected\n");
+        }
+        vTaskDelay(( POWER_DELAY_TIME * ( task_idx + 1 ) ) / portTICK_RATE_MS);
+
+        //--------------------------------------------------//
+        ret = INA219_measure_voltage( I2C_EXAMPLE_MASTER_NUM, &sensor_data_h, &sensor_data_l);
+        if (ret == ESP_OK) {
+	   battery_voltage = ( sensor_data_h << 8 | sensor_data_l );
+	   battery_voltage = battery_voltage * voltage_cf / 1000 - voltage_cb;
+	   //printf("battery voltage %d mV\n",battery_voltage);
+           sprintf(voltage_str,"%d", battery_voltage);
+           power_data_ready = true;
+        } else {
+            printf("INA219_measure_voltage No ack, sensor not connected\n");
+        }
+        vTaskDelay(( POWER_DELAY_TIME * ( task_idx + 1 ) ) / portTICK_RATE_MS);
+
+    }
+}
+
+/************************** power detection ********************************/
+
 
 enum eIgnitionState {
   IgnitionOff,
@@ -227,6 +527,11 @@ void turn_dash_off() {
 }
 
 void turn_dash_on() {
+  if (battery_current > MAINBOARD_ON_CURRENT) {
+    ESP_LOGI("turn_dash_on", "dash is already on");
+    break;
+  }
+
   ESP_LOGI("power", "turning dash on... (%0.2fs wait)", (1.0 * DASH_POWERUP_WAIT * portTICK_PERIOD_MS) / 1000.0);
   toggle_dash_power();
   dash_wait_flag = true;
@@ -454,9 +759,11 @@ void app_main(void) {
 
   ESP_ERROR_CHECK( esp_event_loop_init(event_handler, NULL) );
 
+  i2c_example_master_init();
   initialize_gpio();
   apply_dash_power();
 
+  xTaskCreate(power_task, "power_task", 1024 * 2, (void* ) 1, 10, NULL);
   xTaskCreate(task_Dash, "Dash", 2048, NULL, 5, NULL);
   xTaskCreate(task_CAN, "CAN", 2048, NULL, 5, NULL);
   xTaskCreate(task_BlinkOnce, "blink", configMINIMAL_STACK_SIZE, NULL, 5, &xBlink);

@@ -65,6 +65,28 @@ X A 2 150 0 100 L 50 50 1 1 P
 ENDDRAW
 ENDDEF
 #
+# MAX98357AETE+T-liger-rescue
+#
+DEF MAX98357AETE+T-liger-rescue U 0 40 Y Y 1 F N
+F0 "U" 450 -350 60 H V C CNN
+F1 "MAX98357AETE+T-liger-rescue" 200 225 60 H V C CNN
+F2 "open-automation:MAX98357A" 350 -450 60 H I C CNN
+F3 "https://www.digikey.com/product-detail/en/maxim-integrated/MAX98357AETE-T/MAX98357AETE-TCT-ND/7603777" 175 -425 60 H I C CNN
+F4 "MAX98357AETE+T" 200 300 60 H V C CNN "Part Number"
+DRAW
+S 550 175 -150 -300 0 1 0 f
+X DIN 1 -350 125 200 R 50 50 1 1 I
+X OUTN 10 750 25 200 L 50 50 1 1 I
+X LRCLK 14 750 -75 200 L 50 50 1 1 I
+X BCLK 16 750 -175 200 L 50 50 1 1 I
+X GAIN_SLOT 2 -350 25 200 R 50 50 1 1 I
+X GND 3 -350 -250 200 R 50 50 1 1 I
+X ~SD_MODE 4 -350 -75 200 R 50 50 1 1 I
+X VDD 7 -350 -175 200 R 50 50 1 1 I
+X OUTP 9 750 125 200 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
 # MMBT2222ALT3G-dk_Transistors-Bipolar-BJT-Single
 #
 DEF MMBT2222ALT3G-dk_Transistors-Bipolar-BJT-Single Q 0 0 Y Y 1 F N
@@ -136,6 +158,79 @@ P 4 0 1 0 100 100 200 100 200 -100 100 -100 N
 X C1 1 -500 100 200 R 50 50 1 1 B
 X C2 2 -500 -100 200 R 50 50 1 1 B
 X C3 3 500 0 200 L 50 50 1 1 B
+ENDDRAW
+ENDDEF
+#
+# R_10-open-automation
+#
+DEF R_10-open-automation R 0 0 N Y 1 F N
+F0 "R" 0 0 50 V V C CNN
+F1 "R_10-open-automation" -75 0 50 V V C CNN
+F2 "Resistor_SMD:R_2512_6332Metric_Pad1.49x3.40mm_HandSolder" -70 0 50 V I C CNN
+F3 "https://www.digikey.com/product-detail/en/bourns-inc/CRM2512-JW-100ELF/CRM2512-JW-100ELFCT-ND/3438030" 80 0 50 V I C CNN
+F4 "CRM2512-JW-100ELF" 180 100 60 V I C CNN "Part Number"
+$FPLIST
+ R_*
+ R_*
+$ENDFPLIST
+DRAW
+S -40 -100 40 100 0 1 10 f
+X ~ 1 0 150 50 D 50 50 1 1 P
+X ~ 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# R_100k-liger-rescue
+#
+DEF R_100k-liger-rescue R 0 0 N Y 1 F N
+F0 "R" 0 0 50 V V C CNN
+F1 "R_100k-liger-rescue" -75 0 50 V V C CNN
+F2 "Resistors_SMD:R_0603" -70 0 50 V I C CNN
+F3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-07100KL/311-100KGRCT-ND/729645" 80 0 50 V I C CNN
+F4 "RC0603JR-07100KL" 180 100 60 V I C CNN "Part Number"
+$FPLIST
+ R_*
+ R_*
+$ENDFPLIST
+DRAW
+S -40 -100 40 100 0 1 10 f
+X ~ 1 0 150 50 D 50 50 1 1 P
+X ~ 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# R_47.5-liger-rescue
+#
+DEF R_47.5-liger-rescue R 0 0 N Y 1 F N
+F0 "R" 0 0 50 V V C CNN
+F1 "R_47.5-liger-rescue" -75 0 50 V V C CNN
+F2 "Resistors_SMD:R_0603" -70 0 50 V I C CNN
+F3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3EKF4752V/P47.5KHCT-ND/198404" 80 0 50 V I C CNN
+F4 "ERJ-3EKF4752V" 180 100 60 V I C CNN "Part Number"
+$FPLIST
+ R_*
+ R_*
+$ENDFPLIST
+DRAW
+S -40 -100 40 100 0 1 10 f
+X ~ 1 0 150 50 D 50 50 1 1 P
+X ~ 2 0 -150 50 U 50 50 1 1 P
+ENDDRAW
+ENDDEF
+#
+# speaker-CVS-1508-liger-rescue
+#
+DEF ~speaker-CVS-1508-liger-rescue LS 0 0 Y N 1 F N
+F0 "LS" 50 225 50 H V R CNN
+F1 "speaker-CVS-1508-liger-rescue" 50 150 50 H I R CNN
+F2 "open-automation:speaker-1508" 0 -200 50 H I C CNN
+F3 "http://www.cui.com/product/resource/cvs-1508.pdf" -10 -50 50 H I C CNN
+F4 "CVS-1508" 150 325 60 H I C CNN "Part Number"
+DRAW
+S -100 50 40 -150 0 0 10 N
+P 4 0 0 10 40 50 140 150 140 -250 40 -150 N
+X 1 1 -200 0 100 R 50 50 1 1 I
+X 2 2 -200 -100 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #

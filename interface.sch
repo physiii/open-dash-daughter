@@ -443,51 +443,12 @@ Wire Wire Line
 Connection ~ 7100 2225
 Wire Wire Line
 	7100 2225 7125 2225
-Wire Wire Line
-	7050 2425 7100 2425
-Wire Wire Line
-	7100 2425 7100 2325
-Connection ~ 7100 2325
-Text HLabel 6550 2425 0    60   Input ~ 0
-5V
-Wire Wire Line
-	6550 2425 6650 2425
-Text HLabel 4950 2775 0    50   Output ~ 0
+Text HLabel 4950 2675 0    50   Output ~ 0
 SOFT_POWER
-Text HLabel 7300 3650 0    60   Input ~ 0
+Text HLabel 7150 2425 2    60   Input ~ 0
 L_MAIN_AUDIO
-Text HLabel 7300 3750 0    60   Input ~ 0
+Text HLabel 7150 2525 2    60   Input ~ 0
 R_MAIN_AUDIO
-$Comp
-L open-automation:GND #PWR0120
-U 1 1 5B1495DE
-P 7325 3500
-F 0 "#PWR0120" H 7325 3250 50  0001 C CNN
-F 1 "GND" H 7325 3350 50  0000 C CNN
-F 2 "" H 7325 3500 50  0000 C CNN
-F 3 "" H 7325 3500 50  0000 C CNN
-	1    7325 3500
-	-1   0    0    1   
-$EndComp
-$Comp
-L Connector_Generic:Conn_01x03 AUDIO_IN1
-U 1 1 5B16C30A
-P 7575 3650
-F 0 "AUDIO_IN1" H 7655 3642 50  0000 L CNN
-F 1 "Conn_01x02" H 7655 3551 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 7575 3650 50  0001 C CNN
-F 3 "~" H 7575 3650 50  0001 C CNN
-	1    7575 3650
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7325 3500 7325 3550
-Wire Wire Line
-	7325 3550 7375 3550
-Wire Wire Line
-	7375 3650 7300 3650
-Wire Wire Line
-	7300 3750 7375 3750
 $Comp
 L open-automation:molex-2x4-5.7mm U14
 U 1 1 5B1795E3
@@ -529,95 +490,95 @@ $EndComp
 $Comp
 L open-automation:R_1k R52
 U 1 1 5B1B9666
-P 5225 2775
-F 0 "R52" V 5018 2775 50  0000 C CNN
-F 1 "R_1k" V 5109 2775 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 5155 2775 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5305 2775 50  0001 C CNN
-F 4 "ERJ-3GEYJ102V" V 5405 2875 60  0001 C CNN "Part Number"
-	1    5225 2775
+P 5225 2675
+F 0 "R52" V 5018 2675 50  0000 C CNN
+F 1 "R_1k" V 5109 2675 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 5155 2675 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5305 2675 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 5405 2775 60  0001 C CNN "Part Number"
+	1    5225 2675
 	0    1    1    0   
 $EndComp
 $Comp
 L open-automation:R_1k R51
 U 1 1 5B1BAEB5
-P 5025 2950
-F 0 "R51" H 5095 2996 50  0000 L CNN
-F 1 "R_1k" H 5095 2905 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4955 2950 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5105 2950 50  0001 C CNN
-F 4 "ERJ-3GEYJ102V" V 5205 3050 60  0001 C CNN "Part Number"
-	1    5025 2950
+P 5025 2850
+F 0 "R51" H 5095 2896 50  0000 L CNN
+F 1 "R_1k" H 5095 2805 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4955 2850 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5105 2850 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 5205 2950 60  0001 C CNN "Part Number"
+	1    5025 2850
 	1    0    0    -1  
 $EndComp
 $Comp
 L open-automation:R_1k R53
 U 1 1 5B1BB164
-P 5700 2350
-F 0 "R53" H 5500 2425 50  0000 L CNN
-F 1 "R_1k" H 5475 2350 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 5630 2350 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5780 2350 50  0001 C CNN
-F 4 "ERJ-3GEYJ102V" V 5880 2450 60  0001 C CNN "Part Number"
-	1    5700 2350
+P 5700 2250
+F 0 "R53" H 5500 2325 50  0000 L CNN
+F 1 "R_1k" H 5475 2250 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 5630 2250 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5780 2250 50  0001 C CNN
+F 4 "ERJ-3GEYJ102V" V 5880 2350 60  0001 C CNN "Part Number"
+	1    5700 2250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5700 2525 6650 2525
+	5700 2425 6650 2425
 Wire Wire Line
-	5700 2975 5700 3125
+	5700 2875 5700 3025
 $Comp
 L open-automation:GND #PWR0124
 U 1 1 5B1CB05C
-P 5025 3125
-F 0 "#PWR0124" H 5025 2875 50  0001 C CNN
-F 1 "GND" H 5030 2952 50  0000 C CNN
-F 2 "" H 5025 3125 50  0000 C CNN
-F 3 "" H 5025 3125 50  0000 C CNN
-	1    5025 3125
+P 5025 3025
+F 0 "#PWR0124" H 5025 2775 50  0001 C CNN
+F 1 "GND" H 5030 2852 50  0000 C CNN
+F 2 "" H 5025 3025 50  0000 C CNN
+F 3 "" H 5025 3025 50  0000 C CNN
+	1    5025 3025
 	1    0    0    -1  
 $EndComp
 $Comp
 L open-automation:GND #PWR0125
 U 1 1 5B1CB0C0
-P 5700 3125
-F 0 "#PWR0125" H 5700 2875 50  0001 C CNN
-F 1 "GND" H 5705 2952 50  0000 C CNN
-F 2 "" H 5700 3125 50  0000 C CNN
-F 3 "" H 5700 3125 50  0000 C CNN
-	1    5700 3125
+P 5700 3025
+F 0 "#PWR0125" H 5700 2775 50  0001 C CNN
+F 1 "GND" H 5705 2852 50  0000 C CNN
+F 2 "" H 5700 3025 50  0000 C CNN
+F 3 "" H 5700 3025 50  0000 C CNN
+	1    5700 3025
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5700 2575 5700 2525
+	5700 2475 5700 2425
 Wire Wire Line
-	5400 2775 5375 2775
+	5400 2675 5375 2675
 Wire Wire Line
-	5025 2775 5075 2775
+	5025 2675 5075 2675
 Wire Wire Line
-	5025 3125 5025 3100
+	5025 3025 5025 3000
 Wire Wire Line
-	5025 2775 5025 2800
+	5025 2675 5025 2700
 Wire Wire Line
-	5025 2775 4950 2775
-Connection ~ 5025 2775
+	5025 2675 4950 2675
+Connection ~ 5025 2675
 Wire Wire Line
-	5700 2525 5700 2500
-Connection ~ 5700 2525
+	5700 2425 5700 2400
+Connection ~ 5700 2425
 Wire Wire Line
-	5700 2200 5700 2175
-Text HLabel 5700 2175 1    60   Input ~ 0
+	5700 2100 5700 2075
+Text HLabel 5700 2075 1    60   Input ~ 0
 3v3
 $Comp
 L open-automation:Q_NPN_BEC Q6
 U 1 1 5B1F6997
-P 5600 2775
-F 0 "Q6" H 5791 2821 50  0000 L CNN
-F 1 "Q_NPN_BEC" H 5791 2730 50  0000 L CNN
-F 2 "Package_TO_SOT_SMD:SOT-23" H 5800 2875 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/on-semiconductor/KST10MTF/KST10MTFCT-ND/965649" H 5800 2825 50  0001 C CNN
-F 4 "KST10MTF" H 5900 2925 50  0001 C CNN "Part Number"
-	1    5600 2775
+P 5600 2675
+F 0 "Q6" H 5791 2721 50  0000 L CNN
+F 1 "Q_NPN_BEC" H 5791 2630 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 5800 2775 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/on-semiconductor/KST10MTF/KST10MTFCT-ND/965649" H 5800 2725 50  0001 C CNN
+F 4 "KST10MTF" H 5900 2825 50  0001 C CNN "Part Number"
+	1    5600 2675
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -664,7 +625,7 @@ F 0 "J?" H 7200 5667 50  0000 C CNN
 F 1 "Conn_02x08_Counter_Clockwise" H 7200 5576 50  0000 C CNN
 F 2 "Connector_Molex:Molex_Mini-Fit_Jr_5566-16A2_2x08_P4.20mm_Vertical" H 7150 5150 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/molex-llc/0015978162/WM7202-ND/3044417" H 7150 5150 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/molex-llc/0015978162/WM7202-ND/3044417" H 7150 5150 50  0001 C CNN "Part Number"
+F 4 "0015978162" H 7150 5150 50  0001 C CNN "Part Number"
 	1    7150 5150
 	1    0    0    -1  
 $EndComp
@@ -678,6 +639,37 @@ F 2 "" H 8575 5200 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/molex-llc/0015975161/WM2595-ND/2405484" H 8575 5200 50  0001 C CNN
 F 4 "0015975161" H 8575 5200 50  0001 C CNN "Part Number"
 	1    8575 5200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7150 2425 7050 2425
+Wire Wire Line
+	7150 2525 7050 2525
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B4B0C05
+P 6475 2575
+F 0 "#PWR?" H 6475 2325 50  0001 C CNN
+F 1 "GND" H 6475 2425 50  0000 C CNN
+F 2 "" H 6475 2575 50  0000 C CNN
+F 3 "" H 6475 2575 50  0000 C CNN
+	1    6475 2575
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6650 2525 6475 2525
+Wire Wire Line
+	6475 2525 6475 2575
+$Comp
+L Connector:Barrel_Jack J?
+U 1 1 5B4B4D04
+P 6875 3400
+F 0 "J?" H 6953 3725 50  0000 C CNN
+F 1 "Barrel_Jack" H 6953 3634 50  0000 C CNN
+F 2 "Connector_BarrelJack:BarrelJack_Horizontal" H 6925 3360 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/cui-inc/RCJ-021/CP-1406-ND/408493" H 6925 3360 50  0001 C CNN
+F 4 "RCJ-021" H 6875 3400 50  0001 C CNN "Part Number"
+	1    6875 3400
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

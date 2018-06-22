@@ -946,7 +946,7 @@ F 4 "GRM188R60G476ME15D" H 5925 1700 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:R_10 R29
+L open-dash-daughterboard-rescue:R_10-open-automation R29
 U 1 1 5B292BF0
 P 5325 1500
 F 0 "R29" V 5118 1500 50  0000 C CNN

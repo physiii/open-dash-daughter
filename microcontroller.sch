@@ -253,7 +253,7 @@ Wire Wire Line
 Text HLabel 4775 3800 0    50   Input ~ 0
 I2S_DATA_OUT
 $Comp
-L liger-rescue:R_47.5 R?
+L open-dash-daughterboard-rescue:R_47.5-liger-rescue R?
 U 1 1 5B2E2168
 P 4450 3900
 F 0 "R?" V 4450 3900 50  0000 C CNN
@@ -273,7 +273,7 @@ Wire Wire Line
 Wire Wire Line
 	6625 3200 7025 3200
 $Comp
-L liger-rescue:R_47.5 R?
+L open-dash-daughterboard-rescue:R_47.5-liger-rescue R?
 U 1 1 5B308AD6
 P 7175 3200
 F 0 "R?" V 7175 3200 50  0000 C CNN

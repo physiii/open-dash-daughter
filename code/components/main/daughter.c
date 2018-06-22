@@ -38,6 +38,8 @@
 #define GPIO_AUDIO_AMP_POWER          (GPIO_NUM_16)
 #define GPIO_MAINBOARD_POWER          (GPIO_NUM_18)
 
+#define GPIO_OUTPUT_PIN_SEL  ((1ULL<<GPIO_MAINBOARD_SOFT_POWER) | (1ULL<<GPIO_DISPLAY_POWER) | (1ULL<<GPIO_AUDIO_AMP_POWER) | (1ULL<<GPIO_MAINBOARD_POWER))
+
 #define KEY_POSITION_MASK             0x0000f00000000f00
 #define KEY_POSITION_OFF              0x0000100000000b00
 #define KEY_POSITION_START            0x0000c00000000b00
@@ -71,9 +73,9 @@ bool dash_wait_flag = false;
 #define GPIO_CAN_RX                   (GPIO_NUM_4)
 // #define GPIO_CAN_TX                   (GPIO_NUM_???)
 #define GPIO_MAINBOARD_SOFT_POWER     (GPIO_NUM_5)
-#define GPIO_DISPLAY_POWER            (GPIO_NUM_15)
+#define GPIO_DISPLAY_POWER            (GPIO_NUM_18)
 #define GPIO_AUDIO_AMP_POWER          (GPIO_NUM_16)
-#define GPIO_MAINBOARD_POWER          (GPIO_NUM_18)
+#define GPIO_MAINBOARD_POWER          (GPIO_NUM_15)
 
 #define POWER_DELAY_TIME   1234 /*!< delay time between different test items */
 
@@ -382,21 +384,36 @@ const char * get_dash_state_label(enum eDashState dash_state) {
 CAN_device_t CAN_cfg = {0};
 
 void initialize_gpio() {
-  gpio_set_direction(GPIO_STATUS_LED, GPIO_MODE_OUTPUT);
-  gpio_set_direction(GPIO_MAINBOARD_SOFT_POWER, GPIO_MODE_OUTPUT);
-  gpio_set_direction(GPIO_DISPLAY_POWER, GPIO_MODE_OUTPUT);
-  gpio_set_direction(GPIO_AUDIO_AMP_POWER, GPIO_MODE_OUTPUT);
-  gpio_set_direction(GPIO_MAINBOARD_POWER, GPIO_MODE_OUTPUT);
+
+    gpio_config_t io_conf;
+    //disable interrupt
+    io_conf.intr_type = GPIO_PIN_INTR_DISABLE;
+    //set as output mode
+    io_conf.mode = GPIO_MODE_OUTPUT;
+    //bit mask of the pins that you want to set,e.g.GPIO18/19
+    io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
+    //disable pull-down mode
+    io_conf.pull_down_en = 0;
+    //disable pull-up mode
+    io_conf.pull_up_en = 0;
+    //configure GPIO with the given settings
+    gpio_config(&io_conf);
+
+  //gpio_set_direction(GPIO_MAINBOARD_POWER, GPIO_MODE_OUTPUT);
+  //gpio_set_direction(GPIO_DISPLAY_POWER, GPIO_MODE_OUTPUT);
+  //gpio_set_direction(GPIO_STATUS_LED, GPIO_MODE_OUTPUT);
+  //gpio_set_direction(GPIO_MAINBOARD_SOFT_POWER, GPIO_MODE_OUTPUT);
+  //gpio_set_direction(GPIO_AUDIO_AMP_POWER, GPIO_MODE_OUTPUT);
 }
 
 /***
 apply power to peripherals
 ***/
 void apply_dash_power() {
-  gpio_set_level(GPIO_DISPLAY_POWER, 0); //display power
-  gpio_set_level(GPIO_AUDIO_AMP_POWER, 0); //audio amp power
   gpio_set_level(GPIO_MAINBOARD_POWER, 0); //mainboard power
-  gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0); //mainboard softpower
+  gpio_set_level(GPIO_DISPLAY_POWER, 0); //display power
+  //gpio_set_level(GPIO_AUDIO_AMP_POWER, 0); //audio amp power
+  //gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0); //mainboard softpower
 }
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
@@ -529,7 +546,7 @@ void turn_dash_off() {
 void turn_dash_on() {
   if (battery_current > MAINBOARD_ON_CURRENT) {
     ESP_LOGI("turn_dash_on", "dash is already on");
-    break;
+    return;
   }
 
   ESP_LOGI("power", "turning dash on... (%0.2fs wait)", (1.0 * DASH_POWERUP_WAIT * portTICK_PERIOD_MS) / 1000.0);

@@ -1561,4 +1561,19 @@ Text HLabel 3700 6300 0    60   Input ~ 0
 I2S_WS
 Wire Wire Line
 	3700 6300 3825 6300
+Wire Wire Line
+	5275 4100 5600 4100
+Wire Wire Line
+	5600 4100 5600 4650
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B6FB0D8
+P 5600 4650
+F 0 "#PWR?" H 5600 4400 50  0001 C CNN
+F 1 "GND" H 5605 4477 50  0000 C CNN
+F 2 "" H 5600 4650 50  0000 C CNN
+F 3 "" H 5600 4650 50  0000 C CNN
+	1    5600 4650
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

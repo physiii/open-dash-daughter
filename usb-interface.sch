@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 13 13
+Sheet 13 12
 Title ""
 Date ""
 Rev ""
@@ -23,10 +23,10 @@ Wire Wire Line
 Wire Wire Line
 	6075 4975 5975 4975
 $Comp
-L open-automation:USB_IC-CP2104 U17
+L open-automation:USB_IC-CP2104 U18
 U 1 1 5B157129
 P 5275 5075
-F 0 "U17" H 5800 4100 50  0000 C CNN
+F 0 "U18" H 5800 4100 50  0000 C CNN
 F 1 "USB_IC-CP2104" H 4875 4125 50  0000 C CNN
 F 2 "Housings_DFN_QFN:QFN-24-1EP_3x3mm_Pitch0.4mm" H 5425 4125 50  0001 L CNN
 F 3 "https://www.digikey.com/product-detail/en/silicon-labs/CP2102N-A01-GQFN20/336-3692-ND/6012517" H 4725 6325 50  0001 C CNN
@@ -35,10 +35,10 @@ F 4 "CP2102N-A01-GQFN20" H 5275 3807 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0115
+L open-automation:GND #PWR0111
 U 1 1 5B15ED00
 P 5275 6125
-F 0 "#PWR0115" H 5275 5875 50  0001 C CNN
+F 0 "#PWR0111" H 5275 5875 50  0001 C CNN
 F 1 "GND" H 5275 5975 50  0000 C CNN
 F 2 "" H 5275 6125 50  0000 C CNN
 F 3 "" H 5275 6125 50  0000 C CNN
@@ -52,10 +52,10 @@ Text HLabel 3425 4475 0    60   Input ~ 0
 Wire Wire Line
 	3775 4825 3775 4775
 $Comp
-L open-automation:GND #PWR0116
+L open-automation:GND #PWR0109
 U 1 1 5B1612EC
 P 3900 4875
-F 0 "#PWR0116" H 3900 4625 50  0001 C CNN
+F 0 "#PWR0109" H 3900 4625 50  0001 C CNN
 F 1 "GND" H 3900 4725 50  0000 C CNN
 F 2 "" H 3900 4875 50  0000 C CNN
 F 3 "" H 3900 4875 50  0000 C CNN
@@ -87,10 +87,10 @@ Wire Wire Line
 Wire Wire Line
 	6025 4675 5975 4675
 $Comp
-L open-automation:R_470 R37
+L open-automation:R_470 R66
 U 1 1 5B166157
 P 6225 4975
-F 0 "R37" V 6225 4975 50  0000 C CNN
+F 0 "R66" V 6225 4975 50  0000 C CNN
 F 1 "R_470" V 6150 4975 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 6155 4975 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603FR-07470RL/311-470HRCT-ND/730203" V 6305 4975 50  0001 C CNN
@@ -101,10 +101,10 @@ $EndComp
 Wire Wire Line
 	6425 4975 6375 4975
 $Comp
-L Device:Q_NPN_BCE Q4
+L Device:Q_NPN_BCE Q7
 U 1 1 5B167526
 P 8025 3575
-F 0 "Q4" H 8216 3621 50  0000 L CNN
+F 0 "Q7" H 8216 3621 50  0000 L CNN
 F 1 "Q_NPN_BCE" H 8216 3530 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 8225 3675 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/micro-commercial-co/MMSS8050-H-TP/MMSS8050-H-TPMSCT-ND/2825945" H 8025 3575 50  0001 C CNN
@@ -113,10 +113,10 @@ F 4 "MMSS8050-H-TP" H 8025 3575 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:Q_PNP_BEC Q5
+L Device:Q_PNP_BEC Q8
 U 1 1 5B16769F
 P 8025 4175
-F 0 "Q5" H 8216 4221 50  0000 L CNN
+F 0 "Q8" H 8216 4221 50  0000 L CNN
 F 1 "Q_PNP_BCE" H 8216 4130 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 8225 4275 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/micro-commercial-co/MMSS8550-L-TP/MMSS8550-L-TPMSCT-ND/2827205" H 8025 4175 50  0001 C CNN
@@ -125,10 +125,10 @@ F 4 "MMSS8550-L-TP" H 8025 4175 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_02x04_Odd_Even P4
+L Connector_Generic:Conn_02x04_Odd_Even P3
 U 1 1 5B1561A8
 P 9050 2150
-F 0 "P4" H 9100 2467 50  0000 C CNN
+F 0 "P3" H 9100 2467 50  0000 C CNN
 F 1 "CONN_01X04" H 9100 2376 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_2x04_P2.54mm_Vertical" H 9127 2054 50  0001 L CNN
 F 3 "https://www.digikey.com/products/en?keywords=88738-8000" H 9128 2054 50  0001 L CNN
@@ -137,10 +137,10 @@ F 4 "0887388000" H 9050 2150 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0117
+L open-automation:GND #PWR0112
 U 1 1 5B156693
 P 8800 2400
-F 0 "#PWR0117" H 8800 2150 50  0001 C CNN
+F 0 "#PWR0112" H 8800 2150 50  0001 C CNN
 F 1 "GND" H 8800 2250 50  0000 C CNN
 F 2 "" H 8800 2400 50  0000 C CNN
 F 3 "" H 8800 2400 50  0000 C CNN
@@ -166,10 +166,10 @@ Wire Wire Line
 Wire Wire Line
 	8850 2250 8700 2250
 $Comp
-L open-automation:R_12k R40
+L open-automation:R_12k R67
 U 1 1 5B178943
 P 7575 3575
-F 0 "R40" V 7575 3575 50  0000 C CNN
+F 0 "R67" V 7575 3575 50  0000 C CNN
 F 1 "R_12k" V 7500 3575 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 7505 3575 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0712KL/311-12KGRCT-ND/729656" V 7655 3575 50  0001 C CNN
@@ -178,10 +178,10 @@ F 4 "RC0603JR-0712KL" V 7755 3675 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:R_12k R41
+L open-automation:R_12k R68
 U 1 1 5B178CF5
 P 7575 4175
-F 0 "R41" V 7575 4175 50  0000 C CNN
+F 0 "R68" V 7575 4175 50  0000 C CNN
 F 1 "R_12k" V 7500 4175 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 7505 4175 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0712KL/311-12KGRCT-ND/729656" V 7655 4175 50  0001 C CNN
@@ -234,10 +234,10 @@ Wire Wire Line
 Wire Wire Line
 	5275 4100 5275 4175
 $Comp
-L open-automation:GND #PWR0111
+L open-automation:GND #PWR0110
 U 1 1 5B180278
 P 5275 3750
-F 0 "#PWR0111" H 5275 3500 50  0001 C CNN
+F 0 "#PWR0110" H 5275 3500 50  0001 C CNN
 F 1 "GND" H 5275 3600 50  0000 C CNN
 F 2 "" H 5275 3750 50  0000 C CNN
 F 3 "" H 5275 3750 50  0000 C CNN
@@ -289,10 +289,10 @@ Wire Wire Line
 	4000 4475 4475 4475
 Connection ~ 4000 4475
 $Comp
-L open-automation:C_0.1uF C14
+L open-automation:C_0.1uF C68
 U 1 1 5B1608B3
 P 4000 4625
-F 0 "C14" H 4115 4671 50  0000 L CNN
+F 0 "C68" H 4115 4671 50  0000 L CNN
 F 1 "C_0.1uF" H 4115 4580 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4100 4925 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X7S0J475K080AC/445-9120-1-ND/3661604" H 4000 4375 50  0001 C CNN
@@ -303,10 +303,10 @@ $EndComp
 Wire Wire Line
 	3425 4475 3775 4475
 $Comp
-L open-automation:C_10uF C52
+L open-automation:C_10uF C67
 U 1 1 5B27C012
 P 3775 4625
-F 0 "C52" H 3890 4671 50  0000 L CNN
+F 0 "C67" H 3890 4671 50  0000 L CNN
 F 1 "C_10uF" H 3890 4580 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3875 4925 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10A106MP8NNNC/1276-1871-1-ND/3889957" H 3775 4375 50  0001 C CNN
@@ -318,10 +318,10 @@ Connection ~ 3775 4475
 Wire Wire Line
 	3775 4475 4000 4475
 $Comp
-L open-automation:C_1uF C50
+L open-automation:C_1uF C69
 U 1 1 5B2C9FB8
 P 5275 3950
-F 0 "C50" H 5390 3996 50  0000 L CNN
+F 0 "C69" H 5390 3996 50  0000 L CNN
 F 1 "C_1uF" H 5390 3905 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5375 4250 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 5275 3700 50  0001 C CNN

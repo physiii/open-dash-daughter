@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 12 13
+Sheet 12 12
 Title ""
 Date ""
 Rev ""
@@ -52,34 +52,6 @@ Text HLabel 6675 925  0    50   Input ~ 0
 AMF_Antenna
 Text HLabel 8300 925  0    50   Input ~ 0
 GPS_Antenna
-Text HLabel 1375 1125 0    50   Input ~ 0
-CAN+
-Text HLabel 1875 1125 2    50   Input ~ 0
-CAN-
-Text HLabel 1375 1025 0    50   Input ~ 0
-CAMERA+
-Text HLabel 1875 925  2    50   Input ~ 0
-CAMERA_S
-Text HLabel 1875 1025 2    50   Input ~ 0
-CAMERA-
-Text HLabel 1375 825  0    50   Input ~ 0
-BATTERY
-Text HLabel 3400 1025 0    50   Input ~ 0
-FL_AUDIO_OUT+
-Text HLabel 3400 925  0    50   Input ~ 0
-FR_AUDIO_OUT+
-Text HLabel 3400 825  0    50   Input ~ 0
-RL_AUDIO_OUT+
-Text HLabel 3400 1125 0    50   Input ~ 0
-RR_AUDIO_OUT+
-Text HLabel 3900 1125 2    50   Input ~ 0
-RR_AUDIO_OUT-
-Text HLabel 3900 825  2    50   Input ~ 0
-RL_AUDIO_OUT-
-Text HLabel 3900 925  2    50   Input ~ 0
-FR_AUDIO_OUT-
-Text HLabel 3900 1025 2    50   Input ~ 0
-FL_AUDIO_OUT-
 $Comp
 L open-automation:SW_PUSH SW1
 U 1 1 5B15E1FC
@@ -93,10 +65,10 @@ F 4 "KMR211NG LFS" H 2100 5625 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:GND #PWR0105
+L open-automation:GND #PWR097
 U 1 1 5B15E1EA
 P 2100 6000
-F 0 "#PWR0105" H 2100 5750 50  0001 C CNN
+F 0 "#PWR097" H 2100 5750 50  0001 C CNN
 F 1 "GND" H 2100 5850 50  0000 C CNN
 F 2 "" H 2100 6000 50  0000 C CNN
 F 3 "" H 2100 6000 50  0000 C CNN
@@ -106,10 +78,10 @@ $EndComp
 Wire Wire Line
 	2100 6000 2100 5925
 $Comp
-L open-automation:R_10k R17
+L open-automation:R_10k R60
 U 1 1 5B15E1FD
 P 2100 5125
-F 0 "R17" V 2100 5125 50  0000 C CNN
+F 0 "R60" V 2100 5125 50  0000 C CNN
 F 1 "R_10k" V 2000 5125 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 2030 5125 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 2180 5125 50  0001 C CNN
@@ -139,10 +111,10 @@ F 4 "KMR211NG LFS" H 3050 5625 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:GND #PWR0106
+L open-automation:GND #PWR098
 U 1 1 5B15E200
 P 3050 6000
-F 0 "#PWR0106" H 3050 5750 50  0001 C CNN
+F 0 "#PWR098" H 3050 5750 50  0001 C CNN
 F 1 "GND" H 3050 5850 50  0000 C CNN
 F 2 "" H 3050 6000 50  0000 C CNN
 F 3 "" H 3050 6000 50  0000 C CNN
@@ -152,10 +124,10 @@ $EndComp
 Wire Wire Line
 	3050 6000 3050 5925
 $Comp
-L open-automation:R_10k R38
+L open-automation:R_10k R61
 U 1 1 5B15E201
 P 3050 5125
-F 0 "R38" V 3050 5125 50  0000 C CNN
+F 0 "R61" V 3050 5125 50  0000 C CNN
 F 1 "R_10k" V 2950 5125 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 2980 5125 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 3130 5125 50  0001 C CNN
@@ -185,10 +157,10 @@ F 4 "KMR211NG LFS" H 3875 5625 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:GND #PWR0107
+L open-automation:GND #PWR0101
 U 1 1 5B15E1EB
 P 3875 6000
-F 0 "#PWR0107" H 3875 5750 50  0001 C CNN
+F 0 "#PWR0101" H 3875 5750 50  0001 C CNN
 F 1 "GND" H 3875 5850 50  0000 C CNN
 F 2 "" H 3875 6000 50  0000 C CNN
 F 3 "" H 3875 6000 50  0000 C CNN
@@ -198,10 +170,10 @@ $EndComp
 Wire Wire Line
 	3875 6000 3875 5925
 $Comp
-L open-automation:R_10k R39
+L open-automation:R_10k R62
 U 1 1 5B1799BC
 P 3875 5125
-F 0 "R39" V 3875 5125 50  0000 C CNN
+F 0 "R62" V 3875 5125 50  0000 C CNN
 F 1 "R_10k" V 3775 5125 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 3805 5125 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 3955 5125 50  0001 C CNN
@@ -236,68 +208,15 @@ Text HLabel 3875 4575 1    60   Input ~ 0
 3v3
 Text HLabel 2100 4575 1    60   Input ~ 0
 3v3
-$Comp
-L open-automation:molex-2x4-5.7mm U7
-U 1 1 5B1A08B0
-P 1625 975
-F 0 "U7" H 1625 1225 50  0000 C CNN
-F 1 "molex-2x4-5.7mm" H 1650 725 50  0000 C CNN
-F 2 "open-automation:molex-2x4-5.7mm" H 1625 575 50  0001 C CNN
-F 3 "https://www.digikey.com/products/en?keywords=768290008" H 1625 675 50  0001 C CNN
-F 4 "0768290008" H 1625 725 50  0001 C CNN "Part Number"
-	1    1625 975 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	1375 825  1425 825 
-Wire Wire Line
-	1875 925  1825 925 
-Wire Wire Line
-	1825 825  1875 825 
-Wire Wire Line
-	1875 1025 1825 1025
-Wire Wire Line
-	1825 1125 1875 1125
-Wire Wire Line
-	1425 1125 1375 1125
-Wire Wire Line
-	1375 1025 1425 1025
-Wire Wire Line
-	3450 925  3400 925 
-Wire Wire Line
-	3450 1025 3400 1025
-Wire Wire Line
-	3850 1125 3900 1125
-Wire Wire Line
-	3900 1025 3850 1025
-Wire Wire Line
-	3850 925  3900 925 
-Wire Wire Line
-	3900 825  3850 825 
-$Comp
-L open-automation:GND #PWR0108
-U 1 1 5B1DA0DF
-P 1875 825
-F 0 "#PWR0108" H 1875 575 50  0001 C CNN
-F 1 "GND" V 1850 650 50  0000 C CNN
-F 2 "" H 1875 825 50  0000 C CNN
-F 3 "" H 1875 825 50  0000 C CNN
-	1    1875 825 
-	0    -1   -1   0   
-$EndComp
-Text HLabel 1375 925  0    50   Input ~ 0
-SOFT_POWER
-Wire Wire Line
-	1425 925  1375 925 
 Wire Wire Line
 	8300 925  8400 925 
 Wire Wire Line
 	6675 925  6775 925 
 $Comp
-L open-automation:GND #PWR0112
+L open-automation:GND #PWR099
 U 1 1 5B15E1E7
 P 3225 2050
-F 0 "#PWR0112" H 3225 1800 50  0001 C CNN
+F 0 "#PWR099" H 3225 1800 50  0001 C CNN
 F 1 "GND" H 3225 1900 50  0000 C CNN
 F 2 "" H 3225 2050 50  0000 C CNN
 F 3 "" H 3225 2050 50  0000 C CNN
@@ -305,10 +224,10 @@ F 3 "" H 3225 2050 50  0000 C CNN
 	-1   0    0    1   
 $EndComp
 $Comp
-L open-automation:GND #PWR0113
+L open-automation:GND #PWR0100
 U 1 1 5B15E1E8
 P 3825 2050
-F 0 "#PWR0113" H 3825 1800 50  0001 C CNN
+F 0 "#PWR0100" H 3825 1800 50  0001 C CNN
 F 1 "GND" H 3825 1900 50  0000 C CNN
 F 2 "" H 3825 2050 50  0000 C CNN
 F 3 "" H 3825 2050 50  0000 C CNN
@@ -356,10 +275,10 @@ RXD
 Text HLabel 3175 2500 0    60   Input ~ 0
 SDA
 $Comp
-L Connector_Generic:Conn_02x06_Odd_Even J4
+L Connector_Generic:Conn_02x06_Odd_Even J2
 U 1 1 5B15E1F0
 P 3475 2300
-F 0 "J4" H 3520 2610 50  0000 C CNN
+F 0 "J2" H 3520 2610 50  0000 C CNN
 F 1 "Conn_02x06_Odd_Even" H 3525 1850 50  0000 C CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical" H 3475 2300 50  0001 C CNN
 F 3 "~" H 3475 2300 50  0001 C CNN
@@ -375,10 +294,10 @@ SOFT_POWER
 Text HLabel 1375 2025 1    60   Input ~ 0
 3v3
 $Comp
-L open-automation:R_10k R16
+L open-automation:R_10k R59
 U 1 1 5AF64A9D
 P 1375 2250
-F 0 "R16" H 1445 2296 50  0000 L CNN
+F 0 "R59" H 1445 2296 50  0000 L CNN
 F 1 "R_10k" H 1445 2205 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 1305 2250 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 1455 2250 50  0001 C CNN
@@ -393,10 +312,10 @@ Wire Wire Line
 Wire Wire Line
 	1375 2500 1475 2500
 $Comp
-L open-automation:radio-housing-mounts U15
+L open-automation:radio-housing-mounts U17
 U 1 1 5B15D7E5
 P 8675 2450
-F 0 "U15" H 8800 2675 60  0000 L CNN
+F 0 "U17" H 8800 2675 60  0000 L CNN
 F 1 "radio-housing-mounts" H 8175 2250 60  0000 L CNN
 F 2 "open-automation:radio-housing-mounts" H 8825 2750 60  0001 C CNN
 F 3 "" H 8675 2500 60  0001 C CNN
@@ -420,10 +339,10 @@ MAIN_POWER
 Text HLabel 6550 2325 0    60   Input ~ 0
 DISPLAY_POWER
 $Comp
-L open-automation:GND #PWR0104
+L open-automation:GND #PWR0106
 U 1 1 5B11F759
 P 7125 2225
-F 0 "#PWR0104" H 7125 1975 50  0001 C CNN
+F 0 "#PWR0106" H 7125 1975 50  0001 C CNN
 F 1 "GND" H 7125 2075 50  0000 C CNN
 F 2 "" H 7125 2225 50  0000 C CNN
 F 3 "" H 7125 2225 50  0000 C CNN
@@ -450,26 +369,10 @@ L_MAIN_AUDIO
 Text HLabel 7150 2525 2    60   Input ~ 0
 R_MAIN_AUDIO
 $Comp
-L open-automation:molex-2x4-5.7mm U14
-U 1 1 5B1795E3
-P 3650 975
-F 0 "U14" H 3650 1350 50  0000 C CNN
-F 1 "molex-2x4-5.7mm" H 3650 1259 50  0000 C CNN
-F 2 "open-automation:molex-2x4-5.7mm" H 3650 575 50  0001 C CNN
-F 3 "https://www.digikey.com/products/en?keywords=768290008" H 3650 675 50  0001 C CNN
-F 4 "0768290008" H 3650 725 50  0001 C CNN "Part Number"
-	1    3650 975 
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3400 1125 3450 1125
-Wire Wire Line
-	3400 825  3450 825 
-$Comp
-L open-automation:GND #PWR0102
+L open-automation:GND #PWR0105
 U 1 1 5B1DCBD3
 P 6575 1125
-F 0 "#PWR0102" H 6575 875 50  0001 C CNN
+F 0 "#PWR0105" H 6575 875 50  0001 C CNN
 F 1 "GND" H 6575 975 50  0000 C CNN
 F 2 "" H 6575 1125 50  0000 C CNN
 F 3 "" H 6575 1125 50  0000 C CNN
@@ -477,10 +380,10 @@ F 3 "" H 6575 1125 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0103
+L open-automation:GND #PWR0108
 U 1 1 5B1DCC14
 P 8250 1125
-F 0 "#PWR0103" H 8250 875 50  0001 C CNN
+F 0 "#PWR0108" H 8250 875 50  0001 C CNN
 F 1 "GND" H 8250 975 50  0000 C CNN
 F 2 "" H 8250 1125 50  0000 C CNN
 F 3 "" H 8250 1125 50  0000 C CNN
@@ -488,10 +391,10 @@ F 3 "" H 8250 1125 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_1k R52
+L open-automation:R_1k R64
 U 1 1 5B1B9666
 P 5225 2675
-F 0 "R52" V 5018 2675 50  0000 C CNN
+F 0 "R64" V 5018 2675 50  0000 C CNN
 F 1 "R_1k" V 5109 2675 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 5155 2675 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5305 2675 50  0001 C CNN
@@ -500,10 +403,10 @@ F 4 "ERJ-3GEYJ102V" V 5405 2775 60  0001 C CNN "Part Number"
 	0    1    1    0   
 $EndComp
 $Comp
-L open-automation:R_1k R51
+L open-automation:R_1k R63
 U 1 1 5B1BAEB5
 P 5025 2850
-F 0 "R51" H 5095 2896 50  0000 L CNN
+F 0 "R63" H 5095 2896 50  0000 L CNN
 F 1 "R_1k" H 5095 2805 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4955 2850 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5105 2850 50  0001 C CNN
@@ -512,10 +415,10 @@ F 4 "ERJ-3GEYJ102V" V 5205 2950 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_1k R53
+L open-automation:R_1k R65
 U 1 1 5B1BB164
 P 5700 2250
-F 0 "R53" H 5500 2325 50  0000 L CNN
+F 0 "R65" H 5500 2325 50  0000 L CNN
 F 1 "R_1k" H 5475 2250 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 5630 2250 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ102V/P1.0KGDKR-ND/577615" V 5780 2250 50  0001 C CNN
@@ -528,10 +431,10 @@ Wire Wire Line
 Wire Wire Line
 	5700 2875 5700 3025
 $Comp
-L open-automation:GND #PWR0124
+L open-automation:GND #PWR0102
 U 1 1 5B1CB05C
 P 5025 3025
-F 0 "#PWR0124" H 5025 2775 50  0001 C CNN
+F 0 "#PWR0102" H 5025 2775 50  0001 C CNN
 F 1 "GND" H 5030 2852 50  0000 C CNN
 F 2 "" H 5025 3025 50  0000 C CNN
 F 3 "" H 5025 3025 50  0000 C CNN
@@ -539,10 +442,10 @@ F 3 "" H 5025 3025 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0125
+L open-automation:GND #PWR0103
 U 1 1 5B1CB0C0
 P 5700 3025
-F 0 "#PWR0125" H 5700 2775 50  0001 C CNN
+F 0 "#PWR0103" H 5700 2775 50  0001 C CNN
 F 1 "GND" H 5705 2852 50  0000 C CNN
 F 2 "" H 5700 3025 50  0000 C CNN
 F 3 "" H 5700 3025 50  0000 C CNN
@@ -582,10 +485,10 @@ F 4 "KST10MTF" H 5900 2825 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:LED-0603-R D?
+L open-automation:LED-0603-R D15
 U 1 1 5B35FE49
 P 2100 4775
-F 0 "D?" V 2138 4658 50  0000 R CNN
+F 0 "D15" V 2138 4658 50  0000 R CNN
 F 1 "LED-0603-R" V 2047 4658 50  0000 R CNN
 F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 2000 4775 50  0001 C CNN
 F 3 "https://www.digikey.com/products/en?keywords=475-2512-2-ND" H 2100 4875 50  0001 C CNN
@@ -594,10 +497,10 @@ F 4 "LS Q976-NR-1" H 2200 4975 50  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:LED-0603-R D?
+L open-automation:LED-0603-R D16
 U 1 1 5B35FF8B
 P 3050 4775
-F 0 "D?" V 3088 4658 50  0000 R CNN
+F 0 "D16" V 3088 4658 50  0000 R CNN
 F 1 "LED-0603-R" V 2997 4658 50  0000 R CNN
 F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 2950 4775 50  0001 C CNN
 F 3 "https://www.digikey.com/products/en?keywords=475-2512-2-ND" H 3050 4875 50  0001 C CNN
@@ -606,10 +509,10 @@ F 4 "LS Q976-NR-1" H 3150 4975 50  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L open-automation:LED-0603-R D?
+L open-automation:LED-0603-R D17
 U 1 1 5B3600BD
 P 3875 4775
-F 0 "D?" V 3913 4658 50  0000 R CNN
+F 0 "D17" V 3913 4658 50  0000 R CNN
 F 1 "LED-0603-R" V 3822 4658 50  0000 R CNN
 F 2 "LED_SMD:LED_0603_1608Metric_Pad0.82x1.00mm_HandSolder" H 3775 4775 50  0001 C CNN
 F 3 "https://www.digikey.com/products/en?keywords=475-2512-2-ND" H 3875 4875 50  0001 C CNN
@@ -618,10 +521,10 @@ F 4 "LS Q976-NR-1" H 3975 4975 50  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Connector_Generic:Conn_02x08_Counter_Clockwise J?
+L Connector_Generic:Conn_02x08_Counter_Clockwise J3
 U 1 1 5B5067C0
 P 7150 5150
-F 0 "J?" H 7200 5667 50  0000 C CNN
+F 0 "J3" H 7200 5667 50  0000 C CNN
 F 1 "Conn_02x08_Counter_Clockwise" H 7200 5576 50  0000 C CNN
 F 2 "Connector_Molex:Molex_Mini-Fit_Jr_5566-16A2_2x08_P4.20mm_Vertical" H 7150 5150 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/molex-llc/0015978162/WM7202-ND/3044417" H 7150 5150 50  0001 C CNN
@@ -630,10 +533,10 @@ F 4 "0015978162" H 7150 5150 50  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_02x08_Counter_Clockwise J?
+L Connector_Generic:Conn_02x08_Counter_Clockwise J5
 U 1 1 5B506A12
 P 8575 5200
-F 0 "J?" H 8625 5717 50  0000 C CNN
+F 0 "J5" H 8625 5717 50  0000 C CNN
 F 1 "Conn_02x08_Counter_Clockwise" H 8625 5626 50  0000 C CNN
 F 2 "" H 8575 5200 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/molex-llc/0015975161/WM2595-ND/2405484" H 8575 5200 50  0001 C CNN
@@ -646,10 +549,10 @@ Wire Wire Line
 Wire Wire Line
 	7150 2525 7050 2525
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0104
 U 1 1 5B4B0C05
 P 6475 2575
-F 0 "#PWR?" H 6475 2325 50  0001 C CNN
+F 0 "#PWR0104" H 6475 2325 50  0001 C CNN
 F 1 "GND" H 6475 2425 50  0000 C CNN
 F 2 "" H 6475 2575 50  0000 C CNN
 F 3 "" H 6475 2575 50  0000 C CNN
@@ -661,12 +564,12 @@ Wire Wire Line
 Wire Wire Line
 	6475 2525 6475 2575
 $Comp
-L Connector_Generic:Conn_01x03 J?
+L Connector_Generic:Conn_01x03 J4
 U 1 1 5B31738A
 P 8250 3375
-F 0 "J?" H 8330 3417 50  0000 L CNN
+F 0 "J4" H 8330 3417 50  0000 L CNN
 F 1 "Conn_01x03" H 8330 3326 50  0000 L CNN
-F 2 "Connector_PinHeader_2.00mm:PinHeader_1x02_P2.54mm_Horizontal" H 8250 3375 50  0001 C CNN
+F 2 "open-automation:RCA JACK" H 8250 3375 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/cui-inc/RCJ-021/CP-1406-ND/408493" H 8250 3375 50  0001 C CNN
 F 4 "RCJ-021" H 8250 3375 50  0001 C CNN "Part Number"
 	1    8250 3375
@@ -692,13 +595,13 @@ Wire Wire Line
 	6900 5150 6950 5150
 Wire Wire Line
 	6900 4850 6950 4850
-Text HLabel 6900 5250 0    50   Input ~ 0
+Text HLabel 7500 5150 2    50   Input ~ 0
 RR_AUDIO_OUT-
-Text HLabel 6900 5550 0    50   Input ~ 0
+Text HLabel 7500 4850 2    50   Input ~ 0
 RL_AUDIO_OUT-
-Text HLabel 6900 5450 0    50   Input ~ 0
+Text HLabel 7500 4950 2    50   Input ~ 0
 FR_AUDIO_OUT-
-Text HLabel 6900 5350 0    50   Input ~ 0
+Text HLabel 7500 5050 2    50   Input ~ 0
 FL_AUDIO_OUT-
 Wire Wire Line
 	6950 5250 6900 5250
@@ -708,11 +611,11 @@ Wire Wire Line
 	6950 5450 6900 5450
 Wire Wire Line
 	6900 5550 6950 5550
-Text HLabel 7500 5150 2    50   Input ~ 0
+Text HLabel 6900 5250 0    50   Input ~ 0
 CAN+
-Text HLabel 7500 5550 2    50   Input ~ 0
+Text HLabel 6900 5450 0    50   Input ~ 0
 CAMERA+
-Text HLabel 7500 5050 2    50   Input ~ 0
+Text HLabel 6900 5350 0    50   Input ~ 0
 BATTERY
 Wire Wire Line
 	7500 5150 7450 5150
@@ -720,7 +623,7 @@ Wire Wire Line
 	7450 4850 7500 4850
 Wire Wire Line
 	7500 4950 7450 4950
-Text HLabel 7500 4950 2    50   Input ~ 0
+Text HLabel 6900 5550 0    50   Input ~ 0
 SOFT_POWER
 Wire Wire Line
 	7450 5050 7500 5050
@@ -739,14 +642,14 @@ Wire Wire Line
 Wire Wire Line
 	7450 5550 7500 5550
 $Comp
-L open-automation:GND #PWR?
+L open-automation:GND #PWR0107
 U 1 1 5B6B9D18
-P 7500 4850
-F 0 "#PWR?" H 7500 4600 50  0001 C CNN
-F 1 "GND" V 7475 4675 50  0000 C CNN
-F 2 "" H 7500 4850 50  0000 C CNN
-F 3 "" H 7500 4850 50  0000 C CNN
-	1    7500 4850
+P 7500 5550
+F 0 "#PWR0107" H 7500 5300 50  0001 C CNN
+F 1 "GND" V 7500 5350 50  0000 C CNN
+F 2 "" H 7500 5550 50  0000 C CNN
+F 3 "" H 7500 5550 50  0000 C CNN
+	1    7500 5550
 	0    -1   -1   0   
 $EndComp
 Text HLabel 7925 3375 0    50   Input ~ 0

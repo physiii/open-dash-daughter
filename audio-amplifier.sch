@@ -750,8 +750,6 @@ Wire Wire Line
 Wire Wire Line
 	8550 4550 8775 4550
 Wire Wire Line
-	8650 4750 8550 4750
-Wire Wire Line
 	8650 4650 8550 4650
 $Comp
 L open-dash-daughterboard-rescue:MAX98357AETE+T-liger-rescue U?
@@ -808,13 +806,13 @@ Wire Wire Line
 $Comp
 L open-dash-daughterboard-rescue:speaker-CVS-1508-liger-rescue LS?
 U 1 1 5A1620B5
-P 9725 4250
-F 0 "LS?" H 9725 4375 50  0000 R CNN
-F 1 "speaker-CVS-1508" H 9775 4400 50  0001 R CNN
-F 2 "open-automation:speaker-1508" H 9725 4050 50  0001 C CNN
-F 3 "http://www.cui.com/product/resource/cvs-1508.pdf" H 9715 4200 50  0001 C CNN
-F 4 "CVS-1508" H 9875 4575 60  0001 C CNN "Part Number"
-	1    9725 4250
+P 9775 5800
+F 0 "LS?" H 9775 5925 50  0000 R CNN
+F 1 "speaker-CVS-1508" H 9825 5950 50  0001 R CNN
+F 2 "open-automation:speaker-1508" H 9775 5600 50  0001 C CNN
+F 3 "http://www.cui.com/product/resource/cvs-1508.pdf" H 9765 5750 50  0001 C CNN
+F 4 "CVS-1508" H 9925 6125 60  0001 C CNN "Part Number"
+	1    9775 5800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -825,8 +823,6 @@ Wire Wire Line
 	8775 4550 8775 4350
 Wire Wire Line
 	8775 4350 8825 4350
-Text Label 4775 4125 0    197  ~ 0
-Speaker
 Wire Wire Line
 	7400 4750 7450 4750
 Wire Wire Line
@@ -849,34 +845,34 @@ Text HLabel 7375 4450 0    60   Input ~ 0
 I2S_DATA_OUT
 Text HLabel 8650 4650 2    60   Input ~ 0
 I2S_WS
-Text HLabel 8650 4750 2    60   Input ~ 0
+Text HLabel 3700 6100 0    60   Input ~ 0
 I2S_BCLK
 Wire Wire Line
-	9525 4250 9450 4250
+	9575 5800 9500 5800
 $Comp
 L Connector_Generic:Conn_01x02 J?
 U 1 1 5B2BE39C
-P 9025 4250
-F 0 "J?" H 8975 4350 50  0000 L CNN
-F 1 "Conn_01x02" H 8900 4025 50  0000 L CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical" H 9025 4250 50  0001 C CNN
-F 3 "~" H 9025 4250 50  0001 C CNN
-	1    9025 4250
+P 8975 5800
+F 0 "J?" H 8925 5900 50  0000 L CNN
+F 1 "Conn_01x02" H 8850 5575 50  0000 L CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical" H 8975 5800 50  0001 C CNN
+F 3 "~" H 8975 5800 50  0001 C CNN
+	1    8975 5800
 	1    0    0    -1  
 $EndComp
 $Comp
 L Connector_Generic:Conn_01x02 J?
 U 1 1 5B2BE409
-P 9250 4350
-F 0 "J?" H 9170 4025 50  0000 C CNN
-F 1 "Conn_01x02" H 9170 4116 50  0000 C CNN
-F 2 "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical" H 9250 4350 50  0001 C CNN
-F 3 "~" H 9250 4350 50  0001 C CNN
-	1    9250 4350
+P 9300 5900
+F 0 "J?" H 9220 5575 50  0000 C CNN
+F 1 "Conn_01x02" H 9220 5666 50  0000 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical" H 9300 5900 50  0001 C CNN
+F 3 "~" H 9300 5900 50  0001 C CNN
+	1    9300 5900
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	9450 4350 9525 4350
+	9500 5900 9575 5900
 $Comp
 L open-automation:R_100k R?
 U 1 1 5B3182B5
@@ -907,321 +903,309 @@ Wire Wire Line
 	5375 1800 4950 1800
 Wire Wire Line
 	4950 2050 5375 2050
-Text Label 4175 7725 1    50   ~ 0
+Text Label 4675 7325 1    50   ~ 0
 R_AUDIO_IN
-Text Label 3875 7725 1    50   ~ 0
+Text Label 4375 7325 1    50   ~ 0
 L_AUDIO_IN
 Wire Wire Line
-	3875 7300 3875 7725
+	4375 6900 4375 7325
 Wire Wire Line
-	4175 7725 4175 7300
+	4675 7325 4675 6900
 Wire Wire Line
-	4375 7300 4375 7375
+	4875 6900 4875 6975
 $Comp
 L open-automation:GND #PWR?
 U 1 1 5B4DCFCE
-P 4375 7375
-F 0 "#PWR?" H 4375 7125 50  0001 C CNN
-F 1 "GND" H 4380 7202 50  0000 C CNN
-F 2 "" H 4375 7375 50  0000 C CNN
-F 3 "" H 4375 7375 50  0000 C CNN
-	1    4375 7375
+P 4875 6975
+F 0 "#PWR?" H 4875 6725 50  0001 C CNN
+F 1 "GND" H 4880 6802 50  0000 C CNN
+F 2 "" H 4875 6975 50  0000 C CNN
+F 3 "" H 4875 6975 50  0000 C CNN
+	1    4875 6975
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5275 6250 5500 6250
-Text Label 5500 6250 0    50   ~ 0
+	5775 5850 6000 5850
+Text Label 6000 5850 0    50   ~ 0
 R_AUDIO_CODEC_IN
 Wire Wire Line
-	5275 6350 5500 6350
-Text Label 5500 6350 0    50   ~ 0
+	5775 5950 6000 5950
+Text Label 6000 5950 0    50   ~ 0
 L_AUDIO_CODEC_IN
 Wire Wire Line
-	4075 5350 4075 5175
+	4575 4950 4575 4775
 Wire Wire Line
-	4175 5350 4175 5175
-Text HLabel 4175 5175 1    50   Input ~ 0
+	4675 4950 4675 4775
+Text HLabel 4675 4775 1    50   Input ~ 0
 SCL
-Text HLabel 4075 5175 1    50   Input ~ 0
+Text HLabel 4575 4775 1    50   Input ~ 0
 SDA
 Wire Wire Line
-	4575 6950 4575 6700
+	5075 6550 5075 6300
 Wire Wire Line
-	3325 6000 4575 6000
-Connection ~ 4575 6000
+	3825 5600 5075 5600
+Connection ~ 5075 5600
 Wire Wire Line
-	4575 6000 4575 5350
+	5075 5600 5075 4950
 Wire Wire Line
-	4275 7300 4275 6700
+	4775 6900 4775 6300
 Wire Wire Line
-	4275 6700 4575 6700
-Connection ~ 4575 6700
+	4775 6300 5075 6300
+Connection ~ 5075 6300
 Wire Wire Line
-	4575 6700 4575 6650
+	5075 6300 5075 6250
 $Comp
 L open-automation:GND #PWR?
 U 1 1 5B32BE2E
-P 5825 7200
-F 0 "#PWR?" H 5825 6950 50  0001 C CNN
-F 1 "GND" H 5830 7027 50  0000 C CNN
-F 2 "" H 5825 7200 50  0000 C CNN
-F 3 "" H 5825 7200 50  0000 C CNN
-	1    5825 7200
+P 6325 6800
+F 0 "#PWR?" H 6325 6550 50  0001 C CNN
+F 1 "GND" H 6330 6627 50  0000 C CNN
+F 2 "" H 6325 6800 50  0000 C CNN
+F 3 "" H 6325 6800 50  0000 C CNN
+	1    6325 6800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3775 7300 3775 6650
+	4275 6900 4275 6250
 Wire Wire Line
-	3775 6650 4575 6650
-Connection ~ 4575 6650
+	4275 6250 5075 6250
+Connection ~ 5075 6250
 Wire Wire Line
-	4575 6650 4575 6000
+	5075 6250 5075 5600
 $Comp
 L open-automation:C_1uF C?
 U 1 1 5B33DF15
-P 4625 4950
-F 0 "C?" V 4575 4850 50  0000 C CNN
-F 1 "C_1uF" V 4475 4950 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4725 5250 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 4625 4700 50  0001 C CNN
-F 4 "CGA3E1X7R1C105M080AC" H 4750 5150 60  0001 C CNN "Part Number"
-	1    4625 4950
+P 5125 4550
+F 0 "C?" V 5075 4450 50  0000 C CNN
+F 1 "C_1uF" V 4975 4550 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5225 4850 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 5125 4300 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 5250 4750 60  0001 C CNN "Part Number"
+	1    5125 4550
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	4775 4950 4775 5050
+	5275 4550 5275 4650
 $Comp
 L open-automation:GND #PWR?
 U 1 1 5B3506D8
-P 4775 5050
-F 0 "#PWR?" H 4775 4800 50  0001 C CNN
-F 1 "GND" H 4780 4877 50  0000 C CNN
-F 2 "" H 4775 5050 50  0000 C CNN
-F 3 "" H 4775 5050 50  0000 C CNN
-	1    4775 5050
+P 5275 4650
+F 0 "#PWR?" H 5275 4400 50  0001 C CNN
+F 1 "GND" H 5280 4477 50  0000 C CNN
+F 2 "" H 5275 4650 50  0000 C CNN
+F 3 "" H 5275 4650 50  0000 C CNN
+	1    5275 4650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4375 5350 4375 4725
+	4875 4950 4875 4325
 Wire Wire Line
-	4375 4725 4475 4725
+	4875 4325 4975 4325
 $Comp
 L open-automation:C_2.2uF C?
 U 1 1 5B379721
-P 4625 4725
-F 0 "C?" V 4373 4725 50  0000 C CNN
-F 1 "C_2.2uF" V 4464 4725 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4725 5025 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R61E225KA12D/490-10731-1-ND/5251369" H 4625 4475 50  0001 C CNN
-F 4 "GRM188R61E225KA12D" H 4750 4925 60  0001 C CNN "Part Number"
-	1    4625 4725
+P 5125 4325
+F 0 "C?" V 4873 4325 50  0000 C CNN
+F 1 "C_2.2uF" V 4964 4325 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5225 4625 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R61E225KA12D/490-10731-1-ND/5251369" H 5125 4075 50  0001 C CNN
+F 4 "GRM188R61E225KA12D" H 5250 4525 60  0001 C CNN "Part Number"
+	1    5125 4325
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	4775 4725 4925 4725
+	5275 4325 5425 4325
 Wire Wire Line
-	4925 4725 4925 5050
+	5425 4325 5425 4650
 $Comp
 L open-automation:GND #PWR?
 U 1 1 5B383127
-P 4925 5050
-F 0 "#PWR?" H 4925 4800 50  0001 C CNN
-F 1 "GND" H 4930 4877 50  0000 C CNN
-F 2 "" H 4925 5050 50  0000 C CNN
-F 3 "" H 4925 5050 50  0000 C CNN
-	1    4925 5050
+P 5425 4650
+F 0 "#PWR?" H 5425 4400 50  0001 C CNN
+F 1 "GND" H 5430 4477 50  0000 C CNN
+F 2 "" H 5425 4650 50  0000 C CNN
+F 3 "" H 5425 4650 50  0000 C CNN
+	1    5425 4650
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4775 7300 4775 7425
+	5275 6900 5275 7025
 Wire Wire Line
-	4775 7425 4675 7425
+	5275 7025 5175 7025
 Wire Wire Line
-	4675 7425 4675 7550
+	5175 7025 5175 7150
 $Comp
 L open-automation:C_1uF C?
 U 1 1 5B3A070A
-P 4825 7550
-F 0 "C?" V 4800 7650 50  0000 C CNN
-F 1 "C_1uF" V 4950 7550 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4925 7850 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 4825 7300 50  0001 C CNN
-F 4 "CGA3E1X7R1C105M080AC" H 4950 7750 60  0001 C CNN "Part Number"
-	1    4825 7550
+P 5325 7150
+F 0 "C?" V 5300 7250 50  0000 C CNN
+F 1 "C_1uF" V 5450 7150 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5425 7450 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 5325 6900 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 5450 7350 60  0001 C CNN "Part Number"
+	1    5325 7150
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	4975 7550 4975 7425
+	5475 7150 5475 7025
 Wire Wire Line
-	4975 7425 4875 7425
+	5475 7025 5375 7025
 Wire Wire Line
-	4875 7425 4875 7300
+	5375 7025 5375 6900
 Wire Wire Line
-	5275 6850 5600 6850
+	5775 6450 6100 6450
 $Comp
 L open-automation:C_1uF C?
 U 1 1 5B3CA38C
-P 5600 7000
-F 0 "C?" H 5715 7046 50  0000 L CNN
-F 1 "C_1uF" H 5715 6955 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5700 7300 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 5600 6750 50  0001 C CNN
-F 4 "CGA3E1X7R1C105M080AC" H 5725 7200 60  0001 C CNN "Part Number"
-	1    5600 7000
+P 6100 6600
+F 0 "C?" H 6215 6646 50  0000 L CNN
+F 1 "C_1uF" H 6215 6555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 6200 6900 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 6100 6350 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 6225 6800 60  0001 C CNN "Part Number"
+	1    6100 6600
 	1    0    0    -1  
 $EndComp
 $Comp
 L open-automation:C_1uF C?
 U 1 1 5B3CA4B2
-P 5825 7000
-F 0 "C?" H 5940 7046 50  0000 L CNN
-F 1 "C_1uF" H 5940 6955 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5925 7300 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 5825 6750 50  0001 C CNN
-F 4 "CGA3E1X7R1C105M080AC" H 5950 7200 60  0001 C CNN "Part Number"
-	1    5825 7000
+P 6325 6600
+F 0 "C?" H 6440 6646 50  0000 L CNN
+F 1 "C_1uF" H 6440 6555 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 6425 6900 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 6325 6350 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 6450 6800 60  0001 C CNN "Part Number"
+	1    6325 6600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5825 6750 5825 6850
+	6325 6350 6325 6450
 Wire Wire Line
-	5275 6750 5825 6750
+	5775 6350 6325 6350
 Wire Wire Line
-	5600 7150 5600 7200
+	6100 6750 6100 6800
 Wire Wire Line
-	5825 7150 5825 7200
+	6325 6750 6325 6800
 Wire Wire Line
-	5450 6950 5450 7200
+	5950 6550 5950 6800
 $Comp
 L open-automation:GND #PWR?
 U 1 1 5B3F4549
-P 5600 7200
-F 0 "#PWR?" H 5600 6950 50  0001 C CNN
-F 1 "GND" H 5605 7027 50  0000 C CNN
-F 2 "" H 5600 7200 50  0000 C CNN
-F 3 "" H 5600 7200 50  0000 C CNN
-	1    5600 7200
+P 6100 6800
+F 0 "#PWR?" H 6100 6550 50  0001 C CNN
+F 1 "GND" H 6105 6627 50  0000 C CNN
+F 2 "" H 6100 6800 50  0000 C CNN
+F 3 "" H 6100 6800 50  0000 C CNN
+	1    6100 6800
 	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:C_0.1uF C?
-U 1 1 5B4148B9
-P 3600 4850
-F 0 "C?" V 3550 4925 50  0000 C CNN
-F 1 "C_0.1uF" V 3725 4900 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3700 5150 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X8R1H104K080AB/445-8818-1-ND/3248223" H 3600 4600 50  0001 C CNN
-F 4 "C1608X8R1H104K080AB" H 3725 5050 60  0001 C CNN "Part Number"
-	1    3600 4850
-	0    1    1    0   
 $EndComp
 $Comp
 L open-automation:+3.3V #PWR?
 U 1 1 5B435474
-P 3975 4825
-F 0 "#PWR?" H 3975 4675 50  0001 C CNN
-F 1 "+3.3V" H 3990 4998 50  0000 C CNN
-F 2 "" H 3975 4825 50  0000 C CNN
-F 3 "" H 3975 4825 50  0000 C CNN
-	1    3975 4825
+P 4475 4425
+F 0 "#PWR?" H 4475 4275 50  0001 C CNN
+F 1 "+3.3V" H 4490 4598 50  0000 C CNN
+F 2 "" H 4475 4425 50  0000 C CNN
+F 3 "" H 4475 4425 50  0000 C CNN
+	1    4475 4425
 	1    0    0    -1  
 $EndComp
 $Comp
 L open-automation:GND #PWR?
 U 1 1 5B435564
-P 3450 4900
-F 0 "#PWR?" H 3450 4650 50  0001 C CNN
-F 1 "GND" H 3450 4775 50  0000 C CNN
-F 2 "" H 3450 4900 50  0000 C CNN
-F 3 "" H 3450 4900 50  0000 C CNN
-	1    3450 4900
+P 3950 4500
+F 0 "#PWR?" H 3950 4250 50  0001 C CNN
+F 1 "GND" H 3950 4375 50  0000 C CNN
+F 2 "" H 3950 4500 50  0000 C CNN
+F 3 "" H 3950 4500 50  0000 C CNN
+	1    3950 4500
 	1    0    0    -1  
 $EndComp
 $Comp
 L open-automation:C_0.1uF C?
 U 1 1 5B441011
-P 3600 5100
-F 0 "C?" V 3575 5175 50  0000 C CNN
-F 1 "C_0.1uF" V 3725 5150 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3700 5400 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X8R1H104K080AB/445-8818-1-ND/3248223" H 3600 4850 50  0001 C CNN
-F 4 "C1608X8R1H104K080AB" H 3725 5300 60  0001 C CNN "Part Number"
-	1    3600 5100
+P 4100 4700
+F 0 "C?" V 4075 4775 50  0000 C CNN
+F 1 "C_0.1uF" V 4225 4750 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4200 5000 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X8R1H104K080AB/445-8818-1-ND/3248223" H 4100 4450 50  0001 C CNN
+F 4 "C1608X8R1H104K080AB" H 4225 4900 60  0001 C CNN "Part Number"
+	1    4100 4700
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	3775 5100 3750 5100
+	4275 4700 4250 4700
 Wire Wire Line
-	3775 5100 3775 5350
+	4275 4700 4275 4950
 Wire Wire Line
-	3450 5100 3450 5175
+	3950 4700 3950 4775
 Wire Wire Line
-	3775 5100 3775 5025
-Connection ~ 3775 5100
+	4275 4700 4275 4625
+Connection ~ 4275 4700
 $Comp
 L open-automation:+3.3V #PWR?
 U 1 1 5B463178
-P 3775 5025
-F 0 "#PWR?" H 3775 4875 50  0001 C CNN
-F 1 "+3.3V" H 3775 5150 50  0000 C CNN
-F 2 "" H 3775 5025 50  0000 C CNN
-F 3 "" H 3775 5025 50  0000 C CNN
-	1    3775 5025
+P 4275 4625
+F 0 "#PWR?" H 4275 4475 50  0001 C CNN
+F 1 "+3.3V" H 4275 4750 50  0000 C CNN
+F 2 "" H 4275 4625 50  0000 C CNN
+F 3 "" H 4275 4625 50  0000 C CNN
+	1    4275 4625
 	1    0    0    -1  
 $EndComp
 $Comp
 L open-automation:GND #PWR?
 U 1 1 5B46E7FE
-P 3450 5175
-F 0 "#PWR?" H 3450 4925 50  0001 C CNN
-F 1 "GND" H 3450 5050 50  0000 C CNN
-F 2 "" H 3450 5175 50  0000 C CNN
-F 3 "" H 3450 5175 50  0000 C CNN
-	1    3450 5175
+P 3950 4775
+F 0 "#PWR?" H 3950 4525 50  0001 C CNN
+F 1 "GND" H 3950 4650 50  0000 C CNN
+F 2 "" H 3950 4775 50  0000 C CNN
+F 3 "" H 3950 4775 50  0000 C CNN
+	1    3950 4775
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	3450 4850 3450 4900
+	3950 4450 3950 4500
 Wire Wire Line
-	3750 4850 3975 4850
+	4250 4450 4475 4450
 Wire Wire Line
-	3975 4850 3975 5350
+	4475 4450 4475 4950
 Wire Wire Line
-	3975 4850 3975 4825
-Connection ~ 3975 4850
+	4475 4450 4475 4425
+Connection ~ 4475 4450
 $Comp
 L open-automation:GND #PWR?
 U 1 1 5B3FED41
-P 5450 7200
-F 0 "#PWR?" H 5450 6950 50  0001 C CNN
-F 1 "GND" H 5455 7027 50  0000 C CNN
-F 2 "" H 5450 7200 50  0000 C CNN
-F 3 "" H 5450 7200 50  0000 C CNN
-	1    5450 7200
+P 5950 6800
+F 0 "#PWR?" H 5950 6550 50  0001 C CNN
+F 1 "GND" H 5955 6627 50  0000 C CNN
+F 2 "" H 5950 6800 50  0000 C CNN
+F 3 "" H 5950 6800 50  0000 C CNN
+	1    5950 6800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4475 5350 4475 4950
+	4975 4950 4975 4550
 Wire Wire Line
-	4475 5375 4475 5350
-Connection ~ 4475 5350
+	4975 4975 4975 4950
+Connection ~ 4975 4950
 $Comp
 L Amplifier_Audio:MAX98089 U?
 U 1 1 5B46AEA2
-P 4275 6000
-F 0 "U?" H 3425 6600 50  0000 L CNN
-F 1 "MAX98089" H 5050 6600 50  0000 L CNN
-F 2 "Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP5.7x5.7mm" H 4825 6900 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/maxim-integrated/MAX98089ETN/MAX98089ETN-ND/2744335" H 4275 7100 50  0001 C CNN
-F 4 "MAX98089ETN+" H 5316 5584 50  0000 L CNN "Part Number"
-	1    4275 6000
+P 4775 5600
+F 0 "U?" H 3925 6200 50  0000 L CNN
+F 1 "MAX98089" H 5550 6200 50  0000 L CNN
+F 2 "Package_DFN_QFN:QFN-56-1EP_7x7mm_P0.4mm_EP5.7x5.7mm" H 5325 6500 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/maxim-integrated/MAX98089ETN/MAX98089ETN-ND/2744335" H 4775 6700 50  0001 C CNN
+F 4 "MAX98089ETN+" H 5816 5184 50  0000 L CNN "Part Number"
+	1    4775 5600
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	4575 6950 5275 6950
-Connection ~ 5275 6950
+	5075 6550 5775 6550
+Connection ~ 5775 6550
 Wire Wire Line
-	5275 6950 5450 6950
+	5775 6550 5950 6550
 $Comp
 L open-automation:C_390uf C?
 U 1 1 5B4E75DE
@@ -1308,4 +1292,273 @@ Wire Wire Line
 	8950 925  9000 925 
 Wire Wire Line
 	8525 975  8950 975 
+Wire Wire Line
+	5175 6900 5175 6950
+Wire Wire Line
+	5175 6950 5075 6950
+Wire Wire Line
+	5075 6950 5075 7025
+Wire Wire Line
+	4475 6900 4475 7350
+$Comp
+L open-automation:+5V #PWR?
+U 1 1 5B3E6C14
+P 4675 7775
+F 0 "#PWR?" H 4675 7625 50  0001 C CNN
+F 1 "+5V" H 4690 7948 50  0000 C CNN
+F 2 "" H 4675 7775 50  0000 C CNN
+F 3 "" H 4675 7775 50  0000 C CNN
+	1    4675 7775
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4475 7350 4475 7375
+Wire Wire Line
+	4475 7375 4525 7375
+Wire Wire Line
+	4575 6900 4575 7350
+Connection ~ 4475 7350
+Wire Wire Line
+	4575 7350 4750 7350
+Connection ~ 4575 7350
+Wire Wire Line
+	4575 7350 4575 7375
+Wire Wire Line
+	4225 7350 4475 7350
+$Comp
+L open-automation:C_1uF C?
+U 1 1 5B414A02
+P 4075 7350
+F 0 "C?" V 4050 7450 50  0000 C CNN
+F 1 "C_1uF" V 4200 7350 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4175 7650 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 4075 7100 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 4200 7550 60  0001 C CNN "Part Number"
+	1    4075 7350
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:C_1uF C?
+U 1 1 5B420336
+P 4900 7350
+F 0 "C?" V 4875 7450 50  0000 C CNN
+F 1 "C_1uF" V 5025 7350 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5000 7650 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 4900 7100 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 5025 7550 60  0001 C CNN "Part Number"
+	1    4900 7350
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	5050 7350 5050 7425
+Wire Wire Line
+	3925 7350 3925 7425
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B45ADC6
+P 5050 7425
+F 0 "#PWR?" H 5050 7175 50  0001 C CNN
+F 1 "GND" H 5055 7252 50  0000 C CNN
+F 2 "" H 5050 7425 50  0000 C CNN
+F 3 "" H 5050 7425 50  0000 C CNN
+	1    5050 7425
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B45AE7E
+P 3925 7425
+F 0 "#PWR?" H 3925 7175 50  0001 C CNN
+F 1 "GND" H 3930 7252 50  0000 C CNN
+F 2 "" H 3925 7425 50  0000 C CNN
+F 3 "" H 3925 7425 50  0000 C CNN
+	1    3925 7425
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4525 7375 4525 7600
+Connection ~ 4525 7375
+Wire Wire Line
+	4525 7375 4575 7375
+Wire Wire Line
+	4525 7600 4675 7600
+Wire Wire Line
+	4525 7600 4525 7800
+Wire Wire Line
+	4525 7800 4675 7800
+Wire Wire Line
+	4675 7800 4675 7775
+Connection ~ 4525 7600
+$Comp
+L open-automation:C_10uF C?
+U 1 1 5B48C588
+P 4825 7600
+F 0 "C?" V 4573 7600 50  0000 C CNN
+F 1 "C_10uF" V 4664 7600 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4925 7900 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10A106MP8NNNC/1276-1871-1-ND/3889957" H 4825 7350 50  0001 C CNN
+F 4 "CL10A106MP8NNNC" H 4950 7800 60  0001 C CNN "Part Number"
+	1    4825 7600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	4975 7600 4975 7675
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B4996F5
+P 4975 7675
+F 0 "#PWR?" H 4975 7425 50  0001 C CNN
+F 1 "GND" H 4980 7502 50  0000 C CNN
+F 2 "" H 4975 7675 50  0000 C CNN
+F 3 "" H 4975 7675 50  0000 C CNN
+	1    4975 7675
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2850 5900 2850 5875
+Wire Wire Line
+	2850 5900 2925 5900
+$Comp
+L open-automation:+3.3V #PWR?
+U 1 1 5B4C02B5
+P 2850 5875
+F 0 "#PWR?" H 2850 5725 50  0001 C CNN
+F 1 "+3.3V" H 2865 6048 50  0000 C CNN
+F 2 "" H 2850 5875 50  0000 C CNN
+F 3 "" H 2850 5875 50  0000 C CNN
+	1    2850 5875
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:C_0.1uF C?
+U 1 1 5B4C0634
+P 2925 6075
+F 0 "C?" H 2950 6150 50  0000 L CNN
+F 1 "C_0.1uF" H 2625 6000 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 3025 6375 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X8R1H104K080AB/445-8818-1-ND/3248223" H 2925 5825 50  0001 C CNN
+F 4 "C1608X8R1H104K080AB" H 3050 6275 60  0001 C CNN "Part Number"
+	1    2925 6075
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2925 5900 2925 5925
+Connection ~ 2925 5900
+Wire Wire Line
+	2925 6250 2925 6225
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B4DABD9
+P 2925 6250
+F 0 "#PWR?" H 2925 6000 50  0001 C CNN
+F 1 "GND" H 2930 6077 50  0000 C CNN
+F 2 "" H 2925 6250 50  0000 C CNN
+F 3 "" H 2925 6250 50  0000 C CNN
+	1    2925 6250
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-dash-daughterboard-rescue:speaker-CVS-1508-liger-rescue LS?
+U 1 1 5B4DB744
+P 9775 4250
+F 0 "LS?" H 9775 4375 50  0000 R CNN
+F 1 "speaker-CVS-1508" H 9825 4400 50  0001 R CNN
+F 2 "open-automation:speaker-1508" H 9775 4050 50  0001 C CNN
+F 3 "http://www.cui.com/product/resource/cvs-1508.pdf" H 9765 4200 50  0001 C CNN
+F 4 "CVS-1508" H 9925 4575 60  0001 C CNN "Part Number"
+	1    9775 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9575 4250 9500 4250
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5B4DB74C
+P 9300 4350
+F 0 "J?" H 9220 4025 50  0000 C CNN
+F 1 "Conn_01x02" H 9220 4116 50  0000 C CNN
+F 2 "Connector_PinHeader_1.00mm:PinHeader_1x02_P1.00mm_Vertical" H 9300 4350 50  0001 C CNN
+F 3 "~" H 9300 4350 50  0001 C CNN
+	1    9300 4350
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	9500 4350 9575 4350
+Wire Wire Line
+	3700 4950 4175 4950
+Wire Wire Line
+	3700 4850 3700 4950
+$Comp
+L open-automation:R_10k R?
+U 1 1 5B53C323
+P 3700 4700
+F 0 "R?" H 3770 4746 50  0000 L CNN
+F 1 "R_10k" H 3770 4655 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 3630 4700 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 3780 4700 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 3880 4800 60  0001 C CNN "Part Number"
+	1    3700 4700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3700 4550 3700 4450
+$Comp
+L open-automation:+3.3V #PWR?
+U 1 1 5B5851A6
+P 3700 4450
+F 0 "#PWR?" H 3700 4300 50  0001 C CNN
+F 1 "+3.3V" H 3715 4623 50  0000 C CNN
+F 2 "" H 3700 4450 50  0000 C CNN
+F 3 "" H 3700 4450 50  0000 C CNN
+	1    3700 4450
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:C_1uF C?
+U 1 1 5B5934BC
+P 4100 4450
+F 0 "C?" V 3848 4450 50  0000 C CNN
+F 1 "C_1uF" V 3939 4450 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 4200 4750 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 4100 4200 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 4225 4650 60  0001 C CNN "Part Number"
+	1    4100 4450
+	0    1    1    0   
+$EndComp
+Text Label 8600 5800 2    50   ~ 0
+R_AUDIO_IN
+Wire Wire Line
+	8775 5800 8600 5800
+Text Label 8600 5900 2    50   ~ 0
+L_AUDIO_IN
+Wire Wire Line
+	8775 5900 8600 5900
+Wire Wire Line
+	4775 4950 4775 4100
+$Comp
+L open-automation:C_1uF C?
+U 1 1 5B5E98B2
+P 5125 4100
+F 0 "C?" V 5175 4000 50  0000 C CNN
+F 1 "C_1uF" V 5175 4250 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad0.99x1.00mm_HandSolder" H 5225 4400 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/CGA3E1X7R1C105M080AC/445-12540-1-ND/3954206" H 5125 3850 50  0001 C CNN
+F 4 "CGA3E1X7R1C105M080AC" H 5250 4300 60  0001 C CNN "Part Number"
+	1    5125 4100
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	4775 4100 4975 4100
+Wire Wire Line
+	2925 5900 3825 5900
+Wire Wire Line
+	3825 6100 3700 6100
+Text HLabel 3700 6200 0    50   Input ~ 0
+I2S_DATA_IN
+Wire Wire Line
+	3825 6200 3700 6200
+Text HLabel 3700 6300 0    60   Input ~ 0
+I2S_WS
+Wire Wire Line
+	3700 6300 3825 6300
 $EndSCHEMATC

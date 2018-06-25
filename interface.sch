@@ -661,15 +661,110 @@ Wire Wire Line
 Wire Wire Line
 	6475 2525 6475 2575
 $Comp
-L Connector:Barrel_Jack J?
-U 1 1 5B4B4D04
-P 6875 3400
-F 0 "J?" H 6953 3725 50  0000 C CNN
-F 1 "Barrel_Jack" H 6953 3634 50  0000 C CNN
-F 2 "Connector_BarrelJack:BarrelJack_Horizontal" H 6925 3360 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/cui-inc/RCJ-021/CP-1406-ND/408493" H 6925 3360 50  0001 C CNN
-F 4 "RCJ-021" H 6875 3400 50  0001 C CNN "Part Number"
-	1    6875 3400
+L Connector_Generic:Conn_01x03 J?
+U 1 1 5B31738A
+P 8250 3375
+F 0 "J?" H 8330 3417 50  0000 L CNN
+F 1 "Conn_01x03" H 8330 3326 50  0000 L CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x02_P2.54mm_Horizontal" H 8250 3375 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/cui-inc/RCJ-021/CP-1406-ND/408493" H 8250 3375 50  0001 C CNN
+F 4 "RCJ-021" H 8250 3375 50  0001 C CNN "Part Number"
+	1    8250 3375
 	1    0    0    -1  
 $EndComp
+Wire Notes Line
+	8875 3650 8875 3100
+Text Notes 8100 3050 0    50   ~ 0
+RCA Jack
+Text HLabel 6900 5050 0    50   Input ~ 0
+FL_AUDIO_OUT+
+Text HLabel 6900 4950 0    50   Input ~ 0
+FR_AUDIO_OUT+
+Text HLabel 6900 4850 0    50   Input ~ 0
+RL_AUDIO_OUT+
+Text HLabel 6900 5150 0    50   Input ~ 0
+RR_AUDIO_OUT+
+Wire Wire Line
+	6950 4950 6900 4950
+Wire Wire Line
+	6950 5050 6900 5050
+Wire Wire Line
+	6900 5150 6950 5150
+Wire Wire Line
+	6900 4850 6950 4850
+Text HLabel 6900 5250 0    50   Input ~ 0
+RR_AUDIO_OUT-
+Text HLabel 6900 5550 0    50   Input ~ 0
+RL_AUDIO_OUT-
+Text HLabel 6900 5450 0    50   Input ~ 0
+FR_AUDIO_OUT-
+Text HLabel 6900 5350 0    50   Input ~ 0
+FL_AUDIO_OUT-
+Wire Wire Line
+	6950 5250 6900 5250
+Wire Wire Line
+	6900 5350 6950 5350
+Wire Wire Line
+	6950 5450 6900 5450
+Wire Wire Line
+	6900 5550 6950 5550
+Text HLabel 7500 5150 2    50   Input ~ 0
+CAN+
+Text HLabel 7500 5550 2    50   Input ~ 0
+CAMERA+
+Text HLabel 7500 5050 2    50   Input ~ 0
+BATTERY
+Wire Wire Line
+	7500 5150 7450 5150
+Wire Wire Line
+	7450 4850 7500 4850
+Wire Wire Line
+	7500 4950 7450 4950
+Text HLabel 7500 4950 2    50   Input ~ 0
+SOFT_POWER
+Wire Wire Line
+	7450 5050 7500 5050
+Text HLabel 7500 5250 2    50   Input ~ 0
+CAN-
+Text HLabel 7500 5350 2    50   Input ~ 0
+CAMERA_S
+Text HLabel 7500 5450 2    50   Input ~ 0
+CAMERA-
+Wire Wire Line
+	7500 5350 7450 5350
+Wire Wire Line
+	7450 5250 7500 5250
+Wire Wire Line
+	7500 5450 7450 5450
+Wire Wire Line
+	7450 5550 7500 5550
+$Comp
+L open-automation:GND #PWR?
+U 1 1 5B6B9D18
+P 7500 4850
+F 0 "#PWR?" H 7500 4600 50  0001 C CNN
+F 1 "GND" V 7475 4675 50  0000 C CNN
+F 2 "" H 7500 4850 50  0000 C CNN
+F 3 "" H 7500 4850 50  0000 C CNN
+	1    7500 4850
+	0    -1   -1   0   
+$EndComp
+Text HLabel 7925 3375 0    50   Input ~ 0
+CAMERA_S
+Text HLabel 7925 3275 0    50   Input ~ 0
+CAMERA-
+Text HLabel 7925 3475 0    50   Input ~ 0
+CAMERA+
+Wire Wire Line
+	8050 3275 7925 3275
+Wire Wire Line
+	8050 3375 7925 3375
+Wire Wire Line
+	8050 3475 7925 3475
+Wire Notes Line
+	7425 3100 7425 3650
+Wire Notes Line
+	7425 3100 8875 3100
+Wire Notes Line
+	7425 3650 8850 3650
 $EndSCHEMATC

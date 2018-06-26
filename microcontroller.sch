@@ -247,7 +247,7 @@ U 1 1 5B2E2168
 P 4450 3900
 F 0 "R20" V 4450 3900 50  0000 C CNN
 F 1 "R_47.5" V 4550 3900 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 4380 3900 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 4380 3900 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3EKF4752V/P47.5KHCT-ND/198404" V 4530 3900 50  0001 C CNN
 F 4 "ERJ-3EKF4752V" V 4630 4000 60  0001 C CNN "Part Number"
 	1    4450 3900
@@ -267,7 +267,7 @@ U 1 1 5B308AD6
 P 7175 3200
 F 0 "R22" V 7175 3200 50  0000 C CNN
 F 1 "R_47.5" V 7075 3200 50  0000 C CNN
-F 2 "Resistors_SMD:R_0603" V 7105 3200 50  0001 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 7105 3200 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3EKF4752V/P47.5KHCT-ND/198404" V 7255 3200 50  0001 C CNN
 F 4 "ERJ-3EKF4752V" V 7355 3300 60  0001 C CNN "Part Number"
 	1    7175 3200

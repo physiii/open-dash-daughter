@@ -4,7 +4,7 @@ EELAYER 26 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
-Sheet 12 12
+Sheet 11 12
 Title ""
 Date ""
 Rev ""
@@ -14,17 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L Connector_Generic:Conn_01x02 AMF_Antenna1
-U 1 1 5B15E1EC
-P 6975 925
-F 0 "AMF_Antenna1" H 7055 917 50  0000 L CNN
-F 1 "Conn_01x02" H 7055 826 50  0000 L CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 6975 925 50  0001 C CNN
-F 3 "~" H 6975 925 50  0001 C CNN
-	1    6975 925 
-	1    0    0    -1  
-$EndComp
 $Comp
 L Connector_Generic:Conn_01x02 GPS_ANT1
 U 1 1 5AE240A7
@@ -40,10 +29,6 @@ Text Notes 6775 725  0    50   ~ 0
 AM/FM Antenna
 Text Notes 8350 725  0    50   ~ 0
 GPS Antenna
-Wire Wire Line
-	6575 1125 6575 1025
-Wire Wire Line
-	6575 1025 6775 1025
 Wire Wire Line
 	8250 1125 8250 1025
 Wire Wire Line
@@ -369,17 +354,6 @@ L_MAIN_AUDIO
 Text HLabel 7150 2525 2    60   Input ~ 0
 R_MAIN_AUDIO
 $Comp
-L open-automation:GND #PWR0105
-U 1 1 5B1DCBD3
-P 6575 1125
-F 0 "#PWR0105" H 6575 875 50  0001 C CNN
-F 1 "GND" H 6575 975 50  0000 C CNN
-F 2 "" H 6575 1125 50  0000 C CNN
-F 3 "" H 6575 1125 50  0000 C CNN
-	1    6575 1125
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:GND #PWR0108
 U 1 1 5B1DCC14
 P 8250 1125
@@ -670,4 +644,29 @@ Wire Notes Line
 	7425 3100 8875 3100
 Wire Notes Line
 	7425 3650 8850 3650
+$Comp
+L open-automation:GND #PWR0105
+U 1 1 5B3DB71C
+P 6975 1225
+F 0 "#PWR0105" H 6975 975 50  0001 C CNN
+F 1 "GND" H 6980 1052 50  0000 C CNN
+F 2 "" H 6975 1225 50  0000 C CNN
+F 3 "" H 6975 1225 50  0000 C CNN
+	1    6975 1225
+	1    0    0    -1  
+$EndComp
+$Comp
+L dk_Coaxial-Connectors-RF:0734120114 J6
+U 1 1 5B3DB725
+P 6975 925
+F 0 "J6" V 6998 1013 60  0000 L CNN
+F 1 "0734120114" V 7104 1013 60  0000 L CNN
+F 2 "open-automation:RF Female Housing" H 7175 1125 60  0001 L CNN
+F 3 "https://www.digikey.com/product-detail/en/molex-llc/0731000105/WM5524-ND/1465146" H 7175 1225 60  0001 L CNN
+F 4 "0731000105" H 7175 1325 60  0001 L CNN "Part Number"
+	1    6975 925 
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6975 1125 6975 1225
 $EndSCHEMATC

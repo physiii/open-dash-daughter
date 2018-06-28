@@ -253,9 +253,9 @@ Text HLabel 3875 2500 2    60   Input ~ 0
 SCL
 Text HLabel 3875 2200 2    60   Input ~ 0
 5V
-Text HLabel 3875 2300 2    60   Input ~ 0
-TXD
 Text HLabel 3875 2400 2    60   Input ~ 0
+TXD
+Text HLabel 3875 2300 2    60   Input ~ 0
 RXD
 Text HLabel 3175 2500 0    60   Input ~ 0
 SDA

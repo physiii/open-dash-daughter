@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/chris/circuits/open-dash-daughter/open-dash-daughterboard.sch)
-    (date "Thu 28 Jun 2018 11:34:38 AM CDT")
+    (date "Thu 28 Jun 2018 11:53:10 AM CDT")
     (tool "Eeschema 5.0.0-rc2-unknown-0a91f0b~65~ubuntu17.10.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -3050,12 +3050,12 @@
       (node (ref J2) (pin 4)))
     (net (code 2) (name /TXD)
       (node (ref U6) (pin 35))
-      (node (ref J2) (pin 8))
+      (node (ref J2) (pin 6))
       (node (ref U18) (pin 20)))
     (net (code 3) (name /RXD)
       (node (ref U6) (pin 34))
       (node (ref R66) (pin 1))
-      (node (ref J2) (pin 6)))
+      (node (ref J2) (pin 8)))
     (net (code 4) (name /CAN-)
       (node (ref R24) (pin 1))
       (node (ref D12) (pin 1))

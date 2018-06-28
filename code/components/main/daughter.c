@@ -48,7 +48,16 @@
 TaskHandle_t xBlink = NULL;
 bool dash_wait_flag = false;
 
-/************************** power detection ********************************/
+// GPIO assignments
+#define GPIO_STATUS_LED               (GPIO_NUM_2)
+#define GPIO_CAN_RX                   (GPIO_NUM_4)
+// #define GPIO_CAN_TX                   (GPIO_NUM_???)
+#define GPIO_MAINBOARD_SOFT_POWER     (GPIO_NUM_5)
+#define GPIO_DISPLAY_POWER            (GPIO_NUM_18)
+#define GPIO_AUDIO_AMP_POWER          (GPIO_NUM_16)
+#define GPIO_MAINBOARD_POWER          (GPIO_NUM_15)
+
+/*************** initialize i2c *************************************/
 
 #define DATA_LENGTH                        512              /*!<Data buffer length for test buffer*/
 #define RW_TEST_LENGTH                     129              /*!<Data length for r/w test, any value from 0-DATA_LENGTH*/
@@ -68,14 +77,7 @@ bool dash_wait_flag = false;
 #define ACK_VAL                            0x0              /*!< I2C ack value */
 #define NACK_VAL                           0x1              /*!< I2C nack value */
 
-// GPIO assignments
-#define GPIO_STATUS_LED               (GPIO_NUM_2)
-#define GPIO_CAN_RX                   (GPIO_NUM_4)
-// #define GPIO_CAN_TX                   (GPIO_NUM_???)
-#define GPIO_MAINBOARD_SOFT_POWER     (GPIO_NUM_5)
-#define GPIO_DISPLAY_POWER            (GPIO_NUM_18)
-#define GPIO_AUDIO_AMP_POWER          (GPIO_NUM_16)
-#define GPIO_MAINBOARD_POWER          (GPIO_NUM_15)
+/************************** power detection ********************************/
 
 #define POWER_DELAY_TIME   1234 /*!< delay time between different test items */
 
@@ -345,8 +347,171 @@ static void power_task(void* arg)
     }
 }
 
-/************************** power detection ********************************/
+/*************************** radio control *********************************/
 
+#define SI4740_SENSOR_ADDR            0x10    /*!< slave address for SI7020 sensor */
+#define SI4740_POWER_UP               0x01    /*!< Command to get chip version */
+#define SI4740_POWER_UP_ARG1          0x1F    /*!< Command to get chip version */
+#define SI4740_POWER_UP_ARG2          0x1F    /*!< Command to get chip version */
+#define SI4740_GET_VERSION            0x50    /*!< Command to get chip version */
+
+
+int SI4740_version = 0;
+
+static esp_err_t SI4740_power_up(i2c_port_t i2c_num, uint8_t* data_h, uint8_t* data_l)
+{
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, SI4740_SENSOR_ADDR << 1 | WRITE_BIT, ACK_CHECK_EN);
+    i2c_master_write_byte(cmd, SI4740_POWER_UP, ACK_CHECK_EN);
+    i2c_master_write_byte(cmd, SI4740_POWER_UP_ARG1, ACK_CHECK_EN);
+    i2c_master_write_byte(cmd, SI4740_POWER_UP_ARG2, ACK_CHECK_EN);
+    i2c_master_stop(cmd);
+
+    int ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_FAIL) {
+        return ret;
+    }
+
+    vTaskDelay(30 / portTICK_RATE_MS);
+
+    cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, SI4740_SENSOR_ADDR << 1 | READ_BIT, ACK_CHECK_EN);
+    i2c_master_read_byte(cmd, data_h, ACK_VAL);
+    i2c_master_read_byte(cmd, data_l, NACK_VAL);
+    i2c_master_stop(cmd);
+
+    ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_FAIL) {
+        return ESP_FAIL;
+    }
+    return ESP_OK;
+}
+
+static esp_err_t SI4740_get_version(i2c_port_t i2c_num, uint8_t* data_h, uint8_t* data_l)
+{
+    i2c_cmd_handle_t cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, SI4740_SENSOR_ADDR << 1 | WRITE_BIT, ACK_CHECK_EN);
+    i2c_master_write_byte(cmd, SI4740_GET_VERSION, ACK_CHECK_EN);
+    i2c_master_stop(cmd);
+
+    int ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_FAIL) {
+        return ret;
+    }
+
+    vTaskDelay(30 / portTICK_RATE_MS);
+
+    cmd = i2c_cmd_link_create();
+    i2c_master_start(cmd);
+    i2c_master_write_byte(cmd, SI4740_SENSOR_ADDR << 1 | READ_BIT, ACK_CHECK_EN);
+    i2c_master_read_byte(cmd, data_h, ACK_VAL);
+    i2c_master_read_byte(cmd, data_l, NACK_VAL);
+    i2c_master_stop(cmd);
+
+    ret = i2c_master_cmd_begin(i2c_num, cmd, 1000 / portTICK_RATE_MS);
+    i2c_cmd_link_delete(cmd);
+    if (ret == ESP_FAIL) {
+        return ESP_FAIL;
+    }
+    return ESP_OK;
+}
+
+static void radio_task(void* arg)
+{
+
+    char tag[20] = "[radio-task]";
+    int i = 0;
+    int ret;
+    uint32_t task_idx = (uint32_t) arg;
+    uint8_t* data = (uint8_t*) malloc(DATA_LENGTH);
+    uint8_t* data_wr = (uint8_t*) malloc(DATA_LENGTH);
+    uint8_t* data_rd = (uint8_t*) malloc(DATA_LENGTH);
+    uint8_t sensor_data_h, sensor_data_l;
+    bool SI4740_CONFIGURED = false;
+    while (1) {
+
+        //--------------------------------------------------//
+	if (!SI4740_CONFIGURED) {
+		ret = SI4740_power_up( I2C_EXAMPLE_MASTER_NUM, &sensor_data_h, &sensor_data_l);
+        	if (ret == ESP_OK) {
+        	    printf("SI4740 configured!!\n");
+		    SI4740_CONFIGURED = true;
+	        } else {
+        	    printf("SI4740_CONFIGURED No ack, sensor not connected\n");
+	        }
+	        vTaskDelay(( POWER_DELAY_TIME * ( task_idx + 1 ) ) / portTICK_RATE_MS);
+	}
+
+        //--------------------------------------------------//
+	/*ret = SI4740_measure_current( I2C_EXAMPLE_MASTER_NUM, &sensor_data_h, &sensor_data_l);
+        if (ret == ESP_OK) {
+            //printf("data_h: %02x\n", sensor_data_h);
+            //printf("data_l: %02x\n", sensor_data_l);
+            //printf("sensor val: %f\n", ( sensor_data_h << 8 | sensor_data_l ) / 1.2);
+            printf("MEASURE CURRENT SI4740 (%d)\n", ( sensor_data_h << 8 | sensor_data_l ));
+	    battery_current = ( sensor_data_h << 8 | sensor_data_l ) * current_cf / 1000 - current_cb;
+            sprintf(current_str,"%d", battery_current);
+	    //power_data_ready = true;
+        } else {
+            printf("SI4740_measure_current No ack, sensor not connected\n");
+        }
+        vTaskDelay(( POWER_DELAY_TIME * ( task_idx + 1 ) ) / portTICK_RATE_MS);*/
+
+        //--------------------------------------------------//
+        ret = SI4740_get_version( I2C_EXAMPLE_MASTER_NUM, &sensor_data_h, &sensor_data_l);
+        if (ret == ESP_OK) {
+	   SI4740_version = ( sensor_data_h << 8 | sensor_data_l );
+	   printf("SI4740 Version: %d\n",SI4740_version);
+        } else {
+            printf("SI4740_get_version No ack, sensor not connected\n");
+        }
+        vTaskDelay(( POWER_DELAY_TIME * ( task_idx + 1 ) ) / portTICK_RATE_MS);
+    }
+}
+
+
+/************************** initialization ********************************/
+
+void initialize_gpio() {
+
+    gpio_config_t io_conf;
+    //disable interrupt
+    io_conf.intr_type = GPIO_PIN_INTR_DISABLE;
+    //set as output mode
+    io_conf.mode = GPIO_MODE_OUTPUT;
+    //bit mask of the pins that you want to set,e.g.GPIO18/19
+    io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
+    //disable pull-down mode
+    io_conf.pull_down_en = 0;
+    //disable pull-up mode
+    io_conf.pull_up_en = 0;
+    //configure GPIO with the given settings
+    gpio_config(&io_conf);
+
+  //gpio_set_direction(GPIO_MAINBOARD_POWER, GPIO_MODE_OUTPUT);
+  //gpio_set_direction(GPIO_DISPLAY_POWER, GPIO_MODE_OUTPUT);
+  //gpio_set_direction(GPIO_STATUS_LED, GPIO_MODE_OUTPUT);
+  //gpio_set_direction(GPIO_MAINBOARD_SOFT_POWER, GPIO_MODE_OUTPUT);
+  //gpio_set_direction(GPIO_AUDIO_AMP_POWER, GPIO_MODE_OUTPUT);
+}
+
+/***
+apply power to peripherals
+***/
+void apply_dash_power() {
+  gpio_set_level(GPIO_MAINBOARD_POWER, 0); //mainboard power
+  gpio_set_level(GPIO_DISPLAY_POWER, 0); //display power
+  //gpio_set_level(GPIO_AUDIO_AMP_POWER, 0); //audio amp power
+  //gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0); //mainboard softpower
+}
+
+/*************************** ignition *********************************/
 
 enum eIgnitionState {
   IgnitionOff,
@@ -383,38 +548,6 @@ const char * get_dash_state_label(enum eDashState dash_state) {
 
 CAN_device_t CAN_cfg = {0};
 
-void initialize_gpio() {
-
-    gpio_config_t io_conf;
-    //disable interrupt
-    io_conf.intr_type = GPIO_PIN_INTR_DISABLE;
-    //set as output mode
-    io_conf.mode = GPIO_MODE_OUTPUT;
-    //bit mask of the pins that you want to set,e.g.GPIO18/19
-    io_conf.pin_bit_mask = GPIO_OUTPUT_PIN_SEL;
-    //disable pull-down mode
-    io_conf.pull_down_en = 0;
-    //disable pull-up mode
-    io_conf.pull_up_en = 0;
-    //configure GPIO with the given settings
-    gpio_config(&io_conf);
-
-  //gpio_set_direction(GPIO_MAINBOARD_POWER, GPIO_MODE_OUTPUT);
-  //gpio_set_direction(GPIO_DISPLAY_POWER, GPIO_MODE_OUTPUT);
-  //gpio_set_direction(GPIO_STATUS_LED, GPIO_MODE_OUTPUT);
-  //gpio_set_direction(GPIO_MAINBOARD_SOFT_POWER, GPIO_MODE_OUTPUT);
-  //gpio_set_direction(GPIO_AUDIO_AMP_POWER, GPIO_MODE_OUTPUT);
-}
-
-/***
-apply power to peripherals
-***/
-void apply_dash_power() {
-  gpio_set_level(GPIO_MAINBOARD_POWER, 0); //mainboard power
-  gpio_set_level(GPIO_DISPLAY_POWER, 0); //display power
-  //gpio_set_level(GPIO_AUDIO_AMP_POWER, 0); //audio amp power
-  //gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0); //mainboard softpower
-}
 
 esp_err_t event_handler(void *ctx, system_event_t *event)
 {
@@ -781,6 +914,7 @@ void app_main(void) {
   apply_dash_power();
 
   xTaskCreate(power_task, "power_task", 1024 * 2, (void* ) 1, 10, NULL);
+  xTaskCreate(radio_task, "radio_task", 1024 * 2, (void* ) 1, 10, NULL);
   xTaskCreate(task_Dash, "Dash", 2048, NULL, 5, NULL);
   xTaskCreate(task_CAN, "CAN", 2048, NULL, 5, NULL);
   xTaskCreate(task_BlinkOnce, "blink", configMINIMAL_STACK_SIZE, NULL, 5, &xBlink);

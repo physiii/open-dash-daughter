@@ -569,13 +569,13 @@ Wire Wire Line
 	6900 5150 6950 5150
 Wire Wire Line
 	6900 4850 6950 4850
-Text HLabel 7500 5150 2    50   Input ~ 0
+Text HLabel 7500 5250 2    50   Input ~ 0
 RR_AUDIO_OUT-
-Text HLabel 7500 4850 2    50   Input ~ 0
+Text HLabel 7500 5550 2    50   Input ~ 0
 RL_AUDIO_OUT-
-Text HLabel 7500 4950 2    50   Input ~ 0
+Text HLabel 7500 5450 2    50   Input ~ 0
 FR_AUDIO_OUT-
-Text HLabel 7500 5050 2    50   Input ~ 0
+Text HLabel 7500 5350 2    50   Input ~ 0
 FL_AUDIO_OUT-
 Wire Wire Line
 	6950 5250 6900 5250
@@ -589,42 +589,42 @@ Text HLabel 6900 5250 0    50   Input ~ 0
 CAN+
 Text HLabel 6900 5450 0    50   Input ~ 0
 CAMERA+
-Text HLabel 6900 5350 0    50   Input ~ 0
+Text HLabel 7500 5050 2    50   Input ~ 0
 BATTERY
 Wire Wire Line
-	7500 5150 7450 5150
-Wire Wire Line
-	7450 4850 7500 4850
-Wire Wire Line
-	7500 4950 7450 4950
-Text HLabel 6900 5550 0    50   Input ~ 0
-SOFT_POWER
-Wire Wire Line
-	7450 5050 7500 5050
-Text HLabel 7500 5250 2    50   Input ~ 0
-CAN-
-Text HLabel 7500 5350 2    50   Input ~ 0
-CAMERA_S
-Text HLabel 7500 5450 2    50   Input ~ 0
-CAMERA-
-Wire Wire Line
-	7500 5350 7450 5350
-Wire Wire Line
-	7450 5250 7500 5250
-Wire Wire Line
-	7500 5450 7450 5450
+	7500 5250 7450 5250
 Wire Wire Line
 	7450 5550 7500 5550
+Wire Wire Line
+	7500 5450 7450 5450
+Text HLabel 7500 4850 2    50   Input ~ 0
+SOFT_POWER
+Wire Wire Line
+	7450 5350 7500 5350
+Text HLabel 7500 5150 2    50   Input ~ 0
+CAN-
+Text HLabel 6900 5550 0    50   Input ~ 0
+CAMERA_S
+Text HLabel 7500 4950 2    50   Input ~ 0
+CAMERA-
+Wire Wire Line
+	7500 4850 7450 4850
+Wire Wire Line
+	7450 5150 7500 5150
+Wire Wire Line
+	7500 4950 7450 4950
+Wire Wire Line
+	7450 5050 7500 5050
 $Comp
 L open-automation:GND #PWR0107
 U 1 1 5B6B9D18
-P 7500 5550
-F 0 "#PWR0107" H 7500 5300 50  0001 C CNN
-F 1 "GND" V 7500 5350 50  0000 C CNN
-F 2 "" H 7500 5550 50  0000 C CNN
-F 3 "" H 7500 5550 50  0000 C CNN
-	1    7500 5550
-	0    -1   -1   0   
+P 6900 5350
+F 0 "#PWR0107" H 6900 5100 50  0001 C CNN
+F 1 "GND" V 6900 5175 50  0000 C CNN
+F 2 "" H 6900 5350 50  0000 C CNN
+F 3 "" H 6900 5350 50  0000 C CNN
+	1    6900 5350
+	0    1    1    0   
 $EndComp
 Text HLabel 7925 3375 0    50   Input ~ 0
 CAMERA_S

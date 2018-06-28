@@ -945,17 +945,6 @@ F 3 "" H 7425 7775 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:+3.3V #PWR054
-U 1 1 5B435474
-P 5800 5400
-F 0 "#PWR054" H 5800 5250 50  0001 C CNN
-F 1 "+3.3V" H 5815 5573 50  0000 C CNN
-F 2 "" H 5800 5400 50  0000 C CNN
-F 3 "" H 5800 5400 50  0000 C CNN
-	1    5800 5400
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:GND #PWR051
 U 1 1 5B435564
 P 5275 5475
@@ -987,17 +976,6 @@ Wire Wire Line
 Wire Wire Line
 	5600 5675 5600 5600
 Connection ~ 5600 5675
-$Comp
-L open-automation:+3.3V #PWR053
-U 1 1 5B463178
-P 5600 5600
-F 0 "#PWR053" H 5600 5450 50  0001 C CNN
-F 1 "+3.3V" H 5600 5725 50  0000 C CNN
-F 2 "" H 5600 5600 50  0000 C CNN
-F 3 "" H 5600 5600 50  0000 C CNN
-	1    5600 5600
-	1    0    0    -1  
-$EndComp
 $Comp
 L open-automation:GND #PWR052
 U 1 1 5B46E7FE
@@ -1264,17 +1242,6 @@ Wire Wire Line
 Wire Wire Line
 	4175 6875 4250 6875
 $Comp
-L open-automation:+3.3V #PWR046
-U 1 1 5B4C02B5
-P 4175 6850
-F 0 "#PWR046" H 4175 6700 50  0001 C CNN
-F 1 "+3.3V" H 4190 7023 50  0000 C CNN
-F 2 "" H 4175 6850 50  0000 C CNN
-F 3 "" H 4175 6850 50  0000 C CNN
-	1    4175 6850
-	1    0    0    -1  
-$EndComp
-$Comp
 L open-automation:C_0.1uF C22
 U 1 1 5B4C0634
 P 4250 7050
@@ -1320,17 +1287,6 @@ F 4 "RC0603JR-0710KL" V 5205 5775 60  0001 C CNN "Part Number"
 $EndComp
 Wire Wire Line
 	5025 5525 5025 5425
-$Comp
-L open-automation:+3.3V #PWR049
-U 1 1 5B5851A6
-P 5025 5425
-F 0 "#PWR049" H 5025 5275 50  0001 C CNN
-F 1 "+3.3V" H 5040 5598 50  0000 C CNN
-F 2 "" H 5025 5425 50  0000 C CNN
-F 3 "" H 5025 5425 50  0000 C CNN
-	1    5025 5425
-	1    0    0    -1  
-$EndComp
 $Comp
 L open-automation:C_1uF C29
 U 1 1 5B5934BC
@@ -1597,4 +1553,12 @@ Wire Wire Line
 Wire Wire Line
 	5600 7275 6100 7275
 Connection ~ 6100 7275
+Text HLabel 5800 5400 1    60   Input ~ 0
+3v3
+Text HLabel 5025 5425 1    60   Input ~ 0
+3v3
+Text HLabel 4175 6850 1    60   Input ~ 0
+3v3
+Text HLabel 5600 5600 1    60   Input ~ 0
+3v3
 $EndSCHEMATC

@@ -473,7 +473,7 @@ F 3 "" H 7850 3600 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7750 3550 7750 3800
+	7750 3550 7750 3675
 Wire Wire Line
 	7950 3550 7950 3800
 Wire Wire Line
@@ -1037,4 +1037,27 @@ F 3 "" H 9025 3150 50  0000 C CNN
 	1    9025 3150
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	7750 3675 7650 3675
+Connection ~ 7750 3675
+Wire Wire Line
+	7750 3675 7750 3800
+$Comp
+L open-automation:R_10k R69
+U 1 1 5B37BC7C
+P 7500 3675
+F 0 "R69" V 7293 3675 50  0000 C CNN
+F 1 "R_10k" V 7384 3675 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 7430 3675 50  0001 C CNN
+F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 7580 3675 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 7680 3775 60  0001 C CNN "Part Number"
+	1    7500 3675
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7350 3675 7300 3675
+Wire Wire Line
+	7300 3675 7300 3550
+Text HLabel 7300 3550 1    60   Input ~ 0
+3v3
 $EndSCHEMATC

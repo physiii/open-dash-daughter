@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source /home/chris/circuits/open-dash-daughter/open-dash-daughterboard.sch)
-    (date "Thu 28 Jun 2018 02:20:34 PM CDT")
+    (date "Fri 29 Jun 2018 09:53:50 AM CDT")
     (tool "Eeschema 5.0.0-rc2-unknown-0a91f0b~65~ubuntu17.10.1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block

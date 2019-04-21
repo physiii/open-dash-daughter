@@ -1,6 +1,5 @@
-EESchema Schematic File Version 4
-LIBS:open-dash-daughterboard-cache
-EELAYER 26 0
+EESchema Schematic File Version 5
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -341,7 +340,7 @@ Wire Wire Line
 	6200 1500 6200 1900
 Connection ~ 6200 1900
 Text HLabel 4875 1500 0    50   Input ~ 0
-3v3
+3V3
 $Comp
 L Device:R R29
 U 1 1 5ADBD513
@@ -361,8 +360,8 @@ NoConn ~ 7000 2650
 NoConn ~ 7750 1650
 NoConn ~ 7850 1650
 NoConn ~ 7950 1650
-Text HLabel 10750 2350 2    50   Input ~ 0
-3v3
+Text HLabel 10450 600  2    50   Input ~ 0
+3V3
 $Comp
 L open-automation:GND #PWR063
 U 1 1 5ADC27BB
@@ -383,13 +382,13 @@ NoConn ~ 8950 2750
 NoConn ~ 8250 1650
 Wire Wire Line
 	7850 3600 7850 3550
-Text HLabel 7950 4300 3    50   Input ~ 0
+Text HLabel 10450 1000 2    50   Input ~ 0
 SCL
-Text HLabel 8175 4300 3    50   Input ~ 0
+Text HLabel 10450 900  2    50   Input ~ 0
 SDA
-Text HLabel 9900 3600 2    50   Input ~ 0
+Text HLabel 10450 800  2    50   Input ~ 0
 L_FM_AUDIO
-Text HLabel 9900 3200 2    50   Input ~ 0
+Text HLabel 10450 700  2    50   Input ~ 0
 R_FM_AUDIO
 Text HLabel 8150 1500 1    50   Input ~ 0
 FM_INT
@@ -531,7 +530,7 @@ Wire Wire Line
 Wire Wire Line
 	8175 3700 8175 3800
 Text HLabel 9925 3875 2    50   Input ~ 0
-3v3
+3V3
 $Comp
 L open-automation:GND #PWR060
 U 1 1 5AE0458E
@@ -641,8 +640,6 @@ F 4 "RC0603JR-074K7L" V 1650 5500 50  0001 C CNN "Part Number"
 	1    1650 5500
 	-1   0    0    -1  
 $EndComp
-Text HLabel 1650 5075 1    50   Input ~ 0
-3v3
 Wire Wire Line
 	3825 4775 3825 5650
 Wire Wire Line
@@ -1023,6 +1020,10 @@ Wire Wire Line
 	2275 5175 2625 5175
 Wire Wire Line
 	2675 5850 2925 5850
-Text HLabel 1550 950  0    50   Input ~ 0
+Text HLabel 10450 1100 2    50   Input ~ 0
 AMF_Antenna
+Text HLabel 6925 2475 1    50   Input ~ 0
+3V3
+Text HLabel 1650 5075 1    50   Input ~ 0
+3V3
 $EndSCHEMATC

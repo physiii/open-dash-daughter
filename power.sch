@@ -1,6 +1,5 @@
-EESchema Schematic File Version 4
-LIBS:open-dash-daughterboard-cache
-EELAYER 26 0
+EESchema Schematic File Version 5
+EELAYER 29 0
 EELAYER END
 $Descr A3 16535 11693
 encoding utf-8
@@ -505,11 +504,11 @@ V_MAIN
 Text HLabel 7700 3900 0    60   Input ~ 0
 EN_MAIN
 Text HLabel 7275 4175 0    60   Input ~ 0
-3v3
+3V3
 Text HLabel 7550 7200 0    60   Input ~ 0
 EN_AUDIO
 Text HLabel 7125 7425 0    60   Input ~ 0
-3v3
+3V3
 Wire Wire Line
 	3050 2325 3050 2475
 Wire Wire Line
@@ -759,7 +758,7 @@ BATTERY
 Text HLabel 7700 5550 0    60   Input ~ 0
 EN_DISPLAY
 Text HLabel 7275 5825 0    60   Input ~ 0
-3v3
+3V3
 $Comp
 L open-automation:D_Schottky D5
 U 1 1 5B1039FC
@@ -841,7 +840,7 @@ Connection ~ 10225 7650
 Wire Wire Line
 	10225 7650 10225 7700
 Text HLabel 13175 2400 2    60   Input ~ 0
-3v3
+3V3
 $Comp
 L open-automation:R_7k15 R4
 U 1 1 5B14C07D

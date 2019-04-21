@@ -1,6 +1,5 @@
-EESchema Schematic File Version 4
-LIBS:open-dash-daughterboard-cache
-EELAYER 26 0
+EESchema Schematic File Version 5
+EELAYER 29 0
 EELAYER END
 $Descr USLetter 11000 8500
 encoding utf-8
@@ -178,15 +177,15 @@ Wire Wire Line
 Wire Wire Line
 	2625 3525 2825 3525
 Text HLabel 3350 3425 1    60   Input ~ 0
-3v3
+3V3
 Text HLabel 3450 3425 1    60   Input ~ 0
-3v3
+3V3
 Text HLabel 3450 3925 3    60   Input ~ 0
 SCL
 Text HLabel 3350 3925 3    60   Input ~ 0
 SDA
 Text HLabel 2625 3400 1    60   Input ~ 0
-3v3
+3V3
 Text HLabel 6725 3600 2    60   Input ~ 0
 EN_MAIN
 Text HLabel 6725 3900 2    60   Input ~ 0
@@ -208,7 +207,7 @@ TXD
 Text HLabel 4775 4100 0    60   Input ~ 0
 FACTORY
 Text HLabel 4775 2900 0    60   Input ~ 0
-3v3
+3V3
 Text HLabel 4775 3000 0    60   Input ~ 0
 EN_ESP
 Text HLabel 4765 4200 0    50   Output ~ 0

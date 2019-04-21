@@ -1,6 +1,5 @@
-EESchema Schematic File Version 4
-LIBS:open-dash-daughterboard-cache
-EELAYER 26 0
+EESchema Schematic File Version 5
+EELAYER 29 0
 EELAYER END
 $Descr A 11000 8500
 encoding utf-8
@@ -267,11 +266,11 @@ EN_ESP
 Text HLabel 4000 5300 2    60   Input ~ 0
 PROG
 Text HLabel 3050 4575 1    60   Input ~ 0
-3v3
+3V3
 Text HLabel 3875 4575 1    60   Input ~ 0
-3v3
+3V3
 Text HLabel 2100 4575 1    60   Input ~ 0
-3v3
+3V3
 $Comp
 L open-automation:molex-2x4-5.7mm U7
 U 1 1 5B1A08B0
@@ -376,7 +375,7 @@ Wire Wire Line
 Wire Wire Line
 	3775 2500 3875 2500
 Text HLabel 3175 2200 0    60   Input ~ 0
-3v3
+3V3
 Text HLabel 3175 2300 0    60   Input ~ 0
 PROG
 Text HLabel 3175 2400 0    60   Input ~ 0
@@ -409,7 +408,7 @@ Wire Wire Line
 Text HLabel 1475 2500 2    50   Output ~ 0
 SOFT_POWER
 Text HLabel 1375 2025 1    60   Input ~ 0
-3v3
+3V3
 $Comp
 L open-automation:R_10k R16
 U 1 1 5AF64A9D

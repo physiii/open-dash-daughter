@@ -1,6 +1,6 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 5
 LIBS:open-dash-daughterboard-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -832,14 +832,9 @@ Wire Wire Line
 Wire Wire Line
 	4325 4150 4325 4350
 Wire Wire Line
-	4325 4350 4575 4350
-Wire Wire Line
 	4775 4150 4850 4150
 Wire Wire Line
 	4850 4150 4850 4350
-Wire Wire Line
-	4850 4350 4575 4350
-Connection ~ 4575 4350
 Wire Wire Line
 	4575 3950 4575 3800
 Connection ~ 4575 3800
@@ -875,14 +870,9 @@ Wire Wire Line
 Wire Wire Line
 	3550 1300 3550 1500
 Wire Wire Line
-	3550 1500 3800 1500
-Wire Wire Line
 	4000 1300 4050 1300
 Wire Wire Line
 	4050 1300 4050 1500
-Wire Wire Line
-	4050 1500 3800 1500
-Connection ~ 3800 1500
 Wire Wire Line
 	3800 950  3800 1100
 Connection ~ 3800 950 
@@ -1034,4 +1024,8 @@ F 4 "ERJ-3GEYJ472V" H 1650 5600 60  0001 C CNN "Part Number"
 	1    1650 5525
 	0    1    1    0   
 $EndComp
+Wire Wire Line
+	4325 4350 4850 4350
+Wire Wire Line
+	3550 1500 4050 1500
 $EndSCHEMATC

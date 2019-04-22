@@ -1,6 +1,6 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 5
 LIBS:open-dash-daughterboard-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -285,9 +285,6 @@ Wire Wire Line
 	4000 4825 3900 4825
 Wire Wire Line
 	4000 4775 4000 4825
-Wire Wire Line
-	4000 4475 4475 4475
-Connection ~ 4000 4475
 $Comp
 L open-automation:C_0.1uF C14
 U 1 1 5B1608B3
@@ -300,8 +297,6 @@ F 4 "C1608X8R1H104K080AB" H 4125 4825 60  0001 C CNN "Part Number"
 	1    4000 4625
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	3425 4475 3775 4475
 $Comp
 L open-automation:C_10uF C52
 U 1 1 5B27C012
@@ -314,9 +309,6 @@ F 4 "CL10A106MP8NNNC" H 3900 4825 60  0001 C CNN "Part Number"
 	1    3775 4625
 	1    0    0    -1  
 $EndComp
-Connection ~ 3775 4475
-Wire Wire Line
-	3775 4475 4000 4475
 $Comp
 L open-automation:C_1uF C50
 U 1 1 5B2C9FB8
@@ -329,4 +321,6 @@ F 4 "CGA3E1X7R1C105M080AC" H 5400 4150 60  0001 C CNN "Part Number"
 	1    5275 3950
 	1    0    0    -1  
 $EndComp
+Wire Wire Line
+	3425 4475 4475 4475
 $EndSCHEMATC

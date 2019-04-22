@@ -1,6 +1,6 @@
-EESchema Schematic File Version 4
+EESchema Schematic File Version 5
 LIBS:open-dash-daughterboard-cache
-EELAYER 26 0
+EELAYER 29 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
@@ -70,8 +70,6 @@ F 4 "RC0603JR-0710KL" V 7880 2850 60  0001 C CNN "Part Number"
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7625 2950 7650 2950
-Wire Wire Line
 	7700 2950 7700 2900
 Text HLabel 7700 2525 1    50   Input ~ 0
 3v3
@@ -97,8 +95,6 @@ F 4 "RC0603JR-0710KL" V 8030 3150 60  0001 C CNN "Part Number"
 $EndComp
 Wire Wire Line
 	8100 3050 8000 3050
-Wire Wire Line
-	7700 3050 7650 3050
 Text HLabel 6150 3250 0    50   Input ~ 0
 SCL
 Text HLabel 6150 3350 0    50   Input ~ 0
@@ -118,14 +114,8 @@ F 3 "" H 7950 3800 50  0000 C CNN
 	1    7950 3800
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7750 3750 7650 3750
-Wire Wire Line
-	7625 3850 7650 3850
 Text Label 7750 3550 0    50   ~ 0
 WAKEUP
-Wire Wire Line
-	7750 3550 7650 3550
 Text Label 5925 3050 0    50   ~ 0
 WAKEUP
 Wire Wire Line
@@ -188,8 +178,6 @@ Wire Wire Line
 	7725 3175 7675 3175
 Wire Wire Line
 	7675 3175 7675 3150
-Wire Wire Line
-	7675 3150 7650 3150
 Text Label 2525 2625 1    50   ~ 0
 EN_I2C
 Wire Wire Line
@@ -217,8 +205,6 @@ Wire Wire Line
 	7725 3275 7675 3275
 Wire Wire Line
 	7675 3275 7675 3250
-Wire Wire Line
-	7675 3250 7650 3250
 Text Label 2050 2675 1    50   ~ 0
 ANT_SW
 $Comp
@@ -304,26 +290,18 @@ F 4 "A2235-H" H 7225 3650 60  0001 L CNN "Part Number"
 	1    7025 3150
 	-1   0    0    -1  
 $EndComp
-Connection ~ 7650 2950
 Wire Wire Line
-	7650 2950 7700 2950
-Connection ~ 7650 3250
+	7625 2950 7700 2950
 Wire Wire Line
-	7650 3250 7625 3250
-Connection ~ 7650 3550
+	7625 3050 7700 3050
 Wire Wire Line
-	7650 3550 7625 3550
-Connection ~ 7650 3650
-Connection ~ 7650 3750
+	7625 3750 7750 3750
 Wire Wire Line
-	7650 3750 7625 3750
-Connection ~ 7650 3850
+	7625 3850 7750 3850
 Wire Wire Line
-	7650 3850 7750 3850
-Connection ~ 7650 3050
+	7625 3550 7750 3550
 Wire Wire Line
-	7650 3050 7625 3050
-Connection ~ 7650 3150
+	7625 3150 7675 3150
 Wire Wire Line
-	7650 3150 7625 3150
+	7625 3250 7675 3250
 $EndSCHEMATC

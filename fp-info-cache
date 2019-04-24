@@ -1,4 +1,4 @@
-15951085262708028
+15961977428806028
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin{space}Battery{space}Holder,{space}BX0036,{space}Battery{space}Type{space}C{space}(https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -49777,12 +49777,26 @@ ACS711
 10
 10
 open-automation
+ACS711KEXLT-15AB-T
+QFN,{space}16{space}Pin{space}(https://www.onsemi.com/pub/Collateral/NCN4555-D.PDF),{space}generated{space}with{space}kicad-footprint-generator{space}ipc_noLead_generator.py
+QFN{space}NoLead
+0
+12
+12
+open-automation
 Amplifier-D-TS4962IQT
 8-Lead{space}Plastic{space}Dual{space}Flat,{space}No{space}Lead{space}Package{space}(MF){space}-{space}3x3x0.9{space}mm{space}Body{space}[DFN]{space}(see{space}Microchip{space}Packaging{space}Specification{space}00000049BS.pdf)
 DFN{space}0.65
 0
 12
 9
+open-automation
+ANTENNA-AUTO- 638817-4
+
+
+0
+5
+2
 open-automation
 APT13005SU-G1
 
@@ -49791,11 +49805,25 @@ APT13005SU-G1
 3
 3
 open-automation
+AudioConn-SJ1-2503A
+
+
+0
+5
+4
+open-automation
 Balun-2450BM15A0002E
 
 
 0
 6
+3
+open-automation
+BarrelJack_OD5.5_ID2.5
+DC{space}Barrel{space}Jack
+Power{space}Jack
+0
+3
 3
 open-automation
 battery_input
@@ -49914,8 +49942,8 @@ Flexiwatt25-V
 
 
 0
-1
-1
+25
+13
 open-automation
 generic-housing-mounts-md
 
@@ -50141,6 +50169,20 @@ radio-housing-mounts
 0
 0
 open-automation
+RCA-PJRAN1X1U04X
+
+
+0
+3
+3
+open-automation
+RDA5807M
+
+
+0
+10
+10
+open-automation
 Regulator-LM2576
 
 
@@ -50322,6 +50364,13 @@ TSOP75338TR
 0
 4
 3
+open-automation
+USB-mini-B-0548190519
+
+
+0
+7
+5
 open-automation
 USB_A_2
 

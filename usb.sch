@@ -1,4 +1,4 @@
-EESchema Schematic File Version 5
+EESchema Schematic File Version 4
 LIBS:open-dash-daughterboard-cache
 EELAYER 29 0
 EELAYER END
@@ -27,54 +27,27 @@ DCD
 Text HLabel 1350 1050 0    60   Input ~ 0
 TXD
 $Comp
-L open-automation:R_27 R2
-U 1 1 5C04EC05
-P 3850 3800
-AR Path="/5B15E02A/5C04EC05" Ref="R2"  Part="1" 
-AR Path="/5C04BFCE/5C04EC05" Ref="R45"  Part="1" 
-F 0 "R2" V 3850 3800 50  0000 C CNN
-F 1 "R_27" V 3925 3800 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3780 3800 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ2R2V/P2.2GCT-ND/282413" V 3930 3800 50  0001 C CNN
-F 4 "ERJ-3GEYJ2R2V" V 4030 3900 60  0001 C CNN "Part Number"
-	1    3850 3800
-	0    1    1    0   
-$EndComp
-$Comp
-L open-automation:C_47pF C1
-U 1 1 5C04EC0F
-P 3200 3950
-AR Path="/5B15E02A/5C04EC0F" Ref="C1"  Part="1" 
-AR Path="/5C04BFCE/5C04EC0F" Ref="C21"  Part="1" 
-F 0 "C1" H 3100 4025 50  0000 L CNN
-F 1 "C_47pF" H 2925 3875 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3300 4250 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R60G476ME15D/490-13246-1-ND/5877454" H 3200 3700 50  0001 C CNN
-F 4 "GRM188R60G476ME15D" H 3325 4150 60  0001 C CNN "Part Number"
-	1    3200 3950
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:C_47pF C2
+L open-automation:C_47pF C5
 U 1 1 5C04EC17
 P 3600 3950
-AR Path="/5B15E02A/5C04EC17" Ref="C2"  Part="1" 
-AR Path="/5C04BFCE/5C04EC17" Ref="C23"  Part="1" 
-F 0 "C2" H 3400 3950 50  0000 L CNN
+AR Path="/5B15E02A/5C04EC17" Ref="C5"  Part="1" 
+AR Path="/5C04BFCE/5C04EC17" Ref="C?"  Part="1" 
+F 0 "C5" H 3400 3950 50  0000 L CNN
 F 1 "C_47pF" H 3300 3850 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3700 4250 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GRM188R60G476ME15D/490-13246-1-ND/5877454" H 3600 3700 50  0001 C CNN
-F 4 "GRM188R60G476ME15D" H 3725 4150 60  0001 C CNN "Part Number"
+F 3 "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM1885C2A470FA16-01.pdf" H 3600 3700 50  0001 C CNN
+F 4 " GCM1885C2A470FA16D" H 3725 4150 60  0001 C CNN "Part Number"
+F 5 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GCM1885C2A470FA16D/490-16408-1-ND/7363390" H 0   0   50  0001 C CNN "Website"
 	1    3600 3950
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0110
+L open-automation:GND #PWR017
 U 1 1 5C04EC24
 P 4625 1400
-AR Path="/5B15E02A/5C04EC24" Ref="#PWR0110"  Part="1" 
-AR Path="/5C04BFCE/5C04EC24" Ref="#PWR0157"  Part="1" 
-F 0 "#PWR0110" H 4625 1150 50  0001 C CNN
+AR Path="/5B15E02A/5C04EC24" Ref="#PWR017"  Part="1" 
+AR Path="/5C04BFCE/5C04EC24" Ref="#PWR?"  Part="1" 
+F 0 "#PWR017" H 4625 1150 50  0001 C CNN
 F 1 "GND" H 4630 1227 50  0000 C CNN
 F 2 "" H 4625 1400 50  0000 C CNN
 F 3 "" H 4625 1400 50  0000 C CNN
@@ -82,12 +55,12 @@ F 3 "" H 4625 1400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0111
+L open-automation:GND #PWR018
 U 1 1 5C04EC2A
 P 4750 4900
-AR Path="/5B15E02A/5C04EC2A" Ref="#PWR0111"  Part="1" 
-AR Path="/5C04BFCE/5C04EC2A" Ref="#PWR0158"  Part="1" 
-F 0 "#PWR0111" H 4750 4650 50  0001 C CNN
+AR Path="/5B15E02A/5C04EC2A" Ref="#PWR018"  Part="1" 
+AR Path="/5C04BFCE/5C04EC2A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR018" H 4750 4650 50  0001 C CNN
 F 1 "GND" H 4755 4727 50  0000 C CNN
 F 2 "" H 4750 4900 50  0000 C CNN
 F 3 "" H 4750 4900 50  0000 C CNN
@@ -95,40 +68,40 @@ F 3 "" H 4750 4900 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:C_0.1uF C3
+L open-automation:C_0.1uF C6
 U 1 1 5C04EC31
 P 4625 1200
-AR Path="/5B15E02A/5C04EC31" Ref="C3"  Part="1" 
-AR Path="/5C04BFCE/5C04EC31" Ref="C19"  Part="1" 
-F 0 "C3" H 4625 1275 50  0000 L CNN
+AR Path="/5B15E02A/5C04EC31" Ref="C6"  Part="1" 
+AR Path="/5C04BFCE/5C04EC31" Ref="C?"  Part="1" 
+F 0 "C6" H 4625 1275 50  0000 L CNN
 F 1 "C_0.1uF" H 4625 1125 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 4725 1500 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X8R1H104K080AB/445-8818-1-ND/3248223" H 4625 950 50  0001 C CNN
-F 4 "CL10F104ZO8NNNC" H 4750 1400 60  0001 C CNN "Part Number"
+F 4 "C1608X8R1H104K080AB" H 4750 1400 60  0001 C CNN "Part Number"
 	1    4625 1200
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:C_0.1uF C5
+L open-automation:C_0.1uF C8
 U 1 1 5C04EC39
 P 5450 1200
-AR Path="/5B15E02A/5C04EC39" Ref="C5"  Part="1" 
-AR Path="/5C04BFCE/5C04EC39" Ref="C22"  Part="1" 
-F 0 "C5" H 5450 1275 50  0000 L CNN
+AR Path="/5B15E02A/5C04EC39" Ref="C8"  Part="1" 
+AR Path="/5C04BFCE/5C04EC39" Ref="C?"  Part="1" 
+F 0 "C8" H 5450 1275 50  0000 L CNN
 F 1 "C_0.1uF" H 5450 1125 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5550 1500 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X8R1H104K080AB/445-8818-1-ND/3248223" H 5450 950 50  0001 C CNN
-F 4 "CL10F104ZO8NNNC" H 5575 1400 60  0001 C CNN "Part Number"
+F 4 "C1608X8R1H104K080AB" H 5575 1400 60  0001 C CNN "Part Number"
 	1    5450 1200
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:C_4.7uF C4
+L open-automation:C_4.7uF C7
 U 1 1 5C04EC41
 P 5050 1200
-AR Path="/5B15E02A/5C04EC41" Ref="C4"  Part="1" 
-AR Path="/5C04BFCE/5C04EC41" Ref="C20"  Part="1" 
-F 0 "C4" H 5050 1275 50  0000 L CNN
+AR Path="/5B15E02A/5C04EC41" Ref="C7"  Part="1" 
+AR Path="/5C04BFCE/5C04EC41" Ref="C?"  Part="1" 
+F 0 "C7" H 5050 1275 50  0000 L CNN
 F 1 "C_4.7uF" H 5050 1125 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5150 1500 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/tdk-corporation/C1608X7S0J475K080AC/445-9120-1-ND/3661604" H 5050 950 50  0001 C CNN
@@ -141,12 +114,12 @@ Wire Wire Line
 Wire Wire Line
 	5450 1350 5450 1400
 $Comp
-L open-automation:GND #PWR0112
+L open-automation:GND #PWR020
 U 1 1 5C04EC4A
 P 5450 1400
-AR Path="/5B15E02A/5C04EC4A" Ref="#PWR0112"  Part="1" 
-AR Path="/5C04BFCE/5C04EC4A" Ref="#PWR0159"  Part="1" 
-F 0 "#PWR0112" H 5450 1150 50  0001 C CNN
+AR Path="/5B15E02A/5C04EC4A" Ref="#PWR020"  Part="1" 
+AR Path="/5C04BFCE/5C04EC4A" Ref="#PWR?"  Part="1" 
+F 0 "#PWR020" H 5450 1150 50  0001 C CNN
 F 1 "GND" H 5455 1227 50  0000 C CNN
 F 2 "" H 5450 1400 50  0000 C CNN
 F 3 "" H 5450 1400 50  0000 C CNN
@@ -154,12 +127,12 @@ F 3 "" H 5450 1400 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0113
+L open-automation:GND #PWR019
 U 1 1 5C04EC50
 P 5050 1400
-AR Path="/5B15E02A/5C04EC50" Ref="#PWR0113"  Part="1" 
-AR Path="/5C04BFCE/5C04EC50" Ref="#PWR0160"  Part="1" 
-F 0 "#PWR0113" H 5050 1150 50  0001 C CNN
+AR Path="/5B15E02A/5C04EC50" Ref="#PWR019"  Part="1" 
+AR Path="/5C04BFCE/5C04EC50" Ref="#PWR?"  Part="1" 
+F 0 "#PWR019" H 5050 1150 50  0001 C CNN
 F 1 "GND" H 5055 1227 50  0000 C CNN
 F 2 "" H 5050 1400 50  0000 C CNN
 F 3 "" H 5050 1400 50  0000 C CNN
@@ -185,12 +158,12 @@ Text Label 4625 1000 2    50   ~ 0
 Wire Wire Line
 	4625 1000 4625 1050
 $Comp
-L open-automation:GND #PWR0114
+L open-automation:GND #PWR014
 U 1 1 5BB6DCA8
 P 2250 1550
-AR Path="/5B15E02A/5BB6DCA8" Ref="#PWR0114"  Part="1" 
-AR Path="/5C04BFCE/5BB6DCA8" Ref="#PWR0173"  Part="1" 
-F 0 "#PWR0114" H 2250 1300 50  0001 C CNN
+AR Path="/5B15E02A/5BB6DCA8" Ref="#PWR014"  Part="1" 
+AR Path="/5C04BFCE/5BB6DCA8" Ref="#PWR?"  Part="1" 
+F 0 "#PWR014" H 2250 1300 50  0001 C CNN
 F 1 "GND" H 2255 1377 50  0000 C CNN
 F 2 "" H 2250 1550 50  0000 C CNN
 F 3 "" H 2250 1550 50  0000 C CNN
@@ -212,10 +185,10 @@ USBDP
 Wire Wire Line
 	2950 1300 2900 1300
 $Comp
-L open-automation:FT231XS U7
+L open-automation:FT231XS U6
 U 1 1 5CCE180E
 P 4750 4000
-F 0 "U7" H 5200 3200 50  0000 C CNN
+F 0 "U6" H 5200 3200 50  0000 C CNN
 F 1 "FT231XS" H 5150 4800 50  0000 C CNN
 F 2 "Package_SO:SSOP-20_3.9x8.7mm_P0.635mm" H 5350 3050 50  0001 C CNN
 F 3 "https://www.ftdichip.com/Support/Documents/DataSheets/ICs/DS_FT231X.pdf" H 4750 4000 50  0001 C CNN
@@ -229,20 +202,6 @@ Wire Wire Line
 Connection ~ 4750 4900
 Wire Wire Line
 	4750 4900 4850 4900
-$Comp
-L open-automation:R_27 R1
-U 1 1 5C04EBFD
-P 3850 3700
-AR Path="/5B15E02A/5C04EBFD" Ref="R1"  Part="1" 
-AR Path="/5C04BFCE/5C04EBFD" Ref="R44"  Part="1" 
-F 0 "R1" V 3850 3700 50  0000 C CNN
-F 1 "R_27" V 3775 3725 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3780 3700 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ2R2V/P2.2GCT-ND/282413" V 3930 3700 50  0001 C CNN
-F 4 "ERJ-3GEYJ2R2V" V 4030 3800 60  0001 C CNN "Part Number"
-	1    3850 3700
-	0    1    1    0   
-$EndComp
 $Comp
 L open-automation:USB_MINI_B J4
 U 1 1 5CBFBAFC
@@ -309,12 +268,12 @@ Wire Wire Line
 Wire Wire Line
 	3200 3700 3700 3700
 $Comp
-L open-automation:GND #PWR0115
+L open-automation:GND #PWR016
 U 1 1 5CC0C44E
 P 3600 4150
-AR Path="/5B15E02A/5CC0C44E" Ref="#PWR0115"  Part="1" 
+AR Path="/5B15E02A/5CC0C44E" Ref="#PWR016"  Part="1" 
 AR Path="/5C04BFCE/5CC0C44E" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0115" H 3600 3900 50  0001 C CNN
+F 0 "#PWR016" H 3600 3900 50  0001 C CNN
 F 1 "GND" H 3605 3977 50  0000 C CNN
 F 2 "" H 3600 4150 50  0000 C CNN
 F 3 "" H 3600 4150 50  0000 C CNN
@@ -322,12 +281,12 @@ F 3 "" H 3600 4150 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:GND #PWR0116
+L open-automation:GND #PWR015
 U 1 1 5CC0CA16
 P 3200 4150
-AR Path="/5B15E02A/5CC0CA16" Ref="#PWR0116"  Part="1" 
+AR Path="/5B15E02A/5CC0CA16" Ref="#PWR015"  Part="1" 
 AR Path="/5C04BFCE/5CC0CA16" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0116" H 3200 3900 50  0001 C CNN
+F 0 "#PWR015" H 3200 3900 50  0001 C CNN
 F 1 "GND" H 3205 3977 50  0000 C CNN
 F 2 "" H 3200 4150 50  0000 C CNN
 F 3 "" H 3200 4150 50  0000 C CNN
@@ -352,38 +311,10 @@ Text Label 6500 3700 2    50   ~ 0
 DTR
 Text HLabel 1350 1450 0    60   Input ~ 0
 PROG
-$Comp
-L open-automation:R_10k R3
-U 1 1 5CC1FFD2
-P 6700 4250
-AR Path="/5B15E02A/5CC1FFD2" Ref="R3"  Part="1" 
-AR Path="/5C04BFCE/5CC1FFD2" Ref="R?"  Part="1" 
-F 0 "R3" V 6700 4250 50  0000 C CNN
-F 1 "R_10k" V 6800 4250 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6630 4250 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 6780 4250 50  0001 C CNN
-F 4 "MCT06030C1002FP500" V 6880 4350 60  0001 C CNN "Part Number"
-	1    6700 4250
-	0    1    1    0   
-$EndComp
 Text Label 7250 3450 0    50   ~ 0
 ESP_EN
 Wire Wire Line
 	7250 3500 7250 3450
-$Comp
-L open-automation:R_10k R4
-U 1 1 5CC1FFE1
-P 6750 3700
-AR Path="/5B15E02A/5CC1FFE1" Ref="R4"  Part="1" 
-AR Path="/5C04BFCE/5CC1FFE1" Ref="R?"  Part="1" 
-F 0 "R4" V 6750 3700 50  0000 C CNN
-F 1 "R_10k" V 6650 3700 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6680 3700 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/yageo/RC0603JR-0710KL/311-10KGRCT-ND/729647" V 6830 3700 50  0001 C CNN
-F 4 "MCT06030C1002FP500" V 6930 3800 60  0001 C CNN "Part Number"
-	1    6750 3700
-	0    1    1    0   
-$EndComp
 $Comp
 L Device:Q_NPN_BCE Q1
 U 1 1 5CC1FFC3
@@ -393,7 +324,7 @@ AR Path="/5C04BFCE/5CC1FFC3" Ref="Q?"  Part="1"
 F 0 "Q1" H 7341 3746 50  0000 L CNN
 F 1 "Q_NPN_BCE" H 7341 3655 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 7350 3800 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/micro-commercial-co/MMSS8050-H-TP/MMSS8050-H-TPMSCT-ND/2825945" H 7150 3700 50  0001 C CNN
+F 3 "~" H 7150 3700 50  0001 C CNN
 F 4 "MMSS8050-H-TP" H 7150 3700 50  0001 C CNN "Part Number"
 	1    7150 3700
 	1    0    0    -1  
@@ -407,7 +338,7 @@ AR Path="/5C04BFCE/5CC1FFB2" Ref="Q?"  Part="1"
 F 0 "Q2" H 7341 4296 50  0000 L CNN
 F 1 "Q_PNP_BCE" H 7341 4205 50  0000 L CNN
 F 2 "Package_TO_SOT_SMD:SOT-23" H 7350 4350 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/micro-commercial-co/MMSS8550-L-TP/MMSS8550-L-TPMSCT-ND/2827205" H 7150 4250 50  0001 C CNN
+F 3 "~" H 7150 4250 50  0001 C CNN
 F 4 "MMSS8550-L-TP" H 7150 4250 50  0001 C CNN "Part Number"
 	1    7150 4250
 	1    0    0    -1  
@@ -435,12 +366,12 @@ VBUS
 Wire Wire Line
 	8350 4450 8350 4400
 $Comp
-L open-automation:GND #PWR0117
+L open-automation:GND #PWR021
 U 1 1 5CC969CC
 P 8350 4450
-AR Path="/5B15E02A/5CC969CC" Ref="#PWR0117"  Part="1" 
+AR Path="/5B15E02A/5CC969CC" Ref="#PWR021"  Part="1" 
 AR Path="/5C04BFCE/5CC969CC" Ref="#PWR?"  Part="1" 
-F 0 "#PWR0117" H 8350 4200 50  0001 C CNN
+F 0 "#PWR021" H 8350 4200 50  0001 C CNN
 F 1 "GND" H 8355 4277 50  0000 C CNN
 F 2 "" H 8350 4450 50  0000 C CNN
 F 3 "" H 8350 4450 50  0000 C CNN
@@ -448,22 +379,10 @@ F 3 "" H 8350 4450 50  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L open-automation:R_10k R5
-U 1 1 5CC84B14
-P 8350 4200
-F 0 "R5" H 8300 4200 50  0000 L CNN
-F 1 "R_10k" H 8050 4200 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad0.99x1.00mm_HandSolder" V 8280 4200 50  0001 C CNN
-F 3 "" V 8430 4200 50  0001 C CNN
-F 4 "RC0603JR-0710KL" V 8530 4300 60  0001 C CNN "Part Number"
-	1    8350 4200
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:R_4K7 R6
+L open-automation:R_4K7 R9
 U 1 1 5CC82187
 P 8600 3750
-F 0 "R6" V 8600 4050 50  0000 R CNN
+F 0 "R9" V 8600 4050 50  0000 R CNN
 F 1 "R_4K7" V 8600 4300 50  0000 R CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8575 3575 50  0001 C CNN
 F 3 "https://industrial.panasonic.com/ww/products/resistors/chip-resistors/general-purpose-chip-resistors/thick-film-chip-resistors/ERJ3GEYJ472V" H 8600 3500 50  0001 C CNN
@@ -484,4 +403,79 @@ Wire Wire Line
 	6450 3700 6550 3700
 Wire Wire Line
 	6450 4050 7250 4050
+$Comp
+L open-automation:R_10K R7
+U 1 1 5CC1ED63
+P 6750 3700
+F 0 "R7" V 6750 3700 50  0000 C CNN
+F 1 "R_10K" V 6634 3700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6680 3700 50  0001 C CNN
+F 3 "" V 6830 3700 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 6930 3800 60  0001 C CNN "Part Number"
+	1    6750 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:R_10K R6
+U 1 1 5CC209A3
+P 6700 4250
+F 0 "R6" V 6700 4250 50  0000 C CNN
+F 1 "R_10K" V 6600 4250 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6630 4250 50  0001 C CNN
+F 3 "" V 6780 4250 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 6880 4350 60  0001 C CNN "Part Number"
+	1    6700 4250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L open-automation:R_10K R8
+U 1 1 5CC21EE4
+P 8350 4200
+F 0 "R8" H 8420 4246 50  0000 L CNN
+F 1 "R_10K" H 8420 4155 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8280 4200 50  0001 C CNN
+F 3 "" V 8430 4200 50  0001 C CNN
+F 4 "RC0603JR-0710KL" V 8530 4300 60  0001 C CNN "Part Number"
+	1    8350 4200
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:R_27 R4
+U 1 1 5CC410DE
+P 3850 3700
+F 0 "R4" V 3850 3700 50  0000 C CNN
+F 1 "R_27" V 3750 3700 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3780 3700 50  0001 C CNN
+F 3 "" V 3930 3700 50  0001 C CNN
+F 4 "ERJ-3GEYJ2R2V" V 4030 3800 60  0001 C CNN "Part Number"
+	1    3850 3700
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:R_27 R5
+U 1 1 5CC41378
+P 3850 3800
+F 0 "R5" V 3850 3800 50  0000 C CNN
+F 1 "R_27" V 3900 4000 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 3780 3800 50  0001 C CNN
+F 3 "" V 3930 3800 50  0001 C CNN
+F 4 "ERJ-3GEYJ2R2V" V 4030 3900 60  0001 C CNN "Part Number"
+	1    3850 3800
+	0    1    1    0   
+$EndComp
+$Comp
+L open-automation:C_47pF C4
+U 1 1 5CC29668
+P 3200 3950
+AR Path="/5B15E02A/5CC29668" Ref="C4"  Part="1" 
+AR Path="/5C04BFCE/5CC29668" Ref="C?"  Part="1" 
+F 0 "C4" H 3000 3950 50  0000 L CNN
+F 1 "C_47pF" H 2900 3850 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3300 4250 50  0001 C CNN
+F 3 "https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GCM1885C2A470FA16-01.pdf" H 3200 3700 50  0001 C CNN
+F 4 " GCM1885C2A470FA16D" H 3325 4150 60  0001 C CNN "Part Number"
+F 5 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/GCM1885C2A470FA16D/490-16408-1-ND/7363390" H 0   0   50  0001 C CNN "Website"
+	1    3200 3950
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

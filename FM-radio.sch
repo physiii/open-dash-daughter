@@ -1,4 +1,4 @@
-EESchema Schematic File Version 5
+EESchema Schematic File Version 4
 LIBS:open-dash-daughterboard-cache
 EELAYER 29 0
 EELAYER END
@@ -17,10 +17,10 @@ $EndDescr
 Text HLabel 1350 1250 0    50   Input ~ 0
 3V3
 $Comp
-L open-automation:GND #PWR060
+L open-automation:GND #PWR011
 U 1 1 5AE0458E
 P 4650 3300
-F 0 "#PWR060" H 4650 3050 50  0001 C CNN
+F 0 "#PWR011" H 4650 3050 50  0001 C CNN
 F 1 "GND" H 4655 3127 50  0000 C CNN
 F 2 "" H 4650 3300 50  0000 C CNN
 F 3 "" H 4650 3300 50  0000 C CNN
@@ -72,10 +72,10 @@ Wire Wire Line
 Wire Wire Line
 	1350 1450 1400 1450
 $Comp
-L open-automation:GND #PWR0107
+L open-automation:GND #PWR012
 U 1 1 5CC65603
 P 4650 4200
-F 0 "#PWR0107" H 4650 3950 50  0001 C CNN
+F 0 "#PWR012" H 4650 3950 50  0001 C CNN
 F 1 "GND" H 4655 4027 50  0000 C CNN
 F 2 "" H 4650 4200 50  0000 C CNN
 F 3 "" H 4650 4200 50  0000 C CNN
@@ -112,10 +112,10 @@ Connection ~ 4600 3850
 Wire Wire Line
 	4650 3850 4600 3850
 $Comp
-L open-automation:RDA5807M U4
+L open-automation:RDA5807M U5
 U 1 1 5CC6B0DA
 P 5900 3250
-F 0 "U4" H 6150 3275 50  0000 C CNN
+F 0 "U5" H 6150 3275 50  0000 C CNN
 F 1 "RDA5807M" H 6150 3184 50  0000 C CNN
 F 2 "open-automation:RDA5807M" H 6150 3450 50  0001 C CNN
 F 3 "http://cxem.net/tuner/files/tuner84_RDA5807M_datasheet_v1.pdf" H 5900 2450 50  0001 C CNN
@@ -135,10 +135,10 @@ L_FM
 Text Label 5750 3650 2    50   ~ 0
 R_FM
 $Comp
-L open-automation:GND #PWR0108
+L open-automation:GND #PWR013
 U 1 1 5CC6BDF5
 P 5750 3800
-F 0 "#PWR0108" H 5750 3550 50  0001 C CNN
+F 0 "#PWR013" H 5750 3550 50  0001 C CNN
 F 1 "GND" H 5755 3627 50  0000 C CNN
 F 2 "" H 5750 3800 50  0000 C CNN
 F 3 "" H 5750 3800 50  0000 C CNN
@@ -163,50 +163,4 @@ Text Label 5750 3450 2    50   ~ 0
 AMF_Antenna
 Wire Wire Line
 	5750 3450 5800 3450
-$Comp
-L open-automation:ANTENNA-COAX-AUTO U3
-U 1 1 5CC7C70C
-P 4550 5050
-F 0 "U3" H 4325 5275 50  0000 C CNN
-F 1 "ANTENNA-COAX-AUTO" H 4325 5184 50  0000 C CNN
-F 2 "open-automation:ANTENNA-AUTO- 638817-4" H 4350 5250 50  0001 C CNN
-F 3 "https://www.mouser.com/ProductDetail/TE-Connectivity/638817-4?qs=sGAEpiMZZMuLQf%252BEuFsOrg13rQmhiDiQDoRLLQMK5p8%3D" H 4550 5050 50  0001 C CNN
-F 4 "638817-4" H 4350 5150 50  0001 C CNN "Part Number"
-	1    4550 5050
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:GND #PWR0109
-U 1 1 5CC7CA63
-P 3950 5400
-F 0 "#PWR0109" H 3950 5150 50  0001 C CNN
-F 1 "GND" H 3955 5227 50  0000 C CNN
-F 2 "" H 3950 5400 50  0000 C CNN
-F 3 "" H 3950 5400 50  0000 C CNN
-	1    3950 5400
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3950 5400 3950 5350
-Wire Wire Line
-	3950 5350 4000 5350
-Wire Wire Line
-	4000 5250 3950 5250
-Wire Wire Line
-	3950 5250 3950 5350
-Connection ~ 3950 5350
-Wire Wire Line
-	4000 5150 3950 5150
-Wire Wire Line
-	3950 5150 3950 5250
-Connection ~ 3950 5250
-Wire Wire Line
-	4000 5050 3950 5050
-Wire Wire Line
-	3950 5050 3950 5150
-Connection ~ 3950 5150
-Text Label 4700 5200 0    50   ~ 0
-AMF_Antenna
-Wire Wire Line
-	4650 5200 4700 5200
 $EndSCHEMATC

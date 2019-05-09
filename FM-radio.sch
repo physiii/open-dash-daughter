@@ -35,30 +35,14 @@ Text Label 1400 1250 0    50   ~ 0
 3V3
 Wire Wire Line
 	1350 1250 1400 1250
-$Comp
-L open-automation:AudioJack4_TTRS J2
-U 1 1 5CC5FF37
-P 4400 3050
-F 0 "J2" H 4200 3250 50  0000 C CNN
-F 1 "AudioJack4_TTRS" H 4350 2700 50  0001 C CNN
-F 2 "open-automation:AudioConn-SJ1-2503A" H 4350 2500 50  0001 C CNN
-F 3 "https://www.cui.com/product/resource/sj1-2503a.pdf" H 4400 3050 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/cui-inc/SJ1-2503A/CP1-2503A-ND/738680" H 4050 2600 50  0001 C CNN "Website"
-F 5 "SJ1-2503A" H 4300 2400 50  0001 C CNN "Part Number"
-	1    4400 3050
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4650 3300 4650 3250
 Wire Wire Line
 	4650 3250 4600 3250
-Wire Wire Line
-	4600 3050 4600 2950
 Text Label 4650 2950 0    50   ~ 0
 L_FM
 Wire Wire Line
 	4650 2950 4600 2950
-Connection ~ 4600 2950
 Text Label 4650 3150 0    50   ~ 0
 R_FM
 Wire Wire Line
@@ -71,46 +55,6 @@ Wire Wire Line
 	1400 1350 1350 1350
 Wire Wire Line
 	1350 1450 1400 1450
-$Comp
-L open-automation:GND #PWR012
-U 1 1 5CC65603
-P 4650 4200
-F 0 "#PWR012" H 4650 3950 50  0001 C CNN
-F 1 "GND" H 4655 4027 50  0000 C CNN
-F 2 "" H 4650 4200 50  0000 C CNN
-F 3 "" H 4650 4200 50  0000 C CNN
-	1    4650 4200
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:AudioJack4_TTRS J3
-U 1 1 5CC65617
-P 4400 3950
-F 0 "J3" H 4200 4150 50  0000 C CNN
-F 1 "AudioJack4_TTRS" H 4350 3600 50  0001 C CNN
-F 2 "open-automation:AudioConn-SJ1-2503A" H 4350 3400 50  0001 C CNN
-F 3 "https://www.cui.com/product/resource/sj1-2503a.pdf" H 4400 3950 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/cui-inc/SJ1-2503A/CP1-2503A-ND/738680" H 4050 3500 50  0001 C CNN "Website"
-F 5 "SJ1-2503A" H 4300 3300 50  0001 C CNN "Part Number"
-	1    4400 3950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4650 4200 4650 4150
-Wire Wire Line
-	4650 4150 4600 4150
-Wire Wire Line
-	4600 3950 4600 3850
-Wire Wire Line
-	4650 4050 4600 4050
-Wire Wire Line
-	4650 4050 4650 4150
-Connection ~ 4650 4150
-Text Label 4650 3850 0    50   ~ 0
-AMF_Antenna
-Connection ~ 4600 3850
-Wire Wire Line
-	4650 3850 4600 3850
 $Comp
 L open-automation:RDA5807M U5
 U 1 1 5CC6B0DA
@@ -163,4 +107,49 @@ Text Label 5750 3450 2    50   ~ 0
 AMF_Antenna
 Wire Wire Line
 	5750 3450 5800 3450
+$Comp
+L open-automation:AudioJack_3.5TRS J2
+U 1 1 5CD611B3
+P 4400 3050
+F 0 "J2" H 4357 3283 50  0000 C CNN
+F 1 "AudioJack_3.5TRS" H 4350 2700 50  0001 C CNN
+F 2 "open-automation:AudioJack_SJ1-3525N" H 4350 2500 50  0001 C CNN
+F 3 "https://www.cui.com/product/resource/sj1-352xn-series.pdf" H 4400 3050 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/cui-inc/SJ1-3525N/CP1-3525N-ND/738687" H 4050 2600 50  0001 C CNN "Website"
+F 5 "SJ1-3525N" H 4300 2400 50  0001 C CNN "Part Number"
+	1    4400 3050
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:Coax_U.FL U4
+U 1 1 5CD48F7F
+P 4300 4700
+F 0 "U4" H 4500 4750 50  0000 L CNN
+F 1 "Coax_U.FL" H 4300 4450 50  0000 L CNN
+F 2 "open-automation:CONN-COAX-UFL-A-4JA" H 4300 4700 50  0001 C CNN
+F 3 "https://www.amphenolrf.com/downloads/dl/file/id/8661/product/9127/a_4ja_customer_drawing.pdf" H 4300 4700 50  0001 C CNN
+F 4 "A-4JA" H 4300 4700 50  0001 C CNN "Part Number"
+F 5 "https://www.digikey.com/product-detail/en/amphenol-rf-division/A-4JA/ARF3390CT-ND/9860928" H 4300 4700 50  0001 C CNN "Website"
+	1    4300 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:GND #PWR0105
+U 1 1 5CD4931B
+P 4150 4900
+F 0 "#PWR0105" H 4150 4650 50  0001 C CNN
+F 1 "GND" H 4155 4727 50  0000 C CNN
+F 2 "" H 4150 4900 50  0000 C CNN
+F 3 "" H 4150 4900 50  0000 C CNN
+	1    4150 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4150 4900 4150 4850
+Wire Wire Line
+	4150 4850 4200 4850
+Text Label 4150 4750 2    50   ~ 0
+AMF_Antenna
+Wire Wire Line
+	4150 4750 4200 4750
 $EndSCHEMATC

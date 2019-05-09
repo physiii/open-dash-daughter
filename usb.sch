@@ -176,11 +176,11 @@ Text Label 3350 3700 2    50   ~ 0
 USBDM
 Text Label 3650 3800 2    50   ~ 0
 USBDP
-Text Label 2950 1400 0    50   ~ 0
+Text Label 2950 1300 0    50   ~ 0
 USBDM
 Wire Wire Line
 	2950 1400 2900 1400
-Text Label 2950 1300 0    50   ~ 0
+Text Label 2950 1400 0    50   ~ 0
 USBDP
 Wire Wire Line
 	2950 1300 2900 1300
@@ -232,17 +232,17 @@ Wire Wire Line
 Wire Wire Line
 	5500 3400 5450 3400
 Text Label 5500 3400 0    50   ~ 0
-TXD
+USB_TXD
 Text Label 5500 3500 0    50   ~ 0
-RXD
+USB_RXD
 Wire Wire Line
 	1350 1150 1400 1150
 Wire Wire Line
 	1400 1050 1350 1050
-Text Label 1400 1050 0    50   ~ 0
-TXD
 Text Label 1400 1150 0    50   ~ 0
-RXD
+USB_TXD
+Text Label 1400 1050 0    50   ~ 0
+USB_RXD
 Wire Wire Line
 	4850 3050 4850 3100
 Text Label 4650 3050 2    50   ~ 0
@@ -478,4 +478,8 @@ F 5 "https://www.digikey.com/product-detail/en/murata-electronics-north-america/
 	1    3200 3950
 	1    0    0    -1  
 $EndComp
+Text Label 4000 3400 2    50   ~ 0
+3V3OUT
+Wire Wire Line
+	4000 3400 4050 3400
 $EndSCHEMATC

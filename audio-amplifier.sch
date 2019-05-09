@@ -418,16 +418,16 @@ F 4 "ERJ-3EKF4752V" V 2730 3600 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:C C28
+L Device:CP C28
 U 1 1 5CC7B01E
 P 5950 2800
-F 0 "C28" H 5800 2700 50  0000 L CNN
-F 1 "470uF" H 5700 2900 50  0000 L CNN
+F 0 "C28" H 6000 2700 50  0000 L CNN
+F 1 "470uF" H 6000 2900 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 5988 2650 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/wurth-electronics-inc/860020474014/732-8831-1-ND/5728776" H 5950 2800 50  0001 C CNN
+F 3 "~" H 5950 2800 50  0001 C CNN
 F 4 "860020474014" H 5950 2800 60  0001 C CNN "Part Number"
 	1    5950 2800
-	1    0    0    1   
+	-1   0    0    -1  
 $EndComp
 $Comp
 L open-automation:GND #PWR061
@@ -440,19 +440,6 @@ F 3 "" H 2600 4750 50  0000 C CNN
 	1    2600 4750
 	1    0    0    -1  
 $EndComp
-$Comp
-L open-automation:AudioJack4_TTRS J8
-U 1 1 5CBF7E66
-P 2350 4500
-F 0 "J8" H 2350 4700 50  0000 C CNN
-F 1 "AudioJack4_TTRS" H 2307 4734 50  0001 C CNN
-F 2 "open-automation:AudioConn-SJ1-2503A" H 2300 3950 50  0001 C CNN
-F 3 "https://www.cui.com/product/resource/sj1-2503a.pdf" H 2350 4500 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/cui-inc/SJ1-2503A/CP1-2503A-ND/738680" H 2000 4050 50  0001 C CNN "Website"
-F 5 "SJ1-2503A" H 2307 4733 50  0001 C CNN "Part Number"
-	1    2350 4500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	2550 4400 2600 4400
 Wire Wire Line
@@ -461,10 +448,6 @@ Text Label 2600 4400 0    50   ~ 0
 IN1
 Wire Wire Line
 	2600 4750 2600 4700
-Wire Wire Line
-	2550 4500 2600 4500
-Wire Wire Line
-	2600 4500 2600 4400
 Text Label 2600 4600 0    50   ~ 0
 IN2
 Wire Wire Line
@@ -480,19 +463,6 @@ F 3 "" H 3550 4750 50  0000 C CNN
 	1    3550 4750
 	1    0    0    -1  
 $EndComp
-$Comp
-L open-automation:AudioJack4_TTRS J9
-U 1 1 5CC0387E
-P 3300 4500
-F 0 "J9" H 3300 4700 50  0000 C CNN
-F 1 "AudioJack4_TTRS" H 3257 4734 50  0001 C CNN
-F 2 "open-automation:AudioConn-SJ1-2503A" H 3250 3950 50  0001 C CNN
-F 3 "https://www.cui.com/product/resource/sj1-2503a.pdf" H 3300 4500 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/cui-inc/SJ1-2503A/CP1-2503A-ND/738680" H 2950 4050 50  0001 C CNN "Website"
-F 5 "SJ1-2503A" H 3257 4733 50  0001 C CNN "Part Number"
-	1    3300 4500
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	3500 4400 3550 4400
 Wire Wire Line
@@ -501,10 +471,6 @@ Text Label 3550 4400 0    50   ~ 0
 IN3
 Wire Wire Line
 	3550 4750 3550 4700
-Wire Wire Line
-	3500 4500 3550 4500
-Wire Wire Line
-	3550 4500 3550 4400
 Text Label 3550 4600 0    50   ~ 0
 IN4
 Wire Wire Line
@@ -719,4 +685,30 @@ Text Label 1750 1300 0    50   ~ 0
 AUDIO_STBY
 Text Label 1750 1400 0    50   ~ 0
 AUDIO_MUTE
+$Comp
+L open-automation:AudioJack_3.5TRS J8
+U 1 1 5CD5A35B
+P 2350 4500
+F 0 "J8" H 2307 4725 50  0000 C CNN
+F 1 "AudioJack_3.5TRS" H 2300 4150 50  0001 C CNN
+F 2 "open-automation:AudioJack_SJ1-3525N" H 2300 3950 50  0001 C CNN
+F 3 "https://www.cui.com/product/resource/sj1-352xn-series.pdf" H 2350 4500 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/cui-inc/SJ1-3525N/CP1-3525N-ND/738687" H 2000 4050 50  0001 C CNN "Website"
+F 5 "SJ1-3525N" H 2250 3850 50  0001 C CNN "Part Number"
+	1    2350 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:AudioJack_3.5TRS J9
+U 1 1 5CD5F394
+P 3300 4500
+F 0 "J9" H 3257 4725 50  0000 C CNN
+F 1 "AudioJack_3.5TRS" H 3250 4150 50  0001 C CNN
+F 2 "open-automation:AudioJack_SJ1-3525N" H 3250 3950 50  0001 C CNN
+F 3 "https://www.cui.com/product/resource/sj1-352xn-series.pdf" H 3300 4500 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/cui-inc/SJ1-3525N/CP1-3525N-ND/738687" H 2950 4050 50  0001 C CNN "Website"
+F 5 "SJ1-3525N" H 3200 3850 50  0001 C CNN "Part Number"
+	1    3300 4500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC

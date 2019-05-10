@@ -152,4 +152,34 @@ Text Label 4150 4750 2    50   ~ 0
 AMF_Antenna
 Wire Wire Line
 	4150 4750 4200 4750
+$Comp
+L open-automation:CONN_01X02 P2
+U 1 1 5CD62517
+P 4450 4150
+F 0 "P2" H 4528 4191 50  0000 L CNN
+F 1 "CONN_01X02" H 4528 4100 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 4350 4200 50  0001 C CNN
+F 3 "" H 4450 4150 50  0000 C CNN
+	1    4450 4150
+	1    0    0    -1  
+$EndComp
+Text Label 4200 4100 2    50   ~ 0
+AMF_Antenna
+$Comp
+L open-automation:GND #PWR0106
+U 1 1 5CD62ADE
+P 4200 4250
+F 0 "#PWR0106" H 4200 4000 50  0001 C CNN
+F 1 "GND" H 4205 4077 50  0000 C CNN
+F 2 "" H 4200 4250 50  0000 C CNN
+F 3 "" H 4200 4250 50  0000 C CNN
+	1    4200 4250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4200 4250 4200 4200
+Wire Wire Line
+	4200 4200 4250 4200
+Wire Wire Line
+	4250 4100 4200 4100
 $EndSCHEMATC

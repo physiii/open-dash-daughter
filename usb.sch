@@ -253,8 +253,6 @@ Wire Wire Line
 	1350 1250 1400 1250
 Text Label 1400 1250 0    50   ~ 0
 5V
-Text Label 2950 1100 0    50   ~ 0
-VBUS
 Wire Wire Line
 	4000 4000 4050 4000
 Wire Wire Line
@@ -355,42 +353,6 @@ Text Label 5500 4300 0    50   ~ 0
 VSENSE
 Wire Wire Line
 	5500 4300 5450 4300
-Text Label 8350 4000 0    50   ~ 0
-VSENSE
-Wire Wire Line
-	8350 3950 8350 4000
-Wire Wire Line
-	8350 3500 8350 3550
-Text Label 8350 3500 0    50   ~ 0
-VBUS
-Wire Wire Line
-	8350 4450 8350 4400
-$Comp
-L open-automation:GND #PWR021
-U 1 1 5CC969CC
-P 8350 4450
-AR Path="/5B15E02A/5CC969CC" Ref="#PWR021"  Part="1" 
-AR Path="/5C04BFCE/5CC969CC" Ref="#PWR?"  Part="1" 
-F 0 "#PWR021" H 8350 4200 50  0001 C CNN
-F 1 "GND" H 8355 4277 50  0000 C CNN
-F 2 "" H 8350 4450 50  0000 C CNN
-F 3 "" H 8350 4450 50  0000 C CNN
-	1    8350 4450
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:R_4K7 R9
-U 1 1 5CC82187
-P 8600 3750
-F 0 "R9" V 8600 4050 50  0000 R CNN
-F 1 "R_4K7" V 8600 4300 50  0000 R CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8575 3575 50  0001 C CNN
-F 3 "https://industrial.panasonic.com/ww/products/resistors/chip-resistors/general-purpose-chip-resistors/thick-film-chip-resistors/ERJ3GEYJ472V" H 8600 3500 50  0001 C CNN
-F 4 "ERJ-3GEYJ472V" H 8600 3825 60  0001 C CNN "Part Number"
-F 5 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/ERJ-3GEYJ472V/P4.7KGCT-ND/135199" H 8600 3750 50  0001 C CNN "Website"
-	1    8600 3750
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	6500 4250 6500 3900
 Wire Wire Line
@@ -426,18 +388,6 @@ F 3 "" V 6780 4250 50  0001 C CNN
 F 4 "RC0603JR-0710KL" V 6880 4350 60  0001 C CNN "Part Number"
 	1    6700 4250
 	0    -1   -1   0   
-$EndComp
-$Comp
-L open-automation:R_10K R8
-U 1 1 5CC21EE4
-P 8350 4200
-F 0 "R8" H 8420 4246 50  0000 L CNN
-F 1 "R_10K" H 8420 4155 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 8280 4200 50  0001 C CNN
-F 3 "" V 8430 4200 50  0001 C CNN
-F 4 "RC0603JR-0710KL" V 8530 4300 60  0001 C CNN "Part Number"
-	1    8350 4200
-	1    0    0    -1  
 $EndComp
 $Comp
 L open-automation:R_27 R4
@@ -482,4 +432,19 @@ Text Label 4000 3400 2    50   ~ 0
 3V3OUT
 Wire Wire Line
 	4000 3400 4050 3400
+Text Label 3250 1100 0    50   ~ 0
+5V
+$Comp
+L open-automation:D_1N5819HW D7
+U 1 1 5CD8937E
+P 3100 1100
+F 0 "D7" H 3100 884 50  0000 C CNN
+F 1 "D_1N5819HW" H 3100 975 50  0000 C CNN
+F 2 "Diode_SMD:D_SOD-123" H 3100 925 50  0001 C CNN
+F 3 "http://www.diodes.com/_files/datasheets/ds23022.pdf" H 3100 1100 50  0001 C CNN
+F 4 "1N5819HW-7-F" H 3100 1400 50  0001 C CNN "Part Number"
+F 5 "https://www.digikey.com/product-detail/en/diodes-incorporated/1N5819HW-7-F/1N5819HW-FDICT-ND/815283" H 3200 1300 50  0001 C CNN "Website"
+	1    3100 1100
+	-1   0    0    1   
+$EndComp
 $EndSCHEMATC

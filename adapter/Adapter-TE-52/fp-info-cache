@@ -1,4 +1,4 @@
-16080561681411285
+16083679084477285
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -49984,8 +49984,8 @@ Adapter-TE-52
 
 
 0
-0
-0
+54
+53
 open-automation
 Amplifier-D-TS4962IQT
 8-Lead Plastic Dual Flat, No Lead Package (MF) - 3x3x0.9 mm Body [DFN] (see Microchip Packaging Specification 00000049BS.pdf)
@@ -50014,6 +50014,13 @@ AudioConn-SJ1-2503A
 0
 5
 4
+open-automation
+AudioJack_SJ1-3525N
+
+
+0
+10
+5
 open-automation
 Balun-2450BM15A0002E
 
@@ -50069,6 +50076,13 @@ CONN-BARREL_PJ-037A
 
 0
 2
+2
+open-automation
+CONN-COAX-UFL-A-4JA
+
+
+0
+4
 2
 open-automation
 connector_3pos

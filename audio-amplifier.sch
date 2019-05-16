@@ -371,8 +371,9 @@ P 6300 5950
 F 0 "C30" H 6400 5950 50  0000 L CNN
 F 1 "C_0.47uF" H 6300 5850 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6400 6250 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B474KA8NFNC/1276-2082-1-ND/3890168" H 6300 5700 50  0001 C CNN
-F 4 "CL10B474KA8NFNC" H 6425 6150 60  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/445/885012206075-554589.pdf" H 6300 5700 50  0001 C CNN
+F 4 "885012206075" H 6425 6150 60  0001 C CNN "Part Number"
+F 5 "https://www.mouser.com/ProductDetail/Wurth-Electronics/885012206075?qs=sGAEpiMZZMs0AnBnWHyRQEGbLOF2VP1i35TeX6K3n4AZTwQpyzLezQ%3D%3D" H 0   0   50  0001 C CNN "Website"
 	1    6300 5950
 	1    0    0    -1  
 $EndComp

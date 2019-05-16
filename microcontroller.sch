@@ -524,8 +524,9 @@ P 3100 1800
 F 0 "C18" H 2850 1800 50  0000 L CNN
 F 1 "C_10uF" H 2800 1700 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 3200 2100 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10A106MP8NNNC/1276-1871-1-ND/3889957" H 3100 1550 50  0001 C CNN
-F 4 "CL10A106MP8NNNC" H 3225 2000 60  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf" H 3100 1550 50  0001 C CNN
+F 4 "GRM188R61E106KA73D" H 3225 2000 60  0001 C CNN "Part Number"
+F 5 "https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D" H 0   0   50  0001 C CNN "Website"
 	1    3100 1800
 	1    0    0    -1  
 $EndComp

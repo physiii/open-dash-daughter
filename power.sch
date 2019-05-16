@@ -42,8 +42,9 @@ P 7600 5500
 F 0 "C13" H 7350 5500 50  0000 L CNN
 F 1 "C_10uF" H 7300 5400 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7700 5800 50  0001 C CNN
-F 3 "" H 7600 5250 50  0001 C CNN
-F 4 "CL10A106MP8NNNC" H 7725 5700 60  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf" H 7600 5250 50  0001 C CNN
+F 4 "GRM188R61E106KA73D" H 7725 5700 60  0001 C CNN "Part Number"
+F 5 "https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D" H 0   0   50  0001 C CNN "Website"
 	1    7600 5500
 	1    0    0    -1  
 $EndComp
@@ -427,8 +428,9 @@ P 9800 2800
 F 0 "R22" V 9800 2750 50  0000 L CNN
 F 1 "R_6.5k" H 9850 2800 50  0000 L CNN
 F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 9730 2800 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/stackpole-electronics-inc/RMCF0603FT6K49/RMCF0603FT6K49CT-ND/1943043" V 9880 2800 50  0001 C CNN
-F 4 "RMCF0603FT6K49" V 9980 2900 60  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/427/crcwce3-1223726.pdf" V 9880 2800 50  0001 C CNN
+F 4 "CRCW06036K49FKEAC" V 9980 2900 60  0001 C CNN "Part Number"
+F 5 "https://www.mouser.com/ProductDetail/Vishay-Dale/CRCW06036K49FKEAC?qs=sGAEpiMZZMu61qfTUdNhG9bvwnXh9sSrI1lmGEGWpLM4TJW%252B33zaEQ%3D%3D" H 0   0   50  0001 C CNN "Website"
 	1    9800 2800
 	1    0    0    -1  
 $EndComp
@@ -461,8 +463,9 @@ P 7900 2400
 F 0 "C14" H 7700 2400 50  0000 L CNN
 F 1 "C_10uF" H 7600 2300 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 8000 2700 50  0001 C CNN
-F 3 "" H 7900 2150 50  0001 C CNN
-F 4 "CL10A106MP8NNNC" H 8025 2600 60  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf" H 7900 2150 50  0001 C CNN
+F 4 "GRM188R61E106KA73D" H 8025 2600 60  0001 C CNN "Part Number"
+F 5 "https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D" H 0   0   50  0001 C CNN "Website"
 	1    7900 2400
 	1    0    0    -1  
 $EndComp
@@ -581,8 +584,9 @@ P 7550 3850
 F 0 "C12" H 7350 3850 50  0000 L CNN
 F 1 "C_10uF" H 7250 3750 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 7650 4150 50  0001 C CNN
-F 3 "" H 7550 3600 50  0001 C CNN
-F 4 "CL10A106MP8NNNC" H 7675 4050 60  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf" H 7550 3600 50  0001 C CNN
+F 4 "GRM188R61E106KA73D" H 7675 4050 60  0001 C CNN "Part Number"
+F 5 "https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D" H 0   0   50  0001 C CNN "Website"
 	1    7550 3850
 	1    0    0    -1  
 $EndComp
@@ -899,8 +903,9 @@ P 5400 4100
 F 0 "C10" H 5200 4100 50  0000 L CNN
 F 1 "C_10uF" H 5100 4000 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5500 4400 50  0001 C CNN
-F 3 "" H 5400 3850 50  0001 C CNN
-F 4 "CL10A106MP8NNNC" H 5525 4300 60  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf" H 5400 3850 50  0001 C CNN
+F 4 "GRM188R61E106KA73D" H 5525 4300 60  0001 C CNN "Part Number"
+F 5 "https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D" H 0   0   50  0001 C CNN "Website"
 	1    5400 4100
 	1    0    0    -1  
 $EndComp
@@ -911,8 +916,9 @@ P 6500 4250
 F 0 "C11" H 6300 4250 50  0000 L CNN
 F 1 "C_10uF" H 6200 4150 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 6600 4550 50  0001 C CNN
-F 3 "" H 6500 4000 50  0001 C CNN
-F 4 "CL10A106MP8NNNC" H 6625 4450 60  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf" H 6500 4000 50  0001 C CNN
+F 4 "GRM188R61E106KA73D" H 6625 4450 60  0001 C CNN "Part Number"
+F 5 "https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D" H 0   0   50  0001 C CNN "Website"
 	1    6500 4250
 	1    0    0    -1  
 $EndComp
@@ -1044,9 +1050,9 @@ P 3200 1400
 F 0 "D2" H 3200 1524 50  0000 C CNN
 F 1 "D_Zener" H 3200 1300 50  0001 C CNN
 F 2 "Diode_SMD:D_SMB_Handsoldering" H 3200 1400 50  0001 C CNN
-F 3 "https://www.st.com/content/ccc/resource/technical/document/datasheet/19/78/91/39/07/cd/40/65/CD00001366.pdf/files/CD00001366.pdf/_jcr_content/translations/en.CD00001366.pdf" H 3200 1400 50  0001 C CNN
-F 4 "https://www.digikey.com/product-detail/en/stmicroelectronics/SMBJ26CA-TR/497-15658-1-ND/5253755" H 3200 1400 50  0001 C CNN "Website"
-F 5 " SMBJ26CA-TR" H 3200 1400 50  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/54/mbj-778392.pdf" H 3200 1400 50  0001 C CNN
+F 4 "https://www.mouser.com/ProductDetail/Bourns/SMBJ26CA-H?qs=sGAEpiMZZMvxHShE6WhpuzFJKAwOiSVmlqTrfISDsZs%3D" H 3200 1400 50  0001 C CNN "Website"
+F 5 "SMBJ26CA-H" H 3200 1400 50  0001 C CNN "Part Number"
 	1    3200 1400
 	1    0    0    -1  
 $EndComp

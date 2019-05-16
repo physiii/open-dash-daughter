@@ -206,8 +206,9 @@ P 5750 2000
 F 0 "C3" H 5850 2000 50  0000 L CNN
 F 1 "C_560pF" H 5750 1900 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5850 2300 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B561KB8NNNC/1276-1278-1-ND/3889364" H 5750 1750 50  0001 C CNN
-F 4 "CL10B561KB8NNNC" H 5875 2200 60  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/447/UPY-GPHC_X7R_6.3V-to-50V_18-1154002.pdf" H 5750 1750 50  0001 C CNN
+F 4 "CC0603KPX7R9BB561" H 5875 2200 60  0001 C CNN "Part Number"
+F 5 "https://www.mouser.com/ProductDetail/Yageo/CC0603KPX7R9BB561?qs=sGAEpiMZZMs0AnBnWHyRQCF1lTWZ1EBLZb6TrNZY8PI%3D" H 0   0   50  0001 C CNN "Website"
 	1    5750 2000
 	1    0    0    -1  
 $EndComp
@@ -218,8 +219,9 @@ P 5300 2000
 F 0 "C2" H 5100 2000 50  0000 L CNN
 F 1 "C_560pF" H 4950 1900 50  0000 L CNN
 F 2 "Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder" H 5400 2300 50  0001 C CNN
-F 3 "https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B561KB8NNNC/1276-1278-1-ND/3889364" H 5300 1750 50  0001 C CNN
-F 4 "CL10B561KB8NNNC" H 5425 2200 60  0001 C CNN "Part Number"
+F 3 "https://www.mouser.com/datasheet/2/447/UPY-GPHC_X7R_6.3V-to-50V_18-1154002.pdf" H 5300 1750 50  0001 C CNN
+F 4 "CC0603KPX7R9BB561" H 5425 2200 60  0001 C CNN "Part Number"
+F 5 "https://www.mouser.com/ProductDetail/Yageo/CC0603KPX7R9BB561?qs=sGAEpiMZZMs0AnBnWHyRQCF1lTWZ1EBLZb6TrNZY8PI%3D" H 0   0   50  0001 C CNN "Website"
 	1    5300 2000
 	1    0    0    -1  
 $EndComp

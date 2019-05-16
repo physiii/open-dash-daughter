@@ -2,7 +2,7 @@
 <export version="D">
   <design>
     <source>/home/andy/devices/open-dash-daughter-dev/open-dash-daughterboard.sch</source>
-    <date>Sat 11 May 2019 11:07:03 AM CDT</date>
+    <date>Tue 14 May 2019 09:44:08 PM CDT</date>
     <tool>Eeschema 5.1.2-f72e74a~84~ubuntu19.04.1</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -191,22 +191,24 @@
     <comp ref="C3">
       <value>C_560pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
-      <datasheet>https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B561KB8NNNC/1276-1278-1-ND/3889364</datasheet>
+      <datasheet>https://www.mouser.com/datasheet/2/447/UPY-GPHC_X7R_6.3V-to-50V_18-1154002.pdf</datasheet>
       <fields>
-        <field name="Part Number">CL10B561KB8NNNC</field>
+        <field name="Part Number">CC0603KPX7R9BB561</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Yageo/CC0603KPX7R9BB561?qs=sGAEpiMZZMs0AnBnWHyRQCF1lTWZ1EBLZb6TrNZY8PI%3D</field>
       </fields>
-      <libsource lib="open-automation" part="C_560pF" description=""/>
+      <libsource lib="open-automation" part="C_560pF" description="Multilayer Ceramic Capacitors MLCC - SMD/SMT 0201 560pF 25volts C0G 5%"/>
       <sheetpath names="/canbus/" tstamps="/5A8CA1AF/"/>
       <tstamp>5CC6A0A1</tstamp>
     </comp>
     <comp ref="C2">
       <value>C_560pF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
-      <datasheet>https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B561KB8NNNC/1276-1278-1-ND/3889364</datasheet>
+      <datasheet>https://www.mouser.com/datasheet/2/447/UPY-GPHC_X7R_6.3V-to-50V_18-1154002.pdf</datasheet>
       <fields>
-        <field name="Part Number">CL10B561KB8NNNC</field>
+        <field name="Part Number">CC0603KPX7R9BB561</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Yageo/CC0603KPX7R9BB561?qs=sGAEpiMZZMs0AnBnWHyRQCF1lTWZ1EBLZb6TrNZY8PI%3D</field>
       </fields>
-      <libsource lib="open-automation" part="C_560pF" description=""/>
+      <libsource lib="open-automation" part="C_560pF" description="Multilayer Ceramic Capacitors MLCC - SMD/SMT 0201 560pF 25volts C0G 5%"/>
       <sheetpath names="/canbus/" tstamps="/5A8CA1AF/"/>
       <tstamp>5CC6C4BD</tstamp>
     </comp>
@@ -447,8 +449,10 @@
     <comp ref="C13">
       <value>C_10uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf</datasheet>
       <fields>
-        <field name="Part Number">CL10A106MP8NNNC</field>
+        <field name="Part Number">GRM188R61E106KA73D</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D</field>
       </fields>
       <libsource lib="open-automation" part="C_10uF" description=""/>
       <sheetpath names="/power/" tstamps="/5A7BADB8/"/>
@@ -594,9 +598,10 @@
     <comp ref="R22">
       <value>R_6.5k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
-      <datasheet>https://www.digikey.com/product-detail/en/stackpole-electronics-inc/RMCF0603FT6K49/RMCF0603FT6K49CT-ND/1943043</datasheet>
+      <datasheet>https://www.mouser.com/datasheet/2/427/crcwce3-1223726.pdf</datasheet>
       <fields>
-        <field name="Part Number">RMCF0603FT6K49</field>
+        <field name="Part Number">CRCW06036K49FKEAC</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Vishay-Dale/CRCW06036K49FKEAC?qs=sGAEpiMZZMu61qfTUdNhG9bvwnXh9sSrI1lmGEGWpLM4TJW%252B33zaEQ%3D%3D</field>
       </fields>
       <libsource lib="open-automation" part="R_6.5k" description="6.49 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film"/>
       <sheetpath names="/power/" tstamps="/5A7BADB8/"/>
@@ -605,8 +610,10 @@
     <comp ref="C14">
       <value>C_10uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf</datasheet>
       <fields>
-        <field name="Part Number">CL10A106MP8NNNC</field>
+        <field name="Part Number">GRM188R61E106KA73D</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D</field>
       </fields>
       <libsource lib="open-automation" part="C_10uF" description=""/>
       <sheetpath names="/power/" tstamps="/5A7BADB8/"/>
@@ -637,8 +644,10 @@
     <comp ref="C12">
       <value>C_10uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf</datasheet>
       <fields>
-        <field name="Part Number">CL10A106MP8NNNC</field>
+        <field name="Part Number">GRM188R61E106KA73D</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D</field>
       </fields>
       <libsource lib="open-automation" part="C_10uF" description=""/>
       <sheetpath names="/power/" tstamps="/5A7BADB8/"/>
@@ -726,8 +735,10 @@
     <comp ref="C10">
       <value>C_10uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf</datasheet>
       <fields>
-        <field name="Part Number">CL10A106MP8NNNC</field>
+        <field name="Part Number">GRM188R61E106KA73D</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D</field>
       </fields>
       <libsource lib="open-automation" part="C_10uF" description=""/>
       <sheetpath names="/power/" tstamps="/5A7BADB8/"/>
@@ -736,8 +747,10 @@
     <comp ref="C11">
       <value>C_10uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
+      <datasheet>https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf</datasheet>
       <fields>
-        <field name="Part Number">CL10A106MP8NNNC</field>
+        <field name="Part Number">GRM188R61E106KA73D</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D</field>
       </fields>
       <libsource lib="open-automation" part="C_10uF" description=""/>
       <sheetpath names="/power/" tstamps="/5A7BADB8/"/>
@@ -817,10 +830,10 @@
     <comp ref="D2">
       <value>D_Zener</value>
       <footprint>Diode_SMD:D_SMB_Handsoldering</footprint>
-      <datasheet>https://www.st.com/content/ccc/resource/technical/document/datasheet/19/78/91/39/07/cd/40/65/CD00001366.pdf/files/CD00001366.pdf/_jcr_content/translations/en.CD00001366.pdf</datasheet>
+      <datasheet>https://www.mouser.com/datasheet/2/54/mbj-778392.pdf</datasheet>
       <fields>
-        <field name="Part Number"> SMBJ26CA-TR</field>
-        <field name="Website">https://www.digikey.com/product-detail/en/stmicroelectronics/SMBJ26CA-TR/497-15658-1-ND/5253755</field>
+        <field name="Part Number">SMBJ26CA-H</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Bourns/SMBJ26CA-H?qs=sGAEpiMZZMvxHShE6WhpuzFJKAwOiSVmlqTrfISDsZs%3D</field>
       </fields>
       <libsource lib="open-automation" part="D_Zener" description=" 42.1V Clamp 14.9A Ipp Tvs Diode Surface Mount SMB (DO-214AA)"/>
       <sheetpath names="/power/" tstamps="/5A7BADB8/"/>
@@ -929,9 +942,10 @@
     <comp ref="C18">
       <value>C_10uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
-      <datasheet>https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10A106MP8NNNC/1276-1871-1-ND/3889957</datasheet>
+      <datasheet>https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf</datasheet>
       <fields>
-        <field name="Part Number">CL10A106MP8NNNC</field>
+        <field name="Part Number">GRM188R61E106KA73D</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D</field>
       </fields>
       <libsource lib="open-automation" part="C_10uF" description=""/>
       <sheetpath names="/microcontroller/" tstamps="/5A7BADDB/"/>
@@ -1177,9 +1191,10 @@
     <comp ref="C30">
       <value>C_0.47uF</value>
       <footprint>Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</footprint>
-      <datasheet>https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B474KA8NFNC/1276-2082-1-ND/3890168</datasheet>
+      <datasheet>https://www.mouser.com/datasheet/2/445/885012206075-554589.pdf</datasheet>
       <fields>
-        <field name="Part Number">CL10B474KA8NFNC</field>
+        <field name="Part Number">885012206075</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Wurth-Electronics/885012206075?qs=sGAEpiMZZMs0AnBnWHyRQEGbLOF2VP1i35TeX6K3n4AZTwQpyzLezQ%3D%3D</field>
       </fields>
       <libsource lib="open-automation" part="C_0.470uF" description=""/>
       <sheetpath names="/audio amplifier/" tstamps="/5ABD1806/"/>
@@ -1464,7 +1479,7 @@
       </pins>
     </libpart>
     <libpart lib="open-automation" part="C_0.470uF">
-      <docs>https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B474KA8NFNC/1276-2082-1-ND/3890168</docs>
+      <docs>https://www.mouser.com/datasheet/2/445/885012206075-554589.pdf</docs>
       <footprints>
         <fp>C?</fp>
         <fp>C_????_*</fp>
@@ -1476,7 +1491,8 @@
         <field name="Reference">C</field>
         <field name="Value">C_0.470uF</field>
         <field name="Footprint">Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</field>
-        <field name="Part Number">CL10B474KA8NFNC</field>
+        <field name="Part Number">885012206075</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Wurth-Electronics/885012206075?qs=sGAEpiMZZMs0AnBnWHyRQEGbLOF2VP1i35TeX6K3n4AZTwQpyzLezQ%3D%3D</field>
       </fields>
       <pins>
         <pin num="1" name="~" type="passive"/>
@@ -1505,6 +1521,7 @@
       </pins>
     </libpart>
     <libpart lib="open-automation" part="C_10uF">
+      <docs>https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166.pdf</docs>
       <footprints>
         <fp>C?</fp>
         <fp>C_????_*</fp>
@@ -1516,8 +1533,8 @@
         <field name="Reference">C</field>
         <field name="Value">C_10uF</field>
         <field name="Footprint">Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</field>
-        <field name="Datasheet">https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10A106MP8NNNC/1276-1871-1-ND/3889957</field>
-        <field name="Part Number">CL10A106MP8NNNC</field>
+        <field name="Part Number">GRM188R61E106KA73D</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D</field>
       </fields>
       <pins>
         <pin num="1" name="~" type="passive"/>
@@ -1625,7 +1642,8 @@
       </pins>
     </libpart>
     <libpart lib="open-automation" part="C_560pF">
-      <docs>https://www.digikey.com/product-detail/en/samsung-electro-mechanics/CL10B561KB8NNNC/1276-1278-1-ND/3889364</docs>
+      <description>Multilayer Ceramic Capacitors MLCC - SMD/SMT 0201 560pF 25volts C0G 5%</description>
+      <docs>https://www.mouser.com/datasheet/2/447/UPY-GPHC_X7R_6.3V-to-50V_18-1154002.pdf</docs>
       <footprints>
         <fp>C?</fp>
         <fp>C_????_*</fp>
@@ -1637,7 +1655,8 @@
         <field name="Reference">C</field>
         <field name="Value">C_560pF</field>
         <field name="Footprint">Capacitor_SMD:C_0603_1608Metric_Pad1.05x0.95mm_HandSolder</field>
-        <field name="Part Number">CL10B561KB8NNNC</field>
+        <field name="Part Number">CC0603KPX7R9BB561</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Yageo/CC0603KPX7R9BB561?qs=sGAEpiMZZMs0AnBnWHyRQCF1lTWZ1EBLZb6TrNZY8PI%3D</field>
       </fields>
       <pins>
         <pin num="1" name="~" type="passive"/>
@@ -1705,8 +1724,8 @@
         <field name="Reference">D</field>
         <field name="Value">D_1N5819HW</field>
         <field name="Footprint">Diode_SMD:D_SOD-123</field>
-        <field name="Part Number">1N5819HW-7-F</field>
         <field name="Website">https://www.digikey.com/product-detail/en/diodes-incorporated/1N5819HW-7-F/1N5819HW-FDICT-ND/815283</field>
+        <field name="Part Number">1N5819HW-7-F</field>
       </fields>
       <pins>
         <pin num="1" name="K" type="passive"/>
@@ -1715,7 +1734,7 @@
     </libpart>
     <libpart lib="open-automation" part="D_Zener">
       <description> 42.1V Clamp 14.9A Ipp Tvs Diode Surface Mount SMB (DO-214AA)</description>
-      <docs>https://www.st.com/content/ccc/resource/technical/document/datasheet/19/78/91/39/07/cd/40/65/CD00001366.pdf/files/CD00001366.pdf/_jcr_content/translations/en.CD00001366.pdf</docs>
+      <docs>https://www.mouser.com/datasheet/2/54/mbj-778392.pdf</docs>
       <footprints>
         <fp>TO-???*</fp>
         <fp>*_Diode_*</fp>
@@ -1726,8 +1745,8 @@
         <field name="Reference">D</field>
         <field name="Value">D_Zener</field>
         <field name="Footprint">Diode_SMD:D_SMB_Handsoldering</field>
-        <field name="Website">https://www.digikey.com/product-detail/en/stmicroelectronics/SMBJ26CA-TR/497-15658-1-ND/5253755</field>
-        <field name="Part Number"> SMBJ26CA-TR</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Bourns/SMBJ26CA-H?qs=sGAEpiMZZMvxHShE6WhpuzFJKAwOiSVmlqTrfISDsZs%3D</field>
+        <field name="Part Number">SMBJ26CA-H</field>
       </fields>
       <pins>
         <pin num="1" name="K" type="passive"/>
@@ -2094,7 +2113,7 @@
     </libpart>
     <libpart lib="open-automation" part="R_6.5k">
       <description>6.49 kOhms ±1% 0.1W, 1/10W Chip Resistor 0603 (1608 Metric) Automotive AEC-Q200 Thick Film</description>
-      <docs>https://www.digikey.com/product-detail/en/stackpole-electronics-inc/RMCF0603FT6K49/RMCF0603FT6K49CT-ND/1943043</docs>
+      <docs>https://www.mouser.com/datasheet/2/427/crcwce3-1223726.pdf</docs>
       <footprints>
         <fp>R_*</fp>
         <fp>R_*</fp>
@@ -2103,7 +2122,8 @@
         <field name="Reference">R</field>
         <field name="Value">R_6.5k</field>
         <field name="Footprint">Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder</field>
-        <field name="Part Number">RMCF0603FT6K49</field>
+        <field name="Part Number">CRCW06036K49FKEAC</field>
+        <field name="Website">https://www.mouser.com/ProductDetail/Vishay-Dale/CRCW06036K49FKEAC?qs=sGAEpiMZZMu61qfTUdNhG9bvwnXh9sSrI1lmGEGWpLM4TJW%252B33zaEQ%3D%3D</field>
       </fields>
       <pins>
         <pin num="1" name="~" type="passive"/>

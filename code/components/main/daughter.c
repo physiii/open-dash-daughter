@@ -18,6 +18,7 @@
 #include "CAN.h"
 #include "driver/i2c.h"
 #include <string.h>
+#include "power.c"
 
 // if the dash does not respond, assume it is off
 #define DASH_RESPONSE_TIMEOUT         (2000 / portTICK_PERIOD_MS)
@@ -35,10 +36,11 @@
 // #define GPIO_CAN_TX                   (GPIO_NUM_???)
 #define GPIO_MAINBOARD_SOFT_POWER     (GPIO_NUM_5)
 #define GPIO_DISPLAY_POWER            (GPIO_NUM_15)
-#define GPIO_AUDIO_AMP_POWER          (GPIO_NUM_16)
 #define GPIO_MAINBOARD_POWER          (GPIO_NUM_18)
+#define AUDIO_STBY_IO          (GPIO_NUM_33)
+#define AUDIO_MUTE_IO          (GPIO_NUM_32)
 
-#define GPIO_OUTPUT_PIN_SEL  ((1ULL<<GPIO_MAINBOARD_SOFT_POWER) | (1ULL<<GPIO_DISPLAY_POWER) | (1ULL<<GPIO_AUDIO_AMP_POWER) | (1ULL<<GPIO_MAINBOARD_POWER))
+#define GPIO_OUTPUT_PIN_SEL  ((1ULL<<GPIO_MAINBOARD_SOFT_POWER) | (1ULL<<GPIO_DISPLAY_POWER) | (1ULL<<AUDIO_STBY_IO) | (1ULL<<AUDIO_MUTE_IO) | (1ULL<<GPIO_MAINBOARD_POWER))
 
 #define KEY_POSITION_MASK             0x0000f00000000f00
 #define KEY_POSITION_OFF              0x0000100000000b00
@@ -54,14 +56,13 @@ bool dash_wait_flag = false;
 // #define GPIO_CAN_TX                   (GPIO_NUM_???)
 #define GPIO_MAINBOARD_SOFT_POWER     (GPIO_NUM_5)
 #define GPIO_DISPLAY_POWER            (GPIO_NUM_18)
-#define GPIO_AUDIO_AMP_POWER          (GPIO_NUM_16)
 #define GPIO_MAINBOARD_POWER          (GPIO_NUM_15)
 
 /*************** initialize i2c *************************************/
 
 #define DATA_LENGTH                        512              /*!<Data buffer length for test buffer*/
 #define RW_TEST_LENGTH                     129              /*!<Data length for r/w test, any value from 0-DATA_LENGTH*/
-#define MAINBOARD_ON_CURRENT		   100		
+#define MAINBOARD_ON_CURRENT		   100
 
 #define I2C_EXAMPLE_MASTER_SCL_IO          21               /*!< gpio number for I2C master clock */
 #define I2C_EXAMPLE_MASTER_SDA_IO          19               /*!< gpio number for I2C master data  */
@@ -291,7 +292,7 @@ static void power_task(void* arg)
 
     uint8_t* data_msb = (uint8_t*) INA219_CONFIGURATION_MSB;
     uint8_t* data_lsb = (uint8_t*) INA219_CONFIGURATION_LSB;
-    
+
     /*low_battery_on = get_u32("low_battery_on",low_battery_on);
     low_battery_off = get_u32("low_battery_off",low_battery_off);
     high_battery_on = get_u32("high_battery_on",high_battery_on);
@@ -505,8 +506,10 @@ void initialize_gpio() {
 apply power to peripherals
 ***/
 void apply_dash_power() {
-  gpio_set_level(GPIO_MAINBOARD_POWER, 0); //mainboard power
-  gpio_set_level(GPIO_DISPLAY_POWER, 0); //display power
+  gpio_set_level(GPIO_MAINBOARD_POWER, 1); //mainboard power
+  gpio_set_level(GPIO_DISPLAY_POWER, 1); //display power
+  gpio_set_level(AUDIO_MUTE_IO, 1); //display power
+  gpio_set_level(AUDIO_STBY_IO, 1); //display power
   //gpio_set_level(GPIO_AUDIO_AMP_POWER, 0); //audio amp power
   //gpio_set_level(GPIO_MAINBOARD_SOFT_POWER, 0); //mainboard softpower
 }
@@ -876,7 +879,7 @@ void task_CAN (void *pvParameters) {
 						dash_wait_flag = false;
 	  			}
           IgnitionState = NewIgnitionState;
-          
+
         } else {
           //ESP_LOGI("canbus", "repeat ignition state %s", get_ignition_state_label(IgnitionState));
         }
@@ -912,7 +915,8 @@ void app_main(void) {
   i2c_example_master_init();
   initialize_gpio();
   apply_dash_power();
-
+  power_main();
+  
   xTaskCreate(power_task, "power_task", 1024 * 2, (void* ) 1, 10, NULL);
   xTaskCreate(radio_task, "radio_task", 1024 * 2, (void* ) 1, 10, NULL);
   xTaskCreate(task_Dash, "Dash", 2048, NULL, 5, NULL);
@@ -930,4 +934,3 @@ void app_main(void) {
 #endif // _DEBUG
   }
 }
-

@@ -31,10 +31,6 @@ F 3 "" H 7600 5700 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	7600 5350 7600 5200
-Wire Wire Line
-	8000 5300 8000 5350
-Wire Wire Line
-	8200 5300 8000 5300
 $Comp
 L open-automation:C_10uF C13
 U 1 1 5CC273A4
@@ -46,19 +42,6 @@ F 3 "https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166
 F 4 "GRM188R61E106KA73D" H 7725 5700 60  0001 C CNN "Part Number"
 F 5 "https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D" H 0   0   50  0001 C CNN "Website"
 	1    7600 5500
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8000 5700 8000 5650
-$Comp
-L open-automation:GND #PWR040
-U 1 1 5CC27394
-P 8000 5700
-F 0 "#PWR040" H 8000 5450 50  0001 C CNN
-F 1 "GND" H 8100 5600 50  0000 C CNN
-F 2 "" H 8000 5700 50  0000 C CNN
-F 3 "" H 8000 5700 50  0000 C CNN
-	1    8000 5700
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -573,10 +556,6 @@ F 3 "" H 7550 4050 50  0000 C CNN
 $EndComp
 Wire Wire Line
 	7550 3700 7550 3550
-Wire Wire Line
-	7950 3650 7950 3700
-Wire Wire Line
-	8150 3650 7950 3650
 $Comp
 L open-automation:C_10uF C12
 U 1 1 5CC07B1D
@@ -588,19 +567,6 @@ F 3 "https://www.mouser.com/datasheet/2/281/murata_03052018_GRM_Series_1-1310166
 F 4 "GRM188R61E106KA73D" H 7675 4050 60  0001 C CNN "Part Number"
 F 5 "https://www.mouser.com/ProductDetail/Murata-Electronics/GRM188R61E106KA73D?qs=sGAEpiMZZMs0AnBnWHyRQN7%2FAA2D2lPPadjwaUSKtHX%252BeURw46TYGA%3D%3D" H 0   0   50  0001 C CNN "Website"
 	1    7550 3850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7950 4050 7950 4000
-$Comp
-L open-automation:GND #PWR039
-U 1 1 5CC05233
-P 7950 4050
-F 0 "#PWR039" H 7950 3800 50  0001 C CNN
-F 1 "GND" H 8050 3950 50  0000 C CNN
-F 2 "" H 7950 4050 50  0000 C CNN
-F 3 "" H 7950 4050 50  0000 C CNN
-	1    7950 4050
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -804,12 +770,13 @@ P 3200 1750
 AR Path="/5ABD18ED/5CC3872E" Ref="C?"  Part="1" 
 AR Path="/5CC3872E" Ref="C?"  Part="1" 
 AR Path="/5A7BADB8/5CC3872E" Ref="C9"  Part="1" 
-F 0 "C9" V 3150 1800 50  0000 L CNN
+F 0 "C9" V 3350 1700 50  0000 L CNN
 F 1 "C_1000uF" V 3050 1550 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 3300 2050 50  0001 C CNN
 F 3 "https://industrial.panasonic.com/ww/products/capacitors/aluminum-capacitors/aluminum-cap-lead/fc/EEUFC1E102" H 3200 1500 50  0001 C CNN
 F 4 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/EEU-FC1E102/P10278-ND/266287" H 3200 1750 50  0001 C CNN "Website"
-F 5 "UVR0J102MPD1TD" H 3325 1950 60  0001 C CNN "Part Number"
+F 5 " EEU-FC1E102" H 3325 1950 60  0001 C CNN "Part Number"
+F 6 "https://www.digikey.com/product-detail/en/panasonic-electronic-components/EEU-FC1E102/P10278-ND/266287" H 0   0   50  0001 C CNN "Supplier"
 	1    3200 1750
 	0    -1   -1   0   
 $EndComp
@@ -928,9 +895,9 @@ U 1 1 5CBE85D6
 P 5850 5800
 F 0 "U7" H 5825 6325 50  0000 C CNN
 F 1 "ACS711" H 5825 6234 50  0000 C CNN
-F 2 "open-automation:ACS711KEXLT-15AB-T" H 5900 6450 50  0001 C CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5900 6450 50  0001 C CNN
 F 3 "https://www.digikey.com/product-detail/en/allegro-microsystems-llc/ACS711KEXLT-15AB-T/620-1483-1-ND/3868192" H 5650 6650 50  0001 C CNN
-F 4 "ACS711KEXLT-15AB-T" H 5900 6350 50  0001 C CNN "Part Number"
+F 4 " ACS711ELCTR-12AB-T " H 5900 6350 50  0001 C CNN "Part Number"
 	1    5850 5800
 	1    0    0    -1  
 $EndComp
@@ -939,23 +906,21 @@ Text Label 6550 5500 0    50   ~ 0
 $Comp
 L open-automation:GND #PWR027
 U 1 1 5CBEAC72
-P 5400 5750
-F 0 "#PWR027" H 5400 5500 50  0001 C CNN
-F 1 "GND" H 5300 5750 50  0000 C CNN
-F 2 "" H 5400 5750 50  0000 C CNN
-F 3 "" H 5400 5750 50  0000 C CNN
-	1    5400 5750
+P 6250 5850
+F 0 "#PWR027" H 6250 5600 50  0001 C CNN
+F 1 "GND" H 6250 5700 50  0000 C CNN
+F 2 "" H 6250 5850 50  0000 C CNN
+F 3 "" H 6250 5850 50  0000 C CNN
+	1    6250 5850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	5400 5750 5400 5700
 Wire Wire Line
 	5400 5700 5450 5700
 Text Label 5400 5500 2    50   ~ 0
 POWER_IN
 Wire Wire Line
 	5400 5500 5450 5500
-Text Label 5400 5600 2    50   ~ 0
+Text Label 5400 5700 2    50   ~ 0
 MAIN_POWER_IN
 Wire Wire Line
 	5400 5600 5450 5600
@@ -971,30 +936,6 @@ Wire Wire Line
 	6750 5500 6750 5600
 Wire Wire Line
 	6200 5500 6750 5500
-$Comp
-L open-automation:R_20K R18
-U 1 1 5CC8AB06
-P 8000 5500
-F 0 "R18" H 7850 5450 50  0000 L CNN
-F 1 "R_20K" H 7750 5350 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 7930 5500 50  0001 C CNN
-F 3 "" V 8080 5500 50  0001 C CNN
-F 4 "RC0603JR-0720KL" V 8180 5600 60  0001 C CNN "Part Number"
-	1    8000 5500
-	1    0    0    -1  
-$EndComp
-$Comp
-L open-automation:R_20K R17
-U 1 1 5CC8FDA6
-P 7950 3850
-F 0 "R17" H 7800 3800 50  0000 L CNN
-F 1 "R_20K" H 7700 3700 50  0000 L CNN
-F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 7880 3850 50  0001 C CNN
-F 3 "" V 8030 3850 50  0001 C CNN
-F 4 "RC0603JR-0720KL" V 8130 3950 60  0001 C CNN "Part Number"
-	1    7950 3850
-	1    0    0    -1  
-$EndComp
 $Comp
 L open-automation:R_20K R21
 U 1 1 5CC94E35
@@ -1093,4 +1034,60 @@ Text Label 3100 3500 0    50   ~ 0
 BATTERY
 Wire Wire Line
 	3100 3500 3050 3500
+Text Label 6150 1450 2    50   ~ 0
+3V3
+$Comp
+L open-automation:R_20K R18
+U 1 1 5CF849C8
+P 6350 1700
+F 0 "R18" V 6350 1650 50  0000 L CNN
+F 1 "R_20K" V 6250 1600 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6280 1700 50  0001 C CNN
+F 3 "" V 6430 1700 50  0001 C CNN
+F 4 "RC0603JR-0720KL" V 6530 1800 60  0001 C CNN "Part Number"
+	1    6350 1700
+	0    -1   -1   0   
+$EndComp
+$Comp
+L open-automation:R_20K R17
+U 1 1 5CF897E8
+P 6350 1450
+F 0 "R17" V 6350 1400 50  0000 L CNN
+F 1 "R_20K" V 6450 1300 50  0000 L CNN
+F 2 "Resistor_SMD:R_0603_1608Metric_Pad1.05x0.95mm_HandSolder" V 6280 1450 50  0001 C CNN
+F 3 "" V 6430 1450 50  0001 C CNN
+F 4 "RC0603JR-0720KL" V 6530 1550 60  0001 C CNN "Part Number"
+	1    6350 1450
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	6200 1700 6150 1700
+Wire Wire Line
+	6200 1450 6150 1450
+Text Label 6550 1450 0    50   ~ 0
+DISPLAY_EN
+Text Label 6550 1700 0    50   ~ 0
+MAIN_EN
+Wire Wire Line
+	6550 1700 6500 1700
+Wire Wire Line
+	6550 1450 6500 1450
+Wire Wire Line
+	8100 3650 8150 3650
+Wire Wire Line
+	8150 5300 8200 5300
+Text Label 6150 1700 2    50   ~ 0
+3V3
+Text Notes 6000 1300 0    50   ~ 0
+power enable pullups 
+Wire Wire Line
+	6250 5850 6250 5800
+Wire Wire Line
+	6250 5800 6200 5800
+Wire Wire Line
+	5400 5800 5450 5800
+Wire Wire Line
+	5400 5700 5400 5800
+Wire Wire Line
+	5400 5600 5400 5500
 $EndSCHEMATC

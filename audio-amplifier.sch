@@ -419,18 +419,6 @@ F 4 "ERJ-3EKF4752V" V 2730 3600 60  0001 C CNN "Part Number"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:CP C28
-U 1 1 5CC7B01E
-P 5950 2800
-F 0 "C28" H 6000 2700 50  0000 L CNN
-F 1 "470uF" H 6000 2900 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 5988 2650 50  0001 C CNN
-F 3 "~" H 5950 2800 50  0001 C CNN
-F 4 "860020474014" H 5950 2800 60  0001 C CNN "Part Number"
-	1    5950 2800
-	-1   0    0    -1  
-$EndComp
-$Comp
 L open-automation:GND #PWR061
 U 1 1 5CBD5444
 P 2600 4750
@@ -445,11 +433,11 @@ Wire Wire Line
 	2550 4400 2600 4400
 Wire Wire Line
 	2600 4700 2550 4700
-Text Label 2600 4400 0    50   ~ 0
+Text Label 2600 4600 0    50   ~ 0
 IN1
 Wire Wire Line
 	2600 4750 2600 4700
-Text Label 2600 4600 0    50   ~ 0
+Text Label 2600 4400 0    50   ~ 0
 IN2
 Wire Wire Line
 	2600 4600 2550 4600
@@ -468,11 +456,11 @@ Wire Wire Line
 	3500 4400 3550 4400
 Wire Wire Line
 	3550 4700 3500 4700
-Text Label 3550 4400 0    50   ~ 0
+Text Label 3550 4600 0    50   ~ 0
 IN3
 Wire Wire Line
 	3550 4750 3550 4700
-Text Label 3550 4600 0    50   ~ 0
+Text Label 3550 4400 0    50   ~ 0
 IN4
 Wire Wire Line
 	3550 4600 3500 4600
@@ -710,6 +698,19 @@ F 3 "https://www.cui.com/product/resource/sj1-352xn-series.pdf" H 3300 4500 50  
 F 4 "https://www.digikey.com/product-detail/en/cui-inc/SJ1-3525N/CP1-3525N-ND/738687" H 2950 4050 50  0001 C CNN "Website"
 F 5 "SJ1-3525N" H 3200 3850 50  0001 C CNN "Part Number"
 	1    3300 4500
+	1    0    0    -1  
+$EndComp
+$Comp
+L open-automation:C_470uF C28
+U 1 1 5D065E91
+P 5950 2800
+F 0 "C28" H 5750 2800 50  0000 L CNN
+F 1 "C_470uF" H 5600 2700 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 5950 2800 50  0001 C CNN
+F 3 "https://katalog.we-online.de/pbs/datasheet/860020474014.pdf" H 5950 2800 50  0001 C CNN
+F 4 "https://www.digikey.com/product-detail/en/wurth-electronics-inc/860020474014/732-8831-3-ND/5727068" H 5950 2800 50  0001 C CNN "Supplier"
+F 5 " 860020474014" H 5950 2800 50  0001 C CNN "Part Number"
+	1    5950 2800
 	1    0    0    -1  
 $EndComp
 $EndSCHEMATC

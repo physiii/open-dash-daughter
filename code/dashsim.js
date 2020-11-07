@@ -20,19 +20,19 @@ port.on('data', function (data) {
     printme = lines.slice(0, -1).join('');
     if (printme.length > 0) {
         console.log(printme); // print all messages
-        if (dash_power_state) {
-            let msg;
-            try { msg = JSON.parse(printme); } catch (e){}
-            if (msg && msg.type == 'status' && msg.payload.get_power_state) {
-                console.log('received power status query, reponding with', dash_alive_response, '(press m to turn off)');
-                port.write(JSON.stringify(dash_alive_response) + '\n');
-            }
-        } else {
-            console.log('dash is off, ignoring messages (press a to turn on)');
-        }
     }
     buffer = lines.slice(-1);
 });
+
+// port.on('readable', function () {
+// 	    buffer += port.read().toString('utf8');
+// 	    lines = buffer.split('\n');
+// 	    printme = lines.slice(0, -1).join('');
+// 	    if (printme.length > 0) {
+// 	        console.log(printme); // print all messages
+// 	    }
+// 	    buffer = lines.slice(-1);
+// })
 
 let stdin = process.openStdin();
 

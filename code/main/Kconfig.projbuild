@@ -50,6 +50,22 @@ menu "CAN Configuration"
 
 endmenu
 
+menu "J1850 Configuration"
+
+    config J1850_INPUT_PIN
+        int "Input GPIO number"
+        default 16
+        help
+            This option selects the GPIO pin used for the j1850 input signal.
+
+    config J1850_OUTPUT_PIN
+        int "Output GPIO number"
+        default 17
+        help
+            This option selects the GPIO pin used for the j1850 output signal.
+
+endmenu
+
 menu "Wifi Configuration"
 
     config ESP_WIFI_SSID

@@ -6,7 +6,6 @@
 #include "driver/periph_ctrl.h"
 #include "driver/timer.h"
 
-uint8_t	message_count = 0;
 uint8_t message[12] = {0};
 uint8_t test_msg = 0;
 
@@ -67,8 +66,7 @@ uint64_t BREAK_MAX = 5000;
 
 #define TIMER_DIVIDER         16  //  Hardware timer clock divider
 #define TIMER_SCALE           (TIMER_BASE_CLK / TIMER_DIVIDER)  // convert counter value to seconds
-#define TIMER_INTERVAL1_SEC   (SOF_NOM / 1000000)   // sample test interval for the second timer
-#define TEST_WITHOUT_RELOAD   0        // testing will be done without auto reload
+#define TIMER_INTERVAL1_SEC   (EOF_NOM / 1000000)   // sample test interval for the second timer
 #define TEST_WITH_RELOAD      1        // testing will be done with auto reload
 
 typedef struct {
@@ -218,7 +216,6 @@ static void IRAM_ATTR j1850_isr_handler(void* arg)
 	}
 
 	if (bit_count > 7) {
-		bit_count = 0;
 		message[byte_count] = message_buffer;
 		byte_count++;
 		bit_count = 0;
@@ -232,7 +229,6 @@ static void j1850_task(void* arg)
 	while(1) {
 		vTaskDelay(1000 / portTICK_RATE_MS);
 		// printf("[j1850] %d\n", test_msg);
-		message_count = 0;
 	}
 }
 

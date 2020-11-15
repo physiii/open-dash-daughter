@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <inttypes.h>
 #include "esp_types.h"
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
@@ -6,8 +7,36 @@
 #include "driver/periph_ctrl.h"
 #include "driver/timer.h"
 
-uint8_t message[12] = {0};
+uint8_t crcTable[256];
+uint8_t CalcCRC(uint8_t * buf, uint8_t len);
+void CRCInit(void);
+uint8_t buf[] = {0x08, 0xFF, 0x40, 0x03};
+
+uint8_t CalcCRC(uint8_t * buf, uint8_t len) {
+        const uint8_t * ptr = buf;
+        uint8_t _crc = 0xFF;
+
+        while(len--) _crc = crcTable[_crc ^ *ptr++];
+
+        return ~_crc;
+}
+
+void CRCInit(void) {
+        uint8_t _crc;
+        for (int i = 0; i < 0x100; i++) {
+                _crc = i;
+
+                for (uint8_t bit = 0; bit < 8; bit++) _crc = (_crc & 0x80) ? ((_crc << 1) ^ 0x1D) : (_crc << 1);
+
+                crcTable[i] = _crc;
+        }
+}
+
+// uint8_t message[12] = {0};
+uint64_t message = 0;
+uint64_t message_buffer = 0;
 uint8_t test_msg = 0;
+uint8_t	bit_count = 0;
 
 // J1850 Config
 
@@ -24,7 +53,7 @@ enum J1850_ERRORS {
 };
 
 enum J1850_ERRORS err = J1850_OK;
-bool ACTIVE = false;
+bool ACTIVE = true;
 bool SOF = false;
 uint8_t byte_count = 0;
 
@@ -88,6 +117,7 @@ static void inline print_timer_counter(uint64_t counter_value)
 void IRAM_ATTR timer_group0_isr(void *para)
 {
 		SOF = false;
+    gpio_set_level(J1850_DEBUG_PIN, SOF);
 		byte_count = 0;
 
     timer_spinlock_take(TIMER_GROUP_0);
@@ -156,15 +186,41 @@ static void timer_example_evt_task(void *arg)
         xQueueReceive(timer_queue, &evt, portMAX_DELAY);
 
 				if (err == J1850_OK) {
-					printf("[j1850] Message:\t");
-					for (int i=0; i < 12; i++) {
-						printf("%d ", message[i]);
-					}
-					printf("\n");
+          if (message_buffer) {
+
+            if (bit_count < 24) continue;
+
+            // --- CRC Check --- //
+
+            uint8_t bytes = bit_count / 8 - 1;
+            uint8_t buffer[8] = { 0 };
+
+            for (int i = bytes, j = 0; i > 0; i--,j++) {
+              buffer[j] = message_buffer >> 8 * i;
+            }
+
+            uint8_t calculated_crc = CalcCRC(buffer, bytes);
+            uint8_t received_crc = message_buffer & 0xFF;
+
+            if (calculated_crc == received_crc) {
+              // printf("[j1850] Message (%d bits): %llX\n", bit_count, message_buffer,);
+              printf("{\"j1850\":\"%llX\", \"bits\":%d}\n", message_buffer, bit_count);
+            }
+
+            // ----------------- //
+
+            message_buffer = 0;
+            bit_count = 0;
+          }
+					// printf("[j1850] Message:\t");
+					// for (int i=0; i < 12; i++) {
+					// 	printf("%d ", message[i]);
+					// }
+					// printf("\n");
 				} else {
-					(err == J1850_ERR_PULSE_OUT_OF_RANGE)
-						? printf("[j1850] Error: pulse out of range\n")
-						:	printf("[j1850] Error: %d\n", err);
+					// (err == J1850_ERR_PULSE_OUT_OF_RANGE)
+					// 	? printf("[j1850] Error: pulse out of range\n")
+					// 	:	printf("[j1850] Error: %d\n", err);
 				}
     }
 }
@@ -174,8 +230,6 @@ static void timer_example_evt_task(void *arg)
 uint64_t current_time = 0;
 uint64_t previous_time = 0;
 uint64_t pulse_width = 0;
-uint8_t message_buffer = 0;
-uint8_t	bit_count = 0;
 
 static void IRAM_ATTR j1850_isr_handler(void* arg)
 {
@@ -194,6 +248,7 @@ static void IRAM_ATTR j1850_isr_handler(void* arg)
 			&& pulse_width < SOF_MAX)
 	{
 		SOF = true;
+    gpio_set_level(J1850_DEBUG_PIN, SOF);
 		return;
 	}
 
@@ -215,20 +270,48 @@ static void IRAM_ATTR j1850_isr_handler(void* arg)
 		}
 	}
 
-	if (bit_count > 7) {
-		message[byte_count] = message_buffer;
-		byte_count++;
-		bit_count = 0;
-	} else {
-		bit_count++;
-	}
+  if (err == J1850_OK) {
+    bit_count++;
+  }
+
+	// if (bit_count > 7) {
+	// 	message[byte_count] = message_buffer;
+	// 	byte_count++;
+	// 	bit_count = 0;
+	// } else {
+	// 	bit_count++;
+	// }
 }
 
 static void j1850_task(void* arg)
 {
+  CRCInit();
 	while(1) {
 		vTaskDelay(1000 / portTICK_RATE_MS);
-		// printf("[j1850] %d\n", test_msg);
+    // uint64_t test_message = 38642123526;
+    // printf("test_message: %llX\n", test_message);
+    //
+    // uint8_t bytes = 40 / 8 - 1;
+    // uint8_t buffer[8] = { 0 };
+    //
+    // for (int i = bytes, j = 0; i > 0; i--,j++) {
+    //   buffer[j] = test_message >> 8 * i;
+    // }
+    //
+    // printf("hex array: ");
+    // for (int i = 0; i < bytes; i++) {
+    //   printf("0x%X ", buffer[i]);
+    // }
+    // printf("\n");
+    //
+    // printf("CRC: 0x%2X\n", CalcCRC(buffer, bytes));
+    //
+    // uint8_t calculated_crc = CalcCRC(buffer, bytes);
+    // uint8_t received_crc = test_message & 0xFF;
+    //
+    // if (calculated_crc == received_crc) {
+    //   printf("[j1850] !!MATCH!! Message (%d bits): %llX (CRC 0x%X)\n", bit_count, test_message, received_crc);
+    // }
 	}
 }
 

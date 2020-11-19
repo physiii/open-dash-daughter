@@ -273,14 +273,42 @@ static void IRAM_ATTR j1850_isr_handler(void* arg)
   if (err == J1850_OK) {
     bit_count++;
   }
+}
 
-	// if (bit_count > 7) {
-	// 	message[byte_count] = message_buffer;
-	// 	byte_count++;
-	// 	bit_count = 0;
-	// } else {
-	// 	bit_count++;
-	// }
+void printTestData () {
+	printf("{\"j1850\":\"CBC6C1212672\", \"bits\":48}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"68C986C14434\", \"bits\":47}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"88DB4027F6\", \"bits\":41}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"18AC740A32604\", \"bits\":49}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"88DB4027F6\", \"bits\":41}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"18AC740A32604\", \"bits\":49}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"3689DE995174\", \"bits\":48}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"683B400CC5\", \"bits\":48}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"683B401961\", \"bits\":48}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"CBC6C1212672\", \"bits\":48}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"AAF399151CFA\", \"bits\":48}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"CBC6C1212672\", \"bits\":48}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"CC93A2503ED\", \"bits\":48}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"36885284300DD\", \"bits\":48}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"CC93A2503ED\", \"bits\":48}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"7A9846243D2\", \"bits\":45}\n");
+	vTaskDelay(1000 / portTICK_RATE_MS);
+	printf("{\"j1850\":\"8AC740A1346B\", \"bits\":48}\n");
 }
 
 static void j1850_task(void* arg)
@@ -288,30 +316,7 @@ static void j1850_task(void* arg)
   CRCInit();
 	while(1) {
 		vTaskDelay(1000 / portTICK_RATE_MS);
-    // uint64_t test_message = 38642123526;
-    // printf("test_message: %llX\n", test_message);
-    //
-    // uint8_t bytes = 40 / 8 - 1;
-    // uint8_t buffer[8] = { 0 };
-    //
-    // for (int i = bytes, j = 0; i > 0; i--,j++) {
-    //   buffer[j] = test_message >> 8 * i;
-    // }
-    //
-    // printf("hex array: ");
-    // for (int i = 0; i < bytes; i++) {
-    //   printf("0x%X ", buffer[i]);
-    // }
-    // printf("\n");
-    //
-    // printf("CRC: 0x%2X\n", CalcCRC(buffer, bytes));
-    //
-    // uint8_t calculated_crc = CalcCRC(buffer, bytes);
-    // uint8_t received_crc = test_message & 0xFF;
-    //
-    // if (calculated_crc == received_crc) {
-    //   printf("[j1850] !!MATCH!! Message (%d bits): %llX (CRC 0x%X)\n", bit_count, test_message, received_crc);
-    // }
+		printTestData();
 	}
 }
 
